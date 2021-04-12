@@ -8,7 +8,8 @@
     * TypeScript – nadzbiór języka JavaScript umożliwiający opcjonalne statyczne typowanie (kod sprawdzany podczas kompilacji), kompilowany do języka JavaScript;
 2. technologią cross-platformową
         Technologia cross-platformowa to technologia pozwalająca na uruchamianie tworzonego oprogramowania na różnych systemach operacyjnych takich jak np. Windows, Linux, czy Mac OS.
- <br/> służącą do tworzenia oprogramowania.
+
+służącą do tworzenia oprogramowania.
 
 
 Można przy jej pomocy tworzyć aplikacje:
