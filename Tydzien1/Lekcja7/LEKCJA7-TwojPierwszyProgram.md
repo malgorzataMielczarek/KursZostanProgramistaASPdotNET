@@ -6,13 +6,13 @@ Rysunek 1 Kod programu HelloWorld
 ## 1. Ogólna budowa programu:
 ### 1. Sekcja „using”
 Część programu w której po słowie kluczowym _using_ umieszcza się nazwę biblioteki z których korzysta się w programie i kończy linię średnikiem. Jeżeli korzystamy z kilku bibliotek umieszczamy kilka takich linijek
-```
+```csharp
 using nazwa_biblioteki;
 ```
 Biblioteka – paczka kodu zawierająca funkcje, stałe i klasy służące do określonego celu.
 ### 2. Namespace – z ang. przestrzeń nazw
 Miejsce skupiające podobne klasy (o podobnych funkcjonalnościach lub roli w programie). Służy głównie do uporządkowania nazw typów, klas, funkcji itd., aby zmniejszyć ryzyko  kolizji nazw. Tworzy się ją podając kolejno słowo kluczowe _namespace_ i nazwę, którą chcemy mu nadać. Wnętrze przestrzeni nazw (klasy które zawiera) są ujęte w nawiasie klamrowym. Nawias klamrowy w języku C# oznacza zakres danego elementu, w tym wypadku przestrzeni nazw.
-```
+```csharp
 namespace Nazwa _rzestrzeni_nazw
 {
     //klasy w niej zawarte
@@ -20,7 +20,7 @@ namespace Nazwa _rzestrzeni_nazw
 ```
 ### 3. Klasa
 Częściowa lub całkowita definicja dla obiektu. Opisuje domyślny początkowy stan obiektów, oraz ich zachowanie itp. Jest to zbiór atrybutów i metod opisujący jakiś obiekt (zbiór obiektów). Klasę tworzy się podając kolejno modyfikator dostępu określający poziom dostępu klasy, słowo kluczowe _class_ i nazwę klasy. Wnętrze klasy, wszystkie atrybuty i metody ją tworzące, są ujęte wewnątrz nawiasu klamrowego (ciało klasy jest ograniczone nawiasem klamrowym).
-```
+```csharp
 modyfikator_dostępu class Nazwa_klasy
 {
     //atrybuty i/lub jej metody
@@ -41,7 +41,7 @@ Zestaw (ang. _assembly_) – zbiór typów i źródeł działających razem i tw
         * _private protected_ – określa, że dostęp jest ograniczony do zawierającej klasy lub typów pochodzących od klasy zawierającej w bieżącym zestawie.
 ### 4. Metoda
 Funkcja będąca częścią klasy. Zawiera logikę konkretnej czynności wykonywany przez obiekt danego typu. Tworzy się ją podając kolejno modyfikatory dostępu, następnie jeżeli chcemy aby klasa była statyczna wpisujemy słowo kluczowe _static_, po czym obowiązkowo musimy podać typ zmiennej zwracanej przez metodę, nazwę tworzonej metody i w nawiasie okrągłym parametry funkcji (dane przyjmowane przez metodę). Parametry określamy podając kolejno typ i nazwę każdego z nich. Jeżeli metoda przyjmuje więcej niż jeden parametr to oddzielamy je od siebie przecinkami. Wnętrze (ciało) metody jest ujęte w nawiasach klamrowych.
-```
+```csharp
 modyfikatory_dostępu opcjonalnie_inne_modyfikatory typ_danych_zwracanych_przez_metodę nazwa_metody(/*opcjonalnie*/ typ_parametru_1 nazwa_parametru_1, typ_parametru_2 nazwa_parametru_2 ...)
 {
     //logika metody
