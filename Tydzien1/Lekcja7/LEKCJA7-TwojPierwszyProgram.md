@@ -1,9 +1,22 @@
 # LEKCJA 7 – Twój pierwszy program
 W tej lekcji piszemy pierwszy program w języku C#. Zgodnie z programistyczną tradycją będzie to Hello World. Stworzymy konsolową aplikację desktopową w technologii ASP.NET Core.
-![Kod programu HelloWorld](program.png) 
-Rysunek 1 Kod programu HelloWorld
+## 1. Kod programu HelloWorld
+```csharp{r, attr.source='.numberLines'}
+using System;
 
-## 1. Ogólna budowa programu:
+namespace HelloWorld
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            Console.WriteLine("Nazywam się Małgorzata Mielczarek.");
+        }
+    }
+}
+```
+## 2. Ogólna budowa programu:
 ### 1. Sekcja „using”
 Część programu w której po słowie kluczowym _using_ umieszcza się nazwę biblioteki z których korzysta się w programie i kończy linię średnikiem. Jeżeli korzystamy z kilku bibliotek umieszczamy kilka takich linijek
 ```csharp
@@ -13,7 +26,7 @@ Biblioteka – paczka kodu zawierająca funkcje, stałe i klasy służące do ok
 ### 2. Namespace – z ang. przestrzeń nazw
 Miejsce skupiające podobne klasy (o podobnych funkcjonalnościach lub roli w programie). Służy głównie do uporządkowania nazw typów, klas, funkcji itd., aby zmniejszyć ryzyko  kolizji nazw. Tworzy się ją podając kolejno słowo kluczowe _namespace_ i nazwę, którą chcemy mu nadać. Wnętrze przestrzeni nazw (klasy które zawiera) są ujęte w nawiasie klamrowym. Nawias klamrowy w języku C# oznacza zakres danego elementu, w tym wypadku przestrzeni nazw.
 ```csharp
-namespace Nazwa _rzestrzeni_nazw
+namespace Nazwa_przestrzeni_nazw
 {
     //klasy w niej zawarte
 }
@@ -53,7 +66,7 @@ Metoda _Main_ (z ang. główna) – metoda odpowiedzialna za kontrolę wykonywan
 Czynności wykonywane kolejno przez program. Każde polecenie zakończone jest średnikiem. Takim poleceniem może np. być wywołanie funkcji bibliotecznej. Wówczas podajemy nazwę metody której chcemy użyć, wraz z całą ścieżką dostępu. Następnie znajduje się nawias okrągły, a po nim średnik kończący polecenie. Jeżeli wywołana przez nas metoda przyjmuje jakieś parametry, dane określonego typu (same dane bez typu) podajemy wewnątrz, znajdującego się po nazwie, nawiasu okrągłego. Jeżeli funkcja ma kilka parametrów to dane które chcemy przypisać do kolejnych parametrów oddzielamy od siebie przecinkami.
 Przez ścieżkę dostępu rozumie się nazwy klas w których zawarta jest metoda oddzielonych od siebie kropkami. Klasy podaje się od najbardziej zewnętrznej do wewnętrznej, do której bezpośrednio należy wywoływana funkcja. Następnie wstawia się kropkę i nazwę żądanej metody.
 
-## 2. Elementy użyte w programie
+## 3. Elementy użyte w programie
 ### 1. Biblioteka System – biblioteka systemowa
 Jedna z podstawowych i najczęściej używanych bibliotek C#. Zawiera podstawowe klasy, definiuje podstawowe typy danych itd.
 ### 2. Przestrzeń nazw _HelloWorld_
