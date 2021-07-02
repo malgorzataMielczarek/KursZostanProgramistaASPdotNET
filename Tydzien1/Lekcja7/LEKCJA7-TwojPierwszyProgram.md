@@ -1,7 +1,7 @@
 # LEKCJA 7 – Twój pierwszy program
 W tej lekcji piszemy pierwszy program w języku C#. Zgodnie z programistyczną tradycją będzie to Hello World. Stworzymy konsolową aplikację desktopową w technologii ASP.NET Core.
 ## 1. Kod programu HelloWorld
-```csharp=
+```csharp 
 using System;
 
 namespace HelloWorld
@@ -10,7 +10,7 @@ namespace HelloWorld
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+           Console.WriteLine("Hello World!");
             Console.WriteLine("Nazywam się Małgorzata Mielczarek.");
         }
     }
