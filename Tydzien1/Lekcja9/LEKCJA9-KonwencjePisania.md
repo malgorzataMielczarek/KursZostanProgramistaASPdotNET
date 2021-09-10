@@ -2,20 +2,23 @@
 Konwencje programowania, są to ogólnie przyjęte zasady pisania kodu. Nie mają one wpływu na działanie programu. Stosowanie ich zwiększa jednak czytelność i ułatwia programistą czytanie cudzego kodu. Konwencji programowania jest bardzo dużo. W tej lekcji poznamy tylko kilka z nich. Warto od razu wyrobić sobie nawyk ich stosowania, aby ułatwić sobie pracę w przyszłości.
 ## Konwencje nazywania elementów programu
 ### **PascalCase**
+
 | Wygląd | Zastosowanie |
-|--------|--------------|
+|:---|:---|
 | Wszystkie wyrazy nazwy piszemy razem, bez żadnych przerw. Pierwsza litera każdego wyrazu jest wielka a kolejne małe. | Nazywanie klas, plików, przestrzeni nazw (`namespace`), metod. |
-|Np.: `CaloriesCalculator`, `HelloWorld`, `addYears`. |
+|Np.: `CaloriesCalculator`, `HelloWorld`, `addYears`. ||
 ### **camelCase**
+
 | Wygląd | Zastosowanie|
-|--------|-------------|
+|:---|:---|
 | Wszystkie wyrazy nazwy piszemy razem, bez żadnych przerw. Pierwsza litera prawie każdego wyrazu jest wielka a kolejne małe. Wyjątek stanowi pierwszy wyraz, który w całości jest pisany małymi literami. | Nazywanie lokalnych zmiennych i prywatnych elementów programu. |
-| Np.: `addedYears`, `displayScreen`, `numberOfCircles`. |
+| Np.: `addedYears`, `displayScreen`, `numberOfCircles`. ||
 ### **UPPER_CASE**
+
 | Wygląd | Zastosowanie |
-|--------|--------------|
+|:---|:---|
 | Nazwę piszemy w całości wielkimi literami (wszystkie litery). Wyrazy oddzielamy od siebie przy pomocy podkreślnika („_”). | Nazywanie stałych. |
-| Np.: `PI_NUMBER`, `AGE_OF_CONSENT`, `NUMBER_OF_THREADS`. |
+| Np.: `PI_NUMBER`, `AGE_OF_CONSENT`, `NUMBER_OF_THREADS`. ||
 ## Konwencja zapisu nawiasów klamrowych
 Nawiasy klamrowe są częstym elementem kodu w języku C#. Definiują zasięgi przestrzeni nazw, klas, metod oraz instrukcji warunkowych i pętli. W odróżnieniu od większości instrukcji, po nawiasie klamrowym nie stawia się średnika. W języku C# przyjęło się, że nawias klamrowy stawiamy w kolejnej linii niż instrukcja której dotyczy. Visual Studio domyślnie pomaga w utrzymaniu tej konwencji.
 
