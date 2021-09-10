@@ -32,25 +32,25 @@ namespace HelloWorld
 	wnętrzePrzestrzeniNazw;
 }
 ```
-```charp
+```csharp
 public class Program
 {
 	wnętrzeKlasy;
 }
 ```
-```charp
+```csharp
 public static void Main(string[] args)
 {
 	instrukcjeMetody;
 }
 ```
-```charp
+```csharp
 if(a>b)
 {
 	instrukcjeWykonywaneWPrzypadkuSpełnieniaWarunku;
 }
 ```
-```charp
+```csharp
 while(a>b)
 {
 	instrukcjeWykonywaneWPrzypadkuSpełnieniaWarunku;
