@@ -4,27 +4,27 @@ Kompilator jest narzędziem służącym do kompilacji naszego kodu.
 Proces tłumaczenia kodu programu napisanego w języku programowania (np. C#) na tzw. kod pośredni (ang. _Intermediate Code_). W jego wyniku tworzony jest dodatkowy plik możliwy do uruchomienia w danym środowisku. W przypadku platformy .NET i systemu operacyjnego Windows jest to plik .exe (ang. _executive_ – wykonywalny).
 Jeżeli uruchomimy program w Visual Studio przy pomocy odpowiedniego przycisku z paska narzędzi w konfiguracji _Debug_, to zostanie uruchomiona kompilacja, nasz projekt zostanie zbudowany i uruchomiony, a w folderze _bin_ > _Debug_ utworzą nam się pliki wynikowe m.in. właśnie plik .exe
 
-![Pliki utworzone przez kompilator](Ilustracje\PlikiUtworzonePrzezKompilator.png)<br/>
+![Pliki utworzone przez kompilator](Ilustracje/PlikiUtworzonePrzezKompilator.png)<br/>
 _Rysunek 1 Pliki utworzone przez kompilator_
 
 Pliki utworzone podczas poprzednich uruchomień programu można łatwo usunąć. W tym celu klikamy prawym przyciskiem myszki na nazwę solucji w _Solution Explorer_, a następnie wybieramy opcję _Clean Solution_. 
 
-![Czyszczenie solucji](Ilustracje\CzyszczenieSolucji.png)<br/>
+![Czyszczenie solucji](Ilustracje/CzyszczenieSolucji.png)<br/>
 _Rysunek 2 Czyszczenie solucji_
 
-![Folder z Rysunku 1. po wyczyszczeniu solucji](Ilustracje\FolderPoWyczyszczeniuSolucji.png)<br/>
+![Folder z Rysunku 1. po wyczyszczeniu solucji](Ilustracje/FolderPoWyczyszczeniuSolucji.png)<br/>
 _Rysunek 3 Folder z Rysunku 1. po wyczyszczeniu solucji_
 
 Nasz program możemy również skompilować bez jego uruchamiania. W tym celu ponownie klikamy prawym przyciskiem myszki na nazwę solucji w _Solution Explorer_, a następnie wybieramy opcję _Build Solution_.
 
-![Kompilowanie solucji](Ilustracje\KompilowanieSolucji.png)<br/>
+![Kompilowanie solucji](Ilustracje/KompilowanieSolucji.png)<br/>
 _Rysunek 4 Kompilowanie solucji_
 
 W ten sposób otrzymamy takie same pliki wynikowe co podczas uruchomienia programu „zieloną strzałką”, jednak bez uruchomienia programu. W tym wypadku polegało by ono na otwarciu konsoli i wyświetleniu w niej napisu:<br/>
 Hello World!<br/>
 Nazywam się Małgorzata Mielczarek.
 
-![Folder z Rysunku 1. po zbudowaniu solucji](Ilustracje\FolderPoZbudowaniuSolucji.png)<br/>
+![Folder z Rysunku 1. po zbudowaniu solucji](Ilustracje/FolderPoZbudowaniuSolucji.png)<br/>
 _Rysunek 5 Folder z Rysunku 1. po zbudowaniu solucji_
 
 ### Plik .exe
@@ -43,12 +43,12 @@ konsola zostanie zamknięta. Efekt będzie więc taki, że okno konsoli tylko mi
 ### 1.	Uruchomienie programu z konsoli
 Po pierwsze zamiast tradycyjnego sposobu uruchamiania, możemy najpierw otworzyć konsolę Windows (cmd – ang. _Commend Line_), a następnie z jej poziomu uruchomić naszą aplikację. Skoro mamy już otwarty folder zawierający nasz plik .exe to najprościej będzie to zrobić poprzez kliknięcie w pasek adresu eksploratora plików, wpisanie „cmd” i wciśnięcie klawisza _Enter_.
 
-![Otwieranie konsoli Windows w danej lokalizacji](Ilustracje\OtwieranieKonsoliWindowsWDanejLokalizacji.png)<br/>
+![Otwieranie konsoli Windows w danej lokalizacji](Ilustracje/OtwieranieKonsoliWindowsWDanejLokalizacji.png)<br/>
 _Rysunek 6 Otwieranie konsoli Windows w danej lokalizacji_
 
 Spowoduje to otwarcie konsoli Windows w tej lokalizacji (w naszym folderze _Debug_). Następnie uruchamiamy nasz program poprzez wpisanie nazwy pliku (_HelloWorld.exe_) i wciśnięcie _Enter_. Nie trzeba przy tym ręcznie wpisywać całej nazwy pliku. Można zacząć ją wpisywać a następnie wybrać odpowiedni plik poprzez wciskanie klawisza _Tab_. Można również oczywiście skopiować i wkleić nazwę pliku.
 
-![Uruchomienie programu w konsoli](Ilustracje\UruchomienieProgramuWKonsoli.png)<br/>
+![Uruchomienie programu w konsoli](Ilustracje/UruchomienieProgramuWKonsoli.png)<br/>
 _Rysunek 7 Uruchomienie programu w konsoli_
 
 Jak widać na obrazku powyżej program zakończył swoją pracę, ale konsola w tym wypadku nie została zamknięta. Jeżeli jednak chcemy móc otwierać naszą aplikację tradycyjnie, również na to istnieją sposoby.
@@ -97,7 +97,7 @@ Jeszcze dodatkowo możemy chcieć dodać instrukcję `try{}`, aby pozostawić ok
 ```
 Po dopisaniu na końcu kodu naszego programu wybranego fragmentu kodu po dwukrotnym kliknięciu na nazwę pliku (_HelloWorld.exe_) otworzy nam się konsola w której zostanie wyświetlone np.:
 
-![Przykładowa konsola programu po dopisaniu kodu wstrzymującego jego pracę](Ilustracje\PrzykladowaKonsolaProgramuPoDopisaniuKoduWstrzymujacegoJegoPrace.png)<br/>
+![Przykładowa konsola programu po dopisaniu kodu wstrzymującego jego pracę](Ilustracje/PrzykladowaKonsolaProgramuPoDopisaniuKoduWstrzymujacegoJegoPrace.png)<br/>
 _Rysunek 8 Przykładowa konsola programu po dopisaniu kodu wstrzymującego jego pracę_
 
 W powyższym przykładzie program będzie działał, a co za tym idzie konsola będzie otwarta, tak długo dopóki użytkownik nie wciśnie klawisza _Enter_ lub nie zamknie konsoli.
