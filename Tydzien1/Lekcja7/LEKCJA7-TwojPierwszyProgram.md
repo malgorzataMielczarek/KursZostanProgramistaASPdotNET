@@ -16,7 +16,7 @@ namespace HelloWorld
     }
 }
 ```--->
-![Kod programu HelloWorld](program.png)
+![Kod programu HelloWorld](Ilustracje/Program.png)
 ## 2. Ogólna budowa programu:
 ### :orange_circle: 1. [Sekcja „using”](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L1-L2)
 Część programu w której po słowie kluczowym _using_ umieszcza się nazwę biblioteki z których korzysta się w programie i kończy linię średnikiem. Jeżeli korzystamy z kilku bibliotek umieszczamy kilka takich linijek
