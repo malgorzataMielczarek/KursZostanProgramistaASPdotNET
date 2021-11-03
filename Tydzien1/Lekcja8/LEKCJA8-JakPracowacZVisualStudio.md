@@ -5,7 +5,7 @@ Na potrzeby tej lekcji wykorzystamy zmodyfikowany program z lekcji poprzedniej -
 ><br/> _Źródło: [Wikipedia](https://pl.wikipedia.org/wiki/Zintegrowane_środowisko_programistyczne)_
 
 ## Podstawowe okno programu Visual Studio
-![Przykładowe okno programu Visual Studio](PrzykladoweOknoVS.png)
+![Przykładowe okno programu Visual Studio](Ilustracje/PrzykladoweOknoVS.png)
 
 ### :red_circle: Okno edytora kodu
 Obszar IDE w którym wyświetlany jest cały kod klasy/pliku który przeglądamy.
@@ -27,7 +27,7 @@ Rozwiązanie przedstawione na obrazku powyżej zawiera tylko jeden projekt (_Hel
 Pasek w górnej części okna programu, zawierający ikonki z podstawowymi funkcjami.<br/>
 Jego prawa część składa się z typowych funkcjonalności programu, takich jak: przyciski nawigacji, nowy projekt, otwórz plik, zapisz plik wyświetlany aktualnie w oknie edytora kodu, zapisz wszystkie pliki, cofnij zmiany, wprowadź ponownie cofnięte zmiany itd.. Następnie znajdują się pola związane z uruchamianiem pisanej aplikacji. Możemy wybrać konfigurację w jakiej ma być uruchomiona solucja, platformy na których ma działać i uruchomić program (pole z zieloną strzałką "play"). Na końcu mamy inne przydatne funkcjonalności. Wyświetlany pasek może w rzeczywistości składać się z wielu pasków narzędzi. W standardowym układzie są to trzy paski: standardowych opcji, związany z edycją tekstu oraz z funkcjonalnościami dotyczącymi kontroli źródła. Paski narzędzi można dostosować do swoich potrzeb wybierając te, z pośród wielu dostępnych pasków i funkcjonalności programu, z których korzystamy najczęściej. Po lewej stronie paska znajdują się jeszcze dwa przyciski: do współpracy z innymi programistami w czasie rzeczywistym (_Visual Studio Live Share_) oraz do komunikacji z wytwórcą IDE.
 ## Okno programu Visual Studio podczas działania aplikacji
-![Przykładowe okno programu Visual Studio podczas działania aplikacji](OknoVSPodczasPracyProgramu.png)
+![Przykładowe okno programu Visual Studio podczas działania aplikacji](Ilustracje/OknoVSPodczasPracyProgramu.png)
 
 ### :large_blue_circle: Narzędzia diagnostyczne
 Wyświetlają się tylko podczas pracy pisanej aplikacji. Umożliwia monitorowanie ilości zasobów używanych przez nasz program (ilość zajmowanej przez proces pamięci – _Process Memory_) oraz obciążenie procesorów (_CPU_).
