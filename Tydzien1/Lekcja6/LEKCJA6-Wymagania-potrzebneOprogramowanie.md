@@ -1,4 +1,4 @@
-# LEKCJA 6 – Wymagania (potrzebne oprogramowanie)
+# [LEKCJA 6 – Wymagania (potrzebne oprogramowanie)](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-7-wymagania-potrzebne-oprogramowanie/)
 W tej lekcji pobieramy i instalujemy oprogramowanie z którego będziemy korzystać podczas wykonywania kursu. Będziemy korzystać z programów:
 * Visual Studio 2022 Community
 * Visual Studio Code
