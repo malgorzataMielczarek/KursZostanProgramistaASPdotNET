@@ -1,4 +1,4 @@
-# LEKCJA 9 – Konwencje pisania (Dobre praktyki programowania)
+# [LEKCJA 9 – Konwencje pisania (Dobre praktyki programowania)](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-10-kompilator/)
 Konwencje programowania, są to ogólnie przyjęte zasady pisania kodu. Nie mają one wpływu na działanie programu. Stosowanie ich zwiększa jednak czytelność i ułatwia programistą czytanie cudzego kodu. Konwencji programowania jest bardzo dużo. W tej lekcji poznamy tylko kilka z nich. Warto od razu wyrobić sobie nawyk ich stosowania, aby ułatwić sobie pracę w przyszłości.
 ## Konwencje nazywania elementów programu
 ### **PascalCase**
@@ -6,7 +6,7 @@ Konwencje programowania, są to ogólnie przyjęte zasady pisania kodu. Nie maj�
 | Wygląd | Zastosowanie |
 |:---|:---|
 | Wszystkie wyrazy nazwy piszemy razem, bez żadnych przerw. Pierwsza litera każdego wyrazu jest wielka a kolejne małe. | Nazywanie klas, plików, przestrzeni nazw (`namespace`), metod. |
-|Np.: `CaloriesCalculator`, `HelloWorld`, `addYears`. ||
+|Np.: `CaloriesCalculator`, `HelloWorld`, `AddYears`. ||
 ### **camelCase**
 
 | Wygląd | Zastosowanie|
