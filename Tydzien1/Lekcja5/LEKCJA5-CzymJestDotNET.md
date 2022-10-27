@@ -1,4 +1,4 @@
-# LEKCJA 5 – Czym jest .NET
+# [LEKCJA 5 – Czym jest .NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-6-co-musisz-umiec-zanim-przejdziesz-dalej/)
 ### Co to jest .NET?
 .NET jest technologią cross-platformową służącą do tworzenia oprogramowania.
 
