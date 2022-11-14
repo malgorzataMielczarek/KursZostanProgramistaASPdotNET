@@ -39,9 +39,9 @@ Enumy tworzymy poprzez podanie modyfikatora dostępu, słowa kluczowego `enum` i
 ```csharp =
 public enum ItemTypes
 {
-Grocery,
-Clothing,
-Electronics
+  Grocery,
+  Clothing,
+  Electronics
 }
 ```
 Więcej informacji o typach wyliczeniowych znajdzie się w kolejnych lekcjach tego tygodnia (Lekcja 12 - Enum).
@@ -50,19 +50,19 @@ Typ bardzo podobny do klasy. Możemy w nim zadeklarować zmienne, metody, pola, 
 ```csharp =
 public struct SomeStructure
 {
-private int no;
-private string name;
-public SomeStructure(int number, string name)
-{
-this.no = number;
-tis.name = name;
-}
-public string GetNameIfNo(int number)
-{
-if(this.no == number)
-return this.name;
-else
-return "";
-}
+  private int no;
+  private string name;
+  public SomeStructure(int number, string name)
+  {
+    this.no = number;
+    tis.name = name;
+  }
+  public string GetNameIfNo(int number)
+  {
+    if(this.no == number)
+      return this.name;
+    else
+      return "";
+  }
 }
 ```
