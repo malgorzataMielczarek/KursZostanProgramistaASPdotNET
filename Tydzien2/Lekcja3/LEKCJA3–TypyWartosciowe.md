@@ -35,4 +35,34 @@ Pochodzi od ang. _integer_, czyli liczba całkowita. Jest to tak na prawdę alia
 ### 2. char
 ### 3. bool
 ## 2. Enumy - typy wyliczeniowe
+Enumy tworzymy poprzez podanie modyfikatora dostępu, słowa kluczowego `enum` i nazwy naszego typu wyliczeniowego. Następnie między klamrami podajemy informacje jakie chcemy przetrzymywać w naszym typie wyliczeniowym, oddzielone od siebie przecinkami. Służy on do przechowywania danych typu słownikowego. Przykład nowego typu wyliczeniowego:
+```csharp =
+public enum ItemTypes
+{
+Grocery,
+Clothing,
+Electronics
+}
+```
+Więcej informacji o typach wyliczeniowych znajdzie się w kolejnych lekcjach tego tygodnia (Lekcja 12 - Enum).
 ## 3. Struktury
+Typ bardzo podobny do klasy. Możemy w nim zadeklarować zmienne, metody, pola, właściwości. W odróżnieniu od klas jest to jednak typ wartościowy. Oznacza to, że będzie przechowywany na stosie, w stałym miejscu pamięci, a ilość zajmowanego przez niego miejsca w pamięci jest zawsze taka sama, nie zależnie ilu zmiennym struktury przypiszemy jakieś wartości. Strukturę tworzymy podając modyfikator dostępu, słowo kluczowe `struct` nazwę nowej struktury, a w klamrach ciało struktury (zmienne, metody itd.), np.:
+```csharp =
+public struct SomeStructure
+{
+private int no;
+private string name;
+public SomeStructure(int number, string name)
+{
+this.no = number;
+tis.name = name;
+}
+public string GetNameIfNo(int number)
+{
+if(this.no == number)
+return this.name;
+else
+return "";
+}
+}
+```
