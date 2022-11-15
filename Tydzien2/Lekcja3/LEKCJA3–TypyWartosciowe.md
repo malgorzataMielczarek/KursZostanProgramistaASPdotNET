@@ -118,7 +118,29 @@ System.Boolean isCheckFinished = false;
 ```
 Jeżeli potrzebujesz natomiast logiki trzy-wartościowej można skorzystać z nullowalnego typu bool, czyli typu `bool?`. Poza wartościami `true` i `false` może on jeszcze przyjmować wartość `null`. Może się to przydać np. przy pracy z bazami danych lub gdy zadajemy pytanie na które odpowiedź może być tak/nie/nie wiem.
 ### 3. char
+Słowo kluczowe `char` jest aliasem struktury `System.Char` (ang. _character_ - znak). Reprezentuje ona znak UNICODE UTF-16.
+| Alias | Typ | Zakres | Rozmiar |
+| :---: | :---: | :---: | :---: |
+| `char` | `System.Char` | U+0000 do U+FFFF (0 do 65535) | 16 bitów |
 
+Wartością domyślną typu _char_ jest wartość `\0`, czyli U+0000, czyli znak zerowy (nie mylić ze znakiem przedstawiającym cyfrę zero). Typ _char_ obsługuje operatory porównania, równości, inkrementacji i dekrementacji. Co więcej w przypadku operandów _char_ operatory arytmetyczne i bitowe wykonują operacje na odpowiednich kodach znaków i generują wynik typu _int_. Typ referencyjny _string_ o którym będzie mowa już w kolejnej lekcji reprezentuje tekst w postaci ciągu znaków _char_. Jak zmienne wszystkich typów wartościowych, zmienne tego typu mogą zostać zainicjalizowane literałami znaku. Poza tym można to zrobić używając kodów znaków na trzy sposoby:
+
+* sekwencja ucieczki Unicode, czyli `\u` po czym następuje czteroznakowa reprezentacja szesnastkowa znaku (muszą być podane wszystkie 4 znaki, aby sekwencja była prawidłowa)
+* sekwencja ucieczki szesnastkowej, czyli `\x` po czym następuje reprezentacja szesnastkowa kodu znaku (w przypadku tej sekwencji można pominąć wiodące zera)
+* jawna konwersja wartości reprezentującej kod znaku na typ _char_
+	
+```csharp =
+var chars = new[]
+{
+	'j',
+	'\u006A',
+	'\x006A',
+	(char)106,
+};
+Console.WriteLine(string.Join(" ", chars));  // w konsoli wyświetli się: j j j j
+```
+
+Typ `char` jest niejawnie konwertowany na następujące typy całkowite: `ushort`, `uint`, `int`, `long` i `ulong`. Jest również niejawnie konwertowany na wbudowane typy liczbowe zmiennoprzecinkowe : `float`, `double` i `decimal`. Jawnie można go również konwertować na typy całkowite `sbyte`, `byte` i `short`. Nie ma natomiast niejawnych konwersji z innych typów na typ `char`. Jednak każdy typ liczbowy całkowity lub zmiennoprzecinkowy może być jawnie konwertowany na `char`.
 ## 2. Enumy - typy wyliczeniowe
 Enumy tworzymy poprzez podanie modyfikatora dostępu, słowa kluczowego `enum` i nazwy naszego typu wyliczeniowego. Następnie między klamrami podajemy informacje jakie chcemy przetrzymywać w naszym typie wyliczeniowym, oddzielone od siebie przecinkami. Służy on do przechowywania danych typu słownikowego. Przykład nowego typu wyliczeniowego:
 ```csharp =
