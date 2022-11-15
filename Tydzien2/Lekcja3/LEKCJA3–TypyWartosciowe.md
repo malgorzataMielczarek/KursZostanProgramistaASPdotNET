@@ -25,12 +25,31 @@ double value = price * headphones;
 bool isFreeBasket = baskets > customers; 
 ```
 ### 1. Typy liczbowe
-1. **Typy liczbowe całkowite**
-    * int<br/>
+1. **Typy liczbowe całkowite**<br/>
+Wartościowe typy proste reprezentujące liczby całkowite. Mogą być inicjalizowane literałami, czyli w tym przypadku wprost wpisanymi w kod liczbami. Literały liczb całkowitych mogą być:
+    | System liczbowy | Prefiks | Przykład |
+    | :---: | :--- | :--- |
+    | dziesiętny |  | `var decimalLiteral = 42;` |
+    | szesnastkowy | `0x` lub `0X` | `var hexLiteral = 0x2A;` |
+    | binarny | `0b` lub `0B` | `var binaryLiteral = 0b_0010_1010;`\* |
+    
+    \*W przykładzie pokazano użycie `_` jako separatora cyfr. Można go używać ze wszystkimi rodzajami literałów liczbowych.<br/>
+    
+    W przykładach w tabeli użyto słowa kluczowego `var`, które oznacza, że typ zmiennej zostanie ustalony na podstawie inicjalizującej ją wartości. Jeśli wartość reprezentowana przez literał liczby całkowitej przekracza _UInt64.MaxValue_, występuje błąd kompilatora CS1021. Typy literałów są określane w następujący sposób:
+    | Sufiks | Typ - pierwszy z kolejnych typów w którym wartość może być reprezentowana | Uwagi|
+    | :---: | :---: | :--- |
+    |  | `int`, `uint`, `long`, `ulong`| Literały są interpretowane jako wartości dodatnie. Na przykład literał `0xFF_FF_FF_FF` reprezentuje liczbę `4294967295` typu `uint`, choć ma taką samą reprezentację bitów, jak liczba `-1` typu `int`. Jeśli potrzebujesz wartości określonego typu, wykonaj rzutowanie literał do tego typu. Użyj operatora `unchecked`, jeśli wartości literału nie można przedstawić w typie docelowym. Na przykład `unchecked((int)0xFF_FF_FF_FF)` tworzy wartość `-1`. |
+    | `U` lub `u` | `uint`, `ulong` |  |
+    | `L` lub `l` | `long`, `ulong` | Małą literę `l` można użyć jako sufiksu. Generuje to jednak ostrzeżenie kompilatora, ponieważ literę l można mylić z cyfrą 1. Użyj `L` w celu zapewnienia przejrzystości. |
+    | `UL`, `Ul`, `Lu`, `LU`, `ul`, `lU`, `uL` lub `lu` | `ulong` | Podobnie jak powyżej użycie małej litery l w sufiksie jest poprawne, lecz niezalecane |
+    
+    Wszystkie całkowite typy liczbowe obsługują operatory arytmetyczne, logiczne bitowe, porównania i równości. Można przekonwertować dowolny całkowity typ liczbowy na dowolny inny całkowity typ liczbowy. Jeśli typ docelowy może przechowywać wszystkie wartości typu źródłowego, konwersja jest niejawna. W przeciwnym razie należy użyć wyrażenia rzutowania w celu przeprowadzenia jawnej konwersji.
+    
+    * **int**<br/>
 	Pochodzi od ang. _integer_, czyli liczba całkowita. Jest to tak na prawdę alias struktury Int32, czyli typu reprezentującego liczby całkowite w zakresie \<-2 147 483 648, 2 147 483 647\>, przechowywane na 32 bitach pamięci. Aby podejrzeć metadane tej struktury wystarczy na słowie kluczowym `int` lub `Int32` wcisnąć  klawisz **F12**. Możemy wówczas zobaczyć jakie metody zawiera dana struktura, jaka jest minimalna i maksymalna liczba jaką może przechowywać zmienna tego typu itd. Jeżeli spróbujemy zapisać w niej liczbę z poza tego zakresu (większą lub mniejszą) aplikacja wyrzuci nam błąd kompilacji lub wyjątek bezpieczeństwa. W zależności od sytuacji może on być różnego typu, np. wyjątki _OverflowException_, _ArgumentOutOfRangeException_ lub błędy kompilacji _Compiler Error CS0220 The operation overflows at compile time in checked mode_, czy _Compiler Error CS0266 Cannot implicitly convert type 'type1' to 'type2'_.
-    * short<br/>
+    * **short**<br/>
 	Alias struktury Int16. Służy do przechowywania mniejszych liczb całkowitych, mieszczących się w zakresie \<-32 768, 32 767\>. Aby utworzyć zmienną tego typu używamy słów kluczowych `short`, `Int16` lub `System.Int16`. Zajmuje ona 16 bitów pamięci. Podobnie jak przy zmiennej typu _int_ próba zapisania w niej liczby z poza zakresu będzie skutkować wystąpieniem błędu. Metadane tego typu również możemy podejrzeć używając klawisza **F12**.
-    * long<br/>
+    * **long**<br/>
 	Alias struktury Int64. Służy do przechowywania większych liczb całkowitych, mieszczących się w zakresie \<-9 223 372 036 854 775 808, 9 223 372 036 854 775 807\>. Aby utworzyć zmienną tego typu używamy słów kluczowych `long`, `Int64` lub `System.Int64`. Zajmuje ona 64 bitów pamięci. Podobnie jak w powyższych dwóch przypadkach próba zapisania w niej liczby z poza zakresu będzie skutkować wystąpieniem błędu. Metadane tego typu również możemy podejrzeć używając klawisza **F12**.
 	
 	Podsumowanie wszystkich typów liczbowych całkowitych znajduje się w tabelce poniżej:
@@ -46,12 +65,13 @@ bool isFreeBasket = baskets > customers;
 	| ulong | System.UInt64 | \<0, 18 446 744 073 709 551 615\> | 64 bity | Liczba całkowita bez znakowa |
 	| nint | System.IntPtr | Zależy od platformy (obliczana w czasie wykonywania programu) | 32 lub 64 bity | Liczba całkowita znakowa o rozmiarze natywnym. Odpowiada typowi Int32, jeżeli jest uruchamiana w procesie 32-bitowym, a typowi Int64, gdy jest uruchamiana w procesie 64-bitowym |
 	| nuint	| System.UIntPtr | Zależy od platformy (obliczana w czasie wykonywania programu) | 32 lub 64 bity | Liczba całkowita bez znakowa o rozmiarze natywnym. Odpowiada typowi UInt32, jeżeli jest uruchamiana w procesie 32-bitowym, a typowi UInt64, gdy jest uruchamiana w procesie 64-bitowym |
-  \*Przedrostek _u-_ w nazwach typów pochodzi od ang. _unsigned_, czyli bez znaku
+	
+	\*Przedrostek _u-_ w nazwach typów pochodzi od ang. _unsigned_, czyli bez znaku
   
 2. **Typy liczbowe zmiennoprzecinkowe**
-    * float
-    * duble
-    * decimal
+    * **float**
+    * **duble**
+    * **decimal**
 ### 2. char
 ### 3. bool
 ## 2. Enumy - typy wyliczeniowe
