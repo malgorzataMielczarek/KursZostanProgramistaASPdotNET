@@ -109,8 +109,16 @@ Wartościowe typy proste reprezentujące liczby rzeczywiste. Mogą być inicjowa
 	| `float` | `System.Single` | ±1,5 x 10^−45 do ±3,4 x 10^38 | ~6-9 cyfry | 4 bajty | Najodpowiedniejszy typ gdy zależy nam na znacznej oszczędności pamięci |
 	| `double` | `System.Double` | ±5,0 × 10^−324 do ±1,7 × 10^308 | ~15-17 cyfr | 8 bajtów | Kompromis między zajętością pamięci, a precyzją obliczeń. Najodpowiedniejszy typ do wyboru w najbardziej wymagających obliczeniowo aplikacjach, w celu przyspieszenia ich działania lub gdy dokładność obliczeń nie jest aż tak istotna.  |
 	| `decimal` | `System.Decimal` | ±1,0 x 10^–28 do ±7,9228 x 10^28 | 28–29 cyfr | 16 bajtów | Najodpowiedniejszy, gdy wymagany stopień dokładności jest określany przez liczbę cyfr po prawej stronie przecinka (punktu dziesiętnego). Używany np. w aplikacjach finansowych do reprezentacji kursów walutowych, stóp procentowych itd. |
-### 2. char
-### 3. bool
+### 2. bool
+Słowo kluczowe `bool` jest aliasem struktury `System.Boolean` (ang. _boolean_ - logiczny, od nazwiska angielskiego uczonego George'a Boole'a, współtwórcy logiki matematycznej). Reprezentuje ona wartość logiczną mogącą przyjmować tylko jedną z dwóch wartości: `true` - prawda lub `false` - fałsz. Na tym typie danych można przeprowadzać operacje logiczne, o których mowa będzie w kolejnych lekcjach tego tygodnia (Lekcja 7). Jest on również rezultatem porównań relacyjnych (\<, \>, \<=, \>=) i równości. Wyrażeń typu _bool_ będziemy często używać w wyrażeniach warunkowych wyrażenia `if`, pętli, czy operatora warunkowego `?:`, o których również w dalszych lekcjach tego tygodnia. Nie istnieje żadna standardowa konwersja między typem _bool_ a innymi typami wartościowymi. W odróżnieniu od innych języków takich jak C, czy C++, gdzie wartość zero liczby całkowitej lub zmiennoprzecinkowej oraz wskaźnik null są konwertowane do wartości _bool_ `false`, a wartości niezerowe liczb lub wskaźniki niebędące nullami do wartości `true`, w C# taka konwersja jest niemożliwa. Można ją osiągnąć przez jawne porównanie liczb do zera lub referencji do obiektu do wartości null. Tak jak zmienne innych typów wartościowych, zmienne typu _bool_ również można inicjalizować literałami, np.:
+
+```csharp =
+bool check = true;
+System.Boolean isCheckFinished = false;
+```
+Jeżeli potrzebujesz natomiast logiki trzy-wartościowej można skorzystać z nullowalnego typu bool, czyli typu `bool?`. Poza wartościami `true` i `false` może on jeszcze przyjmować wartość `null`. Może się to przydać np. przy pracy z bazami danych lub gdy zadajemy pytanie na które odpowiedź może być tak/nie/nie wiem.
+### 3. char
+
 ## 2. Enumy - typy wyliczeniowe
 Enumy tworzymy poprzez podanie modyfikatora dostępu, słowa kluczowego `enum` i nazwy naszego typu wyliczeniowego. Następnie między klamrami podajemy informacje jakie chcemy przetrzymywać w naszym typie wyliczeniowym, oddzielone od siebie przecinkami. Służy on do przechowywania danych typu słownikowego. Przykład nowego typu wyliczeniowego:
 ```csharp =
