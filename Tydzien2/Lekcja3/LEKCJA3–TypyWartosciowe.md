@@ -55,18 +55,18 @@ Wartościowe typy proste reprezentujące liczby całkowite. Mogą być inicjaliz
 	Podsumowanie wszystkich typów liczbowych całkowitych znajduje się w tabelce poniżej:
 	| Alias | Typ | Zakres | Rozmiar | Dodatkowe informacje |
 	| :---: | :---: | :---: | :---: | :--- |
-	| sbyte	| System.SByte | \<-128, 127\> | 8 bitów (1 bajt) | Liczba całkowita znakowa. Pierwszy bit w zapisie jest bitem znaku (dodatnia/ujemna) |
-	| byte | System.Byte | \<0, 255\> | 8 bitów (1 bajt) | Liczba całkowita bez znakowa |
-	| short	| System.Int16 | \<-32 768, 32 767\> | 16 bitów (2 bajty) | Liczba całkowita znakowa |
-	| ushort | System.UInt16 | \<0, 65 535\> | 16 bitów (2 bajty) | Liczba całkowita bez znakowa |
-	| int | System.Int32 | \<-2 147 483 648, 2 147 483 647\> | 32 bity | Liczba całkowita znakowa |
-	| uint | System.UInt32 | \<0, 4 294 967 295\> | 32 bity | Liczba całkowita bez znakowa |
-	| long | System.Int64 | \<-9 223 372 036 854 775 808, 9 223 372 036 854 775 807\> | 64 bity | Liczba całkowita znakowa |
-	| ulong | System.UInt64 | \<0, 18 446 744 073 709 551 615\> | 64 bity | Liczba całkowita bez znakowa |
-	| nint | System.IntPtr | Zależy od platformy (obliczana w czasie wykonywania programu) | 32 lub 64 bity | Liczba całkowita znakowa o rozmiarze natywnym. Odpowiada typowi Int32, jeżeli jest uruchamiana w procesie 32-bitowym, a typowi Int64, gdy jest uruchamiana w procesie 64-bitowym |
-	| nuint	| System.UIntPtr | Zależy od platformy (obliczana w czasie wykonywania programu) | 32 lub 64 bity | Liczba całkowita bez znakowa o rozmiarze natywnym. Odpowiada typowi UInt32, jeżeli jest uruchamiana w procesie 32-bitowym, a typowi UInt64, gdy jest uruchamiana w procesie 64-bitowym |
+	| `sbyte` | `System.SByte` | \<-128, 127\> | 8 bitów (1 bajt) | Liczba całkowita znakowa. Pierwszy bit w zapisie jest bitem znaku (dodatnia/ujemna) |
+	| `byte` | `System.Byte` | \<0, 255\> | 8 bitów (1 bajt) | Liczba całkowita bez znakowa |
+	| `short` | `System.Int16` | \<-32 768, 32 767\> | 16 bitów (2 bajty) | Liczba całkowita znakowa |
+	| `ushort` | `System.UInt16` | \<0, 65 535\> | 16 bitów (2 bajty) | Liczba całkowita bez znakowa |
+	| `int` | `System.Int32` | \<-2 147 483 648, 2 147 483 647\> | 32 bity (4 bajty) | Liczba całkowita znakowa |
+	| `uint` | `System.UInt32` | \<0, 4 294 967 295\> | 32 bity (4 bajty) | Liczba całkowita bez znakowa |
+	| `long` | `System.Int64` | \<-9 223 372 036 854 775 808, 9 223 372 036 854 775 807\> | 64 bity (8 bajtów) | Liczba całkowita znakowa |
+	| `ulong` | `System.UInt64` | \<0, 18 446 744 073 709 551 615\> | 64 bity (8 bajtów) | Liczba całkowita bez znakowa |
+	| `nint` | `System.IntPtr` | Zależy od platformy (obliczana w czasie wykonywania programu) | 32 lub 64 bity (4 lub 8 bajtów) | Liczba całkowita znakowa o rozmiarze natywnym. Odpowiada typowi Int32, jeżeli jest uruchamiana w procesie 32-bitowym, a typowi Int64, gdy jest uruchamiana w procesie 64-bitowym |
+	| `nuint` | `System.UIntPtr` | Zależy od platformy (obliczana w czasie wykonywania programu) | 32 lub 64 bity (4 lub 8 bajtów) | Liczba całkowita bez znakowa o rozmiarze natywnym. Odpowiada typowi UInt32, jeżeli jest uruchamiana w procesie 32-bitowym, a typowi UInt64, gdy jest uruchamiana w procesie 64-bitowym |
 	
-	\*Przedrostek _u-_ w nazwach typów pochodzi od ang. _unsigned_, czyli bez znaku
+	\*Przedrostek _u-_ w nazwach typów pochodzi od ang. _unsigned_, czyli bez znaku, przedrostek _s-_ od ang. _signed_, czyli ze znakiem, a przedrostek _n-_ od ang. _native_, czyli natywny, w tym wypadku najlepszy dla danego procesora
   
 2. **Typy liczbowe zmiennoprzecinkowe**
     * **float**
