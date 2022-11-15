@@ -25,13 +25,33 @@ double value = price * headphones;
 bool isFreeBasket = baskets > customers; 
 ```
 ### 1. Typy liczbowe
-#### 1. int
-Pochodzi od ang. _integer_, czyli liczba całkowita. Jest to tak na prawdę alias struktury Int32, czyli typu reprezentującego liczby całkowite w zakresie \<-2147483648, 2147483647\>, przechowywane na 32 bitach pamięci. Aby podejrzeć metadane tej struktury wystarczy na słowie kluczowym `int` lub `Int32` wcisnąć  klawisz **F12**. Możemy wówczas zobaczyć jakie metody zawiera dana struktura, jaka jest minimalna i maksymalna liczba jaką może przechowywać zmienna tego typu itd. Jeżeli spróbujemy zapisać w niej liczbę z poza tego zakresu (większą lub mniejszą) aplikacja wyrzuci nam błąd kompilacji lub wyjątek bezpieczeństwa. W zależności od sytuacji może on być różnego typu, np. wyjątki _OverflowException_, _ArgumentOutOfRangeException_ lub błędy kompilacji _Compiler Error CS0220 The operation overflows at compile time in checked mode_, czy _Compiler Error CS0266 Cannot implicitly convert type 'type1' to 'type2'_.
-#### 1. short
-#### 2. long
-#### 3. float
-#### 4. duble
-#### 5. decimal
+1. **Typy liczbowe całkowite**
+    * int<br/>
+	Pochodzi od ang. _integer_, czyli liczba całkowita. Jest to tak na prawdę alias struktury Int32, czyli typu reprezentującego liczby całkowite w zakresie \<-2 147 483 648, 2 147 483 647\>, przechowywane na 32 bitach pamięci. Aby podejrzeć metadane tej struktury wystarczy na słowie kluczowym `int` lub `Int32` wcisnąć  klawisz **F12**. Możemy wówczas zobaczyć jakie metody zawiera dana struktura, jaka jest minimalna i maksymalna liczba jaką może przechowywać zmienna tego typu itd. Jeżeli spróbujemy zapisać w niej liczbę z poza tego zakresu (większą lub mniejszą) aplikacja wyrzuci nam błąd kompilacji lub wyjątek bezpieczeństwa. W zależności od sytuacji może on być różnego typu, np. wyjątki _OverflowException_, _ArgumentOutOfRangeException_ lub błędy kompilacji _Compiler Error CS0220 The operation overflows at compile time in checked mode_, czy _Compiler Error CS0266 Cannot implicitly convert type 'type1' to 'type2'_.
+    * short<br/>
+	Alias struktury Int16. Służy do przechowywania mniejszych liczb całkowitych, mieszczących się w zakresie \<-32 768, 32 767\>. Aby utworzyć zmienną tego typu używamy słów kluczowych `short`, `Int16` lub `System.Int16`. Zajmuje ona 16 bitów pamięci. Podobnie jak przy zmiennej typu _int_ próba zapisania w niej liczby z poza zakresu będzie skutkować wystąpieniem błędu. Metadane tego typu również możemy podejrzeć używając klawisza **F12**.
+    * long<br/>
+	Alias struktury Int64. Służy do przechowywania większych liczb całkowitych, mieszczących się w zakresie \<-9 223 372 036 854 775 808, 9 223 372 036 854 775 807\>. Aby utworzyć zmienną tego typu używamy słów kluczowych `long`, `Int64` lub `System.Int64`. Zajmuje ona 64 bitów pamięci. Podobnie jak w powyższych dwóch przypadkach próba zapisania w niej liczby z poza zakresu będzie skutkować wystąpieniem błędu. Metadane tego typu również możemy podejrzeć używając klawisza **F12**.
+	
+	Podsumowanie wszystkich typów liczbowych całkowitych znajduje się w tabelce poniżej:
+	| Alias | Typ | Zakres | Rozmiar | Dodatkowe informacje |
+	| :---: | :---: | :---: | :---: | :--- |
+	| sbyte	| System.SByte | \<-128, 127\> | 8 bitów (1 bajt) | Liczba całkowita znakowa. Pierwszy bit w zapisie jest bitem znaku (dodatnia/ujemna) |
+	| byte | System.Byte | \<0, 255\> | 8 bitów (1 bajt) | Liczba całkowita bez znakowa |
+	| short	| System.Int16 | \<-32 768, 32 767\> | 16 bitów (2 bajty) | Liczba całkowita znakowa |
+	| ushort | System.UInt16 | \<0, 65 535\> | 16 bitów (2 bajty) | Liczba całkowita bez znakowa |
+	| int | System.Int32 | \<-2 147 483 648, 2 147 483 647\> | 32 bity | Liczba całkowita znakowa |
+	| uint | System.UInt32 | \<0, 4 294 967 295\> | 32 bity | Liczba całkowita bez znakowa |
+	| long | System.Int64 | \<-9 223 372 036 854 775 808, 9 223 372 036 854 775 807\> | 64 bity | Liczba całkowita znakowa |
+	| ulong | System.UInt64 | \<0, 18 446 744 073 709 551 615\> | 64 bity | Liczba całkowita bez znakowa |
+	| nint | System.IntPtr | Zależy od platformy (obliczana w czasie wykonywania programu) | 32 lub 64 bity | Liczba całkowita znakowa o rozmiarze natywnym. Odpowiada typowi Int32, jeżeli jest uruchamiana w procesie 32-bitowym, a typowi Int64, gdy jest uruchamiana w procesie 64-bitowym |
+	| nuint	| System.UIntPtr | Zależy od platformy (obliczana w czasie wykonywania programu) | 32 lub 64 bity | Liczba całkowita bez znakowa o rozmiarze natywnym. Odpowiada typowi UInt32, jeżeli jest uruchamiana w procesie 32-bitowym, a typowi UInt64, gdy jest uruchamiana w procesie 64-bitowym |
+  \*Przedrostek _u-_ w nazwach typów pochodzi od ang. _unsigned_, czyli bez znaku
+  
+2. **Typy liczbowe zmiennoprzecinkowe**
+    * float
+    * duble
+    * decimal
 ### 2. char
 ### 3. bool
 ## 2. Enumy - typy wyliczeniowe
