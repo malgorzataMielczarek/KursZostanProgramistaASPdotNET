@@ -26,7 +26,7 @@ bool isFreeBasket = baskets > customers;
 ```
 ### 1. Typy liczbowe
 1. **Typy liczbowe całkowite**<br/>
-Wartościowe typy proste reprezentujące liczby całkowite. Mogą być inicjalizowane literałami, czyli w tym przypadku wprost wpisanymi w kod liczbami. Literały liczb całkowitych mogą być:
+Wartościowe typy proste reprezentujące liczby całkowite. Mogą być inicjalizowane literałami, czyli w tym przypadku wprost wpisanymi w kod liczbami całkowitymi. Literały liczb całkowitych mogą być:
     | System liczbowy | Prefiks | Przykład |
     | :---: | :--- | :--- |
     | dziesiętny |  | `var decimalLiteral = 42;` |
@@ -68,10 +68,47 @@ Wartościowe typy proste reprezentujące liczby całkowite. Mogą być inicjaliz
 	
 	\*Przedrostek _u-_ w nazwach typów pochodzi od ang. _unsigned_, czyli bez znaku, przedrostek _s-_ od ang. _signed_, czyli ze znakiem, a przedrostek _n-_ od ang. _native_, czyli natywny, w tym wypadku najlepszy dla danego procesora
   
-2. **Typy liczbowe zmiennoprzecinkowe**
-    * **float**
-    * **duble**
-    * **decimal**
+2. **Typy liczbowe zmiennoprzecinkowe**<br/>
+Wartościowe typy proste reprezentujące liczby rzeczywiste. Mogą być inicjowane literałami, czyli w tym przypadku wprost wpisanymi w kod liczbami rzeczywistymi. Typ literałów liczb rzeczywistych jest determinowany przez sufiks:
+    | Sufiks | Typ | Przykład |
+    | :---: | :---: | :--- |
+	| brak, `d` lub `D` | `double` | <pre>double d = 3D;<br/>d = 4d;<br/>d = 3.934_001;</pre> |
+	| `f` lub `F` | `float` | <pre>float f = 3_000.5F;<br/>f = 5.4f;</pre> |
+	| `m` lub `M` | `decimal` | <pre>decimal myMoney = 3_000.5m;<br/>myMoney = 400.75M;</pre> |
+    
+    \*W przykładzie pokazano użycie `_` jako separatora cyfr. Można go używać ze wszystkimi rodzajami literałów liczbowych.<br/>
+
+	Wszystkie typy liczbowe zmiennoprzecinkowe obsługują operatory arytmetyczne, porównania i równości. Ich wartością domyślną jest zero. Niejawna konwersja pomiędzy typami zmiennoprzecinkowymi jest możliwa tylko z typu _float_ na _double_. Można jednak dokonać jawnej konwersji między dowolnymi dwoma typami liczbowymi zmiennoprzecinkowymi. W wyrażeniach można również mieszać typy liczbowe całkowite i typy liczbowe zmiennoprzecinkowe. W tym wypadku typy całkowite są niejawnie konwertowane do typów zmiennoprzecinkowych. Jeżeli w jednym wyrażeniu mieszamy typy całkowite, _float_ i _double_ obowiązują następujące zasady:
+	<ol>
+		<li> typy liczbowe całkowite są konwertowane do jednego z typów zmiennoprzecinkowych (_float_ lub _double_)</li>
+		<li> jeżeli jest to konieczne _float_ jest niejawnie konwertowany do _double_</li>
+		<li> jeżeli w wyrażeniu występuje _double_, wyrażenie oblicza wartość _double_ lub _bool_ w porównaniach relacyjnych i równości</li>
+		<li> jeżeli w wyrażeniu nie występuje _double_, wyrażenie oblicza wartość _float_ lub _bool_ w porównaniach relacyjnych i równości</li>
+	</ol>
+	
+	Możemy również mieszać typy całkowite z typem _decimal_. Wówczas typy całkowite są niejawnie konwertowane do typu _decimal_, a całość wyrażenia obliczana jest do typu _decimal_ lub _bool_ w porównaniach relacyjnych i równości.<br/>
+	Nie jest za to możliwe mieszanie typów _float_ i _double_ z typem _decimal_. W takim wypadku trzeba dokonać jawnej konwersji, np.:
+	
+	```csharp =
+	double a = 1.0;
+	decimal b = 2.1m;
+	Console.WriteLine(a + (double)b);
+	Console.WriteLine((decimal)a + b);
+	```
+	
+    * **float**<br/>
+	Pochodzi od ang. _floating-point_, czyli zmiennoprzecinkowy. Jest tak naprawdę aliasem struktury Single, czyli typu reprezentującego liczby zmiennoprzecinkowe w zakresie \<-3.40282347E+38, 3.40282347E+38\> (najmniejsza - `Single.MinValue` i największa - `Single.MaxValue` wartość możliwa do przedstawienia przy pomocy tego typu), z dokładnością 1.401298E-45 (najmniejsza wartość dodatnia możliwa do przedstawienia przy pomocy tego typu, która jest większa niż zero - `Single.Epsilon`), przechowywane na 32 bitach pamięci. Jest to tzw. typ zmiennoprzecinkowy pojedynczej precyzji (ang. _single precision_). Aby podejrzeć metadane tej struktury wystarczy jak poprzednio na słowie kluczowym `float` lub `Single` wcisnąć  klawisz **F12**. Możemy wówczas zobaczyć jakie metody zawiera dana struktura, jaka jest minimalna i maksymalna liczba jaką może przechowywać zmienna tego typu itd. Struktura `System.Single`, poza występującymi również w typach liczbowych całkowitych stałymi `MinValue` i `MaxValue` dostarczającymi minimalną i maksymalną skończoną wartość tego typu, definiuje również wspomnianą wcześniej stałą `Single.Epsilon`, oraz stałe reprezentujące wartość nienumeryczną (`Single.NaN` - ang. _not-a-number_) i wartości nieskończone (`Single.PositiveInfinity` - nieskończoność dodatnia i `Single.NegativeInfinity` - nieskończoność ujemna). Wartości przechowywane w zmiennych typu _float_ są pewnymi zaokrągleniami (w systemie dwójkowym). Niema na przykład wystąpienia liczby 0,1. Jest ona przedstawiana jedynie przy pomocy pewnego zaokrąglenia. Będzie to powodować błędy przybliżeń w obliczeniach. Jest to dobry typ jeżeli bardziej niż na dokładności obliczeń zależy nam na oszczędności pamięci.
+    * **duble**<br/>
+	Alias struktury Double, czyli typu reprezentującego liczby zmiennoprzecinkowe w zakresie \<-1.7976931348623157E+308, 1.7976931348623157E+308\> (najmniejsza - `Double.MinValue` i największa - `Double.MaxValue` wartość możliwa do przedstawienia przy pomocy tego typu), z dokładnością 4.94065645841247E-324 (najmniejsza wartość dodatnia możliwa do przedstawienia przy pomocy tego typu, która jest większa niż zero - `Double.Epsilon`), przechowywane na 64 bitach pamięci. Jest to tzw. typ podwójnej precyzji (ang. _double precision_). Aby podejrzeć metadane tej struktury wystarczy jak poprzednio na słowie kluczowym `double` lub `Double` wcisnąć  klawisz **F12**. Możemy wówczas zobaczyć jakie metody zawiera dana struktura, jaka jest minimalna i maksymalna liczba jaką może przechowywać zmienna tego typu itd. Struktura `System.Double` definiuje takie same jak typ _float_ stałe, o analogicznym znaczeniu: `Double.MinValue`, `Double.MaxValue`, `Double.Epsilon`, `Double.NaN`, `Double.PositiveInfinity` i `Double.NegativeInfinity`. Wartości przechowywane w zmiennych typu _double_ są pewnymi zaokrągleniami (w systemie dwójkowym). Niema na przykład wystąpienia liczby 0,1. Jest ona przedstawiana jedynie przy pomocy pewnego zaokrąglenia. Będzie to powodować błędy przybliżeń w obliczeniach. Jest to dobry typ jeżeli bardziej niż na dokładności obliczeń zależy nam na oszczędności pamięci i/lub szybkości obliczeń. Różnice w szybkości wykonywania obliczeń w stosunku do dokładniejszego typu _decimal_ będą jednak widoczne dopiero przy znacznej liczbie obliczeń (jedynie w najbardziej wymagających obliczeniowo aplikacjach).
+    * **decimal**<br/>
+	Alias struktury Decimal, czyli typu reprezentującego dziesiętne liczby zmiennoprzecinkowe w zakresie \<-79 228 162 514 264 337 593 543 950 335, 79 228 162 514 264 337 593 543 950 335\> (najmniejsza - `Decimal.MinValue` i największa - `Decimal.MaxValue` wartość możliwa do przedstawienia przy pomocy tego typu), z dokładnością 0.000000000000000000000000001 (najmniejsza wartość dodatnia możliwa do przedstawienia przy pomocy tego typu, która jest większa niż zero - `Decimal.NearPositiveZero`), przechowywane na 128 bitach pamięci. Aby podejrzeć metadane tej struktury wystarczy jak poprzednio na słowie kluczowym `dacimal` lub `Decimal` wcisnąć  klawisz **F12**. Możemy wówczas zobaczyć jakie metody zawiera dana struktura, jaka jest minimalna i maksymalna liczba jaką może przechowywać zmienna tego typu itd. Wartości przechowywane w zmiennych typu _decimal_ nie są wolne od zaokrągleń (w systemie dwójkowym). Dacimal raczej zmniejsza błąd dzięki zaokrągleniom. W odróżnieniu od zmiennych typu _float_ i _double_, liczba 0,1 może być dokładnie reprezentowana przez _decimal_. Jest to dobry typ jeżeli zależy nam na dokładności obliczeń. Odbywa się to jednak kosztem szybkości i znacznym kosztem zajętości pamięci (zmienna typu _decimal_ zajmuje 4 razy więcej pamięci niż zmienna typu _float_). Zmniejszenie szybkości wykonywania obliczeń w stosunku do mniej dokładnego typu _double_ będzie jednak widoczne dopiero przy znacznej liczbie obliczeń (jedynie w najbardziej wymagających obliczeniowo aplikacjach).
+	
+	Podsumowanie wszystkich typów liczbowych zmiennoprzecinkowych znajduje się w tabelce poniżej:
+	| Alias | Typ | Przybliżony zakres | Dokładność | Rozmiar | Dodatkowe informacje |
+	| :---: | :---: | :---: | :---: | :---: | :--- |
+	| `float` | `System.Single` | ±1,5 x 10^−45 do ±3,4 x 10^38 | ~6-9 cyfry | 4 bajty | Najodpowiedniejszy typ gdy zależy nam na znacznej oszczędności pamięci |
+	| `double` | `System.Double` | ±5,0 × 10^−324 do ±1,7 × 10^308 | ~15-17 cyfr | 8 bajtów | Kompromis między zajętością pamięci, a precyzją obliczeń. Najodpowiedniejszy typ do wyboru w najbardziej wymagających obliczeniowo aplikacjach, w celu przyspieszenia ich działania lub gdy dokładność obliczeń nie jest aż tak istotna.  |
+	| `decimal` | `System.Decimal` | ±1,0 x 10^–28 do ±7,9228 x 10^28 | 28–29 cyfr | 16 bajtów | Najodpowiedniejszy, gdy wymagany stopień dokładności jest określany przez liczbę cyfr po prawej stronie przecinka (punktu dziesiętnego). Używany np. w aplikacjach finansowych do reprezentacji kursów walutowych, stóp procentowych itd. |
 ### 2. char
 ### 3. bool
 ## 2. Enumy - typy wyliczeniowe
