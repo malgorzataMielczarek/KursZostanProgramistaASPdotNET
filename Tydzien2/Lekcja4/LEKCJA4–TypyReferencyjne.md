@@ -30,3 +30,78 @@ Item item = new Item();
 Teraz nasza zmienna istnieje zarówno na stosie, jak i na stercie. Możemy więc już korzystać z metod danej klasy, wypełniać jej pola danymi itd. Jeżeli zmienne tworzymy wewnątrz jakiejś metody, po wyjściu z tej metody usunięte zostaną wszystkie utworzone na stosie, również zmienna typu referencyjnego. Obiekt znajdujący się na stercie jednak dalej tam pozostanie. Oby wyczyścić pamięć sterty z niepotrzebnych już obiektów możemy skorzystać z dostarczanego przez .NET, utworzonego w tym celu mechanizmu _garbage collector_ lub podobnie jak w innych językach programowania zrobić to osobiście, używając odpowiedniej metody.
 
 ## Typy referencyjne
+Do typów referencyjnych zaliczamy przede wszystkim typy dziedziczące po klasie `System.Object`. Są to przede wszystkim elementy tworzone przez samego programistę, czyli klasy, interfejsy. Dodatkowo powszechnie używanym typem referencyjnym jest typ `string`, służący do przechowywania i obsługi tekstu.
+
+### Tworzenie własnego typu referencyjnego - klasy
+Aby utworzyć klasę podajemy po kolei modyfikator dostępu, ewentualnie dodatkowe modyfikatorów, słowo kluczowe `class`, nazwę klasy i w nawiasach klamrowych wnętrze klasy. Poniżej pokazano prosty przykład stworzonej przez programistę klasy:
+
+```csharp =
+namespace Application
+{
+	public class Item
+	{
+		public int Id { get; set; }
+		public string Name { get; set }
+	}
+}
+```
+
+Przypominamy, że do dobrych praktyk należy tworzenie każdej klasy w osobnym pliku.<br/>
+Teraz już możemy tworzyć obiekty tej klasy. Np. w metodzie `Main` naszej aplikacji możemy wpisać kod:
+
+```csharp =
+Item item = new Item() { Id = 1, Name = "Apple" };
+```
+
+Jak widać, na podstawie powyższego fragmentu kodu, podczas tworzenia obiektu możemy od razu przypisać wartości jego właściwością. Wartości te możemy później zmieniać, np.:
+
+```csharp =
+item.Id = 5;
+item.Name = "Banana";
+```
+
+### Przypisywanie zmiennych typów referencyjnych
+Jeżeli mamy dwie zmienne tego samego typu wartościowego i dokonamy przypisania jednej zmiennej do drugiej, to przypiszemy jedynie aktualnie przechowywaną tam wartość. Czyli np.:
+
+```csharp =
+int a = 5;
+int b = 6;
+Console.WriteLine(a);	\\wyświetli się: 5
+Console.WriteLine(b);	\\wyświetli się: 6
+
+b = a;
+Console.WriteLine(a);	\\wyświetli się: 5
+Console.WriteLine(b);	\\wyświetli się: 5
+
+b = 4;
+Console.WriteLine(a);	\\wyświetli się: 5
+Console.WriteLine(b);	\\wyświetli się: 4
+
+b = a;
+a = 3;
+Console.WriteLine(a);	\\wyświetli się: 3
+Console.WriteLine(b);	\\wyświetli się: 5
+```
+
+Jeżeli natomiast analogiczne przypisanie wykonalibyśmy między dwoma zmiennymi tego samego typu referencyjnego, to tak na prawdę nie dokonamy przypisania wartości (nie będziemy mieć dwóch obiektów z takimi samymi wartościami właściwości), a jedynie referencji (adresu, pod którym obiekt istnieje na stercie). Oznacza to, że tak na prawdę istnieje tylko jeden obiekt do którego mamy dwie referencje (aliasy), istnieje pod dwoma nazwami. Czyli np.:
+
+```csharp =
+Item item = new Item() { Id = 1, Name = "Apple" };
+Item item2 = new Item() { Id = 2; Name = "Orange" };
+Console.WriteLine(item.Name);	\\wyświetli się: Apple
+Console.WriteLine(item2.Name);	\\wyświetli się Orange
+
+item2 = item;
+Console.WriteLine(item.Name);	\\wyświetli się: Apple
+Console.WriteLine(item2.Name);	\\wyświetli się Apple
+
+item2.Name = "Banana";
+Console.WriteLine(item.Name);	\\wyświetli się: Banana
+Console.WriteLine(item2.Name);	\\wyświetli się Banana
+
+item.Name = "Melon";
+Console.WriteLine(item.Name);	\\wyświetli się: Melon
+Console.WriteLine(item2.Name);	\\wyświetli się Melon
+```
+
+W powyższym kodzie mamy więc dwie referencje do obiektu utworzonego w pierwszej linijce, pod nazwami `item` i `item2`. Obiekt utworzony w drugiej linijce dalej istnieje na stercie, ale nie ma już do niego żaden referencji.
