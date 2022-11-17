@@ -66,21 +66,21 @@ Jeżeli mamy dwie zmienne tego samego typu wartościowego i dokonamy przypisania
 ```csharp =
 int a = 5;
 int b = 6;
-Console.WriteLine(a);	\\wyświetli się: 5
-Console.WriteLine(b);	\\wyświetli się: 6
+Console.WriteLine(a);	//wyświetli się: 5
+Console.WriteLine(b);	//wyświetli się: 6
 
 b = a;
-Console.WriteLine(a);	\\wyświetli się: 5
-Console.WriteLine(b);	\\wyświetli się: 5
+Console.WriteLine(a);	//wyświetli się: 5
+Console.WriteLine(b);	//wyświetli się: 5
 
 b = 4;
-Console.WriteLine(a);	\\wyświetli się: 5
-Console.WriteLine(b);	\\wyświetli się: 4
+Console.WriteLine(a);	//wyświetli się: 5
+Console.WriteLine(b);	//wyświetli się: 4
 
 b = a;
 a = 3;
-Console.WriteLine(a);	\\wyświetli się: 3
-Console.WriteLine(b);	\\wyświetli się: 5
+Console.WriteLine(a);	//wyświetli się: 3
+Console.WriteLine(b);	//wyświetli się: 5
 ```
 
 Jeżeli natomiast analogiczne przypisanie wykonalibyśmy między dwoma zmiennymi tego samego typu referencyjnego, to tak na prawdę nie dokonamy przypisania wartości (nie będziemy mieć dwóch obiektów z takimi samymi wartościami właściwości), a jedynie referencji (adresu, pod którym obiekt istnieje na stercie). Oznacza to, że tak na prawdę istnieje tylko jeden obiekt do którego mamy dwie referencje (aliasy), istnieje pod dwoma nazwami. Czyli np.:
@@ -88,20 +88,50 @@ Jeżeli natomiast analogiczne przypisanie wykonalibyśmy między dwoma zmiennymi
 ```csharp =
 Item item = new Item() { Id = 1, Name = "Apple" };
 Item item2 = new Item() { Id = 2; Name = "Orange" };
-Console.WriteLine(item.Name);	\\wyświetli się: Apple
-Console.WriteLine(item2.Name);	\\wyświetli się Orange
+Console.WriteLine(item.Name);	//wyświetli się: Apple
+Console.WriteLine(item2.Name);	//wyświetli się Orange
 
 item2 = item;
-Console.WriteLine(item.Name);	\\wyświetli się: Apple
-Console.WriteLine(item2.Name);	\\wyświetli się Apple
+Console.WriteLine(item.Name);	//wyświetli się: Apple
+Console.WriteLine(item2.Name);	//wyświetli się Apple
 
 item2.Name = "Banana";
-Console.WriteLine(item.Name);	\\wyświetli się: Banana
-Console.WriteLine(item2.Name);	\\wyświetli się Banana
+Console.WriteLine(item.Name);	//wyświetli się: Banana
+Console.WriteLine(item2.Name);	//wyświetli się Banana
 
 item.Name = "Melon";
-Console.WriteLine(item.Name);	\\wyświetli się: Melon
-Console.WriteLine(item2.Name);	\\wyświetli się Melon
+Console.WriteLine(item.Name);	//wyświetli się: Melon
+Console.WriteLine(item2.Name);	//wyświetli się Melon
 ```
 
 W powyższym kodzie mamy więc dwie referencje do obiektu utworzonego w pierwszej linijce, pod nazwami `item` i `item2`. Obiekt utworzony w drugiej linijce dalej istnieje na stercie, ale nie ma już do niego żaden referencji.
+
+Jest możliwe, aby znak przypisania między zmiennymi typu referencyjnego, zamiast przypisania referencji, powodował utworzenie kopii obiektu (drugiego obiektu z przypisanymi takimi samymi wartościami), jednak wymaga to celowej implementacji w klasie.
+
+### String
+Klasa `System.String` służąca do przechowywania sekwencji znaków UNICODE UTF-16, czyli sekwencję `char`ów. Zmienne tego typu można również tworzyć używając aliasu `string`, analogicznie do zmiennych typów wartościowych. Tekst który chcemy umieścić w obiekcie typu `string` umieszczamy w cudzysłowach. W _stringach_
+występują również tzw. znaki specjalne, np.
+
+| Znak specjalny | Opis |
+| ---: | :--- |
+| \r | powrót karetki, pozostałość po maszynie do pisania, oznacza powrót na początek linii |
+| \n | nowa linia |
+| \t | tabulacja |
+| \b | backspace |
+| \ | backslash jest tzw. znakiem ucieczki, oznacza to, że umożliwia on wstawianie w tekście znaków używanych w innym kontekście, jak np. cudzysłowów |
+
+| Sekwencja wpisana w stringu | wyświetlany tekst | Opis|
+| ---: | :---: | :--- |
+| `\'` | ' | pojedynczy cudzysłów, apostrof |
+| `\"` | " | cudzysłów |
+| `\\` | \ | backslash |
+
+Możemy również "wyłączyć" interpretowanie znaków specjalnych. W tym celu przed cudzysłowem rozpoczynającym nasz string wstawiamy znak `@`. Oczywiście wstawienie kolejnego znaku `"` będzie dalej oznaczać zakończenie naszego stringa, a znak `\` nie będzie już interpretowany jako znak ucieczki, tylko po prostu backslash. W tak tworzonym stringu nie da się więc wstawić znaku cudzysłowa. W wielu sytuacjach zapis taki może być jednak bardzo pomocny, np. przy zapisywaniu ścieżek do plików, aby zwiększyć czytelność. Np.:
+
+```csharp
+const string FILE = "C:\\Users\\adam\\Images\\smiley.bmp";
+// można też zapisać np.
+const string SMILEY_PATH = @"C:\Users\adam\Images\smiley.bmp";
+```
+
+Wstawiony przed rozpoczynającym string cudzysłowem znaku `$` daje znać kompilatorowi, że chcemy w stringu używać wartości innych zmiennych. Możemy wówczas wpisać wewnątrz stringu nazwę zmiennej otoczoną klamrami. Kompilator zastąpi nam tą sekwencję aktualną wartością zmiennej przekonwertowaną do typu `string`;
