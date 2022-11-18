@@ -49,7 +49,33 @@ Sekcji `else if` może być dowolnie dużo (możemy więc sprawdzać dowolną il
 We wszystkich powyższych przypadkach, jeżeli któryś z bloków instrukcji składa się tylko z jednego polecenia to otaczające je nawiasy klamrowe można pominąć.
 
 Możliwe jest również zagnieżdżanie instrukcji `if` dowolnych wariantów. To znaczy, że blok instrukcji może również zawierać instrukcję `if` (`if else`, `if else if else` itd.).
+
 ## Operator trójargumentowy
+ang. _conditional operator_ lub _ternary conditional operator_ (operator warunkowy, operator trójargumentowy), czyli operator `?:` zwracający różne wartości w zależności od spełnienia określonego warunku. Ma on następującą budowę:
+
+```csharp =
+var zmienna = warunek ? wartosc1 : wartosc2;
+```
+
+Jeżeli wyrażenie warunkowe ma wartość `true` ( `warunek` jest równy `true`) `zmienna` przyjmie wartość `wartosc1`. Gdy natomiast ma wartość `false`, to `zmienna` będzie mieć wartość `wartosc2`. Operatory mogą być również w sobie zagnieżdżone. Tą samą operację można przeprowadzić używając instrukcji `if else`, jednak użycie operatora trójargumentowego skraca zapis. Np. operacja:
+
+```csharp =
+int index = item.Name == 'Banana' ? 1 : 0;
+```
+
+zapisana przy pomocy instrukcji `if else` będzie wyglądać następująco:
+
+```csharp =
+int index;
+if (item.Name == "Banana")
+{
+	index = 1;
+}
+else
+{
+	index = 0;
+}
+```
 
 ## switch
 
