@@ -78,4 +78,73 @@ else
 ```
 
 ## switch
+Instrukcja warunkowa sprawdzająca czy jej argument jest równy konkretnej, z góry znanej wartości. Ma ona następującą budowę:
 
+```csharp =
+switch (argument)
+{
+	case wartosc1:
+		//blok 1 - instrukcje wykonywane gdy argument == wartosc1
+		break;
+	case wartosc2:
+		//blok 2 - instrukcje wykonywane gdy argument == wartosc2
+		break;
+	.
+	.
+	.
+	default:
+		//ostatni blok - instrukcje wykonywane gdy argument nie jest równy żadnej z wymienionych wyżej wartości
+		break;
+}
+```
+
+Powyższa instrukcja działa tak samo jak następująca instrukcja `if`:
+
+```csharp =
+if (argument == wartosc1)
+{
+	//blok 1
+}
+else if (argument == wartosc2)
+{
+	//blok 2
+}
+.
+.
+.
+else
+{
+	//ostatni blok
+}
+```
+
+Operator `==` jest operatorem porównania, czyli wyrażenie `a == b` ma wartość `true`, jeżeli zmienna `a` ma taką samą wartość jak zmienna `b`. W przeciwnym razie wyrażenie ma wartość `false`. Słowo kluczowe `break` oznacza przerwanie wykonywania danej instrukcji. Czyli po dojściu do instrukcji `break` program natychmiast przerywa wykonywanie instrukcji `switch` i przechodzi do wykonywania kolejnych poleceń po niej występujących. W odróżnieniu np. od instrukcji `if` bloki instrukcji nie są otoczone nawiasami klamrowymi. Dany blok zaczyna się za znakiem `:` i kończy poleceniem `break` (zamiast `break` możliwe jest również użycie instrukcji `return` lub `throw`). Taki zapis jest wynikiem zaszłości z języków poprzedzających język C#. W odróżnieniu od np. C++, w C# umieszczenie instrukcji `break` jest obligatoryjne. W instrukcji `switch` analogicznie do instrukcji `if` może być sprawdzana dowolna liczba przypadków (dowolna liczba bloków `case`). Można również pominąć blok `default` (czyli odpowiednik `else` z `if`a). Instrukcja `switch` ma ograniczone działanie w stosunku do instrukcji `if`. Tradycyjnie po pierwsze jej warunki są wyłącznie operacjami porównania dwóch wartości typów podstawowych (typy wartościowe, stringi), `argument` musi więc być zmienną/wyrażeniem typu podstawowego. Sytuacja ta zmieniła się nieco od wersji C# 7, od której składnia i możliwości instrukcji `switch` zostały znacznie rozbudowane i są jeszcze bardziej rozszerzane w kolejnych wersjach języka (dla zainteresowanych ciekawy artykuł o `switch` w C# 7 i C# 8 - [link](https://geek.justjoin.it/nowy-switch-w-c-8-0-jak-dziala-property-pattern/)). Drugim ograniczeniem jest, że wartości z którymi porównywany jest nasz `argument` muszą być stałymi (wartościami znanymi jeż na etapie kompilacji), w odróżnieniu od instrukcji `if`, gdzie wartości te obliczane są dopiero podczas wykonywania instrukcji (sprawdzania warunku). Przez te ograniczenia instrukcja `switch` jest dość rzadko stosowana. Może nam się jednak przydać np. do obsługi menu naszej aplikacji konsolowej, co jest dobrym przykładem jej zastosowania.
+
+## switch expressions
+Występujące od C# 8 wyrażenie o działaniu podobnym do instrukcji `switch`, które jednak podobnie jak operator trójargumentowy zwraca jakąś wartość (zależną od tego który warunek jest spełniony). Ma ono następującą budowę:
+
+```csharp =
+var zmienna = argument switch
+{
+	wzorzec1 => wartosc1,
+	wzorzec2 => wartosc2,
+	.
+	.
+	.
+	_ => wartoscN
+};
+```
+
+Ma ona następujące działanie:
+1. sprawdzamy, czy `argument` jest zgodny ze wzorcem `wzorzec1`
+	1. jeżeli tak, to `switch` zwraca wartość `wartosc1` i kończy swoje działanie
+	2. jeżeli nie, to przechodzimy do punktu 2.
+2. sprawdzamy, czy `argument` jest zgodny z kolejnym wzorcem
+	1. jeżeli tak, to `switch` zwraca odpowiednią wartość i kończy swoje działanie
+	2. jeżeli nie, to
+		1. jeżeli są jeszcze jakieś wzorce do sprawdzenia, wracamy do punktu 2.
+		2. jeżeli nie ma już żadnych wzorców przechodzimy do punktu 3.
+3. ostatnim elementem wyrażenia `switch` może być `_`, choć nie jest to element obligatoryjny. Oznacza on dowolną wartość i jest równoważny sekcji `default` instrukcji `switch`. Jeżeli ten element istnieje i `argument` nie pasował do żadnego ze wzorców, wyrażenie zwraca wartość `wartoscN`.
+
+
+Począwszy od C# 7 `argument` zarówno w instrukcji jak i wyrażeniu `switch` może być obiektem lub tulpem (zestawem wartości, zamiast jedną wartością). Począwszy od C# 9 możliwe jest również poza prostym porównaniem, porównanie relacyjne (<, <=, >, >=).
