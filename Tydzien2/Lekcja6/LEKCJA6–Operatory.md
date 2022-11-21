@@ -1,5 +1,7 @@
 # [LEKCJA 6 – Operatory](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-6-operatory/)
 
+Kolejność wykonywania działań z użyciem operatorów jest zgodna z zasadami matematyki. Jeżeli kilka operacji jest równoważnych (tak samo ważnych jeśli chodzi o kolejność wykonywania działań) to są one wykonywane od lewej do prawej. Jeżeli ostateczny wynik będziemy znać po wykonaniu tylko części operacji (będzie to czasem miało miejsce np. w przypadku operacji logicznych), to dalsze operacje nie są wykonywane.
+
 ## Arytmetyczne
 Zdefiniowanie zmiennych do przykładów z poniższej tabeli:
 
@@ -10,11 +12,11 @@ int b = 10;
 
 | Operator | Znaczenie | Przykład |
 | :---: | :--- | :--- |
-| + | dodawanie | `int c = a + b; // wynik: 15` |
-| - | odejmowanie | `int c = b - a; // wynik: 5` |
-| * | mnożenie | `int c = a * b; // wynik: 50` |
-| / | dzielenie | `int c = b / a; // wynik: 2` |
-| % | modulo - reszta z dzielenia | `int c = b % a; // wynik: 0` |
+| `+` | dodawanie | `int c = a + b; // wynik: 15` |
+| `-` | odejmowanie | `int c = b - a; // wynik: 5` |
+| `*` | mnożenie | `int c = a * b; // wynik: 50` |
+| `/` | dzielenie | `int c = b / a; // wynik: 2` |
+| `%` | modulo - reszta z dzielenia | `int c = b % a; // wynik: 0` |
 
 Jeżeli wynik operacji chcemy przypisać do zmiennej znajdującej się po lewej stronie operatora, zapis operacji możemy skrócić stosując operatory (`+=`, `-=`, `*=`, `/=` i `%=`), np.:
 
@@ -33,8 +35,8 @@ a /= b; // to samo co a = a / b;
 // a == 4, b == 2
 ```
 
-## Inkrementacja/dekrementacja
-1. **Inkrementacja** - zwiększenie wartości zmiennej o jeden. Jest to operacja jednoargumentowa, której operatorem są dwa znaki plus (`++`). Może występować w dwóch wersjach:
+## Inkrementacji/dekrementacji
+1. **Inkrementacja** - zwiększenie wartości o jeden. Jest to operacja jednoargumentowa, której operatorem są dwa znaki plus (`++`). Może występować w dwóch wersjach:
 	1. postinkrementacja -  operator wstawiamy po argumencie. W tym wypadku wyrażenie ma wartość argumentu (najpierw następuje przypisanie, a potem inkrementacja). Np.:
 	
 	```csharp =
@@ -75,8 +77,8 @@ a /= b; // to samo co a = a / b;
 	czyli teraz pre == 1, a i == 1
 	*/
 	```
-	
-2. **Dekrementacja** - zmniejszenie wartości zmiennej o jeden. Jest to operacja jednoargumentowa, której operatorem są dwa znaki minus (`--`). Podobnie jak inkrementacja, może występować w dwóch wersjach, o analogicznym działaniu:
+
+2. **Dekrementacja** - zmniejszenie wartości o jeden. Jest to operacja jednoargumentowa, której operatorem są dwa znaki minus (`--`). Podobnie jak inkrementacja, może występować w dwóch wersjach, o analogicznym działaniu:
 	1. postdekrementacja -  operator wstawiamy po argumencie. W tym wypadku wyrażenie ma wartość argumentu (najpierw następuje przypisanie, a potem dekrementacja). Np.:
 	
 	```csharp =
@@ -118,3 +120,85 @@ a /= b; // to samo co a = a / b;
 	*/
 	```
 	
+Podsumowanie:
+
+| Operator | Znaczenie | Przykład |
+| :---: | :--- | :--- |
+| `++` | inkrementacja | `i++; // postinkrementacja`<br/>`++i; // preinkrementacja` |
+| `--` | dekrementacja | `i--; // postdekrementacja`<br/>`--i; // predekrementacja` |
+
+## Przypisania
+Operator pozwalający nadać zmiennej wartość. Jest to po prostu znak równa się (`=`) i był już przez nas wielokrotnie stosowany, np.:
+
+```csharp =
+int a, b;
+a = 5; // nadanie zmiennej a wartości 5
+b = a; // nadanie zmiennej b takiej samej wartości jaką ma zmienna a, czyli 5
+```
+
+| Operator | Znaczenie | Przykład |
+| :---: | :--- | :--- |
+| `=` | przypisanie wartości do zmiennej | `int i = 0;` |
+
+## Relacji
+Operatory porównujące dwie wartości i zwracające wartość `bool` `true` jeśli zależność jest prawdziwa lub `false`, jeśli nie. Zdefiniowanie zmiennych do przykładów z poniższej tabeli:
+
+```csharp =
+int a = 5;
+int b = 5;
+```
+
+| Operator | Znaczenie | Przykład |
+| :---: | :--- | :--- |
+| `==` | czy równe | `bool c = (a == b); // wynik: true` |
+| `!=` | czy różne | `bool c = (a != b); //wynik: false` |
+| `>` | większe niż | `bool c = (a > b); // wynik: false` |
+| `<` | mniejsze niż | `bool c = (a < b); // wynik: false` |
+| `>=` | większe równe | `bool c = (b >= a); // wynik: true` |
+| `<=` | mniejsze równe | `bool c = (b <= a); // wynik: true` |
+
+Przykład użycia:
+
+```csharp =
+int a = 5;
+int b = 0;
+int result;
+
+if (b != 0)
+{
+	result = a / b;
+	Console.WriteLine($"{a} // {b} = {result}");
+}
+else
+{
+	Console.WriteLine("Nie można dzielić przez zero.");
+}
+```	
+
+## Logiczne warunkowe
+Zostaną omówione w kolejnej lekcji (lekcja 7).
+
+## Konkatenacji
+czyli łączenia łańcuchów tekstowych. Operatorem konkatenacji jest znak plus (`+`). Np.:
+
+```csharp =
+string person = "Ala";
+string action = "ma kota.";
+string sentence = person + " " + action;
+Console.WriteLine(sentence); //zostanie wypisane: Ala ma kota.
+sentence = person + " miała kota";
+sentence += ", ale zdechł.";
+Console.WriteLine(sentence); //zostanie wypisane: Ala miała kota, ale zdechł.
+```
+
+Podobnie jak w przypadku operatora dodawania, można go łączyć z operatorem przypisania (`+=`), np.:
+
+```csharp =
+string a = "Ala";
+a += " ma kota."; // to samo co a = a + " ma kota."
+// wynik: Ala ma kota.
+```
+
+| Operator | Znaczenie | Przykład |
+| :---: | :--- | :--- |
+| `+` | dla argumentów typu `string` oznacza konkatenację, połączenie dwóch stringów w jeden | `string a = "Ala" + " miała kota." // wynik: Ala miała kota.` |
