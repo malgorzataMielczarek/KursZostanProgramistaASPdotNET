@@ -71,7 +71,6 @@ Console.WriteLine();
 Prosty przykład pokazujący różnice między pętlą `while` i `do while`:
 
 ```csharp =
-// Program wypisujący w konsoli pięć znaków plus (+++++)
 int i = 0;
 while(i > 0)
 {
