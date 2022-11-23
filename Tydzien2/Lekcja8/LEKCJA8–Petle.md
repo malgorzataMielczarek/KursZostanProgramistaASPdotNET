@@ -125,7 +125,7 @@ for(int i = 0; i < 5; i++;)
 Console.WriteLine();
 ```
 
-Pętlę `for` stosujemy najczęściej jeżeli z góry wiemy ile razy pętla ma się wykonać.
+Pętlę `for` stosujemy najczęściej jeżeli z góry wiemy ile razy pętla ma się wykonać. Pisząc instrukcję `for` możemy pominąć dowolny element z nawiasu okrągłego (inicjalizacje, warunek i/lub krok) pozostawiając jedynie średniki. Jeżeli nie podamy warunku, stworzymy pętlę nieskończoną (pętla `for( ; ; ){//kod}` będzie się wykonywać w nieskończoność).
 
 ## foreach
 Pętla przeznaczona do iterowania po elementach kolekcji. Składa się ze słowa kluczowego `foreach`, ujętych w nawias okrągły definicji zmiennej przechowującej element kolekcji, słowa kluczowego `in` i kolekcji po której chcemy iterować. Na końcu umieszczony jest ujęty w klamry blok kodu:
