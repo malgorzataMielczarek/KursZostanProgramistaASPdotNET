@@ -64,7 +64,7 @@ do
 	Console.Write("+");
 	i++;
 }
-while(i < 5)
+while(i < 5);
 Console.WriteLine();
 ```
 
@@ -87,7 +87,7 @@ do
 	Console.Write(j);
 	j++;
 }
-while(j > 0)
+while(j > 0);
 Console.WriteLine();
 //zostanie wypisane: 01234567891011121314151617181920212223...
 //pętla nieskończona, będzie się wykonywać nieskończoną ilość razy
