@@ -64,3 +64,40 @@ public class PersonService
 Pamiętajmy, że definicja (i implementacja) każdej klasy powinna się znaleźć w osobnym pliku (jest to dobra praktyka ułatwiająca nawigowanie po kodzie).
 ### Metody typu `void`
 Wróćmy jeszcze na chwilę do metod typu `void`. Są to metody, które nic nie zwracają. Wykonują one operacje wyłącznie wewnątrz klasy, na składnikach obiektu, których rezultat działania właściwie nas nie interesuje. Rezultatu działanie takich metod nie będziemy w dalszych etapach używać.
+### Wywoływanie metod
+Po utworzeniu obiektu danej klasy, możemy swobodnie korzystać w kodzie programu ze wszystkich jego metod publicznych (z modyfikatorem dostępu `public`). Korzystamy z nich tak jak robiliśmy to ze wszystkimi metodami do tej pory. Podajemy ścieżką dostępu, nazwę metody i jej parametry (argumenty), oddzielone przecinkami, ujęte w nawias okrągły. Ścieżką dostępu będzie w tym wypadku utworzony przez nas obiekt (czyli po prostu nazwa utworzonego przez nas obiektu danej klasy). Użyjmy więc dla przykładu metod klasy `PersonService`. Po utworzeniu obiektu tej klasy, najpierw dopiszemy kilka osób do listy, następnie wyświetlimy wpisane dane, a na koniec policzymy średnią wieku osób z listy.
+ 
+```csharp
+PersonService people = new PersonService();
+
+people.AddNewPerson("Jan", "Kowalski", 33);
+people.AddNewPerson("Piotr", "Nowak", 88);
+people.AddNewPerson("Agnieszka", "Luźna", 45);
+people.AddNewPerson("Jolanta", "Piątek", 20);
+people.AddNewPerson("Max", "Pierwszy", 15);
+
+people.DisplayAllPeople();
+
+List<Person> peopleList = people.GetAllPeople();
+int sumAge = 0;
+foreach (Person person in peopleList)
+{
+    sumAge += person.Age;
+}
+decimal average = (decimal)sumAge / (decimal)peopleList.Count;
+Console.WriteLine("Średnia wieku: " + average);
+```
+
+### Metody i klasy statyczne
+Jak już wspominaliśmy tworzone przez nas metody mogą być statyczne (dopisujemy słowo kluczowe `static` pomiędzy modyfikator dostępu a zwracany typ). Oznacza to, że istnieje jeden egzemplarz takiej metody (niezależnie ile obiektów danej klasy utworzymy) i można jej używać, nawet gdy żaden obiekt tej klasy nie istnieje. Taka metoda jest wywoływana nie na obiekcie, a na klasie (ścieżką dostępu będzie nazwa klasy, a nie tak jak w pozostałych przypadkach nazwa obiektu). W związku z tym nie można w takiej metodzie modyfikować żadnych właściwości klasy, gdyż nie ma ona do nich dostępu (chyba, że są to właściwości statyczne). Metoda statyczna jest niezależna od obiektów danej klasy. Właśnie z tych względów metod statycznych prawie nigdy nie stosuje się w klasach serwisowych. Najczęściej używa się ich do zapisania wielokrotnie wykonywanych obliczeń, walidacji itp. i umieszcza w specjalnej pomocniczej klasie statycznej. Na przykład możemy używać ich do przeliczeń jednostek. Załóżmy więc, że chcielibyśmy wiek osób zapisywać w miesiącach, a nie w latach. Wówczas moglibyśmy stworzyć metodę statyczną:
+
+```csharp =
+public static int YearsToMonths(int years)
+{
+    return years * 12;
+}
+```
+
+Oczywiście jest to przeliczenie wieku w miesiącach zaokrąglonego do pełnych lat i takie jego zapisywanie niema zbyt wielkiego sensu. Moglibyśmy sobie jednak wyobrazić podobną metodę przeliczającą aktualny wiek na podstawie daty urodzenia. Moglibyśmy oczywiście umieścić tą metodę w klasie `PersonService` lub `Person` (wówczas jej wywołanie wyglądałoby np. `PersonService.YearsToMonths(45);` lub `Person.YearsToMonths(58);`). Najprawdopodobniej jednak umieścilibyśmy ją w osobnej klasie statycznej przechowującej różne przeliczenia tego typu, gdyż mogą one dotyczyć nie tylko wieku osób, ale też np. częstotliwości raportowania itd.
+
+**Klasy statyczne** są to klasy których wszystkie składniki (zarówno właściwości jak i metody) muszą być statyczne. Klasy statyczne tworzymy dodając słowo kluczowe `static` pomiędzy modyfikator dostępu (np. `public`) a słowo kluczowe `class`. Nie można tworzyć obiektów klas statycznych.
