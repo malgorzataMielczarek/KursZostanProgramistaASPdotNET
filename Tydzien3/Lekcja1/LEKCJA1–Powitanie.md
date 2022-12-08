@@ -1,0 +1,2 @@
+# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-1-powitanie/)
+Przechodzimy do poznawania programowania obiektowego. W tym tygodniu poznamy co to jest dziedziczenie, hermetyzacja, polimorfizm. Poznamy również takie struktury jak interfejsy, czy klasy abstrakcyjne. Pod koniec tego tygodnia dokonamy refaktoryzacji naszej aplikacji, z uwzględnieniem wszystkich zasad jakie poznamy w tym tygodniu.
