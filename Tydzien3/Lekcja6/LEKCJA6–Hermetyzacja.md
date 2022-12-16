@@ -18,30 +18,34 @@ Stałej (zmienna/pole z modyfikatorem `const`) możemy przypisać wartość wył
 
 Polu `readonly` możemy przypisać wartość w momencie deklaracji i/lub w konstruktorze klasy, w momencie tworzenia obiektu. Wartość ta może więc się zmienić (jedną przypiszemy w deklaracji, a inną w konstruktorze). Co więcej, możemy przypisać jej różną wartość, np. w zależności od użytego konstruktora lub jego parametrów. Możemy więc tę wartość poznać dopiero w momencie wykonywania programu. Po utworzeniu obiektu danej klasy, nie możemy już jednak zmieniać wartości jego pola `readonly`. Możemy jedynie odczytywać jego wartość.
 
-### 2. W deklaracji właściwości lub innej struktury
+### 2. W deklaracji struktury
 
 ```csharp =
-modyfikatorDostepu readonly typ NazwaWlasciwosci { get; set; }
 modytikatorDostepu readonly struct NazwaStruktury { //cialo struktury }
 ```
 
-Oznaczenie struktury jako `readonly` oznacza, że wszystkie jej elementy (poza konstruktorem) są również `readonly`. Czyli w przypadku właściwości będziemy mieć tak na prawdę wyłącznie metodę `get`.
+Oznaczenie struktury jako `readonly` oznacza, że wszystkie jej elementy (poza konstruktorem) są również `readonly`.
 
-### 3. W deklaracji elementów struktury, np. metod
+### 3. W deklaracji elementów struktury, klasy, np. metod, właściwości
 
 ```csharp =
 modyfikatorDostepu struct NazwaStruktury
 {
     ...
-    modytikatorDostepu readonly typ nazwaMetody(/*parametry*/)
+    modytikatorDostepu readonly typ NazwaMetody(/*parametry*/)
     {
         //cialo metody
     }
+    modytikatorDostepu readonly typ NazwaWlasciwosci { get; set; }
     ...
 }
 ```
 
+Oznaczenie właściwości jako `readonly` oznacza, że wszystkie jej elementy są również `readonly`. Czyli tak na prawdę będziemy mieć wyłącznie metodę `get`.
+
 Oznaczenie metody jako `readonly` oznacza, że metoda ta, nie będzie modyfikować struktury w której się znajduje. Tzn. może wykonywać różne obliczenia, zwracać jakąś wartość itd., jednak nie zmieni wartość żadnego pola struktury. Wewnątrz ciała metody `readonly` można wywołać jednak metodę bez takiego modyfikatora. Aby zapewnić niezmienność struktury, tworzona jest wówczas kopia struktury i na tej kopii wykonywana jest metoda bez modyfikatora `readonly` (kompilator niema więc pewności, czy nie zmieni ona struktury).
+
+Elementy `readonly` struktury/klasy (z wyłączeniem pól) dostępne są dopiero od wersji C# 8.0.
 
 ### 4. W deklaracji metody zwracającej referencję
 
