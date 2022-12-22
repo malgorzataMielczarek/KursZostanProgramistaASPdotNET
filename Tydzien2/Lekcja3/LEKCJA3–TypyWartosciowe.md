@@ -25,6 +25,7 @@ double value = price * headphones;
 bool isFreeBasket = baskets > customers; 
 ```
 ### 1. Typy liczbowe
+Wartością domyślną (`default`) dla wszystkich typów liczbowych jest zero (`0`). Wartość domyślna jest to wartość jaką przyjmuje zmienna danego typu przed inicjalizacją.
 1. **Typy liczbowe całkowite**<br/>
 Wartościowe typy proste reprezentujące liczby całkowite. Mogą być inicjalizowane literałami, czyli w tym przypadku wprost wpisanymi w kod liczbami całkowitymi. Literały liczb całkowitych mogą być:
     | System liczbowy | Prefiks | Przykład |
@@ -110,7 +111,7 @@ Wartościowe typy proste reprezentujące liczby rzeczywiste. Mogą być inicjowa
 	| `double` | `System.Double` | ±5,0 × 10^−324 do ±1,7 × 10^308 | ~15-17 cyfr | 8 bajtów | Kompromis między zajętością pamięci, a precyzją obliczeń. Najodpowiedniejszy typ do wyboru w najbardziej wymagających obliczeniowo aplikacjach, w celu przyspieszenia ich działania lub gdy dokładność obliczeń nie jest aż tak istotna.  |
 	| `decimal` | `System.Decimal` | ±1,0 x 10^–28 do ±7,9228 x 10^28 | 28–29 cyfr | 16 bajtów | Najodpowiedniejszy, gdy wymagany stopień dokładności jest określany przez liczbę cyfr po prawej stronie przecinka (punktu dziesiętnego). Używany np. w aplikacjach finansowych do reprezentacji kursów walutowych, stóp procentowych itd. |
 ### 2. bool
-Słowo kluczowe `bool` jest aliasem struktury `System.Boolean` (ang. _boolean_ - logiczny, od nazwiska angielskiego uczonego George'a Boole'a, współtwórcy logiki matematycznej). Reprezentuje ona wartość logiczną mogącą przyjmować tylko jedną z dwóch wartości: `true` - prawda lub `false` - fałsz. Na tym typie danych można przeprowadzać operacje logiczne, o których mowa będzie w kolejnych lekcjach tego tygodnia (Lekcja 7). Jest on również rezultatem porównań relacyjnych (\<, \>, \<=, \>=) i równości. Wyrażeń typu _bool_ będziemy często używać w wyrażeniach warunkowych wyrażenia `if`, pętli, czy operatora warunkowego `?:`, o których również w dalszych lekcjach tego tygodnia. Nie istnieje żadna standardowa konwersja między typem _bool_ a innymi typami wartościowymi. W odróżnieniu od innych języków takich jak C, czy C++, gdzie wartość zero liczby całkowitej lub zmiennoprzecinkowej oraz wskaźnik null są konwertowane do wartości _bool_ `false`, a wartości niezerowe liczb lub wskaźniki niebędące nullami do wartości `true`, w C# taka konwersja jest niemożliwa. Można ją osiągnąć przez jawne porównanie liczb do zera lub referencji do obiektu do wartości null. Tak jak zmienne innych typów wartościowych, zmienne typu _bool_ również można inicjalizować literałami, np.:
+Słowo kluczowe `bool` jest aliasem struktury `System.Boolean` (ang. _boolean_ - logiczny, od nazwiska angielskiego uczonego George'a Boole'a, współtwórcy logiki matematycznej). Reprezentuje ona wartość logiczną mogącą przyjmować tylko jedną z dwóch wartości: `true` - prawda lub `false` - fałsz. Wartością domyślną jest `false`. Na tym typie danych można przeprowadzać operacje logiczne, o których mowa będzie w kolejnych lekcjach tego tygodnia (Lekcja 7). Jest on również rezultatem porównań relacyjnych (\<, \>, \<=, \>=) i równości. Wyrażeń typu _bool_ będziemy często używać w wyrażeniach warunkowych wyrażenia `if`, pętli, czy operatora warunkowego `?:`, o których również w dalszych lekcjach tego tygodnia. Nie istnieje żadna standardowa konwersja między typem _bool_ a innymi typami wartościowymi. W odróżnieniu od innych języków takich jak C, czy C++, gdzie wartość zero liczby całkowitej lub zmiennoprzecinkowej oraz wskaźnik null są konwertowane do wartości _bool_ `false`, a wartości niezerowe liczb lub wskaźniki niebędące nullami do wartości `true`, w C# taka konwersja jest niemożliwa. Można ją osiągnąć przez jawne porównanie liczb do zera lub referencji do obiektu do wartości null. Tak jak zmienne innych typów wartościowych, zmienne typu _bool_ również można inicjalizować literałami, np.:
 
 ```csharp =
 bool check = true;
@@ -151,9 +152,9 @@ public enum ItemTypes
   Electronics
 }
 ```
-Więcej informacji o typach wyliczeniowych znajdzie się w kolejnych lekcjach tego tygodnia (Lekcja 12 - Enum).
+Więcej informacji o typach wyliczeniowych znajdzie się w kolejnych lekcjach tego tygodnia (Lekcja 12 - Enum). Wartością domyślną dla enumów są ich elementy zerowe.
 ## 3. Struktury
-Typ bardzo podobny do klasy. Możemy w nim zadeklarować zmienne, metody, pola, właściwości. W odróżnieniu od klas jest to jednak typ wartościowy. Oznacza to, że będzie przechowywany na stosie, w stałym miejscu pamięci, a ilość zajmowanego przez niego miejsca w pamięci jest zawsze taka sama, nie zależnie ilu zmiennym struktury przypiszemy jakieś wartości. Strukturę tworzymy podając modyfikator dostępu, słowo kluczowe `struct` nazwę nowej struktury, a w klamrach ciało struktury (zmienne, metody itd.), np.:
+Typ bardzo podobny do klasy. Możemy w nim zadeklarować zmienne (tzw. pola), metody, właściwości. W odróżnieniu od klas jest to jednak typ wartościowy. Oznacza to, że będzie przechowywany na stosie, w stałym miejscu pamięci, a ilość zajmowanego przez niego miejsca w pamięci jest zawsze taka sama, nie zależnie ilu zmiennym struktury przypiszemy jakieś wartości. Strukturę tworzymy podając modyfikator dostępu, słowo kluczowe `struct` nazwę nowej struktury, a w klamrach ciało struktury (zmienne, metody itd.), np.:
 ```csharp =
 public struct SomeStructure
 {
@@ -162,7 +163,7 @@ public struct SomeStructure
   public SomeStructure(int number, string name)
   {
     this.no = number;
-    tis.name = name;
+    this.name = name;
   }
   public string GetNameIfNo(int number)
   {
@@ -173,3 +174,37 @@ public struct SomeStructure
   }
 }
 ```
+
+## Wartości domyślne typów w C#
+Wartość domyślna jest to wartość, jaką przyjmuje niezainicjalizowana zmienna danego typu. Możemy ją również jawnie przypisać używając domyślnego operatora lub domyślnego literału.
+
+### Domyślny operator (_default operator_)
+Służy do uzyskania wartości domyślnej dla danego typu.
+
+```csharp =
+typ nazwaZmiennej = default(typ);
+
+// np. dla typu int
+int a = default(int);
+```
+
+### Domyślny literał (_default literal_)
+Służy do (jawnej) inicjalizacji zmiennej wartością domyślną jej typu.
+```csharp =
+typ nazwaZmiennej = default;
+
+//np. dla typu int
+int a = default;
+```
+
+### Wartości domyślne dla poszczególnych typów
+| Typ | Wartość domyślna |
+| :--- | :---: |
+| Jakikolwiek typ referencyjny | `null` |
+| Wbudowane typy liczbowe całkowite (`int`, `long` itd.) | `0` (zero) |
+| Wbudowane typy zmiennoprzecinkowe (`float`, `double`, `decimal`) | `0` (zero) |
+| `bool` | `false` |
+| `char` | `'\0'` (U+0000) |
+| `enum` | wartość wyrażenia `(E)0`, gdzie `E` to identyfikator enuma (nazwa) |
+| `struct` (struktura) | wartość uzyskana w wyniku przypisania wszystkim polom typów wartościowych odpowiadających im wartości domyślnych, a polom typów referencyjnych wartości `null` |
+| Wszystkie typy wartościowe nullowalne (typy wartościowe mogące przyjąć wartość `null` np. `int?`, `bool?` itd.) | Instancja, dla której właściwość `HasValue` ma wartość `false`, a właściwość `Value` jest niezdefiniowana (`undefined`). Jest znana również jako wartość `null` typu wartościowego nullowalnego (dopuszczającego wartość `null`) |
