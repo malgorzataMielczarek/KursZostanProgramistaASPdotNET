@@ -118,4 +118,8 @@ Kiedy skończymy tworzyć nowe projekty, podzielimy je na foldery i utworzymy ba
 ### 1. Zmiana namespace'u
 Na górze pliku zmieniamy namespace z nazwy projektu z której plik pochodzi na nazwę projektu do którego został przeniesiony.
 ### 2. Dodanie dziedziczenia
-Do naszych serwisów i modeli dodajemy dziedziczenie po nowozaimplementowanych klasach bazowych (serwisy - `BaseService`, modele - `BaseEntity`).
+Do naszych serwisów i modeli dodajemy dziedziczenie po nowozaimplementowanych klasach bazowych (serwisy - `BaseService<NazwaOdpowiedniegoModelu>`, modele - `BaseEntity`).
+### 3. Dodanie właściwych usingów
+Na górze plików dodajemy odpowiednie pozycje using potrzebne do korzystania z nowo utworzonych plików.
+### 4. Aktualizacja klas uwzględniająca klasy bazowe
+Z klas pochodnych usuwamy właściwości i metody, które zaimplementowaliśmy w nowoutworzonych klasach bazowych. Jeżeli chcemy natomiast nadpisać któreś z metod, to dodajemy odpowiednie słowa kluczowe.
