@@ -4,7 +4,7 @@ W tej lekcji zajmiemy się refaktoryzacją naszego programu, utworzonego w poprz
 2. Wykorzystanie interfejsów - utworzymy interfejsy dla serwisów
 3. Wykorzystanie dziedziczenia i klas abstrakcyjnych - utworzenie bazowego serwisu i modelu
 ## 1. Podzielić solucję na projekty
-Aby aplikacja była łatwiejsza w zarządzaniu i dalszym rozwoju, przeniesiemy część jej funkcjonalności do odrębnych projektów. Nie będą to jednak projekty konsolowe, a biblioteki klas (_Class Library (Standard .NET)_). Są to projekty, które nie kompilują się do pliku wykonywalnego (_.exe_) i co za tym idzie nie mogą funkcjonować jako samodzielne programy. Kompilują się natomiast do plików _.dll_, czyli właśnie bibliotek, i służą do implementacji funkcjonalności potrzebnych w programie. Takie biblioteki można później ponownie wykorzystywać w kolejnych aplikacjach. Utworzymy trzy biblioteki i usuniemy przykładową klasę z każdej z nich.
+Aby aplikacja była łatwiejsza w zarządzaniu i dalszym rozwoju, przeniesiemy część jej funkcjonalności do odrębnych projektów. Nie będą to jednak projekty konsolowe, a biblioteki klas (_Class Library (Standard .NET)_). Są to projekty, które nie kompilują się do pliku wykonywalnego (_.exe_) i co za tym idzie nie mogą funkcjonować jako samodzielne programy. Kompilują się natomiast do plików _.dll_, czyli właśnie bibliotek, i służą do implementacji funkcjonalności potrzebnych w programie. Takie biblioteki można później ponownie wykorzystywać w kolejnych aplikacjach. Utworzymy dwie biblioteki i usuniemy przykładową klasę z każdej z nich.
 ### 1. NazwaAplikacji.App
 Po utworzeniu projektu i usunięci przykładowej klasy, jeszcze zanim utworzymy własną klasę, zajmijmy się zależnościami między projektami (ang. _dependencies_). Wiemy na pewno, że nasz główny projekt będzie korzystał z tego projektu. W naszym _Solution Explorer_ kliknijmy więc prawym przyciskiem myszki na _Dependencies_ naszego głównego projektu i wybierzmy _Add Project Reference..._. Otworzy nam się _Reference Manager_. Powinien automatycznie otworzyć się on na zakładce _Projects_ -> _Solution_, czyli liście projektów w naszej solucji (z wyłączeniem projektu, dla którego menadżer otworzyliśmy). Na liście zaznaczamy check box naszego nowo utworzonego projektu, dodając do niego referencję (informację dla kompilatora, że w danym projekcie będziemy korzystać z innego projektu), i klikamy _OK_.
 
@@ -13,9 +13,109 @@ W tym projekcie znajdować się będzie cała logika naszej aplikacji. Umieścim
 Podzielmy jeszcze projekt na foldery:
 #### 1. Abstract
 Tu znajdą się interfejsy dla serwisów.
-#### 2. Concrete
-
+#### 2.Common
+Tu umieścimy bazowy serwis, implementujący interfejs bazowy dla serwisów.
+#### 3. Concrete
+Tu znajdą się konkretne implementacje serwisów.
 ### 2. NazwaAplikacji.Domain
-W tym projekcie znajdować się będą wszystkie modele (klasy reprezentujące obiekt, który w przyszłości mógłby być obiektem bazodanowym)
+W tym projekcie znajdować się będą wszystkie modele (klasy reprezentujące obiekt, który w przyszłości mógłby być obiektem bazodanowym).
+
+Podzielmy projekt na foldery według podobnej zasady jak powyższy.
+#### 1. Common
+Tu umieścimy klasę bazową dla modeli.
+#### 2. Entity
+Tu będą się znajdywać implementacje konkretnych modeli.
 ## 2. Dodać interfejsy dla serwisów
+W projekcie _NazwaAplikacji.App_ w folderze _Abstract_ utwórzmy interfejsy dla naszych serwisów.
+### 1. `IService<T>`
+Zacznijmy od utworzenia interfejsu bazowy dla wszystkich serwisów. Będzie to publiczny (`public`) interfejs generyczny. Umieścimy w nim listę elementów typu `T` oraz podstawowe metody zwracające wszystkie elementy listy, pozwalające na dodanie, aktualizację lub usunięcie elementu listy.
+#### Przykład
+```csharp =
+namespace NazwaAplikacji.App.Abstract
+{
+    public interface IService<T>
+    {
+        List<T> Items { get; set; }
+        
+        List<T> GetAllItems();      // zwracanie wszystkich elementów listy
+        int AddItem(T item);        // dodawanie elementu do listy
+        int UpdateItem(T item);     // aktualizacja elementu znajdującego się na liście
+        void RemoveItem(T item);    // usunięcie elementu z listy
+    }
+}
+```
 ## 3. Dodać bazowy serwis i bazowy model
+W naszej aplikacji utwórzmy bazowy serwis, po którym dziedziczyć będą inne klasy serwisowe, implementujące logikę związaną z konkretnym modelem. Następnie stwórzmy również bazowy model, czyli klasę będącą szkieletem dla wszystkich klas implementujących modele bazodanowe.
+### `BaseService`
+W projekcie _NazwaAplikacji.App_ w folderze _Common_ stwórzmy plik _BaseService.cs_ w którym umieścimy publiczną klasę generyczną będącą klasą bazową dla serwisów i implementującą bazowy interfejs (`IService<T>`). Tu możemy już stworzyć podstawowy konstruktor, w którym zainicjalizujemy naszą listę. Możemy również zaimplementować podstawowe metody.
+#### Przykład
+W przykładzie będziemy korzystać z utworzonego poniżej modelu bazowego. Ponieważ serwisy będą obsługiwać konkretne modele, więc chcielibyśmy zaznaczyć to w serwisie bazowym. Ponieważ jest to klasa generyczna, więc typ `T` będzie nam wskazywać, który model obsługujemy. `T` musi więc być typu `BaseEntity` (lub jakiejkolwiek klasy po nim dziedziczącej). Umieśćmy więc w definicji klauzulę `where`. Aby móc korzystać w naszym projekcie _NazwaAplikacji.App_ z elementów projektu  _NazwaAplikacji.Domain_, musimy w tym pierwszym dodać referencję do tego drugiego. Możemy to zrobić za pośrednictwem _Dependencies_ projektu _NazwaAplikacji.App_, analogicznie jak poprzednio, lub podczas pisania kodu, korzystając z inteligentnych podpowiedzi. Kiedy napiszemy nazwę klasy `BaseEntity` przed dodaniem referencji, Visual Studio zaznaczy nam błąd kompilacji, gdyż taka klas nie jest mu znana. Wówczas możemy uruchomić, na będzie, inteligentne podpowiedzi, np. korzystając ze skrótu klawiszowego **Alt + Enter** (lub **Ctrl + .**) i wybrać z listy _Add reference to 'NazwaAplikacji.Domain'._. Wybranie tej opcji spowoduje automatyczne dodanie odpowiedniej pozycji w _Dependencies_ projektu.
+```csharp =
+namespace NazwaAplikacji.App.Common
+{
+    public class BaseService<T> : IService<T> where T : BaseEntity
+    {
+        public List<T> Items { get; set; }
+        public BaseService()
+        {
+            Items = new List<T>();
+        }
+        public int AddItem(T item)
+        {
+            Items.Add(item);
+            return item.Id;
+        }
+        public List<T> GetAllItems()
+        {
+            return Items;
+        }
+        public void RemoveItem(T item)
+        {
+            Items.Remove(item);
+        }
+        public int UpdateItem(T item)
+        {
+            var entity = Items.FirstOrDefault(p => p.Id == item.Id);
+            if(entity != null)
+            {
+                entity = item;
+            }
+            return entity.Id;
+        }
+    }
+}
+```
+### `BaseEntity`
+W projekcie _NazwaAplikacji.Domain_ w folderze _Common_ stwórzmy plik _BaseEntity.cs_. Umieśćmy w nim publiczną klasę, która będzie klasą bazową dla wszystkich modeli (wszystkie modele będą po niej dziedziczyć).
+#### Przykład
+W przykładzie skorzystamy z utworzonej poniżej klasy `AuditableModel`. Ponieważ chcemy, aby wszystkie modele zawierały zdefiniowane w niej pola, więc nasz model bazowy będzie po niej dziedziczył.
+```csharp =
+namespace NazwaAplikacji.Domain.Common
+{
+    public class BaseEntity : AuditableModel
+    {
+        public int Id { get; set; }
+    }
+}
+```
+### `AuditableModel`
+W projekcie _NazwaAplikacji.Domain_ w folderze _Common_ stwórzmy jeszcze jedną klasę, `AuditableModel`. Mówiliśmy już o niej przy okazji omawiania dziedziczenia (Tydzień 3., lekcja 4.). Przypomnijmy. Jest to popularna klasa bazowa dla modeli, często tworzona w aplikacjach webowych. Ponieważ modele służą najczęściej do odzwierciadlania tabel w bazie danych, a większość z nich zawiera współcześnie informacje o tym kto i kiedy utworzył/zmodyfikował dany rekord, to często tworzy się odrębną klasę przechowującą takie informacje, z której potem mogą korzystać nasze modele (mogą po niej dziedziczyć).
+#### Przykład
+```csharp =
+namespace NazwaAplikacji.Domain.Common
+{
+    public class AuditableModel
+    {
+        public int CreatedById { get; set; }            // kto utworzył rekord
+        public DateTime CreatedDateTime { get; set; }   // kiedy rekord został utworzony
+        public int? ModifiedById { get; set; }          // jezeli rekord zostal zmodyfikowany, to kto go zmodyfikowal (jezeli nie zostal zmodyfikowany to null, dlatego typ int?, czyli nullowalny int)
+        public DateTime? ModifiedDateTime { get; set; } // jezeli rekord zostal zmodyfikowany, to kiedy (jezeli nie zostal zmodyfikowany to null, dlatego typ DateTime?, czyli nullowalna struktura DateTime)
+    }
+}
+```
+## Uporządkowanie wcześniej utworzonych klas
+Kiedy skończymy tworzyć nowe projekty, podzielimy je na foldery i utworzymy bazowe klasy i interfejsy należałoby dopasować utworzone wcześniej klasy do nowego porządku. Jeżeli jakaś klasa niema jeszcze własnego pliku, to go stwórzmy. Umieśćmy zaimplementowane serwisy w folderze _Concrete_ projektu _NazwaAplikacji.App_, a modele w folderze _Entity_ projektu _NazwaAplikacji.Domain_. Przenosząc pliki z jednego projektu do drugiego, musimy pamiętać o kilku rzeczach:
+### 1. Zmiana namespace'u
+Na górze pliku zmieniamy namespace z nazwy projektu z której plik pochodzi na nazwę projektu do którego został przeniesiony.
+### 2. Dodanie dziedziczenia
+Do naszych serwisów i modeli dodajemy dziedziczenie po nowozaimplementowanych klasach bazowych (serwisy - `BaseService`, modele - `BaseEntity`).
