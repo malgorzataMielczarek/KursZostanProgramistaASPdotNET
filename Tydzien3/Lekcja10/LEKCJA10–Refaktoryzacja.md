@@ -5,25 +5,27 @@ W tej lekcji zajmiemy się refaktoryzacją naszego programu, utworzonego w poprz
 3. Wykorzystanie dziedziczenia i klas abstrakcyjnych - utworzenie bazowego serwisu i modelu
 ## 1. Podzielić solucję na projekty
 Aby aplikacja była łatwiejsza w zarządzaniu i dalszym rozwoju, przeniesiemy część jej funkcjonalności do odrębnych projektów. Nie będą to jednak projekty konsolowe, a biblioteki klas (_Class Library (Standard .NET)_). Są to projekty, które nie kompilują się do pliku wykonywalnego (_.exe_) i co za tym idzie nie mogą funkcjonować jako samodzielne programy. Kompilują się natomiast do plików _.dll_, czyli właśnie bibliotek, i służą do implementacji funkcjonalności potrzebnych w programie. Takie biblioteki można później ponownie wykorzystywać w kolejnych aplikacjach. Utworzymy dwie biblioteki i usuniemy przykładową klasę z każdej z nich.
-### 1. NazwaAplikacji.App
+### 1. _NazwaAplikacji.App_
 Po utworzeniu projektu i usunięci przykładowej klasy, jeszcze zanim utworzymy własną klasę, zajmijmy się zależnościami między projektami (ang. _dependencies_). Wiemy na pewno, że nasz główny projekt będzie korzystał z tego projektu. W naszym _Solution Explorer_ kliknijmy więc prawym przyciskiem myszki na _Dependencies_ naszego głównego projektu i wybierzmy _Add Project Reference..._. Otworzy nam się _Reference Manager_. Powinien automatycznie otworzyć się on na zakładce _Projects_ -> _Solution_, czyli liście projektów w naszej solucji (z wyłączeniem projektu, dla którego menadżer otworzyliśmy). Na liście zaznaczamy check box naszego nowo utworzonego projektu, dodając do niego referencję (informację dla kompilatora, że w danym projekcie będziemy korzystać z innego projektu), i klikamy _OK_.
 
 W tym projekcie znajdować się będzie cała logika naszej aplikacji. Umieścimy w niej wszystkie serwisy (klasy serwisowe) służące do sterowania naszą aplikacją.
 
 Podzielmy jeszcze projekt na foldery:
-#### 1. Abstract
-Tu znajdą się interfejsy dla serwisów.
-#### 2.Common
+#### 1. _Abstract_
+Tu znajdą się interfejsy dla serwisów. Serwisy będą zajmować się manipulacją naszych obiektów entity. Ich dodawaniem, usuwaniem, aktualizacją, czy zwracaniem.
+#### 2. _Common_
 Tu umieścimy bazowy serwis, implementujący interfejs bazowy dla serwisów.
-#### 3. Concrete
+#### 3. _Concrete_
 Tu znajdą się konkretne implementacje serwisów.
-### 2. NazwaAplikacji.Domain
+#### 3. _Managers_
+Tu znajdą się nasze menadżery. Menadżery, są to swoiste kontrolery, decydujące co użytkownik chce zrobić i na tej podstawie wykonujące odpowiednie akcje (być może wywołujące odpowiednie metody z serwisu). W nich będą znajdywać się wszystkie kroki decyzyjne. Być może będzie to wyświetlenie dodatkowego menu i wybranie odpowiedniej opcji, czy przekazywanie do serwisu odpowiedniego obiektu, tak, aby dodać go do listy. Menadżery będziemy tworzyć dla konkretnych modeli.
+### 2. _NazwaAplikacji.Domain_
 W tym projekcie znajdować się będą wszystkie modele (klasy reprezentujące obiekt, który w przyszłości mógłby być obiektem bazodanowym).
 
 Podzielmy projekt na foldery według podobnej zasady jak powyższy.
-#### 1. Common
+#### 1. _Common_
 Tu umieścimy klasę bazową dla modeli.
-#### 2. Entity
+#### 2. _Entity_
 Tu będą się znajdywać implementacje konkretnych modeli.
 ## 2. Dodać interfejsy dla serwisów
 W projekcie _NazwaAplikacji.App_ w folderze _Abstract_ utwórzmy interfejsy dla naszych serwisów.
@@ -59,6 +61,19 @@ namespace NazwaAplikacji.App.Common
         public BaseService()
         {
             Items = new List<T>();
+        }
+        public int GetLastId() //pobierz najwyższe Id n liście
+        {
+            int lastId;
+            if(Items.Any()) //list is not empty
+            {
+                lastId = Items.OrderBy(p => p.Id).LastOrDefault().Id; //sort list and get Id of the last element
+            }
+            else //no elements on the list
+            {
+                lastId = 0;
+            }
+            return lastId;
         }
         public int AddItem(T item)
         {
@@ -116,10 +131,20 @@ namespace NazwaAplikacji.Domain.Common
 ## Uporządkowanie wcześniej utworzonych klas
 Kiedy skończymy tworzyć nowe projekty, podzielimy je na foldery i utworzymy bazowe klasy i interfejsy należałoby dopasować utworzone wcześniej klasy do nowego porządku. Jeżeli jakaś klasa niema jeszcze własnego pliku, to go stwórzmy. Umieśćmy zaimplementowane serwisy w folderze _Concrete_ projektu _NazwaAplikacji.App_, a modele w folderze _Entity_ projektu _NazwaAplikacji.Domain_. Przenosząc pliki z jednego projektu do drugiego, musimy pamiętać o kilku rzeczach:
 ### 1. Zmiana namespace'u
-Na górze pliku zmieniamy namespace z nazwy projektu z której plik pochodzi na nazwę projektu do którego został przeniesiony.
+Na górze pliku zmieniamy namespace z nazwy projektu z której plik pochodzi na nazwę projektu do którego został przeniesiony, kropkę i nazwę folderu.
 ### 2. Dodanie dziedziczenia
 Do naszych serwisów i modeli dodajemy dziedziczenie po nowozaimplementowanych klasach bazowych (serwisy - `BaseService<NazwaOdpowiedniegoModelu>`, modele - `BaseEntity`).
 ### 3. Dodanie właściwych usingów
 Na górze plików dodajemy odpowiednie pozycje using potrzebne do korzystania z nowo utworzonych plików.
 ### 4. Aktualizacja klas uwzględniająca klasy bazowe
-Z klas pochodnych usuwamy właściwości i metody, które zaimplementowaliśmy w nowoutworzonych klasach bazowych. Jeżeli chcemy natomiast nadpisać któreś z metod, to dodajemy odpowiednie słowa kluczowe.
+Z klas pochodnych usuwamy właściwości i metody, które zaimplementowaliśmy w nowoutworzonych klasach bazowych. Jeżeli chcemy natomiast nadpisać któreś z metod, to dodajemy odpowiednie słowa kluczowe. Dopasowujemy nazwy klas i właściwości.
+## Dodanie folderu _Helpers_ w głównym projekcie aplikacji
+W głównym projekcie aplikacji, w razie potrzeby, możemy utworzyć dodatkowy folder _Helpers_. Możemy w nim przechowywać elementy pomocnicze dla naszej aplikacji. Mogą to być np. utworzone na potrzeby tej aplikacji enumy, czy klasy, porządkujące nam wyświetlanie w konsoli.
+## Poprawa metody `Main`
+Po zakończeniu porządkowania klas, musimy poprawić kod w klasie `Main` naszej aplikacji, uwzględniając wprowadzone zmiany.
+### Uprośćmy nasz kod
+Metoda `Main` powinna zawierać możliwie najmniej elementów. Powinny być one za to jak najbardziej podstawowe.
+#### 1. Korzystajmy z klas bazowych.
+Gdzie to tylko możliwe, korzystajmy z klas bazowych, aby zwiększyć elastyczność naszego kodu.
+#### 2. Przenieśmy co można do innych klas
+Jeśli jest to możliwe, to kod dotyczący konkretnej klasy, przenieśmy do tej właśnie klasy. Stwórzmy np. odpowiednie konstruktory i wywoływane w nich metody do wypełniania obiektów klasy danymi inicjalizacyjnymi. Wykorzystajmy menadżery. Przenieśmy do nich interakcję z użytkownikiem.
