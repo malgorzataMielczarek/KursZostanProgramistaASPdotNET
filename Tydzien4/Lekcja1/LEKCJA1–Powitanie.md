@@ -1,0 +1,2 @@
+# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-1-powitanie/)
+W tym tygodniu nauczymy się tworzyć testy jednostkowe. Jest to bardzo ważne, gdyż pozwala na wyłapanie wielu błędów na wczesnym etapie tworzenia oprogramowania. Dodatkowo zmniejsza czas jaki spędzimy nad debugowaniem naszej aplikacji. Pod koniec tygodnia dodamy takie testy do naszej aplikacji.
