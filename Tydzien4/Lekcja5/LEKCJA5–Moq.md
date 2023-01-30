@@ -56,6 +56,9 @@ Kod całego testu będzie więc wyglądał następująco:
 
 ```csharp =
 using NazwaAplikacji.Domain.Entity;
+using NazwaAplikacji.App.Abstract;
+using NazwaAplikacji.App.Concrete;
+using NazwaAplikacji.App.Managers;
 using Xunit;
 
 namespace NazwaAplikacji.Tests
