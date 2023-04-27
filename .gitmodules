@@ -10,3 +10,6 @@
 [submodule "Tydzien2/Lekcja7/ZadaniaWarunki"]
 	path = Tydzien2/Lekcja7/ZadaniaWarunki
 	url = https://github.com/malgorzataMielczarek/ZadaniaWarunki.git
+[submodule "Tydzien2/Lekcja8/ZadaniaPetle"]
+	path = Tydzien2/Lekcja8/ZadaniaPetle
+	url = https://github.com/malgorzataMielczarek/ZadaniaPetle.git
