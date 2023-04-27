@@ -1,6 +1,6 @@
 # Kurs "Zostań programistą ASP.NET" - notatki
-## [Spis treści](#spis-treści-1)
-### [Tydzien1](#tydzien1-1)
+## Spis treści
+### Tydzien1
 #### [BONUS 1 – Tworzenie Repozytorium GitHub](#bonus-1--tworzenie-repozytorium-github-1)
 #### [BONUS 2 – Podstawy pracy z GITem](#bonus-2--podstawy-pracy-z-gitem-1)
 #### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-1)
@@ -16,7 +16,7 @@
 #### [LEKCJA 11 – Debugowanie](#lekcja-11--debugowanie-1)
 #### [LEKCJA 12 – Błędy początkujących](#lekcja-12--błędy-początkujących-1)
 #### [LEKCJA 13 – Praca domowa](#lekcja-13--praca-domowa-1)
-### [Tydzien2](#tydzien2-1)
+### Tydzien2
 #### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-2)
 #### [LEKCJA 2 – Zmienne i stałe](#lekcja-2--zmienne-i-stałe-1)
 #### [LEKCJA 3 – Typy wartościowe](#lekcja-3--typy-wartościowe-1)
@@ -37,7 +37,7 @@
 #### [LEKCJA 18 – Piszemy aplikację](#lekcja-18--piszemy-aplikację-1)
 #### [LEKCJA 19 – Błędy początkujących](#lekcja-19--błędy-początkujących-1)
 #### [LEKCJA 20 – Praca domowa](#lekcja-20--praca-domowa-1)
-### [Tydzien3](#tydzien3-1)
+### Tydzien3
 #### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-3)
 #### [LEKCJA 2 – Konstruktory](#lekcja-2--konstruktory-1)
 #### [LEKCJA 3 – Przeciążenia](#lekcja-3--przeciążenia-1)
@@ -50,7 +50,7 @@
 #### [LEKCJA 10 – Refaktoryzacja](#lekcja-10--refaktoryzacja-1)
 #### [LEKCJA 11 – Błędy początkujących](#lekcja-11--błędy-początkujących-1)
 #### [LEKCJA 12 – Praca domowa](#lekcja-12--praca-domowa-1)
-### [Tydzien4](#tydzien4-1)
+### Tydzien4
 #### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-4)
 #### [LEKCJA 2 – Projekt z testami](#lekcja-2--projekt-z-testami-1)
 #### [LEKCJA 3 – Twój pierwszy test](#lekcja-3--twój-pierwszy-test-1)
@@ -62,7 +62,7 @@
 #### [LEKCJA 9 – Testy integracyjne](#lekcja-9--testy-integracyjne-1)
 #### [LEKCJA 10 – Błędy początkujących](#lekcja-10--błędy-początkujących-1)
 #### [LEKCJA 11 – Praca domowa](#lekcja-11--praca-domowa-1)
-### [Tydzien5](#tydzien5-1)
+### Tydzien5
 #### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-5)
 #### [LEKCJA 2 – Kolekcje w .NET](#lekcja-2--kolekcje-w-net-1)
 #### [LEKCJA 3 – IQueryable i IEnumerable](#lekcja-3--iqueryable-i-ienumerable-1)
