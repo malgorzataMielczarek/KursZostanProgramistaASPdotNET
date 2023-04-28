@@ -68,7 +68,8 @@
 #### [LEKCJA 3 – IQueryable i IEnumerable](#lekcja-3--iqueryable-i-ienumerable-1)
 #### [LEKCJA 4 – LINQ podstawy](#lekcja-4--linq-podstawy-1)
 #### [LEKCJA 5 – Manipulacje plikami](#lekcja-5--manipulacje-plikami-1)
-# [BONUS 1 – Tworzenie Repozytorium GitHub](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/bonus-1-tworzenie-repozytorium-github/)
+
+## [BONUS 1 – Tworzenie Repozytorium GitHub](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/bonus-1-tworzenie-repozytorium-github/)
 Pracę z GitHubem rozpoczynamy od założenia konta na stronie [github.com](https://github.com/) poprzez kliknięcie przycisku ___Sign up___. Następnie wypełniamy formularz postępując zgodnie z instrukcjami pojawiającymi się na ekranie. Po założeniu konta możemy utworzyć nasze pierwsze repozytorium.
 
 __Repozytorium__ - czyli po prostu nasz projekt, a dokładniej zapis składających się na niego plików, wraz z nanoszonymi na nie zmianami. Można powiedzieć, że jest to historia powstawania naszego projektu.
@@ -89,7 +90,7 @@ Tworząc projekty w Visual Studio najłatwiej zarządzać repozytoriami poprzez 
     * Na końcu możemy wybrać opcję _Private repository_. Jej zaznaczenie spowoduje, że nasze zdalne repozytorium będzie prywatne, czyli widoczne i dostępne tylko dla nas i użytkowników z którymi je współtworzymy. Inni użytkownicy nie będą mogli go znaleźć. Odznaczenie tej opcji spowoduje utworzenie repozytorium publicznego, czyli takiego do którego dostęp mają wszyscy.
 5. Po wypełnieniu wszystkich pól klikamy przycisk _Create and Push_. Spowoduje to utworzenie repozytorium lokalnego i zdalnego, i zapisanie w plików naszego projektu, w takim stanie, w jakim są obecnie.
 
-# [BONUS 2 – Podstawy pracy z GITem](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/bonus-2-podstawy-pracy-z-gitem/)
+## [BONUS 2 – Podstawy pracy z GITem](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/bonus-2-podstawy-pracy-z-gitem/)
 W Visual Studio możemy nie tylko tworzyć repozytoria, ale również na bieżąco nimi zarządzać. Jeśli nasz projekt jest połączony z repozytorium możemy śledzić jakie zmiany wprowadziliśmy od czasu jego ostatniego zapisania w repozytorium.
 
  W używanej ostatnio zakładce _Git Changes_ będziemy mieli wypisane wszystkie zmienione pliki. Będą one miały odpowiednie statusy. Status można sprawdzić najeżdżając myszką na nazwę pliku lub patrząc na oznaczenie literowe znajdujące się na końcu linii.
@@ -125,36 +126,36 @@ Możemy teraz zrobić push klikając widoczną na rysunku powyżej ikonkę ze st
 
 Repozytoria mają tzw. branche (ang. _branch_ - gałąź). Główna gałąź projektu najczęściej nazywana jest _master_, jeżeli tworzymy nowe repozytorium przy pomocy Visual Studio lub _main_, jeżeli robimy to na stronie github.com. Branch jest to można powiedzieć odmiana/wariant naszego projektu. Jeżeli planujemy wprowadzić w projekcie jakieś duże zmiany, albo przetestować jakieś rozwiązanie to dobrą praktyką jest utworzenie nowej gałęzi i przeprowadzanie tych zmian właśnie w niej. Oznacza to, że od pewnego momentu nasz projekt będzie mógł składać się z różnych plików lub te same pliki będą mogły mieć różną zawartość w zależności od tego na który branchu będziemy pracować. Dzięki temu możemy mieć w jednym miejscu działający program, a w drugim swobodnie go modyfikować i ulepszać bez obaw, że coś zepsujemy. Jeżeli przeprowadzone przez nas zmiany uzmamy za sukces, możemy gałęzie połączyć i ponownie mieć tylko jedną wersję programu.
 
-# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-1-powitanie/)
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-1-powitanie/)
 Zaczynam Kurs Szkoły Dotneta [Zostań programistą ASP.NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/).
 W takich plikach będę zamieszczać swoje notatki i przemyślenia dotyczące kolejnych lekcji.
 
-# [LEKCJA 2 – Plan gry](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-3-plan-gry/)
+## [LEKCJA 2 – Plan gry](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-3-plan-gry/)
 * Tydzień 1 – Wprowadzenie, pierwszy program, wybór projektów
 * Tygodnie 2-4 – Aplikacja konsolowa – nauka podstaw składni języka C# (zmienne, pętle, warunki itd.)
 * Tygodnie 5-8 – Aplikacja internetowa w ASP.NET Core MVC
 
-# [LEKCJA 3 – Jak studiować ten kurs](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-4-jak-studiowac-ten-kurs/)
+## [LEKCJA 3 – Jak studiować ten kurs](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-4-jak-studiowac-ten-kurs/)
 Kurs należy studiować po kolei, nawet jeżeli coś już się umie. Pomaga to w usystematyzowaniu swojej wiedzy i nauczeniu się dobrych praktyk. Co więcej ułatwia to zrozumienie i zmniejsza prawdopodobieństwo pogubienia się w dalszej części kursu. Należy również wykonywać wszystkie zadania domowe umieszczone na końcu każdego tygodnia. Po ich zrobieniu publikuje się je na przeznaczonej do tego grupie.
 
-# [LEKCJA 4 – Co musisz umieć zanim przejdziesz dalej](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-5-czym-jest-net/)
+## [LEKCJA 4 – Co musisz umieć zanim przejdziesz dalej](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-5-czym-jest-net/)
 Co musisz umieć zanim przejdziesz dalej? 	–	 **Nic**:bangbang: :scream_cat:
 Wszystkie potrzebne informacje zostaną podane w kursie: w lekcjach video lub w dodatkowych materiałach pdf do których linki umieszczone są w opisach pod filmikami.
 
-# [LEKCJA 5 – Czym jest .NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-6-co-musisz-umiec-zanim-przejdziesz-dalej/)
-### Co to jest .NET?
+## [LEKCJA 5 – Czym jest .NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-6-co-musisz-umiec-zanim-przejdziesz-dalej/)
+#### Co to jest .NET?
 .NET jest technologią cross-platformową służącą do tworzenia oprogramowania.
 
 Technologia cross-platformowa to technologia pozwalająca na uruchamianie tworzonego oprogramowania na różnych systemach operacyjnych takich jak np. Windows, Linux, czy Mac OS.
 
-### W jakim języku się w nim programuje?
+#### W jakim języku się w nim programuje?
 W .NETcie  można programować przy pomocy różnych języków. Głównie są to:
 * C# – najbardziej powszechny i najczęściej stosowany język technologii .NET. Właśnie nim zajmiemy się w kursie;
 * F# – rzadziej stosowany język, gdyż jest to język funkcyjny;
 * Visual Basic – nowsza wersja języka BASIC;
 * TypeScript – nadzbiór języka JavaScript umożliwiający opcjonalne statyczne typowanie (kod sprawdzany podczas kompilacji), kompilowany do języka JavaScript;
 
-### Jakie aplikacje można za jego pomocą tworzyć?
+#### Jakie aplikacje można za jego pomocą tworzyć?
 Można przy jej pomocy tworzyć aplikacje:
 1. desktopowe, <br/>
         Aplikacje desktopowe, czyli programy instalowane i uruchamiane bezpośrednio na komputerze użytkownika. Są to zazwyczaj tzw. aplikacje okienkowe popularne w systemach Windows.
@@ -174,10 +175,10 @@ Można przy jej pomocy tworzyć aplikacje:
 6. związane z IoT (ang. Internet of Things – internet rzeczy) <br/>
         IoT jest to koncepcja, wedle której jednoznacznie identyfikowalne przedmioty mogą pośrednio albo bezpośrednio gromadzić, przetwarzać lub wymieniać dane za pośrednictwem instalacji elektrycznej inteligentnej KNX lub sieci komputerowej. Stosowana np. w rozwiązaniach inteligentnych domów.
 
-###
+####
 .NET jest technologią firmy Microsoft, aktywnie przez nią wspieraną i rozwijaną. Posiada ponadto duże środowisko używających jej i rozwijających ją programistów. Dzięki temu łatwiej znaleźć pomoc przy pisaniu programów, a sama technologia nie prędko wyjdzie z użytku.
 
-# [LEKCJA 6 – Wymagania (potrzebne oprogramowanie)](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-7-wymagania-potrzebne-oprogramowanie/)
+## [LEKCJA 6 – Wymagania (potrzebne oprogramowanie)](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-7-wymagania-potrzebne-oprogramowanie/)
 W tej lekcji pobieramy i instalujemy oprogramowanie z którego będziemy korzystać podczas wykonywania kursu. Będziemy korzystać z programów:
 * Visual Studio 2022 Community
 * Visual Studio Code
@@ -195,9 +196,9 @@ Powyższy link kieruje do strony z wymaganiami systemowymi oprogramowania Visual
 Jak zainstalować poszczególne programy można zobaczyć w filmie instruktarzowym z [tej lekcji](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-7-wymagania-potrzebne-oprogramowanie/) lub instrukcjach instalacji poszczególnych programów. Instalacja programów szczególnie Visual Studio zajmie sporo czasu.
 
 
-# [LEKCJA 7 – Twój pierwszy program](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-8-konwencje-pisania/)
+## [LEKCJA 7 – Twój pierwszy program](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-8-konwencje-pisania/)
 W tej lekcji piszemy pierwszy program w języku C#. Zgodnie z programistyczną tradycją będzie to Hello World. Stworzymy cross-platformową konsolową aplikację desktopową w technologii ASP.NET Core. Należy zwrócić uwagę aby wybrać wersję aplikacji konsolowej wspierającej wszyskie platformy (Window, Linux, macOS), w odróżnieniu od starszej wersji tworzonej przy użyciu .NET Framework, wspierającej jedynie platformę Windows. Zarówno tworzonemu projektowi (_Project name_) jak i solucji (_Solution name_) nadajemy nazwę HelloWorld. W nowszej wersji kursu używa się frameworka .NET 6.0. Poniżej opisany program był tworzony wcześniej jeszcze w starszej wersji 3.1.
-## 1. [Kod programu HelloWorld](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs)
+### 1. [Kod programu HelloWorld](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs)
 ```csharp = 
 using System;
 
@@ -221,8 +222,8 @@ Aplikacja tworzona w nowszych wersjach (począwszy od .NET 5 - C# 9) może używ
     Console.WriteLine("Hello World!");
     Console.WriteLine("Nazywam się Małgorzata Mielczarek.");
 ```
-## 2. Ogólna budowa programu:
-### :orange_circle: 1. [Sekcja „using”](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L1-L2)
+### 2. Ogólna budowa programu:
+#### :orange_circle: 1. [Sekcja „using”](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L1-L2)
 Część programu w której po słowie kluczowym _using_ umieszcza się nazwę biblioteki z których korzysta się w programie i kończy linię średnikiem. Jeżeli korzystamy z kilku bibliotek umieszczamy kilka takich linijek
 ```csharp
 using nazwa_biblioteki;
@@ -233,7 +234,7 @@ Później będziemy np. korzystać z takich bibliotek jak:
 * _System.Linq_ - do działania na kolekcjach
 * _System.Security_ - do kryptografii, zabespieczania aplikacji
 * _System.Text_ - do działania na tekście, formatowania JSON-a.
-### :large_blue_circle: 2. [Namespace](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L3-L13) – z ang. przestrzeń nazw
+#### :large_blue_circle: 2. [Namespace](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L3-L13) – z ang. przestrzeń nazw
 Miejsce skupiające podobne klasy (o podobnych funkcjonalnościach lub roli w programie). Służy głównie do uporządkowania nazw typów, klas, funkcji itd., aby zmniejszyć ryzyko  kolizji nazw. Na ogół jest ona związana z folderem w którym znajduje się dany plik. Pliki będące w tej samej przestrzeni nazw mogą bezpośrednio się z sobą komunikować. Żeby móc skorzystać z elementów należących do innego namespace-a trzeba natomiast dodać go do sakcji "using" (_using nazwa-namespace;_). [Przestrzeń nazw tworzy się](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L3) podając kolejno słowo kluczowe _namespace_ i nazwę, którą chcemy mu nadać. [Wnętrze przestrzeni nazw](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L4-L13) (klasy które zawiera) są ujęte w nawiasie klamrowym. Nawias klamrowy w języku C# oznacza zakres danego elementu, w tym wypadku przestrzeni nazw.
 ```csharp
 namespace Nazwa_przestrzeni_nazw
@@ -241,7 +242,7 @@ namespace Nazwa_przestrzeni_nazw
     //klasy w niej zawarte
 }
 ```
-### :green_circle: 3. [Klasa](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L5-L12)
+#### :green_circle: 3. [Klasa](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L5-L12)
 Częściowa lub całkowita definicja dla obiektu. Opisuje domyślny początkowy stan obiektów, oraz ich zachowanie itp. Jest to zbiór atrybutów i metod opisujący jakiś obiekt (zbiór obiektów). [Klasę tworzy się](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L5) podając kolejno modyfikator dostępu określający poziom dostępu klasy, słowo kluczowe _class_ i nazwę klasy. [Wnętrze klasy](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L6-L12), wszystkie atrybuty i metody ją tworzące, są ujęte wewnątrz nawiasu klamrowego (ciało klasy jest ograniczone nawiasem klamrowym).
 ```csharp
 modyfikator_dostępu class Nazwa_klasy
@@ -263,7 +264,7 @@ Zestaw (ang. _assembly_) – zbiór typów i źródeł działających razem i tw
 * _protected internal_ – określa, że dostęp jest ograniczony do bieżącego zestawu lub typów pochodzących od klasy zawierającej;
 * _private_ – określa, że dostęp jest ograniczony do typu zawierającego;
 * _private protected_ – określa, że dostęp jest ograniczony do zawierającej klasy lub typów pochodzących od klasy zawierającej w bieżącym zestawie.
-### :white_circle: 4. [Metoda](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L7-L11)
+#### :white_circle: 4. [Metoda](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L7-L11)
 Funkcja będąca częścią klasy. Zawiera logikę konkretnej czynności wykonywany przez obiekt danego typu. [Tworzy się ją](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L7) podając kolejno modyfikatory dostępu, następnie jeżeli chcemy aby klasa była statyczna wpisujemy słowo kluczowe _static_, po czym obowiązkowo musimy podać typ zmiennej zwracanej przez metodę, nazwę tworzonej metody i w nawiasie okrągłym parametry funkcji (dane przyjmowane przez metodę). Parametry określamy podając kolejno typ i nazwę każdego z nich. Jeżeli metoda przyjmuje więcej niż jeden parametr to oddzielamy je od siebie przecinkami. Wnętrze metody ([ciało metody](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L8-L11)) jest ujęte w nawiasach klamrowych.
 ```csharp
 modyfikatory_dostępu opcjonalnie_inne_modyfikatory typ_danych_zwracanych_przez_metodę nazwa_metody(/*opcjonalnie*/ typ_parametru_1 nazwa_parametru_1, typ_parametru_2 nazwa_parametru_2 ...)
@@ -273,91 +274,91 @@ modyfikatory_dostępu opcjonalnie_inne_modyfikatory typ_danych_zwracanych_przez_
 ```
 Metoda statyczna – metoda tworzona na etapie kompilacji programu. W programie istnieje tylko jedna instancja tej metody (nie ma oddzielnej kopii dla każdego obiektu klasy). W praktyce oznacza to m.in., że można ją wykonywać przed utworzeniem obiektu klasy do której ta metoda należy.  
 Metoda _Main_ (z ang. główna) – metoda odpowiedzialna za kontrolę wykonywania pracy programu. Każda wykonywalna aplikacja (np. aplikacja konsolowa) musi ją zawierać. Tu program rozpoczyna i kończy swoją  pracę. Jest punktem wejściowym w pliku .exe programu. Aplikacja może mieć tylko jeden punkt wejściowy. Jeżeli więc w kodzie programu mamy kilka metod _Main_ na etapie kompilacji musimy podać która z nich będzie tym punktem (metody te muszą jednak należeć do różnych klas). Najlepiej jednak, aby aplikacja posiadała tylko jedną metodę _Main_. Musi ona być statyczna. Deklaruje się ją wewnątrz klasy lub struktury. Metoda _Main_ może, lecz nie musi zwracać dane w postaci liczb całkowitych (mieszczących się w pewnym zakresie). Jeżeli nie chcemy aby metoda cokolwiek zwracała, przypisujemy jej typ _void_ (z ang. pusty). Natomiast gdy chcemy uzyskać dane (najczęściej dotyczące poprawności wykonania programu – kody błędów) na zakończenie działania programu, przypisujemy jej typ _int_ (ang. integer – liczba całkowita). Metoda _Main_ może nie przyjmować żadnych parametrów. Wówczas po nazwie wstawiamy pusty nawias okrągły. Może również pobierać argumenty z wywołania programu w wierszu poleceń. Dane te są pobierane w postaci tablicy ciągu znaków alfanumerycznych. Wówczas wewnątrz nawiasu okrągłego wpisujemy _string[] args_.
-### :red_circle: 5. [Polecenia](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L9-L10)
+#### :red_circle: 5. [Polecenia](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L9-L10)
 Czynności wykonywane kolejno przez program. Każde polecenie zakończone jest średnikiem. Takim poleceniem może [np.](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L9) być wywołanie funkcji bibliotecznej. Wówczas podajemy nazwę metody której chcemy użyć, wraz z całą ścieżką dostępu. Następnie znajduje się nawias okrągły, a po nim średnik kończący polecenie. Jeżeli wywołana przez nas metoda przyjmuje jakieś parametry, dane określonego typu (same dane bez typu) podajemy wewnątrz, znajdującego się po nazwie, nawiasu okrągłego. Jeżeli funkcja ma kilka parametrów to dane które chcemy przypisać do kolejnych parametrów oddzielamy od siebie przecinkami.
 Przez ścieżkę dostępu rozumie się nazwy klas w których zawarta jest metoda oddzielonych od siebie kropkami. Klasy podaje się od najbardziej zewnętrznej do wewnętrznej, do której bezpośrednio należy wywoływana funkcja. Następnie wstawia się kropkę i nazwę żądanej metody.
 
-## 3. Elementy użyte w programie
-### :orange_circle: 1. [Biblioteka System](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L1) – biblioteka systemowa
+### 3. Elementy użyte w programie
+#### :orange_circle: 1. [Biblioteka System](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L1) – biblioteka systemowa
 Jedna z podstawowych i najczęściej używanych bibliotek C#. Zawiera podstawowe klasy, definiuje podstawowe typy danych itd.
-### :large_blue_circle: 2. [Przestrzeń nazw _HelloWorld_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L3-L13)
+#### :large_blue_circle: 2. [Przestrzeń nazw _HelloWorld_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L3-L13)
 Utworzona przez nas przestrzeń nazw zawierającą cały kod naszego programu.
-### :green_circle: 3. [Klasa _Program_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L5-L12)
+#### :green_circle: 3. [Klasa _Program_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L5-L12)
 Jedyna utworzona przez nas klasa zawierająca całą logikę naszego programu. Należy do przestrzeni nazw _HelloWorld_. Jest to klasa publiczna, co oznacza, że dostęp do niej można uzyskać z dowolnego miejsca programu.
-### :white_circle: 4. [Metoda _Main_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L7-L11)
+#### :white_circle: 4. [Metoda _Main_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L7-L11)
 Stworzona przez nas publiczna, statyczna metoda klasy _Program_. Nasza metoda nie zwraca żadnych wartości (jest typu _void_). Przyjmuje natomiast dane w postaci tablicy ciągu znaków (_string[]_) i zapisuje do parametru _args_.
-### :red_circle: 5. [Metoda _WriteLine_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L9-L10)
+#### :red_circle: 5. [Metoda _WriteLine_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L9-L10)
 Metoda klasy _Console_ wyświetlająca w konsoli podaną linijkę tekstu (wypisywanie tekstu jest zakończone przejściem do nowej linii). Metoda przyjmuje jako argument ciąg znaków alfanumerycznych łącznie ze znakami białymi (spacje itp.) – typ _string_. Tekst który chcemy wyświetlić w konsoli umieszczamy wewnątrz nawiasu okrągłego wywołania metody, w cudzysłowie. Pierwsze z wywołań spowoduje pojawienie się w konsoli linijki tekstu – [_Hello World!_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L9). Drugie natomiast linijki – [_Nazywam się Małgorzata Mielczarek._](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L10).
 
 
-# [LEKCJA 8 – Jak pracować z Visual Studio](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-9-pierwszy-program/)
+## [LEKCJA 8 – Jak pracować z Visual Studio](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-9-pierwszy-program/)
 Na potrzeby tej lekcji wykorzystamy zmodyfikowany program z lekcji poprzedniej - [HelloWorld](https://github.com/malgorzataMielczarek/HelloWorld/tree/fb82e35c1d13ff597543adc0384cb5bfe5577c85). W tej lekcji poznajemy podstawowy układ IDE w którym będziemy pracować – *Visual Studio*.
-#### IDE (ang. _integrated development environment_ – zintegrowane środowisko programistyczne)
+##### IDE (ang. _integrated development environment_ – zintegrowane środowisko programistyczne)
 >Program lub zespół programów służących do tworzenia, modyfikowania, testowania i konserwacji oprogramowania. Programy będące zintegrowanymi środowiskami programistycznymi charakteryzują się tym, że udostępniają złożoną, wieloraką funkcjonalność obejmującą edycję kodu źródłowego, kompilowanie kodu źródłowego, tworzenie zasobów programu (tzn. formatek/ekranów/okien dialogowych, menu, raportów, elementów graficznych jak ikony, obrazy), tworzenie baz danych, komponentów i innych.
 ><br/> _Źródło: [Wikipedia](https://pl.wikipedia.org/wiki/Zintegrowane_środowisko_programistyczne)_
 
-## Podstawowe okno programu Visual Studio
+### Podstawowe okno programu Visual Studio
 ![Przykładowe okno programu Visual Studio](Ilustracje/PrzykladoweOknoVS.png)
 
-### :red_circle: Okno edytora kodu
+#### :red_circle: Okno edytora kodu
 Obszar IDE w którym wyświetlany jest cały kod klasy/pliku który przeglądamy.
-### :green_circle: Zakładki
+#### :green_circle: Zakładki
 Wszystkie otwarte w programie pliki.<br/>
 Przełączanie zakładek umożliwia szybkie przeskakiwanie między klasami. Gwiazdka na końcu nazwy pliku oznacza, że są w nim niezapisane zmiany. Aktualnie otwarta karta (zakładka oznaczająca plik którego treść jest aktualnie widoczna w oknie edytora kodu) jest podświetlona.
-### :large_blue_circle: _Solution Explorer_
+#### :large_blue_circle: _Solution Explorer_
 Z ang. eksplorator rozwiązań. Zawiera drzewo rozwiązania (solucji) – wszystkie składające się na nie projekty, foldery, biblioteki, pliki, klasy itd..
-#### Solucja (ang. _solution_ – rozwiązanie)
+##### Solucja (ang. _solution_ – rozwiązanie)
 Jest to zbiór powiązanych ze sobą projektów, związanych z jedną aplikacją.<br/>
 Głównym jej zadaniem jest grupowanie oraz ułatwienie zarządzania powiązanych ze sobą projektów. Solucja może być pusta (nie zawiera żadnego projektu - kodu), lub składać się z przynajmniej jednego projektu. Jeżeli jest ich kilka jest to najczęściej projekt tworzonego programu oraz pisane do niego biblioteki. Projekty mogą być pisane w różnych językach programowania. Jeden z projektów musi być projektem startowym. Jest on wyróżniony poprzez pogrubienie nazwy w drzewie solucji pokazanym w oknie eksploratora rozwiązań (ang. _Solution Explorer_).
-#### Projekt (ang. _project_)
+##### Projekt (ang. _project_)
 Jest kontenerem zawierającym i porządkującym pliki z kodami źródłowymi aplikacji. Pozwala również na zarządzanie jej bibliotekami i pewnymi właściwościami takimi jak debugowanie, kompilacja, architektura, docelowa wersja platformy itd..
-#### Projekt startowy
+##### Projekt startowy
 Jest to pierwszy projekt budowany w danej solucji. Musi być to projekt wykonywalny (np. _Consol Application_ – aplikacja konsolowa). Nie może nim być np. biblioteka (ang. _library_). Z pozostałych projektów można skorzystać tylko poprzez podpięcie ich do projektu startowego.
 
 Rozwiązanie przedstawione na obrazku powyżej zawiera tylko jeden projekt (_HelloWorld_), będący projektem startowym. Nowe projekty można dodać do solucji poprzez kliknięcie jej nazwy, w oknie eksploratora rozwiązań, prawym przyciskiem myszki, a następnie wybranie **Add** -> **New Project...** Projekt startowy można natomiast zmienić klikając w Solution Explorerze nazwę projektu, który chcemy ustawić jako projekt startowy, prawym przyciskiem myszki, a następnie wybierając **Set as Startup Project**. W eksploratorze rozwiązań można również dodawać do projektu nowe pliki, klasy, foldery itd. (prawy przycisk myszki na nazwę projektu, następnie **Add** -> **New Item...**/**Class...**/**New Folder**/itd.). Podobnie można tu również zmieniać nazwy plików/projektów (**Rename**), usuwać je z solucji (**Remove**/**Delete**) i wiele, wiele innych.
-### :yellow_circle: Pasek narzędzi 
+#### :yellow_circle: Pasek narzędzi 
 Pasek w górnej części okna programu, zawierający ikonki z podstawowymi funkcjami.<br/>
 Jego prawa część składa się z typowych funkcjonalności programu, takich jak: przyciski nawigacji, nowy projekt, otwórz plik, zapisz plik wyświetlany aktualnie w oknie edytora kodu, zapisz wszystkie pliki, cofnij zmiany, wprowadź ponownie cofnięte zmiany itd.. Następnie znajdują się pola związane z uruchamianiem pisanej aplikacji. Możemy wybrać konfigurację w jakiej ma być uruchomiona solucja, platformy na których ma działać i uruchomić program (pole z zieloną strzałką "play"). Na końcu mamy inne przydatne funkcjonalności. Wyświetlany pasek może w rzeczywistości składać się z wielu pasków narzędzi. W standardowym układzie są to trzy paski: standardowych opcji, związany z edycją tekstu oraz z funkcjonalnościami dotyczącymi kontroli źródła. Paski narzędzi można dostosować do swoich potrzeb wybierając te, z pośród wielu dostępnych pasków i funkcjonalności programu, z których korzystamy najczęściej. Po lewej stronie paska znajdują się jeszcze dwa przyciski: do współpracy z innymi programistami w czasie rzeczywistym (_Visual Studio Live Share_) oraz do komunikacji z wytwórcą IDE.
-## Okno programu Visual Studio podczas działania aplikacji
+### Okno programu Visual Studio podczas działania aplikacji
 ![Przykładowe okno programu Visual Studio podczas działania aplikacji](Ilustracje/OknoVSPodczasPracyProgramu.png)
 
-### :large_blue_circle: Narzędzia diagnostyczne
+#### :large_blue_circle: Narzędzia diagnostyczne
 Wyświetlają się tylko podczas pracy pisanej aplikacji. Umożliwia monitorowanie ilości zasobów używanych przez nasz program (ilość zajmowanej przez proces pamięci – _Process Memory_) oraz obciążenie procesorów (_CPU_).
-### :green_circle: Monitor zmiennych
+#### :green_circle: Monitor zmiennych
 Lista wszystkich aktualnie istniejących zmiennych, wraz z ich aktualnymi wartościami i typami.<br/>
 Na dole tego okna widzimy trzy zakładki:
 * _Autos_ – pokazuje tylko zmienne używane w pobliżu aktualnie wykonywanej instrukcji,
 * _Locals_ – lista wszystkich zmiennych lokalnych,
 * _Watch 1_ – śledzi wybrane przez użytkownika zmienne.
-### :red_circle: Okno natychmiastowe (ang. _Immediate Window_)
+#### :red_circle: Okno natychmiastowe (ang. _Immediate Window_)
 Służy do wprowadzania poleceń wykonywanych w locie na działającej aplikacji. Mają one skutek tylko w tym konkretnym uruchomieniu, nie wprowadzając zmian w kodzie programu. Skutek działania wprowadzonych komend jest natychmiastowy. Służy głównie do sprawdzenia czy dane polecenie da oczekiwany rezultat. Na dole okna znajdują się zakładki z innymi narzędziami.
-### :orange_circle: Szybkie akcje (ang. _Quick Actions_)
+#### :orange_circle: Szybkie akcje (ang. _Quick Actions_)
 Narzędzie proponujące zmiany w kodzie i wprowadzające je za zgodą programisty. Umożliwia ono np. poprawienie formatowania, utworzenie konstruktora klasy, obwarowanie pól klasy metodami _get_/_set_ itd. Ikona jest widoczna zarówno podczas pisania kodu, jak i w czasie pracy programu. Umożliwia ona dostęp do swoich funkcji w obu przypadkach. Wprowadzone w kodzie zmiany zostaną jednak zastosowane dopiero przy następnym uruchomieniu programu.
-### :yellow_circle: Punkt przerwania pracy programu (ang. _Breakpoint_)
+#### :yellow_circle: Punkt przerwania pracy programu (ang. _Breakpoint_)
 Zaznaczone przez programistę miejsce w kodzie, w którym wykonywanie programu będzie przerwane podczas debugowania. Breakpointy wstawia się poprzez kliknięcie lewym przyciskiem myszki na szary pasek po lewej stronie okna edytora kodu na wysokości linii przed którą chcemy zatrzymać program. Punkty przerwania pracy programu są widoczne zarówno podczas edycji kodu, jak i podczas działania aplikacji. W obu przypadkach można również wstawiać nowe punkty. Działający program zatrzyma się we wprowadzanych na bieżąco punktach o ile występują one w miejscach gdzie jeszcze się nie wykonał.
 
-# [LEKCJA 9 – Konwencje pisania (Dobre praktyki programowania)](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-10-kompilator/)
+## [LEKCJA 9 – Konwencje pisania (Dobre praktyki programowania)](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-10-kompilator/)
 Konwencje programowania, są to ogólnie przyjęte zasady pisania kodu. Nie mają one wpływu na działanie programu. Stosowanie ich zwiększa jednak czytelność i ułatwia programistą czytanie cudzego kodu. Konwencji programowania jest bardzo dużo. W tej lekcji poznamy tylko kilka z nich. Warto od razu wyrobić sobie nawyk ich stosowania, aby ułatwić sobie pracę w przyszłości.
-## Konwencje nazywania elementów programu
-### **PascalCase**
+### Konwencje nazywania elementów programu
+#### **PascalCase**
 
 | Wygląd | Zastosowanie |
 |:---|:---|
 | Wszystkie wyrazy nazwy piszemy razem, bez żadnych przerw. Pierwsza litera każdego wyrazu jest wielka a kolejne małe. | Nazywanie klas, plików, przestrzeni nazw (`namespace`), metod. |
 |Np.: `CaloriesCalculator`, `HelloWorld`, `AddYears`. ||
-### **camelCase**
+#### **camelCase**
 
 | Wygląd | Zastosowanie|
 |:---|:---|
 | Wszystkie wyrazy nazwy piszemy razem, bez żadnych przerw. Pierwsza litera prawie każdego wyrazu jest wielka a kolejne małe. Wyjątek stanowi pierwszy wyraz, który w całości jest pisany małymi literami. | Nazywanie lokalnych zmiennych i prywatnych elementów programu. |
 | Np.: `addedYears`, `displayScreen`, `numberOfCircles`. ||
-### **UPPER_CASE**
+#### **UPPER_CASE**
 
 | Wygląd | Zastosowanie |
 |:---|:---|
 | Nazwę piszemy w całości wielkimi literami (wszystkie litery). Wyrazy oddzielamy od siebie przy pomocy podkreślnika („_”). | Nazywanie stałych. |
 | Np.: `PI_NUMBER`, `AGE_OF_CONSENT`, `NUMBER_OF_THREADS`. ||
-## Konwencja zapisu nawiasów klamrowych
+### Konwencja zapisu nawiasów klamrowych
 Nawiasy klamrowe są częstym elementem kodu w języku C#. Definiują zasięgi przestrzeni nazw, klas, metod oraz instrukcji warunkowych i pętli. W odróżnieniu od większości instrukcji, po nawiasie klamrowym nie stawia się średnika. W języku C# przyjęło się, że nawias klamrowy stawiamy w kolejnej linii niż instrukcja której dotyczy. Visual Studio domyślnie pomaga w utrzymaniu tej konwencji.
 
 Np.:
@@ -392,13 +393,13 @@ while(a>b)
 	a--;
 }
 ```
-## Konwencja tworzenia nowych metod
+### Konwencja tworzenia nowych metod
 Pomiędzy kolejnymi metodami umieszcza się maksymalnie jedną linię odstępu (pustą linię). Stosowanie większych odstępów zmniejsza czytelność kodu. Powoduje jego niepotrzebne wydłużenie. To z kolei utrudnia sprawną nawigację po kodzie.
-## Konwencja pisania modyfikatorów dostępu
+### Konwencja pisania modyfikatorów dostępu
 Zaleca się pisanie modyfikatora dostępu za każdym razem, nawet kiedy nie jest on wymagany. Standardowym i domyślnym modyfikatorem dostępu dla większości elementów języka C# jest `private` lub `internal`. W niektórych przypadkach można więc je pominąć, bez wpływu na funkcjonowanie programu. Zaleca się jednak zapisywanie ich w postaci jawnej, aby zwiększyć przejrzystość kodu. Związane jest to ze stosowaniem wielu słów kluczowych przed nazwami metod (takich jak `static`, czy typ zwracany przez metodę). Zapisanie modyfikatorów dostępu w postaci jawnej ułatwia przeglądanie kodu w poszukiwaniu metod o określonym typie dostępu.
-## Konwencja tworzenia klas
+### Konwencja tworzenia klas
 Każda klasa powinna znajdować się w oddzielnym pliku (każdy plik powinien zawierać tylko jedną klasę). Język C# umożliwia umieszczenie wielu klas w jednym pliku. W miarę rozrastania się programu zmniejsza to jednak jego czytelność i utrudnia nawigację. Visual Studio umożliwia łatwe przeniesienie utworzonych już klas do nowych plików, przy pomocy Szybkich akcji.
-## Konwencja stosowania typów w nazwach
+### Konwencja stosowania typów w nazwach
 W odróżnieniu od niektórych innych języków programowania, w języku C# w większości przypadków nazwy elementu NIE rozpoczyna się od jego typu (ani skrótu od nazwy typu elementu). Od tej zasady występuje jeden wyjątek, a mianowicie interfejs. Nazwy interfejsów zawsze rozpoczyna się od wielkiej litery „i” („I”, jak `interface`).
 
 Np.:
@@ -408,9 +409,9 @@ public interface IProgram
 }
 ```
 
-# [LEKCJA 10 – Kompilator](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-11-jak-pracowac-z-visual-studio/)
+## [LEKCJA 10 – Kompilator](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-11-jak-pracowac-z-visual-studio/)
 Kompilator jest narzędziem służącym do kompilacji naszego kodu.
-## Kompilacja
+### Kompilacja
 Proces tłumaczenia kodu programu napisanego w języku programowania (np. C#) na tzw. kod pośredni (ang. _Intermediate Code_). W jego wyniku tworzony jest dodatkowy plik możliwy do uruchomienia w danym środowisku. W przypadku platformy .NET i systemu operacyjnego Windows jest to plik .exe (ang. _executive_ – wykonywalny).
 Jeżeli uruchomimy program w Visual Studio przy pomocy odpowiedniego przycisku z paska narzędzi w konfiguracji _Debug_, to zostanie uruchomiona kompilacja, nasz projekt zostanie zbudowany i uruchomiony, a w folderze _bin_ > _Debug_ utworzą nam się pliki wynikowe m.in. właśnie plik .exe
 
@@ -437,20 +438,20 @@ Nazywam się Małgorzata Mielczarek.
 ![Folder z Rysunku 1. po zbudowaniu solucji](Ilustracje/FolderPoZbudowaniuSolucji.png)<br/>
 _Rysunek 5 Folder z Rysunku 1. po zbudowaniu solucji_
 
-### Plik .exe
+#### Plik .exe
 Plik odpowiadający za uruchomienie utworzonego programu.
-### Plik .dll
+#### Plik .dll
 Plik posiadający wszystkie pozostałe zaimplementowane przez nas klasy. To tu znajduje się cała logika naszej aplikacji.
-### Pliki .json
+#### Pliki .json
 Ponieważ pisaliśmy aplikację na platformie .NET Core dodatkowo utworzone zostały pliki .json zawierające informacje na jakiej platformie możemy uruchomić nasz program (zbudowany).
 
 Program skompilowaliśmy na system operacyjny Windows. Gdybyśmy zrobili to na inny system, powiedzmy Linux, wówczas w wyniku zbudowania solucji otrzymalibyśmy inne pliki wynikowe (tzw. pliki runtime).
-## Uruchomienie
+### Uruchomienie
 Uruchomić możemy również bezpośrednio skompilowany plik .exe. Można to zrobić tradycyjnie poprzez dwukrotne kliknięcie na nazwę pliku w folderze. Takie uruchomienie spowoduje jednak automatyczne zamknięcie konsoli z naszym programem po zakończeniu jego działania. W naszym wypadku zaraz po wyświetleniu napisu:<br/>
 Hello World!<br/>
 Nazywam się Małgorzata Mielczarek.<br/>
 konsola zostanie zamknięta. Efekt będzie więc taki, że okno konsoli tylko mignie nam przed oczami i nie zdążymy przeczytać co zostało w nim wyświetlone. Możemy tego uniknąć na kilka sposobów.
-### 1.	Uruchomienie programu z konsoli
+#### 1.	Uruchomienie programu z konsoli
 Po pierwsze zamiast tradycyjnego sposobu uruchamiania, możemy najpierw otworzyć konsolę Windows (cmd – ang. _Commend Line_), a następnie z jej poziomu uruchomić naszą aplikację. Skoro mamy już otwarty folder zawierający nasz plik .exe to najprościej będzie to zrobić poprzez kliknięcie w pasek adresu eksploratora plików, wpisanie „cmd” i wciśnięcie klawisza _Enter_.
 
 ![Otwieranie konsoli Windows w danej lokalizacji](Ilustracje/OtwieranieKonsoliWindowsWDanejLokalizacji.png)<br/>
@@ -462,7 +463,7 @@ Spowoduje to otwarcie konsoli Windows w tej lokalizacji (w naszym folderze _Debu
 _Rysunek 7 Uruchomienie programu w konsoli_
 
 Jak widać na obrazku powyżej program zakończył swoją pracę, ale konsola w tym wypadku nie została zamknięta. Jeżeli jednak chcemy móc otwierać naszą aplikację tradycyjnie, również na to istnieją sposoby.
-### 2.	Wstrzymanie pracy programu
+#### 2.	Wstrzymanie pracy programu
 Aby móc zobaczyć co zostało wyświetlone w konsoli zanim zostanie ona zamknięta musimy wstrzymać pracę programu po wykonaniu wszystkich pożądanych instrukcji. Najprościej zrobić to poprzez oczekiwanie na wciśnięcie przez użytkownika jakiegoś klawisza. Wówczas program zakończy się (konsola zostanie zamknięta) dopiero gdy użytkownik wciśnie klawisz _Enter_ (lub dowolny klawisz, w zależności od wersji kodu którą zaraz dopiszemy). W tym celu na końcu kodu naszego programu (tuż przed klamrą zamykającą metody _Main_) dopisujemy któryś z poniższych fragmentów kodu:
 1. program oczekuje na wpisanie w konsoli przez użytkownika linii tekstu, kończy się więc, gdy wciśniemy _Enter_
 ``` csharp
@@ -484,15 +485,15 @@ Console.ReadKey();
 ```
 Dodatkowo możemy wybrany z powyższych fragmentów kodu obudować dyrektywą preprocesora `#if DEBUG`, dzięki czemu takie wstrzymanie będzie miało miejsce tylko w przypadku zbudowania aplikacji w wersji do debugowania, ale nie wystąpi w ostatecznej wersji aplikacji (budowania solucji w wersji _Release_). Np.:
 ``` csharp
-#if DEBUG
+##if DEBUG
  Console.WriteLine();
  Console.WriteLine("Press enter to close . . .");
  Console.ReadLine();
-#endif
+##endif
 ```
 Jeszcze dodatkowo możemy chcieć dodać instrukcję `try{}`, aby pozostawić okno konsoli otwarte nawet jeśli wystąpi jakiś niespodziewany (niewyłapywany przez nasz program) błąd. Wówczas nasz kod dopisujemy poniżej niej wewnątrz instrukcji `finally{}`. Np.:
  ``` csharp
- #if DEBUG
+##if DEBUG
  try
  {
  // to keep window open if uncaught exception was thrown
@@ -503,7 +504,7 @@ Jeszcze dodatkowo możemy chcieć dodać instrukcję `try{}`, aby pozostawić ok
  Console.WriteLine("Press enter to close . . .");
  Console.ReadLine();
  }
-#endif
+##endif
 ```
 Po dopisaniu na końcu kodu naszego programu wybranego fragmentu kodu po dwukrotnym kliknięciu na nazwę pliku (_HelloWorld.exe_) otworzy nam się konsola w której zostanie wyświetlone np.:
 
@@ -511,57 +512,57 @@ Po dopisaniu na końcu kodu naszego programu wybranego fragmentu kodu po dwukrot
 _Rysunek 8 Przykładowa konsola programu po dopisaniu kodu wstrzymującego jego pracę_
 
 W powyższym przykładzie program będzie działał, a co za tym idzie konsola będzie otwarta, tak długo dopóki użytkownik nie wciśnie klawisza _Enter_ lub nie zamknie konsoli.
-## Kod pośredni (ang. _Intermediate Code_)
+### Kod pośredni (ang. _Intermediate Code_)
 Kod programu zapisany w pliku .exe. Powstał po przetłumaczeniu kodu napisanego w języku programowania (np. C#) przez kompilator. Kod ten nie jest jeszcze zrozumiały przez procesor naszego komputera, dlatego właśnie nazywamy go pośrednim.
-## CLR (ang. _Common Language Runtime_ – Środowisko Uruchomieniowe Wspólnego Języka)
+### CLR (ang. _Common Language Runtime_ – Środowisko Uruchomieniowe Wspólnego Języka)
 Jest to środowisko uruchomieniowe dla naszych aplikacji. W przypadku .NET Core jest to CLR Core. Działa on na różnych platformach. W pewnym zakresie różni się w zależności od nich. Te zmiany są związane z dostosowaniem pod konkretny system operacyjny i konfigurację komputera. Jednym z głównych jego mechanizmów jest JIT.
-### JIT (ang. _just-in-time compiler_ – kompilator _just-in-time_)
+#### JIT (ang. _just-in-time compiler_ – kompilator _just-in-time_)
 Kompilator tłumaczący dynamicznie (na bieżąco, podczas działania programu) kod pośredni na kod maszynowy (kod najniższego poziomu, zrozumiały dla procesora). Jest on automatycznie uruchamiany wraz z plikiem .exe. Umożliwia on dostosowanie aplikacji do konkretnego komputera, na którym jest uruchamiana.<br/>
 JIT tłumaczy kod z pliku .exe, nie z pisanego przez nas kodu. Oznacza to, że w uruchomionym programie nie zobaczymy wprowadzanych przez nas zmian w kodzie projektu dopóki nie zostanie on ponownie skompilowany (do pliku .exe) i uruchomiony.
-## Języki kompilowane, a języki skryptowe
-### Języki skryptowe
+### Języki kompilowane, a języki skryptowe
+#### Języki skryptowe
 Programy napisane w językach skryptowych uruchamia się bezpośrednio w interpreterze (serwerze aplikacji). Oznacza to, że napisany przez nas kod jest bezpośrednio uruchamiany. Aby program działał nie wykonuje się więc żadnych dodatkowych czynności. Oznacza to również, że wprowadzane przez nas zmiany w kodzie programu są od razu widoczne w jego działaniu.
-### Języki kompilowane
+#### Języki kompilowane
 Język C# należy do języków kompilowanych. Oznacza to, że w odróżnieniu od języków skryptowych, aby napisany przez nas kod działał trzeba go najpierw skompilować do języka pośredniego. Dopiero plik napisany w języku pośrednim nadaje się do uruchomienia. Oznacza to, że wprowadzanych przez nas zmian w kodzie nie widzimy w skompilowanym wcześniej pliku, czyli również w działaniu programu. Choć może się to wydawać pewną niedogodnością, jednak taki sposób działania ma swoje zalety.
 1.	Skompilowany kod jest trudniej wykraść/podrobić.
 Kiedy oddajemy aplikację do użytku nasza praca jest więc lepiej zabezpieczona.
 2.	Aplikacja napisana w języku kompilowanym jest lepiej zoptymalizowana pod kontem uruchomienia na danej platformie.
 Podczas kompilacji naszego kodu do kodu pośredniego, jest on dostosowywany do konkretnego systemu operacyjnego. Następnie jest on przystosowywany do danego komputera przez JIT. Oznacza to, że takie aplikacje są o wiele wydajniejsze, lepiej wykorzystują dostępne zasoby. Minusem jest jednak konieczność osobnej kompilacji kodu na różne systemy operacyjne.
 
-# [LEKCJA 11 – Debugowanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-12-debugowanie/)
+## [LEKCJA 11 – Debugowanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-12-debugowanie/)
 Debugowanie, z ang. odrobaczanie, polega na sprawdzaniu wykonywania programu (czy jest zgodne z oczekiwaniami) poprzez jego zatrzymywanie, w wybranych miejscach. Jest to funkcja każdego dobrego IDE. Znacznie ułatwia ona pracę programisty, a w szczególności wyszukiwanie błędów w kodzie. Bez debugera (narzędzia do debugowania) trzeba ręcznie wypisywać wszystkie wartości, które chcemy sprawdzić, do konsoli, co wydłuża proces i zaciemnia obraz programu. Narzędzie to jest tym bardziej potrzebne, że debugowanie zajmuje przeciętnie 80 procent czasu pracy programisty. Można spróbować go jednak nieco skrócić poprzez stosowanie testów.
-## Debuger w Visual Studio
-### Utworzenie/usunięcie punktu zatrzymania programu (ang. _Breakpoint_)
+### Debuger w Visual Studio
+#### Utworzenie/usunięcie punktu zatrzymania programu (ang. _Breakpoint_)
 1.	Kliknięcie myszką na lewym pasku okna edytora kodu, na wysokości linii (polecenia/instrukcji) w której chcemy wstawić/usunąć _Breakpoint_. Jeżeli w danej linii znajduje się kilka instrukcji to wykonywanie programu zostanie wstrzymane przed pierwszą z nich. Tym sposobem można wstawić w linii tylko jeden _Breakpoint_.
 2.	Alternatywnie można użyć skrótu __F9__, co utworzy/usunie punkt zatrzymania przed poleceniem, w którym się właśnie znajdujemy. Jeżeli w jednej linii znajduje się wiele instrukcji, to tym sposobem można w niej utworzyć kilka punktów zatrzymania, maksymalnie po jednym na każdą instrukcję. Można również utworzyć tylko _Breakpoint_ dla kolejnej (nie pierwszej) instrukcji w linii.
 3.	Ostatnią metodą jest kliknięcie na wybraną instrukcję (instrukcję przed którą chcemy zatrzymać wykonywanie programu) prawym przyciskiem myszki i wybranie opcji _Breakpoint_ > _Insert Breakpoint_. Sposób ten działa analogicznie do użycia skrótu F9.
 Polecenie którego dotyczy wstawiony punkt zatrzymania programu zaznaczone będzie w oknie edytora kodu czerwoną ramką. Wykonywanie programu, uruchomionego w trybie _Debug_, zostanie zatrzymane w miejscu w którym utworzyliśmy _Breakpoint_. Punktów zatrzymania można wstawić w programie dowolną ilość (maksymalnie jeden na polecenie). Można je również tworzyć i usuwać podczas pracy programu, a działania te zostaną zachowane również po jego zakończeniu. Działają one jednak tylko w IDE w którym je utworzyliśmy. Podczas działania programu polecenie przed którego wykonaniem praca aplikacji została w danym momencie wstrzymana jest zaznaczone w oknie edytora kodu żółtą ramką.
-### Kontynuacja debugowania
+#### Kontynuacja debugowania
 Kiedy praca naszego programu została już wstrzymana możemy ją kontynuować na kilka sposobów.
-#### Przejście do kolejnego polecenia
+##### Przejście do kolejnego polecenia
 Możemy przejść do kolejnego polecenia (wykonać tylko jedną instrukcję i ponownie zatrzymać program). W tym celu możemy użyć skrótu __F10__, odpowiedniego przycisku z paska narzędzi (_Step Over_), opcji z menu głównego (_Debug_ > _Step Over_) lub sposobu opisanego niżej jako [„Kontynuowanie działania programu do wybranej linii”](#Kontynuowanie-działania-programu-od-wybranej-linii), wybierając kolejną linię.
-#### Wejście do wnętrza klasy/metody
+##### Wejście do wnętrza klasy/metody
 Zamiast przechodzić do kolejnego polecenia można wejść do wnętrza metody/klasy użytej w instrukcji przed którą program został wstrzymany. W tym celu możemy użyć skrótu __F11__, odpowiedniego przycisku z paska narzędzi (_Step Into_), opcji z menu głównego (_Debug_ > _Step Into_) lub sposobu opisanego niżej jako [„Kontynuowanie działania programu od wybranej linii”](#Kontynuowanie-działania-programu-od-wybranej-linii) wybierając pierwszą linię implementacji tej metody.
-#### Wyjście z wnętrza klasy/metody
+##### Wyjście z wnętrza klasy/metody
 Debuger Visual Studio umożliwia również wyjście z metody/klasy w której właśnie się znajdujemy. W tym celu możemy użyć skrótu __Shift + F11__, odpowiedniego przycisku z paska narzędzi (_Step Out_) lub opcji z menu głównego (_Debug_ > _Step Out_). Powoduje to przejście do miejsca w kodzie po wykonaniu metody, w której właśnie się znajdujemy. Tak więc jeżeli znajdujemy się w metodzie _Main_ spowoduje to zakończenie działania programu (kontynuację jego pracy do kolejnego _Breakpointa_ lub innego zatrzymania niezwiązanego z debugerem). W innym wypadku przechodzimy do poleceń metody znajdującej się o poziom wyżej. Załóżmy, że zatrzymaliśmy program przed instrukcją przypisania wyniku działania jakiejś metody do zmiennej. Np.:
  ``` csharp
  Person me = new Person("Małgorzata", "Mielczarek");
  ```
 Przeszliśmy następnie do wnętrza konstruktora _Person_. Po sprawdzeniu w nim co chcieliśmy wyszliśmy z jego wnętrza. Wykonywanie metody _Person_ zostało więc zakończone. Krok wyjścia spowodował przeniesienie wykonywania programu przed operację przypisania (przed powyższą przykładową instrukcję).
-#### Kontynuowanie działania programu od wybranej linii
+##### Kontynuowanie działania programu od wybranej linii
 Możemy również kontynuować wykonywanie programu zatrzymując go dopiero w wybranym miejscu. W tym celu możemy oczywiście wstawić kolejny punkt zatrzymania programu (zgodnie z opisem z punktu [„Utworzenie/usunięcie punktu zatrzymania programu (ang. _Breakpoint_)”](#utworzenieusunięcie-punktu-zatrzymania-programu-ang-breakpoint)) i kontynuować jego wykonywanie zgodnie ze sposobami opisanymi poniżej w punkcie [„Kontynuowanie działania programu”](#Kontynuowanie-działania-programu). Można to również zrobić bez wstawiania nowych _Breakpointów_. Podczas działania programu w konfiguracji _Debug_ po najechaniu wskaźnikiem myszki na linijki kodu na początku linii pojawia się ikonka <img src="Ilustracje/Run.png" alt="zielona strzałka z pionową linią" width="12px" height="12px"> _Run execution to here_). Jej kliknięcie powoduje zatrzymanie działania programu przed rozpoczęciem wykonywania znajdujących się w niej instrukcji. Ten sposób sprawdza się, gdy chcemy coś jednorazowo sprawdzić, gdyż nie będziemy musieli wówczas kasować _Breakpointa_. Jeżeli jednak kilkukrotnie będziemy chcieli wykonać program zatrzymując go za każdym razem w tym samym miejscu, warto wstawić tam punkt zatrzymania pracy programu.
-#### Kontynuowanie działania programu
+##### Kontynuowanie działania programu
 Wykonywanie programu można również kontynuować do momentu napotkania kolejnego punktu zatrzymania lub innego wydarzenia powodującego wstrzymanie programu (np. polecenia pobierającego dane od użytkownika). W tym celu można użyć skrótu __F5__, odpowiedniego przycisku z paska narzędzi (zielona strzałka _Continue_) lub opcji z menu głównego (_Debug_ > _Continue_). Jeżeli znajdujemy się w funkcji _Main_, to możemy również skorzystać z opisanego wcześniej sposobu na wyjście z wnętrza metody ([„Wyjście z wnętrza klasy/metody”](#Wyjście-z-wnętrza-klasymetody)). Jeżeli w pozostałej części programu nie ma już żadnych przyczyn powodujących zatrzymanie pracy programu, to wówczas jego działanie zostaje zakończone.
-### Sprawdzanie wartości zmiennych podczas debugowania
+#### Sprawdzanie wartości zmiennych podczas debugowania
 Podczas działania programu w konfiguracji _Debug_, możemy sprawdzać wartości zmiennych w danym momencie wykonywania programu. Ich zmieniające się wartości możemy podglądać w monitorze zmiennych. W zakładce _Locals_ znajdziemy aktualne wartości wszystkich zmiennych, które istnieją w naszym programie. Istnieją, oznacza, że zostały zainicjowane, zadeklarowane i wciąż przetrzymują jakąś wartość. Jeżeli wyjdziemy z jakiejś metody/klasy to, o ile nie wskażemy inaczej, utworzone w niej zmienne przestają istnieć, więc znikają z zakładki _Locals_. Poza tym wartości zmiennych można podejrzeć najeżdżając wskaźnikiem myszki na nazwy zmiennych w kodzie programu w czasie debugowania. Jeżeli zmienna w danym momencie istnieje przy wskaźniku pojawi nam się okienko z nazwą zmiennej i jej aktualną wartością.
 
-# [LEKCJA 12 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-13-bledy-poczatkujacych/)
+## [LEKCJA 12 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-13-bledy-poczatkujacych/)
 Od początku nauki warto wyłapywać i poprawiać swoje błędy. Po pierwsze zwróćmy więc uwagę na użyte w naszych programach nazewnictwo. Nazwy naszych zmiennych, metod, klas itd. powinny być w języku angielskim. Jest to ogólnie przyjęta zasada w środowisku programistów. Zwiększa to uniwersalność naszego kodu. Po drugie naprawdę warto mieć po angielsku również samo IDE Visual Studio. Jest to najpowszechniej używana jego wersja. Jeżeli więc będziemy szukać pomocy dotyczącej tego oprogramowania, nazwy funkcjonalności itp. najczęściej występować więc będą w tym języku.
 
-# [LEKCJA 13 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-14-praca-domowa/)
+## [LEKCJA 13 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-14-praca-domowa/)
 Pracą domową na pierwszy tydzień jest dołączenie do grupy, przywitanie się na forum (#tydzien1 #przywitanie) i założenie konta na [githubie](https://github.com/) (#tydzien2 #github [link do githuba](https://github.com/malgorzataMielczarek)).
 
-# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-1-powitanie/)
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-1-powitanie/)
 W tygodniu 2. poznamy między innymi:
 * jakie typy danych występują w języku C#,
 * instrukcje warunkowe,
@@ -576,14 +577,14 @@ W tygodniu 2. poznamy między innymi:
 
 Wybierzemy również projekt do wykonania. W pliku załączonym do lekcji podano przykładowe projekty.
 
-# [LEKCJA 2 – Zmienne i stałe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-2-zmienne-i-stale/)
+## [LEKCJA 2 – Zmienne i stałe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-2-zmienne-i-stale/)
 Zaczynamy tworzenie naszej aplikacji konsolowej.
-## Utworzenie nowego projektu
+### Utworzenie nowego projektu
 Tworzymy nowy projekt (_Create a new project_) aplikacji konsolowej .NET Core (_Console App (.NET Core)_). Aby zawęzić opcje wyszukiwania odpowiedniego typu aplikacji możemy ustawić język wyszukiwania (rozwijane menu z napisem _All languages_) wybierając opcję **C#**. Następnie możemy ustawić platformę, na której ma działać nasz program (rozwijane menu z napisem _All platforms_) jako **Windows**, oraz wybrać typ projektu (rozwijane menu z napisem _All project types_) – aplikacja konsolowa (**Console**). Przy wyborze typu projektu należy zwrócić uwagę, aby wybrać opcję z językiem _C#_, a nie np. _Visual Basic_ (_VB_). Następnie nadajemy nazwę naszemu projektowi. Przypominamy, że nazwa powinna być w formacie PascalCase (wyrazy pisane łącznie, pierwsza litera każdego wyrazu wielka, nazwa najlepiej w języku angielskim). Jeżeli chcemy możemy zmienić lokalizację projektu (_Location_), aby później łatwo było nam go znaleźć. Tworzymy nasz projekt. Możemy go od razu umieścić na naszym koncie na githubie, tworząc nowe repozytorium.
-## Umieszczenie projektu na naszym koncie na githubie
-### Za pośrednictwem Visual Studio
+### Umieszczenie projektu na naszym koncie na githubie
+#### Za pośrednictwem Visual Studio
 Można to zrobić np. poprzez kliknięcie zakładki _Git_ z menu głównego i wybranie opcji _Create Git Repository_. Następnie uzupełniamy dane w oknie _Create a Git Repository_, które nam się pojawi. Zmieniamy w nim typ repozytorium z prywatnego (odznaczamy opcję _Private repository_, jeżeli jest zaznaczona) na publiczny (dostępny dla wszystkich).
-### Za pośrednictwem strony internetowej
+#### Za pośrednictwem strony internetowej
 Alternatywnie możemy utworzyć nowe repozytorium na swoim koncie przez [stronę internetową](https://github.com/login), a następnie umieścić w nim nasz projekt.
 
 1.	Zaloguj się na swoim koncie github.
@@ -591,7 +592,7 @@ Alternatywnie możemy utworzyć nowe repozytorium na swoim koncie przez [stronę
 3.	Wpisz nazwę repozytorium (_Repository name_), najlepiej taką samą jak nazwa naszego projektu. Jeśli chcemy możemy dodać opis projektu (_Description_). Pozostawiamy wybraną opcję _Public_ (tworzymy repozytorium publiczne – dostępne dla wszystkich).
 4.	Można również dodać plik **README**, zaznaczając opcję _Add a README file_, w którym możemy opisać nasz projekt.
 5.	Od razu możemy dodać też plik **.gitignore** zawierający pliki będące częścią naszego projektu, które nie chcemy jednak, aby zostały umieszczone w naszym repozytorium. Możemy wybrać gotowy szablon pliku (_.gitignore template_). Nie ma na razie szablonu dla platformy .NET Core. Możemy więc wybrać szablon _Visual Studio_ lub utworzyć pusty plik (typ szablonu _None_). Utworzony plik można później zmodyfikować do naszych potrzeb.
-### Przy pomocy konsoli Windows (cmd – ang. _Command Line_ - Wiersz poleceń)
+#### Przy pomocy konsoli Windows (cmd – ang. _Command Line_ - Wiersz poleceń)
 Można również wykonać te czynności za pośrednictwem konsoli Windows, poprzez użycie odpowiednich poleceń (tekst po polsku należy zastąpić właściwymi danymi):
  
 ```
@@ -619,13 +620,13 @@ git config --global user.email NaszAdresEmail
 Powyższe polecenia ustawią nazwę użytkownika i email, które będą stosowane dla wszystkich repozytoriów utworzonych przez aktualnie zalogowanego użytkownika systemu. Można również ustawić te właściwości tylko dla danego repozytorium, wówczas zamiast _--global_, piszemy _--local_.
 
 Alternatywnie możemy utworzyć nowe repozytorium i umieścić w nim nasz projekt przy pomocy przeznaczonej do tego aplikacji, takiej jak np. **GitHub Desktop** czy **Git GUI**.
-## Kod projektu
-### Sekcja „using” – używanie aliasów namespace’ów
+### Kod projektu
+#### Sekcja „using” – używanie aliasów namespace’ów
 W górnej części pliku .cs, jak już wiemy, mamy sekcję „using”. Znajdują się w niej aliasy używanych przez nas bibliotek. Np. polecenia `Console.WriteLine` (służące do wypisania linijki tekstu w konsoli), czy `Console.ReadLine` (służące do pobierania z konsoli wpisanej przez użytkownika linijki tekstu) znajdują się w bibliotece `System`. Możemy z nich skorzystać zapisując całą ścieżkę dostępu (`System.Console.WriteLine`, `System.Console.ReadLine`) lub używając właśnie aliasu. Drugi sposób oznacza, że na górze pliku w którym korzystać będziemy z tej/tych funkcji zapisujemy `using System;`. Wówczas możemy używać skróconego zapisu nazw funkcji (`Console.WriteLine`, `Console.ReadLine`). Alias oznacza, że do naszej przestrzeni nazw (_namespace_) ładujemy wszystkie klasy, metody itd. znajdujące się pod podaną ścieżką dostępu. Dzięki temu możemy z nich korzystać tak, jakby umieszczone były w naszym namespace’ie. Metody tej warto użyć, jeżeli w danym pliku wielokrotnie używamy jakiejś klasy/metody lub wielu elementów z danej przestrzeni nazw, aby skrócić ich zapis. Jeżeli natomiast takie użycia są jednostkowe, lepiej korzystać z pełnych ścieżek dostępów.
-#### Metoda Main
+##### Metoda Main
 Jak już wiemy jest to główna metoda programu. Od niej zaczyna on swoją pracę i wykonuje kolejne znajdujące się w niej polecenia. Jeżeli więc na jej początku umieścimy kilka poleceń `Console.WriteLine("tekst")`, to właśnie umieszczony w nich tekst wyświetli się jako pierwszy w konsoli.
 
-##### Polecenia `Console.WriteLine`, `Console.ReadLine`<br/>
+###### Polecenia `Console.WriteLine`, `Console.ReadLine`<br/>
 Tych metod można użyć do stworzenia prostego menu:<br/>
 ```csharp =
 Console.WriteLine("Witamy w aplikacji Zwierzak");
@@ -656,7 +657,7 @@ Int32.TryParse(action, out actionNo);
  
 Metoda `Console.Write` spowoduje wyświetlenie w konsoli podanego jej tekstu, bez przejścia do nowej linii.<br/>
 Po wyświetleniu tekstu program czeka na wpisanie przez użytkownika w konsoli dowolnego tekstu i wciśnięciu klawisza **Enter** (metoda `Console.ReadLine`). Wpisaną przez użytkownika wartość zapisujemy w zmiennej `action` (`string action = Console.ReadLine();`). Jest to zmienna typu `string`, czyli typu tekstowego (przechowująca tekst). Następnie tworzymy zmienną typu `int`, czyli mogącą przechowywać liczby całkowite z pewnego zakresu. Na koniec przy pomocy metody `Int32.TryParse(string number, out int no)` próbujemy dokonać konwersji z typu `string` na `int` (liczbę zapisaną w formie tekstu przekształcamy w wartość liczbową), a wynik tej operacji zapisujemy w zmiennej wyjściowej (`out`).
-## Stałe
+### Stałe
 Stała jest to taki element aplikacji, który raz zdefiniowany nie może zostać zmieniony. Tworzymy ją podając kolejno słowo kluczowe `const`, typ stałej (np. `string` lub `int`) i jej nazwę. Następnie po znaku `=` możemy zadeklarować tą stałą konkretną wartością.
 
 ```csharp =
@@ -665,7 +666,7 @@ const int NUMBER_OF_MEALS_PER_DAY = 2;
 ```
 
 Jest to jedyne miejsce w kodzie w którym stałej możemy przypisać wartość. Wartość ta jest niezmienna. Gdybyśmy w dalszej części programu próbowali stałej przypisać nową wartość, to otrzymamy błąd kompilacji, nawet jeśli ta nowa wartość będzie taka sama jak obecna. Przypominamy, że nazwy stałych tworzymy najczęściej używając konwencji nazewnictwa UPPER_CASE. Stałe często są w pewien sposób globalne dla całej klasy lub dla większej części projektu. W związku z tym można jej definicję umieścić poza metodą `Main` i w jej zapisie typ stałej poprzedzić modyfikatorem dostępu. Jeżeli stała będzie globalna, oznaczać to będzie, że zarezerwowane zostanie dla niej miejsce w pamięci, na cały okres działania programu. W przeciwnym razie przestanie ona istnieć w momencie gdy program wyjdzie poza zakres w którym została utworzona (najczęściej poza nawiasy klamrowe między którymi znajduje się jej definicja).
-## Zmienne
+### Zmienne
 Podobny do stałej element aplikacji, umożliwiający przechowywanie wartości w znanym miejscu pamięci aplikacji, jednak w odróżnieniu od stałej przechowywana tam wartość może się wielokrotnie zmieniać. Aby używać zmiennej musimy ją najpierw zadeklarować. W tym celu podajemy typ danych jakie przechowywać będzie nasza zmienna i jej nazwę (zapisaną najczęściej w konwencji camelCase). Na początku przed typem można jeszcze podać modyfikator dostępu. Utworzoną zmienną można teraz zainicjalizować konkretną wartością. Można to zrobić od razu z deklaracją, czyli analogicznie jak przy stałej, po nazwie zmiennej wstawić znak przypisania (`=`) i podać wartość jaką chcemy przypisać do zmiennej, zakańczając jak zawsze linię średnikiem. Można również po nazwie zmiennej wstawić średnik, a inicjalizacji dokonać w dalszej części programu. Kiedy do zdefiniowanej już zmiennej będziemy chcieli przypisać jakąś wartość (wszystko jedno czy po raz pierwszy, czy kolejny) wystarczy podać nazwę zmiennej, znak przypisania (`=`), wybraną wartość i średnik. Np.:
 
 ```csharp =
@@ -681,10 +682,10 @@ actionNo = 2;
 
 Zmienna przestaje istnieć w momencie gdy program wyjdzie poza zakres w którym została utworzona (najczęściej poza nawiasy klamrowe między którymi znajduje się jej definicja). Wyjątek stanowią zmienne globalne, które istnieją przez cały czas trwania programu.
 
-# [LEKCJA 3 – Typy wartościowe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-3-typy-wartosciowe/)
+## [LEKCJA 3 – Typy wartościowe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-3-typy-wartosciowe/)
 
 Typy wartościowe, są to typy których zmienne są przechowywane na stosie. Oznacza to, że ilość zajmowanej przez nie pamięci musi być góry wiadoma, w momencie kompilacji i zawsze jest taka sama, nie zależnie od przechowywanych w nich danych. Stos jest bowiem bardzo uporządkowaną strukturą pamięci podręcznej. Przeszukiwanie jej jest bardzo wydajne, jednak może ona bezpośrednio przechowywać jedynie typy wartościowe alokowane w sposób statyczny i zajmującą stałą ilość pamięci. Do typów wartościowych zaliczamy przede wszystkim
-## 1. Typy proste
+### 1. Typy proste
 Zmienne tych typów tworzymy poprzez podanie nazwy typu i nazwy zmiennej, np.:
 ```csharp =
 int customers;
@@ -707,7 +708,7 @@ long headphones = 400000;
 double value = price * headphones;
 bool isFreeBasket = baskets > customers; 
 ```
-### 1. Typy liczbowe
+#### 1. Typy liczbowe
 Wartością domyślną (`default`) dla wszystkich typów liczbowych jest zero (`0`). Wartość domyślna jest to wartość jaką przyjmuje zmienna danego typu przed inicjalizacją.
 1. **Typy liczbowe całkowite**<br/>
 Wartościowe typy proste reprezentujące liczby całkowite. Mogą być inicjalizowane literałami, czyli w tym przypadku wprost wpisanymi w kod liczbami całkowitymi. Literały liczb całkowitych mogą być:
@@ -793,7 +794,7 @@ Wartościowe typy proste reprezentujące liczby rzeczywiste. Mogą być inicjowa
 	| `float` | `System.Single` | ±1,5 x 10^−45 do ±3,4 x 10^38 | ~6-9 cyfry | 4 bajty | Najodpowiedniejszy typ gdy zależy nam na znacznej oszczędności pamięci |
 	| `double` | `System.Double` | ±5,0 × 10^−324 do ±1,7 × 10^308 | ~15-17 cyfr | 8 bajtów | Kompromis między zajętością pamięci, a precyzją obliczeń. Najodpowiedniejszy typ do wyboru w najbardziej wymagających obliczeniowo aplikacjach, w celu przyspieszenia ich działania lub gdy dokładność obliczeń nie jest aż tak istotna.  |
 	| `decimal` | `System.Decimal` | ±1,0 x 10^–28 do ±7,9228 x 10^28 | 28–29 cyfr | 16 bajtów | Najodpowiedniejszy, gdy wymagany stopień dokładności jest określany przez liczbę cyfr po prawej stronie przecinka (punktu dziesiętnego). Używany np. w aplikacjach finansowych do reprezentacji kursów walutowych, stóp procentowych itd. |
-### 2. bool
+#### 2. bool
 Słowo kluczowe `bool` jest aliasem struktury `System.Boolean` (ang. _boolean_ - logiczny, od nazwiska angielskiego uczonego George'a Boole'a, współtwórcy logiki matematycznej). Reprezentuje ona wartość logiczną mogącą przyjmować tylko jedną z dwóch wartości: `true` - prawda lub `false` - fałsz. Wartością domyślną jest `false`. Na tym typie danych można przeprowadzać operacje logiczne, o których mowa będzie w kolejnych lekcjach tego tygodnia (Lekcja 7). Jest on również rezultatem porównań relacyjnych (\<, \>, \<=, \>=) i równości. Wyrażeń typu _bool_ będziemy często używać w wyrażeniach warunkowych wyrażenia `if`, pętli, czy operatora warunkowego `?:`, o których również w dalszych lekcjach tego tygodnia. Nie istnieje żadna standardowa konwersja między typem _bool_ a innymi typami wartościowymi. W odróżnieniu od innych języków takich jak C, czy C++, gdzie wartość zero liczby całkowitej lub zmiennoprzecinkowej oraz wskaźnik null są konwertowane do wartości _bool_ `false`, a wartości niezerowe liczb lub wskaźniki niebędące nullami do wartości `true`, w C# taka konwersja jest niemożliwa. Można ją osiągnąć przez jawne porównanie liczb do zera lub referencji do obiektu do wartości null. Tak jak zmienne innych typów wartościowych, zmienne typu _bool_ również można inicjalizować literałami, np.:
 
 ```csharp =
@@ -801,7 +802,7 @@ bool check = true;
 System.Boolean isCheckFinished = false;
 ```
 Jeżeli potrzebujesz natomiast logiki trzy-wartościowej można skorzystać z nullowalnego typu bool, czyli typu `bool?`. Poza wartościami `true` i `false` może on jeszcze przyjmować wartość `null`. Może się to przydać np. przy pracy z bazami danych lub gdy zadajemy pytanie na które odpowiedź może być tak/nie/nie wiem.
-### 3. char
+#### 3. char
 Słowo kluczowe `char` jest aliasem struktury `System.Char` (ang. _character_ - znak). Reprezentuje ona znak UNICODE UTF-16.
 | Alias | Typ | Zakres | Rozmiar |
 | :---: | :---: | :---: | :---: |
@@ -825,7 +826,7 @@ Console.WriteLine(string.Join(" ", chars));  // w konsoli wyświetli się: j j j
 ```
 
 Typ `char` jest niejawnie konwertowany na następujące typy całkowite: `ushort`, `uint`, `int`, `long` i `ulong`. Jest również niejawnie konwertowany na wbudowane typy liczbowe zmiennoprzecinkowe : `float`, `double` i `decimal`. Jawnie można go również konwertować na typy całkowite `sbyte`, `byte` i `short`. Nie ma natomiast niejawnych konwersji z innych typów na typ `char`. Jednak każdy typ liczbowy całkowity lub zmiennoprzecinkowy może być jawnie konwertowany na `char`.
-## 2. Enumy - typy wyliczeniowe
+### 2. Enumy - typy wyliczeniowe
 Enumy tworzymy poprzez podanie modyfikatora dostępu, słowa kluczowego `enum` i nazwy naszego typu wyliczeniowego. Następnie między klamrami podajemy informacje jakie chcemy przetrzymywać w naszym typie wyliczeniowym, oddzielone od siebie przecinkami. Służy on do przechowywania danych typu słownikowego. Przykład nowego typu wyliczeniowego:
 ```csharp =
 public enum ItemTypes
@@ -836,7 +837,7 @@ public enum ItemTypes
 }
 ```
 Więcej informacji o typach wyliczeniowych znajdzie się w kolejnych lekcjach tego tygodnia (Lekcja 12 - Enum). Wartością domyślną dla enumów są ich elementy zerowe.
-## 3. Struktury
+### 3. Struktury
 Typ bardzo podobny do klasy. Możemy w nim zadeklarować zmienne (tzw. pola), metody, właściwości. W odróżnieniu od klas jest to jednak typ wartościowy. Oznacza to, że będzie przechowywany na stosie, w stałym miejscu pamięci, a ilość zajmowanego przez niego miejsca w pamięci jest zawsze taka sama, nie zależnie ilu zmiennym struktury przypiszemy jakieś wartości. Strukturę tworzymy podając modyfikator dostępu, słowo kluczowe `struct` nazwę nowej struktury, a w klamrach ciało struktury (zmienne, metody itd.), np.:
 ```csharp =
 public struct SomeStructure
@@ -858,10 +859,10 @@ public struct SomeStructure
 }
 ```
 
-## Wartości domyślne typów w C#
+### Wartości domyślne typów w C#
 Wartość domyślna jest to wartość, jaką przyjmuje niezainicjalizowana zmienna danego typu. Możemy ją również jawnie przypisać używając domyślnego operatora lub domyślnego literału.
 
-### Domyślny operator (_default operator_)
+#### Domyślny operator (_default operator_)
 Służy do uzyskania wartości domyślnej dla danego typu.
 
 ```csharp =
@@ -871,7 +872,7 @@ typ nazwaZmiennej = default(typ);
 int a = default(int);
 ```
 
-### Domyślny literał (_default literal_)
+#### Domyślny literał (_default literal_)
 Służy do (jawnej) inicjalizacji zmiennej wartością domyślną jej typu.
 ```csharp =
 typ nazwaZmiennej = default;
@@ -880,7 +881,7 @@ typ nazwaZmiennej = default;
 int a = default;
 ```
 
-### Wartości domyślne dla poszczególnych typów
+#### Wartości domyślne dla poszczególnych typów
 | Typ | Wartość domyślna |
 | :--- | :---: |
 | Jakikolwiek typ referencyjny | `null` |
@@ -892,17 +893,17 @@ int a = default;
 | `struct` (struktura) | wartość uzyskana w wyniku przypisania wszystkim polom typów wartościowych odpowiadających im wartości domyślnych, a polom typów referencyjnych wartości `null` |
 | Wszystkie typy wartościowe nullowalne (typy wartościowe mogące przyjąć wartość `null` np. `int?`, `bool?` itd.) | Instancja, dla której właściwość `HasValue` ma wartość `false`, a właściwość `Value` jest niezdefiniowana (`undefined`). Jest znana również jako wartość `null` typu wartościowego nullowalnego (dopuszczającego wartość `null`) |
 
-# [LEKCJA 4 – Typy referencyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-4-typy-referencyjne/)
+## [LEKCJA 4 – Typy referencyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-4-typy-referencyjne/)
 
 Zmienne w programie są przechowywane na dwóch typach pamięci: na stosie i na stercie.
 
-## Stos
+### Stos
 ang. _stack_, jak mówiliśmy w poprzedniej lekcji, jest to fragment bardzo uporządkowanej pamięci wirtualnej, przydzielonej aplikacji podczas uruchamiania. Jest strukturą typu LIFO (Last-In-First-Out - ostatni włożony, pierwszy wyjęty). Można go sobie wyobrazić jako górę pudełek, ułożonych równo jedno na drugim. Pudełka te są naszymi zmiennymi. Mogą się one od siebie różnić, mieć różną pojemność, ale każde pudełko ma z góry znane wymiary i można wsadzić do niego tylko tyle ile zmieści się do środka. Niezależnie jednak co do nich włożymy (jaka wartość jest aktualnie przypisana do zmiennej), jak bardzo je wypełnimy, pudełko zawsze będzie zajmowało taką samą przestrzeń w naszej wierzy (w pamięci, na stosie). Tworząc nową zmienną "dokładamy nowe pudełko na szczyt naszej wierzy". Jeżeli będziemy sięgnąć "do wnętrza jakiegoś pudełka" będziemy to robić sięgając "od góry po kolejne pudełka". Oznacza to, że najszybciej uzyskamy dostęp do zmiennej, którą ostatnio utworzyliśmy lub użyliśmy. Najczęściej są to właśnie te zmienne do których chcemy się dostać. Przeszukiwanie stosu jest więc bardzo efektywne i umożliwia szybki dostęp do zmiennych. Można jednak przechowywać na nim wyłącznie zmienne o z góry określonym, stałym rozmiarze, alokowane statycznie (kiedy budujemy wierzę, musimy mieć wcześniej przygotowane pudełka). Przechowuje się więc w niej stałe i zmienne typów wartościowych, które zawsze mają taki sam, z góry ustalony, rozmiar, nie zależnie od przechowywanych w nich aktualnie wartości. Poza nimi na stosie znajdują się również referencje do zmiennych referencyjnych, czyli jakby odnośniki do miejsca na stercie, w którym faktycznie przechowywana jest nasza zmienna referencyjna (a dokładniej, gdzie się zaczyna).
 
-## Sterta
+### Sterta
 ang. _heap_, jest to fragment pamięci wirtualnej nieuporządkowanej aplikacji, o bardziej złożonej strukturze. Służy do przechowywania zmiennych typów referencyjnych, czyli obiektów (ang. _objects_). W odróżnieniu od stosu, który umożliwia tylko dodawanie/usuwanie zmiennych "z wierzchu", na stercie możemy uzyskać dostęp do dowolnego elementu w dowolnym czasie. Oznacza to jednak, że struktura i zarządzanie stosem są o wiele bardziej złożone, co łączy się również z mniejszą wydajnością. Sterta umożliwia dynamiczne alokowanie pamięci i służy do przechowywanie zmiennych typów referencyjnych. Oznacza to, że nie musimy z góry znać wielkości naszej zmiennej, a pamięć jest nam  przydzielana/odbierana na bieżąco wedle potrzeb. Za zarządzanie alokowaniem i zwalnianiem pamięci na stercie w C# odpowiada program zwany _garbage collector_ (GC).
 
-## Zmienne typów referencyjnych
+### Zmienne typów referencyjnych
 Zmienne typów referencyjnych, inaczej obiekty, deklarujemy analogicznie jak typy wartościowe. Załóżmy, że tworzymy obiekt będący instancją klasy _Item_ (zmienną typu _Item_):
 
 ```csharp =
@@ -923,10 +924,10 @@ Item item = new Item();
 
 Teraz nasza zmienna istnieje zarówno na stosie, jak i na stercie. Możemy więc już korzystać z metod danej klasy, wypełniać jej pola danymi itd. Jeżeli zmienne tworzymy wewnątrz jakiejś metody, po wyjściu z tej metody usunięte zostaną wszystkie utworzone na stosie, również zmienna typu referencyjnego. Obiekt znajdujący się na stercie jednak dalej tam pozostanie. Oby wyczyścić pamięć sterty z niepotrzebnych już obiektów możemy skorzystać z dostarczanego przez .NET, utworzonego w tym celu mechanizmu _garbage collector_ lub podobnie jak w innych językach programowania zrobić to osobiście, używając odpowiedniej metody.
 
-## Typy referencyjne
+### Typy referencyjne
 Do typów referencyjnych zaliczamy przede wszystkim typy dziedziczące po klasie `System.Object`. Są to przede wszystkim elementy tworzone przez samego programistę, czyli klasy, interfejsy. Dodatkowo powszechnie używanym typem referencyjnym jest typ `string`, służący do przechowywania i obsługi tekstu.
 
-### Tworzenie własnego typu referencyjnego - klasy
+#### Tworzenie własnego typu referencyjnego - klasy
 Aby utworzyć klasę podajemy po kolei modyfikator dostępu, ewentualnie dodatkowe modyfikatorów, słowo kluczowe `class`, nazwę klasy i w nawiasach klamrowych wnętrze klasy. Poniżej pokazano prosty przykład stworzonej przez programistę klasy:
 
 ```csharp =
@@ -954,7 +955,7 @@ item.Id = 5;
 item.Name = "Banana";
 ```
 
-### Przypisywanie zmiennych typów referencyjnych
+#### Przypisywanie zmiennych typów referencyjnych
 Jeżeli mamy dwie zmienne tego samego typu wartościowego i dokonamy przypisania jednej zmiennej do drugiej, to przypiszemy jedynie aktualnie przechowywaną tam wartość. Czyli np.:
 
 ```csharp =
@@ -1002,7 +1003,7 @@ W powyższym kodzie mamy więc dwie referencje do obiektu utworzonego w pierwsze
 
 Jest możliwe, aby znak przypisania między zmiennymi typu referencyjnego, zamiast przypisania referencji, powodował utworzenie kopii obiektu (drugiego obiektu z przypisanymi takimi samymi wartościami), jednak wymaga to celowej implementacji w klasie.
 
-### String
+#### String
 Klasa `System.String` służąca do przechowywania sekwencji znaków UNICODE UTF-16, czyli sekwencję `char`ów. Zmienne tego typu można również tworzyć używając aliasu `string`, analogicznie do zmiennych typów wartościowych. Tekst który chcemy umieścić w obiekcie typu `string` umieszczamy w cudzysłowach. W _stringach_
 występują również tzw. znaki specjalne, np.
 
@@ -1030,9 +1031,9 @@ const string SMILEY_PATH = @"C:\Users\adam\Images\smiley.bmp";
 
 Wstawiony przed rozpoczynającym string cudzysłowem znaku `$` daje znać kompilatorowi, że chcemy w stringu używać wartości innych zmiennych. Możemy wówczas wpisać wewnątrz stringu nazwę zmiennej otoczoną klamrami. Kompilator zastąpi nam tą sekwencję aktualną wartością zmiennej przekonwertowaną do typu `string`;
 
-# [LEKCJA 5 – Warunki](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-5-warunki/)
+## [LEKCJA 5 – Warunki](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-5-warunki/)
 Instrukcje warunkowe umożliwiają wykonanie określonych instrukcji lub zwrócenie określonej wartości w zależności od spełnienia jakiegoś warunku.
-## if
+### if
 Podstawową instrukcją warunkową jest instrukcja `if`. Ma ona postać:
 
 ```csharp =
@@ -1082,7 +1083,7 @@ We wszystkich powyższych przypadkach, jeżeli któryś z bloków instrukcji sk�
 
 Możliwe jest również zagnieżdżanie instrukcji `if` dowolnych wariantów. To znaczy, że blok instrukcji może również zawierać instrukcję `if` (`if else`, `if else if else` itd.).
 
-## Operator trójargumentowy
+### Operator trójargumentowy
 ang. _conditional operator_ lub _ternary conditional operator_ (operator warunkowy, operator trójargumentowy), czyli operator `?:` zwracający różne wartości w zależności od spełnienia określonego warunku. Ma on następującą budowę:
 
 ```csharp =
@@ -1109,7 +1110,7 @@ else
 }
 ```
 
-## switch
+### switch
 Instrukcja warunkowa sprawdzająca czy jej argument jest równy konkretnej, z góry znanej wartości. Ma ona następującą budowę:
 
 ```csharp =
@@ -1152,7 +1153,7 @@ else
 
 Operator `==` jest operatorem porównania, czyli wyrażenie `a == b` ma wartość `true`, jeżeli zmienna `a` ma taką samą wartość jak zmienna `b`. W przeciwnym razie wyrażenie ma wartość `false`. Słowo kluczowe `break` oznacza przerwanie wykonywania danej instrukcji. Czyli po dojściu do instrukcji `break` program natychmiast przerywa wykonywanie instrukcji `switch` i przechodzi do wykonywania kolejnych poleceń po niej występujących. W odróżnieniu np. od instrukcji `if` bloki instrukcji nie są otoczone nawiasami klamrowymi. Dany blok zaczyna się za znakiem `:` i kończy poleceniem `break` (zamiast `break` możliwe jest również użycie instrukcji `return` lub `throw`). Taki zapis jest wynikiem zaszłości z języków poprzedzających język C#. W odróżnieniu od np. C++, w C# umieszczenie instrukcji `break` jest obligatoryjne. W instrukcji `switch` analogicznie do instrukcji `if` może być sprawdzana dowolna liczba przypadków (dowolna liczba bloków `case`). Można również pominąć blok `default` (czyli odpowiednik `else` z `if`a). Instrukcja `switch` ma ograniczone działanie w stosunku do instrukcji `if`. Tradycyjnie po pierwsze jej warunki są wyłącznie operacjami porównania dwóch wartości typów podstawowych (typy wartościowe, stringi), `argument` musi więc być zmienną/wyrażeniem typu podstawowego. Sytuacja ta zmieniła się nieco od wersji C# 7, od której składnia i możliwości instrukcji `switch` zostały znacznie rozbudowane i są jeszcze bardziej rozszerzane w kolejnych wersjach języka (dla zainteresowanych ciekawy artykuł o `switch` w C# 7 i C# 8 - [link](https://geek.justjoin.it/nowy-switch-w-c-8-0-jak-dziala-property-pattern/)). Drugim ograniczeniem jest, że wartości z którymi porównywany jest nasz `argument` muszą być stałymi (wartościami znanymi jeż na etapie kompilacji), w odróżnieniu od instrukcji `if`, gdzie wartości te obliczane są dopiero podczas wykonywania instrukcji (sprawdzania warunku). Przez te ograniczenia instrukcja `switch` jest dość rzadko stosowana. Może nam się jednak przydać np. do obsługi menu naszej aplikacji konsolowej, co jest dobrym przykładem jej zastosowania.
 
-## switch expressions
+### switch expressions
 Występujące od C# 8 wyrażenie o działaniu podobnym do instrukcji `switch`, które jednak podobnie jak operator trójargumentowy zwraca jakąś wartość (zależną od tego który warunek jest spełniony). Ma ono następującą budowę:
 
 ```csharp =
@@ -1181,11 +1182,11 @@ Ma ona następujące działanie:
 
 Począwszy od C# 7 `argument` zarówno w instrukcji jak i wyrażeniu `switch` może być obiektem lub tulpem (zestawem wartości, zamiast jedną wartością). Począwszy od C# 9 możliwe jest również poza prostym porównaniem, porównanie relacyjne (<, <=, >, >=).
 
-# [LEKCJA 6 – Operatory](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-6-operatory/)
+## [LEKCJA 6 – Operatory](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-6-operatory/)
 
 Kolejność wykonywania działań z użyciem operatorów jest zgodna z zasadami matematyki. Jeżeli kilka operacji jest równoważnych (tak samo ważnych jeśli chodzi o kolejność wykonywania działań) to są one wykonywane od lewej do prawej. Jeżeli ostateczny wynik będziemy znać po wykonaniu tylko części operacji (będzie to czasem miało miejsce np. w przypadku operacji logicznych), to dalsze operacje nie są wykonywane.
 
-## Arytmetyczne
+### Arytmetyczne
 Zdefiniowanie zmiennych do przykładów z poniższej tabeli:
 
 ```csharp =
@@ -1218,7 +1219,7 @@ a /= b; // to samo co a = a / b;
 // a == 4, b == 2
 ```
 
-## Inkrementacji/dekrementacji
+### Inkrementacji/dekrementacji
 1. **Inkrementacja** - zwiększenie wartości o jeden. Jest to operacja jednoargumentowa, której operatorem są dwa znaki plus (`++`). Może występować w dwóch wersjach:
 	1. postinkrementacja -  operator wstawiamy po argumencie. W tym wypadku wyrażenie ma wartość argumentu (najpierw następuje przypisanie, a potem inkrementacja). Np.:
 	
@@ -1310,7 +1311,7 @@ Podsumowanie:
 | `++` | inkrementacja | `i++; // postinkrementacja`<br/>`++i; // preinkrementacja` |
 | `--` | dekrementacja | `i--; // postdekrementacja`<br/>`--i; // predekrementacja` |
 
-## Przypisania
+### Przypisania
 Operator pozwalający nadać zmiennej wartość. Jest to po prostu znak równa się (`=`) i był już przez nas wielokrotnie stosowany, np.:
 
 ```csharp =
@@ -1323,7 +1324,7 @@ b = a; // nadanie zmiennej b takiej samej wartości jaką ma zmienna a, czyli 5
 | :---: | :--- | :--- |
 | `=` | przypisanie wartości do zmiennej | `int i = 0;` |
 
-## Relacji
+### Relacji
 Operatory porównujące dwie wartości i zwracające wartość `bool` `true` jeśli zależność jest prawdziwa lub `false`, jeśli nie. Zdefiniowanie zmiennych do przykładów z poniższej tabeli:
 
 ```csharp =
@@ -1358,10 +1359,10 @@ else
 }
 ```	
 
-## Logiczne warunkowe
+### Logiczne warunkowe
 Zostaną omówione w kolejnej lekcji (lekcja 7).
 
-## Konkatenacji
+### Konkatenacji
 czyli łączenia łańcuchów tekstowych. Operatorem konkatenacji jest znak plus (`+`). Np.:
 
 ```csharp =
@@ -1386,10 +1387,10 @@ a += " ma kota."; // to samo co a = a + " ma kota."
 | :---: | :--- | :--- |
 | `+` | dla argumentów typu `string` oznacza konkatenację, połączenie dwóch stringów w jeden | `string a = "Ala" + " miała kota." // wynik: Ala miała kota.` |
 
-# [LEKCJA 7 – Operatory Logiczne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-7-operatory-logiczne/)
+## [LEKCJA 7 – Operatory Logiczne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-7-operatory-logiczne/)
 W lekcji tej poznamy operatory logiczne warunkowe. Wyróżniamy operatory logiczne jednoargumentowe i dwuargumentowe. Wszystkie argumenty są typu `bool`. Wynik operacji logicznych również jest tego typu. Operatory logiczne są często stosowane w wyrażeniach warunkowych instrukcji `if`, pętli itp.
 
-## Operatory logiczne jednoargumentowe
+### Operatory logiczne jednoargumentowe
 Jest tylko jedna jednoargumentowa operacja logiczna - NOT, czyli zaprzeczenie. Zmienia on wartość logiczną wyrażenia na przeciwną (z `true` na `false`, a z `false` na `true`). Operatorem NOT jest wykrzyknik (`!`) stawiany przed argumentem (wyrażeniem/zmienną itd.). Umożliwia on np. wykonanie jakichś czynności, gdy warunek nie jest spełniony.
 
 | Operator | Nazwa | Przykład | Uwagi |
@@ -1401,7 +1402,7 @@ Jest tylko jedna jednoargumentowa operacja logiczna - NOT, czyli zaprzeczenie. Z
 | `true` | `!true` | `false` |
 | `false` | `!false` | `true` |
 
-## Operatory logiczne dwuargumentowe
+### Operatory logiczne dwuargumentowe
 Operacje logiczne dwuargumentowe mają postać `argument1 operator argument2`. Zarówno oba argumenty, jak i całość operacji są typu `bool`. Jeżeli argumenty są wyrażeniami, a operator jest operatorem warunkowym (`&&` lub `||`), to gdy wynik operacji jest znany po obliczeniu pierwszego argumentu, to drugi argument nie jest już w ogóle liczony. Możemy wymienić następujące operatory logiczne dwuargumentowe:
 
 | Operator | Nazwa | Przykład | Uwagi |
@@ -1435,7 +1436,7 @@ Operatory `&` i `|` mogą również obsługiwać logikę trójwartościową, czy
 | `null` | `fałsz` | `fałsz` | `null` |
 | `null` | `null` | `null` | `null` |
 
-## Łączenie operacji logicznych
+### Łączenie operacji logicznych
 Operacje logiczne, podobnie jak arytmetyczne można ze sobą łączyć w jedno wyrażenie logiczne. Podobnie jak w przypadku operatorów arytmetycznych obowiązuje tu również matematyczna kolejność wykonywania działań (zgodnie z logiką matematyczną). Kolejność ta jest następująca:
 1. Operator negacji logicznej (`!`)
 2. Operator logiczny AND (`&`)
@@ -1444,10 +1445,10 @@ Operacje logiczne, podobnie jak arytmetyczne można ze sobą łączyć w jedno w
 5. Warunkowy operator logiczny AND (`&&`)
 6. Warunkowy operator logiczny OR (`||`)
 
-# [LEKCJA 8 – Pętle](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-8-petle/)
+## [LEKCJA 8 – Pętle](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-8-petle/)
 Służą do iteracyjnego powtórzenia jakiejś czynności. Oznacza to, że dany blok kodu wykona się określoną ilość razy, zależną od warunków początkowych jakie przyjmiemy i warunku przerwania. W języku C# wyróżniamy cztery rodzaje pętli:
 
-## while
+### while
 Najbardziej podstawowa pętla. Składa sią ze słowa kluczowego `while`, ujętego w nawias okrągły warunku typu `bool` i zawartego w klamrach bloku kodu:
 
 ```csharp =
@@ -1481,7 +1482,7 @@ Console.WriteLine();
 
 Pętlę `while` stosujemy najczęściej jeżeli nie wiemy dokładnie przez ile wykonań pętli warunek będzie spełniony.
 
-## do while
+### do while
 Chyba najrzadziej stosowany rodzaj pętli, charakteryzujący się tym, że zawsze jest wykonywana przynajmniej raz (niezależnie od warunku). Składa sią ze słowa kluczowego `do`, zawartego w klamrach bloku kodu, słowa kluczowego `while`, ujętego w nawias okrągły warunku typu `bool` i postawionego na końcu instrukcji średnika:
 
 ```csharp =
@@ -1540,7 +1541,7 @@ Console.WriteLine();
 //UWAŻAĆ NA TAKIE PĘTLE!!!
 ```
 
-## for
+### for
 Jeden z najczęściej stosowanych rodzajów pętli. Składa się ze słowa kluczowego `for`, ujętego w nawias okrągły wyrażenia inicjalizacyjnego (inicjalizacja zmiennej użytej jako iterator pętli), warunku (wrażenie typu `bool`) i kroku pętli (instrukcje wykonywane po wykonaniu bloku kodu między klamrami) oddzielonych od siebie średnikami i ujętego w klamry bloku kodu:
 
 ```csharp =
@@ -1573,7 +1574,7 @@ Console.WriteLine();
 
 Pętlę `for` stosujemy najczęściej jeżeli z góry wiemy ile razy pętla ma się wykonać. Pisząc instrukcję `for` możemy pominąć dowolny element z nawiasu okrągłego (inicjalizacje, warunek i/lub krok) pozostawiając jedynie średniki. Jeżeli nie podamy warunku, stworzymy pętlę nieskończoną (pętla `for( ; ; ){//kod}` będzie się wykonywać w nieskończoność).
 
-## foreach
+### foreach
 Pętla przeznaczona do iterowania po elementach kolekcji. Składa się ze słowa kluczowego `foreach`, ujętych w nawias okrągły definicji zmiennej przechowującej element kolekcji, słowa kluczowego `in` i kolekcji po której chcemy iterować. Na końcu umieszczony jest ujęty w klamry blok kodu:
 
 ```csharp =
@@ -1586,10 +1587,10 @@ foreach(var element in kolekcja)
 
 Ten typ pętli zostanie dokładniej omówiony w lekcji 10, gdy poznamy tablice.
 
-# [LEKCJA 9 – Instrukcje skoku](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-9-instrukcje-skoku/)
+## [LEKCJA 9 – Instrukcje skoku](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-9-instrukcje-skoku/)
 Instrukcje składające się z określonego słowa kluczowego i średnika. Najogólniej mówiąc służą do przenoszenia do innej części kodu. Najczęściej stosuje się je w połączeniu z instrukcją warunkową `if`. Wyróżniamy następujące instrukcje skoku:
 
-## break
+### break
 Stosowana głównie w pętlach, gdy istnieje potrzeba przerwania działania pętli, nawet jeśli warunek zakończenia pętli nie został jeszcze spełniony (warunek dalej jest równy `true`). Kiedy program napotyka na instrukcję `break` wykonywana właśnie pętla (lub inna instrukcja np. `switch`) zostaje natychmiast przerwana (przeskakujemy do kodu wykonywanego po danej instrukcji). Weźmy np., użytą w poprzedniej lekcji do pokazania różnicy między pętlą `while` i `do while`, pętlę nieskończoną `do while` wypisującą podaną liczbę i kolejne liczby, jeżeli były one dodatnie. Użyjmy instrukcji `break`, aby wypisywać tą pętlą nie więcej niż 10 cyfr:
 
 ```csharp =
@@ -1615,7 +1616,7 @@ Console.WriteLine();
 
 Teraz powyższa pętla nie jest już pętlą nieskończoną.
 
-## continue
+### continue
 Stosowana w pętlach, gdy istnieje potrzeba pominięcia części kodu w bloku kodu pętli. Po napotkaniu tej instrukcji program nie wykonuje następujących po niej instrukcji bloku kodu, a przeskakuje prosto do sprawdzenia warunku wykonywania pętli. Np.:
 
 ```csharp =
@@ -1639,7 +1640,7 @@ for(int i = 0; i < 10; i++)
 
 Oczywiście powyższy program niema większego sensu i można go zaprogramować z użyciem samej instrukcji warunkowej (bez instrukcji `continue`), ale chodziło nam tu tylko o pokazanie działania instrukcji `continue`.
 
-## goto
+### goto
 Służy do przejścia w zupełne inne miejsce w kodzie. Składa się ze słowa kluczowego `goto` i nazwy etykiety oraz etykiety umieszczonej w kodzie w miejscu do którego chcemy się przenieść. Program po natrafieniu na instrukcję `goto` przeskakuje do miejsca w kodzie gdzie znajduje się etykieta o podanej nazwie i nie wraca już do miejsca w kodzie gdzie znajduje się instrukcja `goto`:
 
 ```csharp =
@@ -1654,22 +1655,22 @@ Etykieta:
 
 Instrukcja `goto` jest pozostałością po językach niższego poziomu i nie jest stosowana we współczesnym programowaniu. Jeżeli jest to tylko możliwe (a praktycznie zawsze jest) unikaj więc jej stosowania, gdyż takie skakanie po kodzie zmniejsza jego spójność i czytelność.
 
-## return
+### return
 Stosowana głównie w metodach. Zostanie omówiona później w tym tygodniu w lekcji dotyczącej metod (Lekcja 14).
 
-## throw
+### throw
 Stosowana do wyrzucania wyjątków. Zostanie omówiona później w kursie, przy okazji omawiania obsługi wyjątków.
 
-# [LEKCJA 10 – Tablice](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-10-tablice/)
+## [LEKCJA 10 – Tablice](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-10-tablice/)
 Obiekty służące do przetrzymywania z góry określonej liczby danych tego samego typu. Klasą bazową dla tablic jest zawsze klasa `System.Array` (nie zależnie od tego jakiego typu dane przechowuje tablica). 
 
-## Tworzenie tablic
+### Tworzenie tablic
 Tablicę możemy sobie wyobrazić jako mebel na książki. Budując mebel (tablicę) z góry wiemy ile książek (danych) danego typu chcemy w nim umieścić - jakie wymiary ma mieć tablica. Wiemy też, czy ma to być półka (tablica jednowymiarowa), czy może regał (tablica dwuwymiarowa), albo mebel jeszcze innego typu (o innej liczbie wymiarów), czyli z góry wiemy ile wymiarów ma nieć nasza tablica. Oczywiście jeśli jest to regał to wiemy nie ile książek łącznie ma się na nim zmieścić, ale raczej ile ma mieć półek i ile książek zmieści się na każdej półce, a jeżeli jest to cała biblioteka z przesuwnymi regałami, to ile takich regałów ma się w niej znajdować. Inaczej mówiąc budując tablicę podajemy wielkość każdego jej wymiaru. 
-### 1. Deklaracja
+#### 1. Deklaracja
 Deklaracja zmiennej typu tablicowego składa się z typu danych jakie będziemy w niej przechowywać, nawiasu kwadratowego z wymiarami tablicy oddzielonymi przecinkami i nazwy zmiennej. Spowoduje to utworzenie zmiennej na stosie, ale bez rezerwacji miejsca na stercie (czyli nie możemy w niej jeszcze niczego przechowywać - na razie zmówiliśmy mebel, wiemy już czy będzie to półka, szafa, czy jeszcze co innego, ale na razie nikt jej nie buduje, więc nie musimy jeszcze znać jej dokładnych wymiarów). Na tym etapie nie musimy jeszcze znać konkretnych wartości jakie będzie mieć każdy z wymiarów, musimy jednak zaznaczyć ile tych wymiarów będzie. To znaczy w nawiasie kwadratowym nie wpisujemy liczb, ale musimy pozostawić przecinki.
-### 2. Inicjalizacja
+#### 2. Inicjalizacja
 Inicjalizację pętli wykonuje się z użyciem słowa kluczowego `new`, po którym następuje typ przechowywanych w niej danych i nawias kwadratowy z podanymi wielkościami wymiarów, oddzielonymi od siebie przecinkami (podajemy dokładne wymiary i mebel zostaje zbudowany). Tym razem musimy określić z ilu konkretnie elementów będzie się składał każdy z wymiarów (podać nieujemne wartości typu `int`). Tablic została już utworzona (zarezerwowano pamięć na stercie - mebel jest już zbudowany), ale na razie jest pusta. Pusta, to znaczy jeżeli dany typ danych przechowywany w tablicy może przyjmować wartość `null`, to właśnie taką wartość ma każdy z elementów tablicy. Gdy natomiast dany typ nie może być równy `null`, to każdy z elementów tablicy przyjmuje wartość domyślną dla danego typu (np. dla typu `int` jest to wartość `0`, a dla typu `string` tzw. pusty string - `String.Empty`, czyli inaczej `""`). Teraz powinniśmy więc wypełniać tablicę żądanymi wartościami.
-### 3. Wypełnienie tablicy danymi
+#### 3. Wypełnienie tablicy danymi
 Możemy to zrobić na kilka sposobów:
 1. razem z inicjalizacją, czyli po nawiasie kwadratowym w klamrach podać wartości wszystkich kolejnych elementów oddzielone od siebie przecinkami. Jeżeli tablica jest wielowymiarowa to będziemy zagnieżdżać w sobie nawiasy klamrowe. Np. dla tablicy dwuwymiarowej piszemy nawias klamrowy w jego wnętrzu wstawiamy nawiasy klamrowe oddzielone przecinkami - tyle nawiasów klamrowych ile mamy rzędów (wielkość pierwszego wymiaru), a w każdym z tych nawiasów wypisujemy tyle przedzielonych przecinkami wartości ile rzędów ma nasza tablica (wielkość drugiego wymiaru). Czyli wracając do naszego przykładu z regałem - zewnętrzne klamry będą naszym regałem. Wewnątrz regału mamy półki (nawiasy klamrowe) które są porozdzielane (przecinki). Na każdej półce znajdują się książki (wartości jakie chcemy wpisać do tablicy), które również są pooddzielane przecinkami (nie chcemy przecież aby książki na półce skleiły się w jedną całość). Przy tym sposobie możemy pominąć podawanie wielkości tablicy w wyrażeniu inicjalizacyjnym, gdyż zostanie ona sprecyzowana przez ilość wartości które przypisujemy.
 2. po inicjalizacji, w dowolnym miejscu programu. Wpisujemy wartość do konkretnej komórki tabeli. W tym celu podajemy nazwę tabeli, ujęty w nawias kwadratowy indeks, znak przypisania (`=`) i wartość jaką chcemy przypisać. Indeks mówi nam w którym miejscu tabeli mamy wpisać daną wartość (na której półce, w którym miejscu mam wsadzić tą książkę). Jeżeli tablica jest wielowymiarowa, to indeksy poszczególnych wymiarów rozdzielamy przecinkami. Indeksację w tablicach zaczynamy od zera tzn. pierwszy element w tablicy jednowymiarowej będzie miał indeks `[0]`, w dwuwymiarowej `[0, 0]`, t trójwymiarowej `[0, 0, 0]` itd. Możemy oczywiście ręcznie podawać indeksy wszystkich kolejnych elementów tablicy, ale przy wypełnianiu najczęściej robi się to przy pomocy pętli `for`, gdzie za indeks służy zmienna będąca iteratorem pętli. Jeżeli tablica jest wielowymiarowa, to stosuje się zagnieżdżone pętle 'for'. Przypisanie wartości do konkretnej komórki tabeli stosuje się też później w programie do zmian wartości konkretnej komórki.
@@ -1812,7 +1813,7 @@ duck:   15
 
 ```
 
-## Właściwości i metody klasy `System.Array`
+### Właściwości i metody klasy `System.Array`
 Jak już wspomnieliśmy klasą bazową dla wszystkich tablic jest klasa `System.Array`. Możemy więc korzystać ze zdefiniowanych w niej właściwości (ang. _properties_) i metod (ang. _methods_). Jedną z podstawowych  właściwości jest `Length`. Przechowuje ona łączną liczbę wszystkich elementów tablicy. Jej wartość możemy uzyskać podając nazwę tablicy, kropkę i nazwę właściwości (`nazwaTablic.Length`). Możemy z niej korzystać np. iterując po wszystkich elementach tablicy, czy chcąc otrzymać ostatni element tablicy. Jednak **UWAGA**, `Length` zwraca liczbę elementów, czyli to co wpisaliśmy w nawiasie klamrowym przy inicjalizacji (a w przypadku tablicy wielowymiarowej wszystkie wartości przemnożone przez siebie). Natomiast indeksowanie w tablicach rozpoczyna się od zera. Oznacza to, że ostatni element tablicy będzie mieć indeks o jeden mniejszy niż długość (wielkość) tablicy (`tablica[tablica.Length - 1]`). Często stosowanymi metodami są np.:
 1. `IndexOf` - metoda zwracająca numer indeksu pierwszego napotkanego elementu tablicy jednowymiarowej o podanej wartości (dokładnie tej wartości włącznie np. z wielkością liter). Stosuje się ją w następujący sposób: `Array.IndexOf(nazwaTablicy, szukanaWartosc)`. Czyli np. chcąc w tablicy `animals` z naszego przykładu sprawdzić pod jakim indeksem jest przechowywana małpa (`"monkey"`) napiszemy:
 
@@ -1834,11 +1835,11 @@ Array.Sort(animalsSorted);
 
 Metody `IndexOf` i `Sort` można stosować tylko w przypadku tablic jednowymiarowych. Mogą one przyjmować też inne argumenty (inna liczba i/lub typ). Np. w przykładowym kodzie użyliśmy metody `Sort` przyjmującej dwa argumenty typu `Array` (tablice). Pierwszy przechowuje klucze (identyfikatory), a drugi wartości. Pierwsza tablica zostanie posortowana normalnie, a druga według tej samej kolejności co pierwsza (jeżeli pierwszy element tablicy kluczy stanie się teraz jej trzecim elementem, to pierwszy element tablicy wartości również stanie się jej trzecim elementem). Więcej informacji dotyczących tych metod można znaleźć w dokumentacji ([`IndexOf`](https://learn.microsoft.com/en-us/dotnet/api/system.array.indexof?view=net-7.0), [`Sort`](https://learn.microsoft.com/en-us/dotnet/api/system.array.sort?view=net-7.0), [`Clear`](https://learn.microsoft.com/en-us/dotnet/api/system.array.clear?view=net-7.0)). Można tam też znaleźć więcej właściwości i metod klasy [`System.Array`](https://learn.microsoft.com/en-us/dotnet/api/system.array?view=net-7.0), np. użytą w przykładzie `Sort` metodę do kopiowania tablic [`CopyTo`](https://learn.microsoft.com/en-us/dotnet/api/system.array.copyto?view=net-7.0) lub [`Copy`](https://learn.microsoft.com/en-us/dotnet/api/system.array.copy?view=net-7.0).
 
-# [LEKCJA 11 – Listy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-11-listy/)
+## [LEKCJA 11 – Listy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-11-listy/)
 Klasa `System.Collections.Generic.List` należy do tzw. typów generycznych. Oznacza to, że lista jest zawsze obiektem typu `List`, ale może przetrzymywać obiekty innego typu, który definiujemy podczas inicjalizacji. Podobnie jak tablice, listy służą do przechowywania wielu obiektów tego samego typu. Różnice między tymi dwoma typami powodują jednak, że stosuje się je w różnych sytuacjach.
 
-## Różnice między listami a tablicami
-### 1. Tworzenie obiektów danego typu
+### Różnice między listami a tablicami
+#### 1. Tworzenie obiektów danego typu
 Listy deklarujemy podając słowo kluczowe `List`, następnie w nawiasach ostrych (`<>`) podajemy typ jaki przetrzymywać będzie dana lista, a na koniec podajemy nazwę naszego obiektu. Wyrażenie inicjalizacyjne, jak w przypadku każdego obiektu, rozpoczyna się od słowa kluczowego `new`, następnie podajemy nazwę klasy do której należy nasz obiekt (`List`), w nawiasach ostrych typ jaki będzie przechowywać ta lista i na koniec nawias okrągły (wywołanie konstruktora klasy - więcej o konstruktorach w lekcji 2 kolejnego tygodnia). Nasza lista jest już utworzona. W przypadku list, podczas inicjalizacji nie podajemy jej rozmiaru. Jak tworzy się tablice omówiliśmy w poprzedniej lekcji. Dla przypomnienia pokażmy jeszcze jak tworzy się tablice i porównajmy to z tworzeniem listy, na przykładzie obiektów obu typów przechowujących `int`y:
 
 ```csharp =
@@ -1850,7 +1851,7 @@ List<int> lista = new List<int>();
 ```
 
 Oczywiście jak zawsze inicjalizacji listy nie musimy przeprowadzać razem z deklaracją. Równie dobrze możemy to zrobić w dalszej części kodu. Jeśli jest to możliwe warto to jednak zrobić od razu, inaczej trzeba uważać, aby nie próbować używać obiektu, który nie został jeszcze zainicjalizowany.
-### 2. Sposób alokowania pamięci
+#### 2. Sposób alokowania pamięci
 **Tablice** są uporządkowanymi (ciągłymi) strukturami alokowanymi statycznie w momencie inicjalizacji. Jest rezerwowany obszar pamięci mogący pomieścić całą tablicę. Dla tego musimy z góry znać jej rozmiar i podać go przy inicjalizacji. Nie powinniśmy też tego rozmiaru później zmieniać. Dzięki temu dodawanie, usuwanie i odczytywanie wartości pod określonym indeksem jest w tablicach bardzo szybkie. Musimy jednak z góry wiedzieć ile wartości będziemy przechowywać, a rozmiar naszej tablicy będzie taki sam niezależnie ile z pośród tych wartości znamy już w tym momencie.
 
 **Listy** mają z kolei bardziej rozrzuconą (nieciągłą) strukturę i są alokowane w sposób dynamiczny. Oznacza to, że w momencie inicjalizacji nie musimy wiedzieć ile obiektów będziemy chcieli w nich przechowywać. Możemy też w dowolnym momencie zmieniać rozmiar naszej listy (dodawać nowe obiekty, usuwać istniejące). Przy czym usuwanie obiektów w tablicy oznacza usunięcie ich z pamięci (zwolnienie pamięci, w odróżnieniu od tablicy, w której oznaczało to przypisanie obiektowi wartości domyślnej). Dzięki sposobowi alokacji list w pamięci, możemy już po inicjalizacji zarezerwować dla nich więcej pamięci lub zwolnić dowolną część z tej już przez nią zajmowanej. Daje to programiście większą swobodę działania, ale wiąże się ze zmniejszeniem szybkości dodawania, usuwania i odczytywania wartości danego obiektu. Jeżeli więc wiemy ile obiektów będziemy chcieli przechowywać i wartość ta jest niezmienna w czasie trwania programu, to warto stosować tablice, ze względu na szybkość ich działania. Ponieważ jednak listy należą do typów generycznych, więc mamy dostęp do większej liczby mechanizmów służących m.in. do sortowania, czy wyszukiwania elementów w liście.
@@ -1871,11 +1872,11 @@ Oczywiście jak zawsze inicjalizacji listy nie musimy przeprowadzać razem z dek
 | Zastosowanie | Częsty dostęp do przechowywanych obiektów, znany stały rozmiar | Częste dodawanie i usuwanie obiektów, zmienność rozmiaru |
 | Wymiary | Może być wielowymiarowa (wsparcie dla obsługi wielowymiarowości) | Jednowymiarowa (można stworzyć pseudo wielowymiarową listę, tworząc listę list - "dwa wymiary", listę list list - "trzy wymiary" itd.|
 
-## Operacje na listach
+### Operacje na listach
 
-### Dodawanie elementów
+#### Dodawanie elementów
 
-#### 1. Metoda `Add`
+##### 1. Metoda `Add`
 Metoda klasy `System.Collections.Generic.List` pozwalająca dodać jeden nowy obiekt na końcu listy (za jej ostatnim dotychczasowym elementem - pierwszy element jeśli lista była pusta). Np.:
 
 ```csharp =
@@ -1893,7 +1894,7 @@ foreach (int i in list)
 */
 ```
 
-#### 2. Metoda `AddRange`
+##### 2. Metoda `AddRange`
 Metoda klasy `System.Collections.Generic.List` pozwalająca dodać istniejącą listę na końcu naszej listy. Np. do utworzonej przed chwilą listy dodajmy kolejne wartości:
 
 ```csharp =
@@ -1913,7 +1914,7 @@ for(int i = 0; i < list.Count; i++)
 */
 ```
 
-#### 3. Metoda `Insert`
+##### 3. Metoda `Insert`
 Metoda klasy `System.Collections.Generic.List` pozwalająca dodać jeden nowy obiekt w wybranym miejscu listy. Jako parametry tej metody podajemy numer indeksu pod którym ma się znaleźć nowy element, oraz dodawany obiekt. Numer indeksu jest liczbą całkowitą niemniejszą od zera i nie większą od liczby elementów w liście (wskazanej przez właściwość `Count`). Np. do tworzonej przez nas listy dodajmy liczbę `5` po liczbie `4`:
 
 ```csharp =
@@ -1935,7 +1936,7 @@ for(int i = 0; i < list.Count; i++)
 */
 ```
 
-#### 4. Metoda `InsertRange`
+##### 4. Metoda `InsertRange`
 Metoda klasy `System.Collections.Generic.List` pozwalająca dodać listę obiektów w wybranym miejscu naszej listy. Jako parametry tej metody podajemy numer indeksu pod którym ma się zaczynać dodawana lista, oraz dodawana list. Numer indeksu jest liczbą całkowitą niemniejszą od zera i nie większą od liczby elementów w liście (wskazanej przez właściwość `Count`). Np. do tworzonej przez nas listy dodajmy listę `new List<int>() { 6, 7, 8, 9 }`, zaraz za dodaną przed chwilą cyfrą `5`:
 
 ```csharp =
@@ -1960,15 +1961,15 @@ foreach (int i in list)
 */
 ```
 
-### Uzyskiwanie dostępu do elementów
+#### Uzyskiwanie dostępu do elementów
 Jak pokazano w powyższych przykładach dostęp do konkretnego elementu listy można uzyskać tak samo jak w przypadku tablic podając nazwę listy i otoczony nawiasami kwadratowymi numer indeksu. Można w ten sposób zarówno uzyskać aktualnie przechowywany w tym miejscu obiekt, zmodyfikować go lub przypisać nowy obiekt. Można również wyszukać w liście obiekt(y) spełniający(e) określone warunki. Do tego służą różne metody _find_ klasy `List`. Więcej na temat tych i innych metod i właściwości można znaleźć w [dokumentacji klasy `List`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-7.0).
 
-### Sortowanie elementów
+#### Sortowanie elementów
 Do uporządkowania elementów służy metoda `Sort` klasy `List`. Jej wywołanie wygląda następująco: `nazwaTablicy.Sort();`. Działa ona analogicznie jak omówiona w poprzedniej lekcji tablicowa metoda o takiej samej nazwie.
 
-### Usuwanie elementów
+#### Usuwanie elementów
 Jak już wspomniano dynamiczna natura list pozwala na łatwe zarówno dodawanie jak i usuwanie jej elementów. Do tego celu klasa `System.Collections.Generic.List` implementuje kilka metod:
-#### 1. Metoda `Remove`
+##### 1. Metoda `Remove`
 Służy do usunięcia z listy konkretnego obiektu, podanego jako argument (pierwszego wystąpienia tego obiektu na liście, czyli jeśli podany obiekt występuje w liści kilka razy, tylko pierwsze wystąpienie zostanie usunięte, a reszta pozostanie bez zmian). Np. gdybyśmy z naszej przykładowej listy chcieli usunąć `10`, napisalibyśmy:
 
 ```csharp =
@@ -1992,10 +1993,10 @@ foreach (int i in list)
 */
 ```
 
-#### 2. Metoda `RemoveAll`
+##### 2. Metoda `RemoveAll`
 Służy do usunięcia z listy wszystkich obiektów spełniających podany warunek. Metoda `RemoveAll` przyjmuje jeden argument typu `Predicate<T>`, gdzie `T` oznacza typ obiektów przechowywanych w liście. Jest to tzw. delegata, która definiuje warunki usunięcia elementów. Więcej o metodach przyjmujących argumenty tego typu dowiemy się w kolejnych lekcjach.
 
-#### 3. Metoda `RemoveRange`
+##### 3. Metoda `RemoveRange`
 Jak w przypadku dodawania obiektów do listy, usunąć również możemy od razu wiele elementów. Służy do tego metoda `RemoveRange`. Przyjmuje ona dwa argumenty: numer indeksu pierwszego elementu listy, który chcemy usunąć i liczbę elementów jakie chcemy usunąć. Załóżmy więc, że z naszej przykładowej listy chcemy teraz usunąć trzy ostatnie elementy. Napiszemy wówczas:
 
 ```csharp =
@@ -2017,7 +2018,7 @@ foreach (int i in list)
 */
 ```
 
-#### 4. Metoda `RemoveAt`
+##### 4. Metoda `RemoveAt`
 Możemy również usunąć obiekt o określonym indeksie. Do tego służy właśnie metoda `RemoveAt`, przyjmująca jako argument numer indeksu elementu, który chcemy usunąć (liczba całkowita z zakresu od `0` do `nazwaTablicy.Count - 1`). Załóżmy więc, że chcemy teraz usunąć ostatni element z naszej przykładowej listy. Napiszemy więc:
 
 ```csharp =
@@ -2037,9 +2038,9 @@ foreach (int i in list)
 */
 ```
 
-### Wykonanie operacji na każdym elemencie listy
+#### Wykonanie operacji na każdym elemencie listy
 Jeżeli chcemy wykonać jakąś operację na wszystkich elementach listy możemy to zrobić na kilka sposobów. Dla przykładu, pokażemy jak wypisać w konsoli wszystkie elementy listy z powyższych przykładów, każdym z tych sposobów.
-#### 1. Z użyciem iteratora
+##### 1. Z użyciem iteratora
 Jak już wiemy możemy uzyskać dostęp do konkretnego elementu listy używając "notacji tablicowej", czyli podając w nawiasie kwadratowym numer indeksu. Wiemy też, że możemy użyć pętli, aby uzyskać wartości kolejnych indeksów. Najczęściej będzie to stosowana już w powyższych przykładach pętla `for`:
 
 ```csharp =
@@ -2059,7 +2060,7 @@ while(i < list.Count)
 }
 ```
 
-#### 2. Z użyciem pętli `foreach`
+##### 2. Z użyciem pętli `foreach`
 Jak już wiemy pętla ta służy do uzyskiwania dostępu do każdego kolejnego elementu kolekcji. Zastosowaliśmy ją już w kilku przykładach powyżej, ale dla przypomnienia:
 ```csharp =
 foreach(var item in list)
@@ -2070,7 +2071,7 @@ foreach(var item in list)
 
 Słowo kluczowe `var` oznacza zmienną dowolnego typu. Zmienna taka przyjmuje typ obiektu (literału), który został do niej przypisany podczas inicjalizacji. W naszym przypadku będzie to `int`, ale gdyby lista przechowywała obiekty innego typu, to byłby to ten inny typ. W powyższym przykładzie można też oczywiście podać typ elementu jawnie, czyli w naszym przypadku, zamiast słowa kluczowego `var`, napisać `int`.
 
-#### 3. Z użyciem metody `ForEach`
+##### 3. Z użyciem metody `ForEach`
 Klasa `System.Collections.Generic.List` definiuje również specjalnie przeznaczoną do tego celu metodę `ForEach`. Przyjmuje ona jeden argument typu `Action<T>`, gdzie `T` jest typem obiektów naszej listy. Argument ten jest delegatą (metodą) wykonywaną na każdym elemencie listy. Można jej użyć na dwa sposoby:
 
 1. Podając jako argument zdefiniowaną oddzielnie metodę:
@@ -2095,7 +2096,7 @@ list.ForEach(delegate(int item)
 
 Więcej o argumentach tego typu dowiemy się w dalszej części kursu.
 
-# [LEKCJA 12 – Enum](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-12-enum/)
+## [LEKCJA 12 – Enum](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-12-enum/)
 Enum należy do wyliczeniowych typów wartościowych. Wspominaliśmy już o nim przy okazji omawiania typów wartościowych. Służy do przechowywania określonych danych słownikowych, których ilość się nie zmienia. Przypomnijmy sobie jak tworzy sią typ `enum`:
 
 ```csharp =
@@ -2147,14 +2148,14 @@ public enum PeriodsOfTime
 
 Typy wyliczeniowe są stosunkowo szybkie w użyciu, jednak mają ograniczone zastosowanie. Należy pamiętać, że nie można ich dynamicznie zmieniać (dopisywać kolejnych wartości), więc ich zastosowanie należy dobrze przemyśleć. Późniejsze zmiany warunków lub wymagań w naszej aplikacji, które będą wiązały się z typami enum będą również oznaczały zmiany w innych częściach kodu programu.
 
-# [LEKCJA 13 – Klasy i obiekty](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-13-klasy-i-obiekty/)
+## [LEKCJA 13 – Klasy i obiekty](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-13-klasy-i-obiekty/)
 Klasy są podstawą języka C#, ponieważ jest to język obiektowy. Z założenia wszystkie jego elementy są więc obiektami.
 
 **Klasy** - definicje dla obiektów jakiegoś typu (tej klasy).
 
 **Obiekty** - instancje danej klasy.
 
-## Klasa
+### Klasa
 Każda klasa ma swoje cechy (właściwości - ang. _properties_) i zachowania (metody - ang. _methods_). Klasę tworzymy podając modyfikator dostępu, ewentualne dodatkowe modyfikatory (np. `static`, jeśli ma być to klasa statyczna), słowo kluczowe `class`, nazwę i w klamrach jej właściwości i metody. Klasa będzie nam więc opisywać jakie cechy posiada każdy obiekt danego typu (wartość tej cechy będzie indywidualna dla każdego obiektu, ale fakt jej posiadania pozostaje niezmienny) oraz jakie czynności może wykonywać (lub czasem jakie czynności można na nim wykonywać). Stwórzmy więc przykładową klasę `Dog`, w której postaramy się opisać psa. Każdy pies ma określone cechy, takie jak np. imię, rasa, wiek, płeć, waga, wysokość, długość, umaszczenie, długość sierści itd. Każdy pies wykonuje też pewne, takie same czynności, np.: je, śpi, wychodzi na spacer, bawi się. Spróbujmy więc to zapisać:
 
 ```csharp =
@@ -2204,7 +2205,7 @@ public enum CoatLength
 
 Stwórzmy teraz psa (konkretny egzemplarz).
 
-## Obiekt
+### Obiekt
 Jak już wiemy klasa, jest to opis całej grupy. Obiekt będzie zaś konkretnym wystąpieniem (egzemplarzem, instancją) tej grupy (klasy). Stwórzmy więc naszego psa. Nasz pies to czarny, pięcioletni kundel, o imieniu Torpeda. Torpeda jest niewielką, energiczną suczką ważącą 5kg i mierzącą 25 cm wysokości w kłębie i 33 cm długości. Jej sierść ma mieszaną długość, gdzieniegdzie jest dłuższa, a w innych miejscach krótsza. Spróbujmy to zapisać:
 
 ```csharp =
@@ -2233,17 +2234,17 @@ Console.WriteLine("Dog weight after activities: " + dog.Weight);
 
 Kiedy będziemy operować na danych z bazy danych, będziemy je na ogół tłumaczyć na obiekty klasy. Później będziemy mogli nimi manipulować przy użyciu metod danej klasy i zmiany właściwości obiektów.
 
-# [LEKCJA 14 – Metody](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-14-metody/)
+## [LEKCJA 14 – Metody](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-14-metody/)
 Jak wspomnieliśmy w poprzedniej lekcji, klasy składają się z właściwości i metod.
 
 Współcześnie często tworzymy osobne klasy z samymi właściwościami, gdyż są one najczęściej odzwierciedleniem bazy danych, więc ma to sens, aby nie zawierały żadnych metod.
 
-## Klasy serwisowe
+### Klasy serwisowe
 Do manipulacji danymi przechowywanymi w tych klasach tworzy się najczęściej tzw. klasy serwisowe. Nadaje się im najczęściej nazwy takie jak nazwa klasy podstawowej z dodanym na końcu słowem `Service`. Klasy serwisowe posiadają najczęściej obiekt lub listę obiektów klasy podstawowej oraz metody do manipulacji nimi. 
 
-## Metody
+### Metody
 Wróćmy jednak do metod. Służą one do wykonywania jakichś operacji na właściwościach klasy i/lub danych podanych im jako parametry (dane które przekazujemy do metody w momencie jej wywołania). Metody definiujemy w następujący sposób: podajemy modyfikator dostępu (`public`, `private` itp.), następnie, jeśli chcemy aby była to metoda statyczna, piszemy słowo kluczowe `static`, typ zwracanych danych (lub `void`, jeśli nie chcemy aby nasza metoda cokolwiek zwracała), w końcu podajemy nazwę metody, w nawiasach okrągłych parametry (typ i nazwa, kolejne parametry oddzielone przecinkami lub puste nawiasy, jeżeli nie chcemy przekazywać do metody żadnych danych) a w klamrach ciało metody (instrukcje wykonywane gdy wywołamy metodę).
-### Instrukcja skoku `return`
+#### Instrukcja skoku `return`
 Jak wspomnieliśmy metoda, kiedy skończy się wykonywać, może zwracać jakąś daną. Służy do tego słowo kluczowe `return`. Oznacza ono natychmiastowe zakończenie wykonywania danego elementu (w tym wypadku metody). Po nim podajemy daną którą chcemy zwrócić (otrzymać jako wynik działania metody) i średnik. Jeżeli chcemy zakończyć wykonywanie metody, ale nie chcemy zwracać żadnych danych (metoda typu `void`), to piszemy tylko `return;`. Jeżeli zadeklarowaliśmy, że nasza metoda będzie zwracać dane jakiegoś typu, to zawsze (nie zależnie od wariantu jej zakończenia) musi zwracać jakąś daną tego typu.
 
 Stwórzmy więc dwie przykładowe klasy, jedną składającą się z samych właściwości i klasę serwisową do jej obsługi:
@@ -2297,9 +2298,9 @@ public class PersonService
 ```
 
 Pamiętajmy, że definicja (i implementacja) każdej klasy powinna się znaleźć w osobnym pliku (jest to dobra praktyka ułatwiająca nawigowanie po kodzie).
-### Metody typu `void`
+#### Metody typu `void`
 Wróćmy jeszcze na chwilę do metod typu `void`. Są to metody, które nic nie zwracają. Wykonują one operacje wyłącznie wewnątrz klasy, na składnikach obiektu, których rezultat działania właściwie nas nie interesuje. Rezultatu działanie takich metod nie będziemy w dalszych etapach używać.
-### Wywoływanie metod
+#### Wywoływanie metod
 Po utworzeniu obiektu danej klasy, możemy swobodnie korzystać w kodzie programu ze wszystkich jego metod publicznych (z modyfikatorem dostępu `public`). Korzystamy z nich tak jak robiliśmy to ze wszystkimi metodami do tej pory. Podajemy ścieżką dostępu, nazwę metody i jej parametry (argumenty), oddzielone przecinkami, ujęte w nawias okrągły. Ścieżką dostępu będzie w tym wypadku utworzony przez nas obiekt (czyli po prostu nazwa utworzonego przez nas obiektu danej klasy). Użyjmy więc dla przykładu metod klasy `PersonService`. Po utworzeniu obiektu tej klasy, najpierw dopiszemy kilka osób do listy, następnie wyświetlimy wpisane dane, a na koniec policzymy średnią wieku osób z listy.
  
 ```csharp
@@ -2323,7 +2324,7 @@ decimal average = (decimal)sumAge / (decimal)peopleList.Count;
 Console.WriteLine("Średnia wieku: " + average);
 ```
 
-### Metody i klasy statyczne
+#### Metody i klasy statyczne
 Jak już wspominaliśmy tworzone przez nas metody mogą być statyczne (dopisujemy słowo kluczowe `static` pomiędzy modyfikator dostępu a zwracany typ). Oznacza to, że istnieje jeden egzemplarz takiej metody (niezależnie ile obiektów danej klasy utworzymy) i można jej używać, nawet gdy żaden obiekt tej klasy nie istnieje. Taka metoda jest wywoływana nie na obiekcie, a na klasie (ścieżką dostępu będzie nazwa klasy, a nie tak jak w pozostałych przypadkach nazwa obiektu). W związku z tym nie można w takiej metodzie modyfikować żadnych właściwości klasy, gdyż nie ma ona do nich dostępu (chyba, że są to właściwości statyczne). Metoda statyczna jest niezależna od obiektów danej klasy. Właśnie z tych względów metod statycznych prawie nigdy nie stosuje się w klasach serwisowych. Najczęściej używa się ich do zapisania wielokrotnie wykonywanych obliczeń, walidacji itp. i umieszcza w specjalnej pomocniczej klasie statycznej. Na przykład możemy używać ich do przeliczeń jednostek. Załóżmy więc, że chcielibyśmy wiek osób zapisywać w miesiącach, a nie w latach. Wówczas moglibyśmy stworzyć metodę statyczną:
 
 ```csharp =
@@ -2337,10 +2338,10 @@ Oczywiście jest to przeliczenie wieku w miesiącach zaokrąglonego do pełnych 
 
 **Klasy statyczne** są to klasy których wszystkie składniki (zarówno właściwości jak i metody) muszą być statyczne. Klasy statyczne tworzymy dodając słowo kluczowe `static` pomiędzy modyfikator dostępu (np. `public`) a słowo kluczowe `class`. Nie można tworzyć obiektów klas statycznych.
 
-# [LEKCJA 15 – Parametry metod](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-15-parametry-metod/)
+## [LEKCJA 15 – Parametry metod](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-15-parametry-metod/)
 Jak wiemy z poprzednich lekcji metody mogą przyjmować dowolną liczbę argumentów. Jeżeli jednak nasza funkcja musi przyjąć ich wiele (powyżej 7), to dobrą praktyką jest, aby utworzyć nową klasę przechowującą wartości tych argumentów i przekazywać do metody obiekt tej klasy. Argumenty podajemy w nawiasie okrągłym za nazwą funkcji i oddzielamy od siebie przecinkami. Istnieją one tylko w obrębie metody.
 
-## Parametry w definicji metody
+### Parametry w definicji metody
 W definicji funkcji każdy parametr składa się z typu i nazwy (deklarujemy zmienne, których będziemy używać w funkcji).
 
 ```csharp =
@@ -2353,7 +2354,7 @@ modyfikatorDostepu typ nazwaMetody (typ1 nazwaParametru1, typ2 nazwaParametru2, 
 }
 ```
 
-## Parametry w wywołaniu metody
+### Parametry w wywołaniu metody
 W wywołaniu metody są to wartości (literały, zmienne, obiekty), które chcemy przekazać do metody (inicjalizujemy zmienne zadeklarowane w definicji metody, przypisując im konkretne wartości). Możemy to zrobić wypisując same wartości. Należy jednak uważać, oby kolejność wypisywanych wartości była zgodna z kolejnością parametrów w definicji metody (pierwsza wartość zostanie przypisana do pierwszego parametru, druga do drugiego itd.). C# daje nam również możliwość przekazywania argumentów w dowolnej kolejności. Wówczas musimy jednak dla każdego parametru podać jego nazwę (użytą w definicji metody), dwukropek i wartość jaką chcemy temu parametrowi przypisać. W obu przypadkach kolejne parametry oddzielamy od siebie przecinkami. Musimy też zawsze podać wartości dla wszystkich obowiązkowych parametrów metody (parametry opcjonalne opcjonalne opisane są niżej).
 
 ```csharp =
@@ -2371,10 +2372,10 @@ typ rezultat = objekt.nazwaMetody(parametr1, parametr2, ..., parametrN);
 typ rezultat2 = objekt.nazwaMetody(nazwaParametruN: parametrN, nazwaParametru1: parametr1, nazwaParametru2: parametr2, ...);
 ```
 
-## Typy parametrów
+### Typy parametrów
 Możemy zadeklarować parametry dowolnego typu. Mogą to być zarówno typy wartościowe, jak i klasy. Należy jednak pamiętać, że typ przekazywanej wartości musi być zgodny z zadeklarowanym typem parametru (lub musi być możliwość niejawnej konwersji do tego typu).
 
-## Parametry opcjonalne
+### Parametry opcjonalne
 1. Definicja<br/>
 Są to parametry, którym w definicji metody przypisujemy wartość domyślną. Robimy to dodając w liście parametrów za nazwą argumentu znak `=` i wartość którą chcemy przypisać. Wartość ta musi być stałą (wartością znaną w momencie kompilacji). Parametry domyślne muszą być podane na końcu listy parametrów (za parametrem opcjonalnym nie może znaleźć się żaden parametr obowiązkowy).
 
@@ -2405,7 +2406,7 @@ objekt.Metoda(nazwaParametruN: parametrN, nazwaParametru1: parametr1, nazwaParam
 objekt.Metoda(parametr1, parametr2, nazwaParametruN: parametrN);
 ```
 
-## Słowa kluczowe `out` i `ref`
+### Słowa kluczowe `out` i `ref`
 Tradycyjnie metoda może zwrócić tylko jedną wartość. Gdybyśmy jednak potrzebowali uzyskać z niej kilka wartości możemy użyć tzw. argumentów wyjściowych. Jak już wspomnieliśmy normalnie argumenty istnieją tylko wewnątrz metody (są usuwana po zakończeniu jej wykonywania). Używając jednak słów kluczowych `out` lub `ref` możemy stworzyć argumenty, które będą istnieć nawet po zakończeniu wykonywania metody. Robimy to dodając przed nazwą parametru (w definicji metody) i przypisywaną mu wartością (w wywołaniu metody, niezależnie którym sposobem) wybrane słowo kluczowe. Sposób ten jest jednak rzadko stosowany. Kiedy musimy zwrócić kilka wartości najczęściej tworzy się nową klasą, która będzie je przechowywać i zwraca się obiekt tej klasy. Czasami jednak spotkamy się z użyciem parametrów wyjściowych. Mogliśmy to już np. zobaczyć w funkcjach do parsowania `string`ów na inne typy. Np:
 
 ```csharp =
@@ -2416,11 +2417,11 @@ Int32.TryParse(ageString, out age);
 ```
 
 Zobaczmy jednak co użycie tych słów kluczowych właściwie oznacza.
-### Przekazywanie argumentów przez wartość
+#### Przekazywanie argumentów przez wartość
 Normalnie parametry metod są przekazywane przez wartość. To znaczy, że przekazujemy samą liczbę (typy liczbowe), znak (`char`), referencję do obiektu na stercie (typy referencyjne) itd., a nie zmienną. Jeżeli więc w metodzie przypiszemy parametrowi inną wartość (lub zmodyfikujemy dotychczasową), to zmiany te nie będą widoczne poza metodą. Oczywiście jeżeli używamy typu referencyjnego i nie zmieniając przechowywanej w argumencie referencji dokonujemy zmian we wskazywanym przez nią obiekcie na stosie, to zmiany te będą widoczne również gdy odwołamy się do tego obiektu przez zmienną spoza metody. Jeżeli jednak w metodzie przypiszemy argumentowi nową referencję (inny obiekt), to nie zmieni to obiektu na który wskazuje zmienna, którą użyliśmy w wywołaniu. 
-### Przekazywanie argumentów przez referencję
+#### Przekazywanie argumentów przez referencję
 Użycie słów kluczowych `ref` lub `out` oznacza, że ten argument przekazujemy przez referencję, a nie przez wartość. Czyli nasz argument nie jest nową zmienną, a jedynie aliasem do zmiennej przekazanej w wywołaniu (w wywołaniu musimy użyć zmiennej, czegoś co ma zarezerwowany konkretny adres w pamięci, a nie np. literału). Oznacza to, że argument jest tak na prawdę tą samą zmienną, co ta przekazana w wywołaniu (wskazuje na ten sam obszar w pamięci), występuje ona tylko pod nową nazwą. Wszelkie zmiany jakie dokonamy w takim argumencie będą więc też widoczne w oryginalnej zmiennej (użytej w wywołaniu) po zakończeniu działania metody.
-### Porównanie argumentów `out` i `ref`
+#### Porównanie argumentów `out` i `ref`
 
 | Cecha | `ref` | `out` |
 | :--- | :---: | :---: |
@@ -2434,8 +2435,8 @@ Użycie słów kluczowych `ref` lub `out` oznacza, że ten argument przekazujemy
 2. Pamiętajmy również, że właściwości metod nie są zmiennymi. Nie możemy więc ich przekazać jako parametrów `out` lub `ref`.
 3. Argumenty `out` i `ref` nie mogą być również argumentami domyślnymi.
 
-# [LEKCJA 16 – Pola i właściwości](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-16-pola-i-wlasciwosci/)
-## Pola
+## [LEKCJA 16 – Pola i właściwości](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-16-pola-i-wlasciwosci/)
+### Pola
 Mówiliśmy już, że klasa składa się z właściwości i metod. Nic nie stoi jednak na przeszkodzie, aby w klasie stworzyć też zwykłą zmienną. Robimy to podając modyfikator dostępu, typ i nazwę zmiennej. Na końcu oczywiście stawiamy średnik. Zmienną będącą składnikiem klasy nazywamy polem. Np.:
 
 ```csharp =
@@ -2474,7 +2475,7 @@ Console.WriteLine("Objętość kostki: " + cube.Volume());
 Console.WriteLine("Pole powierzchni bocznej kostki" + cube.LateralSurface());
 ```
 
-## Właściwości
+### Właściwości
 Właściwości są to tak na prawdę struktury składające się z pola prywatnego i dwóch publicznych metod (`get` i `set`). Czyli np. właściwość:
 
 ```csharp =
@@ -2525,7 +2526,7 @@ public class Person
 
 Jak widać nazwę prywatnego pola ustawia się na ogół na taką samą jak nazwa właściwości, tylko pisaną z małej litery i poprzedzoną podkreślnikiem (_). W `set`terze natomiast użyliśmy słowa kluczowego `value`, które oznacza wartość jaką do niego przekazaliśmy. Czyli jeżeli stworzyliśmy sobie obiekt `Person person = new Person();` i zapisaliśmy niżej `person.Id = 5;`, to `value` będzie równe właśnie to `5`.
 
-### Właściwości read-only
+#### Właściwości read-only
 Może się też tak zdarzyć, że chcemy, aby można było odczytać wartość naszej właściwości, jednak nie chcemy dawać możliwości jej jawnej zmiany. Np. nasze Id będzie ustawiane automatycznie w momencie tworzenia obiektu (zaprogramujemy to w kodzie klasy) i nie chcemy, aby ktokolwiek mógł nam tam mieszać. Oby to zrobić wystarczy w definicji właściwości pominąć sekcję `set`. Czyli w podstawowej formie będzie to wyglądało:
 
 ```csharp =
@@ -2579,34 +2580,34 @@ public class Person
 
 Można też oczywiście mieszać oba zapisy (np. skrócony zapis dla `get`tera i normalny dla `set`tera).
 
-# [LEKCJA 17 – Zakresy widoczności](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-17-zakresy-widocznosci/)
+## [LEKCJA 17 – Zakresy widoczności](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-17-zakresy-widocznosci/)
 Poszczególne elementy programu (klasy, metody, właściwości, zmienne) mają różną widoczność w zależności od miejsca w programie. Definiujemy ją przy pomocy tzw. modyfikatorów dostępu.
-## Modyfikatory dostępu
+### Modyfikatory dostępu
 Są to słowa kluczowe które umieszczaliśmy na początku każdej deklaracji. Podawanie ich jawnie za każdym razem, nawet w sytuacjach gdy nie są wymagane, zwiększa czytelność i przeszukiwanie kodu. Należy więc to do dobrych praktyk programowania. Wyróżniamy cztery podstawowe modyfikatory dostępu:
-### `public`
+#### `public`
 Oznaczamy tak elementy do których chcemy mieć dostęp w każdym elemencie programu. Możemy sią do nich odwoływać zarówno w innych klasach, jak i nawet w innych projektach w danej solucji (wtedy musimy dodać sekcję using z nazwą projektu z elementem który chcemy użyć, lub odpowiedniej ścieżki dostępu).
-### `private`
+#### `private`
 Oznaczamy tak elementy do których chcemy mieć dostęp tylko w obrębie elementu bezpośrednio go zawierającego (klasy, metody).To znaczy, że próba odwołania się do takich w innej klasie, zakończy się fiaskiem.
-### `protected`
+#### `protected`
 Do tak oznaczonych elementów klasy, mamy dostęp tylko wewnątrz tej klasy, oraz w klasach po niej dziedziczących (o dziedziczeniu powiemy więcej w przyszłym tygodniu).
-### `internal`
+#### `internal`
 Oznacza elementy do których mamy dostęp tylko wewnątrz danego projektu. To znaczy nie możemy się do nich odwołać z innych projektów jakie dodamy do naszej solucji. Jeżeli w definicji klasy nie ma podanego modyfikatora dostępu, to są one domyślnie `internal`.
 
-# [LEKCJA 18 – Piszemy aplikację](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-18-piszemy-aplikacje/)
+## [LEKCJA 18 – Piszemy aplikację](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-18-piszemy-aplikacje/)
 W tej lekcji możemy zobaczyć początek implementacji przykładowej aplikacji. Kod programu możemy znaleźć [tutaj](https://github.com/szkoladotneta/warehouse/tree/tydz2).
 
-## 1. Utworzenie projektu
+### 1. Utworzenie projektu
 Tworzenie programu rozpoczynamy oczywiście od utworzenia projektu w którym implementować będziemy naszą aplikację
-## 2. Wypisanie funkcjonalności
+### 2. Wypisanie funkcjonalności
 Następnie, jeszcze zanim zaczniemy pisać jakiś kod dobrze jest wypisać sobie w komentarzach podstawowe funkcjonalności, które będziemy chcieli utworzyć w pierwszej kolejności. Można to zrobić np. wyobrażając sobie co po kolei powinno się dziać po uruchomieniu naszego programu.
-## 3. Rozpisanie funkcjonalności krok po kroku
+### 3. Rozpisanie funkcjonalności krok po kroku
 Poniżej w komentarzach dobrze jest wypisać poszczególne etapy z jakich będzie się składać dana funkcjonalność (w punktach).
-## 4. Implementacja kolejnych funkcjonalności
+### 4. Implementacja kolejnych funkcjonalności
 Teraz możemy przejść do implementacji kolejnych funkcjonalności. Będziemy to robić najczęściej tworząc nowe klasy. Zazwyczaj będą to dwie klasy (podstawowa i serwisowa). Staramy się unikać powtarzania kodu. Dobrze, aby nasz kod był możliwie elastyczny. Wówczas być może będzie możliwe jego ponowne użycie. Dobrze również, aby ewentualne późniejsze zmiany (rozszerzenia funkcjonalności itp.) wymagały modyfikacji kodu w jak najmniejszej liczbie miejsc (a idealnie tylko w jednym). Jeżeli ktoś potrzebuje, może sobie najpierw rozpisać jakie klasy i metody będą mu potrzebne do implementacji poszczególnych etapów. Pamiętajmy również przy wymyślaniu nazw oraz implementacji, aby nasz kod był jak najbardziej czytelny i zrozumiały zarówno dla nas jak i dla innych. Starajmy się przestrzegać dobrych praktyk programowania (każda klasa w oddzielnym pliku, przestrzeganie konwencji nazywania elementów programu, nazwy w języku angielskim, nawiasy klamrowe w osobnych liniach, jawna deklaracja modyfikatorów dostępu, maksymalnie jedna wolna linia pomiędzy kolejnymi metodami itd.).
-## 5. Użycie funkcjonalności
+### 5. Użycie funkcjonalności
 Dodajemy odpowiedni kod do metody `Main`. Tworzymy odpowiednie obiekty. Wypełniamy listy (najczęściej przy użyciu utworzonej do tego metody). Pobieramy odpowiednie dane od użytkownika. W przypadku aplikacji konsolowej, poza poznaną już przez nas metodą `Console.ReadLine();` pobierającą całą linijkę tekstu, przydatna może się okazać metoda `Console.ReadKey();`.
 
-### Metoda `Console.ReadKey()`
+#### Metoda `Console.ReadKey()`
 Użyjemy jej w sytuacji, gdy chcemy zareagować na wciśnięcie tylko jednego klawisza. Np. gdy chcemy pobrać tylko jeden znak lub wykonać odpowiednią akcję po wciśnięciu wybranego klawisza funkcyjnego. Zwraca ona strukturę `ConsoleKeyInfo`. Zawiera ona m.in. informację, który klawisz został wciśnięty (właściwość `Key`), jaka jest jego reprezentacja w formie `char` (jaki znak został wpisany - właściwość `KeyChar`) i jaki był stan klawiszy modyfikujących (SHIFT, ALT i CTRL) w momencie wciskania tego klawisza - które były wciśnięte (właściwość `Modifiers`). Przykład użycia:
 
 ```csharp =
@@ -2633,37 +2634,37 @@ switch(option.KeyChar)
 }
 ```
 
-## 6. Uruchomienie programu
+### 6. Uruchomienie programu
 Po skończeniu jakiegoś etapu uruchamiamy program, aby sprawdzić, czy działa zgodnie z naszymi oczekiwaniami i czy nie popełniliśmy żadnych błędów.
-## 7. Debugowanie
+### 7. Debugowanie
 Jeżeli kompilator poinformuje nas o jakichś błędach, lub gdy program zadziała w nieoczekiwany dla nas sposób, staramy się znaleźć tego przyczynę, a w razie potrzeby korzystamy z narzędzi do debugowania.
-## 8. Czyszczenie komentarzy
+### 8. Czyszczenie komentarzy
 Po zaimplementowaniu jakiejś funkcjonalności (lub jej etapu), możemy usunąć odpowiedni, dotyczący go, komentarz (napisany w punktach 2., 3.).
-## 9. Refaktoryzacja
+### 9. Refaktoryzacja
 W dalszych etapach nauki dokonamy refaktoryzacji naszego kodu. Kiedy lepiej poznamy język C# i nauczymy się nowych mechanizmów zobaczymy, że niektóre fragmenty naszego programu można napisać lepiej, zwiększyć ich czytelność lub sprawność działania. Wówczas zaczniemy modyfikować nasz kod, zgodnie z naszą aktualną wiedzą.
 
-# [LEKCJA 19 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-19-bledy-poczatkujacych/)
-## Tworzenie metod
+## [LEKCJA 19 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-19-bledy-poczatkujacych/)
+### Tworzenie metod
 Nie twórz klas ze zbyt dużą liczbą argumentów. Jeżeli nie możesz zapamiętać kolejności w jakiej występują, to znaczy, że jest ich prawdopodobnie za dużo. Wtedy warto utworzyć dodatkową klasę pomocniczą, która zbierze wszystkie argumenty które chcieliśmy przekazać. Wówczas do naszej metody będziemy przekazywać tylko jeden argument typu tej klasy pomocniczej.
-## Typy danych
+### Typy danych
 Jeżeli masz problem jakiego typu powinna być dana zmienna lub właściwość, to zastanów się, co oznaczałaby ona w świecie realnym. Jeżeli jest to ilość czegoś, to najczęściej będzie to liczba całkowita, czyli użyjemy typu `int`. Gdy chcemy natomiast przechowywać cenę, to wiemy, że jest to wartość z dwoma miejscami dziesiętnymi. Użyjemy więc typu `decimal`, gdyż zależy nam tu na dużej dokładności obliczeń na liczbach dziesiętnych.
-## Instrukcje warunkowe
+### Instrukcje warunkowe
 Stosuj je często. Zawsze, gdy pobierasz dane od użytkownika, sprawdź, czy podał on takie dane jakich oczekiwaliśmy, zanim użyjesz ich dalej w programie. Jeżeli np. oczekiwaliśmy, że użytkownik wpisze cyfrę, a on np. wciśnie Enter, to próba rzutowania na typ `int` może zakończyć się błędem programu i zakończeniem jego pracy.
 
 W instrukcjach warunkowych uważaj na wzajemnie się wykluczające warunki.
-## Pętle nieskończone
+### Pętle nieskończone
 Uważaj na pętle nieskończone. Stosuj je świadomie i pamiętaj, że są kosztowne dla programu.
 
-# [LEKCJA 20 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-20-praca-domowa/)
+## [LEKCJA 20 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-20-praca-domowa/)
 Zaczynamy pisać naszą aplikację konsolową. Tworzymy projekt i implementujemy pierwsze funkcjonalności. Celem zadania jest stworzenie działającego programu z dostępną określoną liczbą funkcjonalności. Pamiętajmy o przestrzeganiu wszystkich poznanych dobrych praktyk programowania, ale nie przejmujmy się, że nie będą one jeszcze zgodne ze wszystkimi standardami. Tym zajmiemy się później w dalszej części nauki. Pisząc program wykorzystajmy całą naszą dotychczasową wiedzę. Zawrzyjmy w nich wszystkie elementy, które poznaliśmy w tym tygodniu. Stwórzmy tablice, listy, wykorzystajmy większość typów wartościowych i referencyjnych. Zaimplementujmy pierwsze klasy i metody, oraz połączmy je w funkcjonalności, które można zaprezentować innym. Poza stworzeniem samego projektu opiszmy go również. powiedz jakie funkcjonalności są w nim w tej chwili dostępne dla użytkownika i jak używać naszego programu.
 
-# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-1-powitanie/)
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-1-powitanie/)
 Przechodzimy do poznawania programowania obiektowego. W tym tygodniu poznamy co to jest dziedziczenie, hermetyzacja, polimorfizm. Poznamy również takie struktury jak interfejsy, czy klasy abstrakcyjne. Pod koniec tego tygodnia dokonamy refaktoryzacji naszej aplikacji, z uwzględnieniem wszystkich zasad jakie poznamy w tym tygodniu.
 
-# [LEKCJA 2 – Konstruktory](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-2-konstruktory/)
+## [LEKCJA 2 – Konstruktory](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-2-konstruktory/)
 **Konstruktor** jest to specjalny rodzaj metody, wywoływanej podczas inicjalizacji obiektu danej klasy.
 
-## Tworzenie konstruktora
+### Tworzenie konstruktora
 Konstruktor tworzymy prawie tak samo jak każdą inną metodę. Jedynymi zastrzeżeniami jest fakt, że nie podajemy w nim zwracanego typu, a jego nazwa musi być identyczna z nazwą klasy. Czyli np.:
 
 ```csharp =
@@ -2676,17 +2677,17 @@ public class MyClass
 }
 ```
 
-## Wywoływanie konstruktora
+### Wywoływanie konstruktora
 Standardowo konstruktor jest wywoływany w momencie tworzenia nowego obiektu danej klasy, czyli gdy piszemy np.:
 
 ```csharp =
 MyClass newObject = new MyClass();
 ```
 
-## Konstruktor domyślny
+### Konstruktor domyślny
 Jeżeli w naszej klasie nie zadeklarujemy konstruktora to zostaje wywoływany tzw. domyślny bezparametrowy konstruktor. Jego zadaniem jest zainicjalizowanie wartościami domyślnymi wszystkich pól i właściwości klasy. Czyli np. do pól i właściwości typu `int` podstawiane jest `0`, do typów referencyjnych `null` itd.
 
-## Konstruktor z parametrami
+### Konstruktor z parametrami
 Tworzony przez nas konstruktor może mieć również parametry. Możemy wówczas przypisać do wszystkich lub wybranych właściwości i pól naszej klasy konkretne wartości w momencie tworzenia obiektów. Np.:
 
 ```csharp =
@@ -2714,7 +2715,7 @@ Konstruktory w takiej formie tworzy się, gdy klasa zawiera jakieś właściwoś
 
 Utworzenie konstruktora z parametrem spowoduje, że nie powstanie konstruktor domyślny. Próba stworzenia obiektu tej klasy bez podania odpowiednich parametrów spowoduje błąd kompilacji. Oczywiście dalej możemy stworzyć konstruktor bezparametrowy. Musimy go jednak zadeklarować w sposób jawny.
 
-## Konstruktor z listą inicjalizacyjną
+### Konstruktor z listą inicjalizacyjną
 Gdybyśmy chcieli zapewnić nadanie wartości określonym parametrom, ale jednocześnie dać możliwość tworzenia obiektów bez podawania parametrów możemy wówczas skorzystać z konstruktora z listą inicjalizacyjną. Możemy np. Do powyższej klasy `User` dopisać drugi konstruktor:
 
 ```csharp
@@ -2731,10 +2732,10 @@ W ten sposób, wywołamy konstruktor bezparametrowy, który wywoła z kolei wywo
 
 Stosowanie konstruktorów z listą inicjalizacyjną jest dobrą metodą, jeżeli mamy możliwość nadania naszym wymaganym do wypełnienia właściwością wartości domyślnych.
 
-## Tworzenie wielu konstruktorów
+### Tworzenie wielu konstruktorów
 Możemy stworzyć dowolną ilość konstruktorów, jednak muszą się one różnić ilością i/lub typem danych przekazywanych przez parametry. Jest to tzw. przeciążanie metod, o którym więcej nauczymy się w kolejnej lekcji (lekcja 3).
 
-## Kiedy tworzyć własne konstruktory
+### Kiedy tworzyć własne konstruktory
 W wielu przypadkach nie tworzy się konstruktorów, gdyż konstruktor domyślny jest dla nas wystarczający. W klasach z samymi właściwościami, powiązanych w jakiś sposób z bazą danych, tabelami w bazie danych, czy prezentujących jakiś rodzaj modeli na ogół nie mamy jawnie zdefiniowanych konstruktorów. W takich klasach na ogół niema potrzeby nadawania właściwością konkretnych wartości podczas tworzenia obiektów tej klasy. Tworzenie konstruktorów z przekazywanymi wszystkimi parametrami nie skróci natomiast (ani nie zwiększy czytelności) zapisu nadawania wartości wszystkim właściwością publicznym po inicjalizacji. Czyli np. dla klasy:
 
 ```csharp =
@@ -2754,11 +2755,11 @@ Item item = new Item() { Id = 1, Name = "bear", Type = "toy" };
 
 **Konstruktory tworzymy więc najczęściej jeżeli mamy tylko część właściwości jako dane wymagane.**
 
-# [LEKCJA 3 – Przeciążenia](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-3-przeciazenia/)
+## [LEKCJA 3 – Przeciążenia](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-3-przeciazenia/)
 **Przeciążanie metod** jest to stworzenie drugiej (kolejnej) metody o takiej samej nazwie, ale o innej liczbie i/lub typie przekazywanych parametrów. Standardowo metoda i jaj przeciążenia zwracają ten sam typ (chociaż możliwe jest zwracanie różnych typów).<br/>
 Standardowo przeciążenia różnią się więc między sobą tylko argumentami i ciałem metody.
 
-## Przykład zastosowania
+### Przykład zastosowania
 Załóżmy np., że mamy klasę `Item`:
 
 ```csharp =
@@ -2806,10 +2807,10 @@ Jak widać stworzyliśmy trzy przeciążone metody `AddItem`. Każda z nich przy
 
 Inne przykłady metod przeciążonych można znaleźć w poprzedniej lekcji, gdzie m.in. przeciążaliśmy konstruktory.
 
-# [LEKCJA 4 – Dziedziczenie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-4-polimorfizm/)
+## [LEKCJA 4 – Dziedziczenie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-4-polimorfizm/)
 **Dziedziczenie** jest to jeden z trzech paradygmatów (filarów) programowania obiektowego. Pozwala ona na przejście od ogółu do szczegółu. Tzn. mamy jakąś ogólną klasę (np. Ssak) i klasy szczegółowe (np. Pies, Kot, Małpa, Człowiek itp.), które będą w sobie zawierać wszystkie cechy klasy ogólnej (pola, właściwości, metody). Dodatkowo każda z tych bardziej szczegółowych klas będzie posiadała własne, charakterystyczne tylko dla siebie cechy (pola, właściwości, metody). Oczywiście dziedziczenie możemy realizować wielopoziomowo. Możemy np. mieć klasę Zwierzę, po której będą dziedziczyć klasy Ssak, Ptak, Gad, Płaz itd. Później np. po klasie Ssak będą dziedziczyć klasy Naczelny, Gryzoń itd., a po klasie Gryzoń np. Wiewiórka, Szczur itd. Wówczas klasa Szczur będzie posiadać wszystkie składniki klas Zwierzę, Ssak, Gryzoń i Szczur. Dziedziczenie może odbywać się jednak tylko po jednej klasie (dana bardziej szczegółowa klasa może mieć tylko jedną klasę bazową). Czyli np. nasza klasa Szczur, ponieważ dziedziczy już po klasie Gryzoń, nie mogłaby jeszcze dodatkowo dziedziczyć po klasie ZwierzątkoDomowe. Klasa może natomiast implementować kilka interfejsów, ale o tym w dalszych lekcjach tego tygodnia. Pokażmy więc jak wygląda dziedziczenie na przykładzie.
 
-## Przykład
+### Przykład
 Załóżmy, że mamy np. klasę `Rectangle` (prostokąt). Każdy prostokąt ma boki (właściwości `Width` i `Height`). Konstruktor tej klasy będzie więc posiadał dwa argumenty (`width` i `height`). Napiszemy również metodę liczącą jego pole powierzchni (`CountArea()`) i dwie metody do narysowania prostokąta w konsoli przy pomocy znaku `'*'` (wypełnionego - `Draw()` i samych krawędzi - `DrawEdges()`). Będzie to nasza klasa bazowa.
 
 ```csharp =
@@ -2882,13 +2883,13 @@ public class Square : Rectangle
 
 Dziedziczenie zaznaczamy pisząc po nazwie klasy dwukropek i nazwę klasy po której chcemy dziedziczyć. Jak już wspomnieliśmy możemy dziedziczyć tylko po jednej klasie. 
 
-### Konstruktor
+#### Konstruktor
 Ponieważ klasa bazowa (`Rectangle`) niema zdefiniowanego konstruktora domyślnego (bezargumentowego), a jedynie konstruktor przyjmujący dwa argumenty, więc w klasie `Square` również musimy zdefiniować konstruktor. Nie musi on przyjmować takich samych argumentów jak konstruktor klasy `Rectangle`, musi jednak go wywoływać. Aby to zrobić po definicji konstruktora klasy `Square` piszemy dwukropek, słowo kluczowe `base` i w nawiasie odpowiednie argumenty, które wyślemy do konstruktora klasy bazowej. Nie musimy więc jeszcze raz przepisywać kodu, który zawarliśmy w konstruktorze klasy bazowej. Jeżeli w klasie `Square` mielibyśmy jakieś dodatkowe pola/właściwości, które chcielibyśmy zainicjalizować, albo jakieś inne czynności jakie chcielibyśmy wykonać podczas tworzenia obiektu tego typu, to możemy dopisać odpowiedni kod w ciele konstruktora. Podczas tworzenia obiektu najpierw zostanie wywołany konstruktor klasy bazowej, a następnie konstruktor klasy pochodnej (najpierw konstruktor `Rectangle`, a potem `Square`).
 
-### Przykrywanie metod
+#### Przykrywanie metod
 W klasie pochodnej poza dodatkowymi metodami niewystępującymi w klasie bazowej możemy również utworzyć metody o takich samych nazwach jak te występujące w klasie bazowej. Takie metody przykryją te występujące w klasie bazowej (dla obiektów klasy pochodnej będą wywoływane zamiast nich). W implementacji klasy pochodnej możemy jednak odwołać się również do oryginalnych implementacji z klasy bazowej. W tym celu ponownie używamy słowa kluczowego `base` i po kropce podajemy nazwę metody klasy bazowej, którą chcemy wywołać i w nawiasie odpowiednie argumenty.
 
-### Przykład użycia obiektów
+#### Przykład użycia obiektów
 Zobaczmy teraz przykładowy kod wykorzystujący powyższe klasy, aby zobaczyć jak one działają: 
 
 ```csharp =
@@ -2935,7 +2936,7 @@ square.DrawEdges();
 //  * * * * *
 ```
 
-## Popularna klasa bazowa w aplikacjach webowych
+### Popularna klasa bazowa w aplikacjach webowych
 W aplikacjach webowych będziemy tworzyć dużo klas będących bezpośrednim odzwierciedleniem tabel w bazie danych (jedna tabela, jedna klasa). Większość współczesnych baz danych posiada w każdej tabeli informacje o tym, kto (id użytkownika) i kiedy utworzył i zmodyfikował dany rekord (pozycję/rząd w tabeli). Ponieważ takie informacje będę w każdej (lub prawie każdej) tabeli więc, aby nie powtarzać wielokrotnie tego samego kodu (co niepotrzebnie wydłuża kod i zwiększa ryzyko błędu), często tworzy się klasę bazową, która będzie je przechowywać.
 
 ```csharp =
@@ -2950,13 +2951,13 @@ public class AuditableModel
 
 Wówczas wszystkie klasy będące odzwierciedleniem tabel bazy danych (oczywiście tych zawierające takie dane) będą dziedziczyć po klasie `AudiatableModel`.
 
-# [LEKCJA 5 – Polimorfizm](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-5-dziedziczenie/)
+## [LEKCJA 5 – Polimorfizm](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-5-dziedziczenie/)
 **Polimorfizm** jest to drugi paradygmat (filar) programowania obiektowego. Z języka greckiego _polys_ - wiele, _morfe_ - kształt, czyli wielopostaciowość (coś o wielu kształtach), oznacza, że dany obiekt może występować w różnych kształtach. W programowaniu oznacza to, że wszystkie elementy mogą mieć jeden interfejs i wiele funkcji do użycia. Polimorfizm jest ściśle związany z poznanym w poprzedniej lekcji dziedziczeniem. Mówiliśmy np., że po klasie bazowej Zwierzę mogą dziedziczyć m.in. klasy Ptak, Ssak, Gad. Czyli obiekt klasy Zwierzę może mieć różne postaci. Może być ptakiem (obiektem klasy Ptak), albo ssakiem (obiektem klasy Ssak), albo gadem (obiektem klasy Gad) itd. Może też być bliżej nieokreślonym Zwierzęciem (czyli po prostu obiektem klasy Zwierzę). Wyróżniamy dwa rodzaje polimorfizmu: statyczny i dynamiczny.
 
-## Polimorfizm statyczny
+### Polimorfizm statyczny
 Ten rodzaj polimorfizmu poznaliśmy już trochę w poprzednich lekcjach. Jest to po prostu przeciążanie konstruktorów i innych metod danej klasy, lub klasy bazowej. Polimorfizm statyczny oznacza, że coś może występować w wielu postaciach (np. metoda może być przeładowana i przyjmować różne zestawy argumentów) i już w momencie kompilacji wiemy, w której postaci wystąpi w danym fragmencie kodu (np. wywołując metodę jawnie wybieramy przeciążenie, poprzez przekazanie odpowiednich argumentów).
 
-## Polimorfizm dynamiczny
+### Polimorfizm dynamiczny
 Oznacza, że postać w której będzie występować dany element znamy dopiero w momencie wykonywania. Załóżmy np., że mamy klasę `Item`, która będzie reprezentować jakiś produkt w sklepie:
 
 ```csharp =
@@ -3027,7 +3028,7 @@ Jeżeli zrobimy to w obecnej formie otrzymamy:
 
 Stanie się tak, gdyż przypisując obiekty do listy dokonaliśmy ich niejawnego rzutowania do `Item`, więc wszystkie skorzystają z metody `ShowItem` z tej właśnie klasy. Chcielibyśmy jednak, aby ubrania wywoływały metodę `ShowItem` z klasy `ClothingItem`, produkty spożywcze z klasy `GroceryItem` itd. Do tego posłuży nam właśnie polimorfizm dynamiczny (dopiero w momencie wywoływania metody `ShowItem` będziemy wiedzieć jakiego typu jest obiekt `item`, na którym ją wywołujemy). Aby go wykorzystać musimy w definicji metod naszych klas dodać odpowiednie słowa kluczowe.
 
-### Słowo kluczowe `virtual`
+#### Słowo kluczowe `virtual`
 Najpierw w definicji metody w klasie bazowej dodamy słowo kluczowe `virtual`.
 
 ```csharp =
@@ -3045,7 +3046,7 @@ public class Item
 
 Wstawienie tego słowa w definicji metody oznacza, że pozwalam, aby ta metoda została nadpisana przez odpowiadającą jej metodę z klasy po niej dziedziczącej. Czyli jeżeli w klasie która dziedziczy po tej klasie bazowej znajduje się metoda nadpisująca tą metodę, to nawet po zrzutowaniu obiektu klasy pochodnej na obiekt klasy bazowej wywołana zostanie metoda z klasy pochodnej. Metoda z klasy pochodnej ma "pierwszeństwo". Czyli pozwoli nam to osiągnąć to co chcemy. Dzięki temu będziemy mogli wywoływać metodę `ShowItem` z odpowiedniej klasy, przechodząc pętlą po liście obiektów `Item`. Musimy jednak jeszcze zaznaczyć, że chcemy aby nasze metody w klasach pochodnych nadpisywały metodę z klasy bazowej.
 
-### Słowo kluczowe `override`
+#### Słowo kluczowe `override`
 Dodając do definicji metody słowo kluczowe `override` zaznaczamy, że chcemy, aby ta metoda nadpisywała metodę wirtualną (ze słowem kluczowym `virtual`) z klasy bazowej. Nadpiszmy więc metodę `ShowItem` w naszych klasach pochodnych.
 
 ```csharp =
@@ -3085,7 +3086,7 @@ foreach(var item in items)
 //  Clothe: 3. T-shirt M
 ```
 
-### Słowo kluczowe `new` w definicji metody
+#### Słowo kluczowe `new` w definicji metody
 Może się jednak zdarzyć, że w którejś z klas pochodnych nie chcemy, aby utworzona przez nas metoda nadpisywała metodę wirtualną z klasy bazowej. Chcemy, aby były one od siebie niezależne. Np. chcielibyśmy, aby podczas wypisywania listy wszystkich przedmiotów `List<Item>` wywoływana była metoda z klasy `Item` podająca mniej szczegółów, natomiast podczas listowania produktów tego typu użyta była metoda z klasy pochodnej, opisująca nasz produkt bardziej szczegółowo. Do tego posłuży nam nowe zastosowanie znanego nam już słowa kluczowego `new`. Utwórzmy więc nową klasę `EletronicItem`, dziedziczącą po naszej klasie `Item`.
 
 ```csharp =
@@ -3137,14 +3138,14 @@ foreach(var el in electronics)
 
 Jak widać otrzymaliśmy dokładnie to, czego się spodziewaliśmy.
 
-# [LEKCJA 6 – Hermetyzacja](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-6-hermetyzacja/)
+## [LEKCJA 6 – Hermetyzacja](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-6-hermetyzacja/)
 **Hermetyzacja**, inaczej **enkapsulacja**, jest trzecim i ostatnim paradygmatem (filarem) programowania obiektowego. Oznacza ona ograniczenie dostępu użytkownika (np. innej klasy) do elementów programu. Tworząc nową klasę musimy świadomie udzielać dostępu tylko do tych jej elementów, do których inne klasy powinny mieć dostęp, i tylko w takim zakresie jaki jest konieczny. To znaczy elementy związane z wewnętrznymi procesami zachodzącymi w klasie ukrywamy całkowicie, a inne możemy chcieć udostępnić tylko do odczytu, albo tylko za pośrednictwem określonych metod. Jest to możliwe przy pomocy modyfikatorów dostępu (`public`, `internal`, `protected`, `private`) oraz innych modyfikatorów (`readonly`, `const` itd.).
 
 Wcześniej omówiliśmy już modyfikatory dostępu (tydzień 2., lekcja 17.) oraz stałe (tydzień 2., lekcja 2.). Powiedzmy więc jeszcze po krótce co oznacza słowo kluczowe `readonly`.
 
-## Słowo kluczowe `readonly`
+### Słowo kluczowe `readonly`
 Słowem kluczowym `readonly` (z ang. tylko do odczytu), jak sama nazwa wskazuje, oznacza się element których odczyt chcemy umożliwić, ale chcemy je zabezpieczyć przed zmianą ich wartości. Tego słowa kluczowego możemy użyć w czterech sytuacjach:
-### 1. W deklaracji pola klasy
+#### 1. W deklaracji pola klasy
 
 ```csharp =
 modyfikatorDostepu readonly typ nazwaPola;
@@ -3152,12 +3153,12 @@ modyfikatorDostepu readonly typ nazwaPola;
 
 Oznacza to, że nie można modyfikować wartości przypisanej temu polu. Jedynymi miejscami w których można to zrobić jest deklaracja pola oraz konstruktor klasy. Później możemy już tylko odczytywać jego wartość.
 
-#### Różnice między polem `readonly` a `const`
+##### Różnice między polem `readonly` a `const`
 Stałej (zmienna/pole z modyfikatorem `const`) możemy przypisać wartość wyłącznie w momencie deklaracji. Ponadto wartość ta musi być znana już na etapie kompilacji. Nigdzie indziej w programie nie możemy już jej zmienić.
 
 Polu `readonly` możemy przypisać wartość w momencie deklaracji i/lub w konstruktorze klasy, w momencie tworzenia obiektu. Wartość ta może więc się zmienić (jedną przypiszemy w deklaracji, a inną w konstruktorze). Co więcej, możemy przypisać jej różną wartość, np. w zależności od użytego konstruktora lub jego parametrów. Możemy więc tę wartość poznać dopiero w momencie wykonywania programu. Po utworzeniu obiektu danej klasy, nie możemy już jednak zmieniać wartości jego pola `readonly`. Możemy jedynie odczytywać jego wartość.
 
-### 2. W deklaracji struktury
+#### 2. W deklaracji struktury
 
 ```csharp =
 modytikatorDostepu readonly struct NazwaStruktury { //cialo struktury }
@@ -3165,7 +3166,7 @@ modytikatorDostepu readonly struct NazwaStruktury { //cialo struktury }
 
 Oznaczenie struktury jako `readonly` oznacza, że wszystkie jej elementy (poza konstruktorem) są również `readonly`.
 
-### 3. W deklaracji elementów struktury, klasy, np. metod, właściwości
+#### 3. W deklaracji elementów struktury, klasy, np. metod, właściwości
 
 ```csharp =
 modyfikatorDostepu struct NazwaStruktury
@@ -3186,7 +3187,7 @@ Oznaczenie metody jako `readonly` oznacza, że metoda ta, nie będzie modyfikowa
 
 Elementy `readonly` struktury/klasy (z wyłączeniem pól) dostępne są dopiero od wersji C# 8.0.
 
-### 4. W deklaracji metody zwracającej referencję
+#### 4. W deklaracji metody zwracającej referencję
 
 ```csharp =
 modyfikatorDostepu ref readonly typ NazwaMetody(/*parametry*/)
@@ -3197,7 +3198,7 @@ modyfikatorDostepu ref readonly typ NazwaMetody(/*parametry*/)
 
 Taki zapis oznacza, że nie możemy modyfikować obiektu na który wskazuje referencja zwrócona nam przez metodę. Ten obiekt jest tylko do odczytu (`readonly`). A dokładniej nie można tego obiektu modyfikować przy użyciu zwróconej referencji.
 
-# [LEKCJA 7 – Klasy abstrakcyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-7-klasy-abstrakcyjne/)
+## [LEKCJA 7 – Klasy abstrakcyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-7-klasy-abstrakcyjne/)
 **Klasa abstrakcyjna** jest to klasa bazowa, swoisty szablon dla innych klas (które będą po niej dziedziczyć). Nie można natomiast utworzyć obiektu tej klasy (klasy abstrakcyjnej). Tworzy się ją dodając w deklaracji klasy słowo kluczowe `abstract`, przed słowem kluczowym `class`. Mimo, że nie możemy utworzyć obiektu klasy abstrakcyjnej, to możemy dokonać rzutowania na ten typ. Przypomnijmy sobie nasze klasy z lekcji dotyczącej polimorfizmu (tydzień 3, lekcja 5).
 
 ```csharp =
@@ -3287,7 +3288,7 @@ foreach(var el in electronics)
 //  6. Speaker       Category: Audio         Energy class: A+
 ```
 
-## Klasa abstrakcyjna
+### Klasa abstrakcyjna
 Jeżeli teraz nie chcielibyśmy aby w naszym programie można było utworzyć nieskategoryzowany item (obiekt klasy `Item`), to możemy przerobić tą klasę, na klasę abstrakcyjną:
 
 ```csharp =
@@ -3307,7 +3308,7 @@ Teraz nie możemy już utworzyć obiektu tej klasy, więc linijka `items.Add(new
 
 Klasa abstrakcyjna jest właściwie podobna do interfejsu (o którym w następnej lekcji - tydzień 3., lekcja 8.), jednak jest to nadal klasa. Pozostaje więc w mocy zasada, że klasa może dziedziczyć bezpośrednio (nie kaskadowo) tylko po jednej klasie.
 
-## Metoda abstrakcyjna
+### Metoda abstrakcyjna
 Wewnątrz klasy abstrakcyjnej mogą występować metody abstrakcyjne. Są to jedynie szablony wskazujące, że wszystkie klasy dziedziczące po tej klasie muszą takie metody implementować. Metodę abstrakcyjną, w klasie bazowej, tworzy się dodając słowo kluczowe `abstract` przed typem, zwracanym przez metodę. W klasie bazowej występuje jedynie deklaracja metody, bez implementacji (bez ciała metody). W klasach pochodnych (dziedziczących po klasie abstrakcyjnej) musimy zaimplementować tą metodę, używając poznanego już słowa kluczowego `override`. Dodajmy do klasy `Item` metodę abstrakcyjną `ShowCategory()`, która wyświetli nam kategorią do jakiej należy dany produkt (obiekt), oraz zwróci nam tą wartość w formie stringa. Przy okazji zmian wprowadzanych w kolejnych klasach zmodyfikujmy również nieco metody `ShowItem`, usuwając z nich nazwy kategorii.
 
 ```csharp =
@@ -3435,7 +3436,7 @@ foreach(var category in categories)
 //  Electronic:     3
 ```
 
-## Klasy "zapieczętowane"
+### Klasy "zapieczętowane"
 Są to ostateczne (finalne) klasy, takie, po których nie można dziedziczyć. Tworzy się je dodając w definicji słowo kluczowe `sealed` (przed słowem kluczowym `class`).
 
 ```csharp =
@@ -3447,10 +3448,10 @@ ModyfikatorDostepu sealed class NazwaKlasy
 
 Stosuje się je raczej rzadko, gdy chcemy uniemożliwić tworzenie klas pochodnych od danej klasy. Próba utworzenia klasy dziedziczącej po klasie sealed będzie skutkować błędem kompilacji. Ponieważ nie można po niej dziedziczyć, nie może ona posiadać metod abstrakcyjnych, ani wirtualnych. Nie możemy jej już zmieniać (nadpisywać), ani rozszerzać.
 
-# [LEKCJA 8 – Interfejsy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-8-interfejsy/)
+## [LEKCJA 8 – Interfejsy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-8-interfejsy/)
 Typ w C# stosowany, podobnie jak klasa abstrakcyjna, do tworzenia szkieletu elementów. Interfejs jest to zbiór deklaracji związanych ze sobą funkcjonalności. Składa się wyłącznie z deklaracji właściwości, metod, indeksatorów i zdarzeń (od C# 8.0 interfejs może zawierać również implementacje metod, choć na razie stosowanie tego nie jest zbyt popularne). Nie może jednak zawierać pól. Interfejs może dziedziczyć jeden lub więcej interfejsów. 
 
-## Tworzenie interfejsu
+### Tworzenie interfejsu
 Interfejs tworzymy przy pomocy słowa kluczowego `interface`.
 
 ```csharp =
@@ -3467,10 +3468,10 @@ ModyfikatorDostepu interface NazwaInterfejsu
 
 Standardowo zaczynamy od pisania interfejsów, a dopiero potem tworzymy implementujące je klasy. Interfejsy nie posiadają konstruktorów, gdyż nie mogą zostać zainicjalizowane (nie można tworzyć obiektów ich typu). Podobnie jak w przypadku klas abstrakcyjnych, można jednak dokonywać rzutowania na ten typ. Czyli zmiennej interfejsu można przypisać obiekt klasy implementującej interfejs. Co ciekawe, można jej nawet przypisać obiekt klasy dziedziczącej po klasie implementującej interfejs. Ponieważ interfejs jest tylko szkieletem, a implementacja jest pozostawiona wyłącznie implementującym go klasom (lub strukturom), więc elementy interfejsu nie posiadają nawet modyfikatorów dostępu. Domyślnie wszystkie są jednak publiczne i abstrakcyjne.
 
-### Nazwa interfejsu
+#### Nazwa interfejsu
 Jak już wspominaliśmy w 1. tygodniu przyjęło się, że nazwy interfejsów rozpoczynamy wielką literą "i" ("I"). Należy to do dobrych praktyk.
 
-### Składniki interfejsu
+#### Składniki interfejsu
 
 Interfejs może zawierać deklaracje:
 * metod (_methods_),
@@ -3497,7 +3498,7 @@ Począwszy od C# 8.0 interfejs może:
 * pod pewnymi warunkami używać modyfikatorów `private`, `protected`, `internal`, `public`, `virtual`, `abstract`, `sealed`, `static`, `extern` i `partial`<br/>
   Dostęp do metod statycznych (z modyfikatorem `static`) można uzyskać przez nazwę interfejsu.
 
-### Przykład
+#### Przykład
 Napiszmy przykładowy interfejs deklarujący podstawowe właściwości do operacji na plikach (przykłady użyte w tej lekcji pochodzą ze strony [tutorialsteacher.com](https://www.tutorialsteacher.com/csharp/csharp-interface))
 
 ```csharp =
@@ -3508,7 +3509,7 @@ public interface IFile
 }
 ```
 
-## Implementacja interfejsu
+### Implementacja interfejsu
 Jak już wiemy, klasa może dziedziczyć tylko po jednej klasie. Może ona jednak implementować wiele interfejsów. Klasa implementująca interfejs musi zaimplementować wszystkie jego składniki (również właściwości). Czyli, w odróżnieniu od dziedziczenia, gdzie klasa pochodna jedynie rozszerzała i nadpisywała klasę bazową, implementując interfejs, musimy w klasie umieścić wszystkie jego składniki (począwszy od C# 8.0 możemy pominąć zaimplementowane w interfejsie metody). Implementacji dokonujemy analogicznie jak to robiliśmy w przypadku dziedziczenia klas, czyli po nazwie klasy (struktury) wstawiamy dwukropek i podajemy nazwę interfejsu (interfejsów - w tym wypadku rozdzielone przecinkami).
 
 ```csharp =
@@ -3522,7 +3523,7 @@ ModyfikatorDostepu class NazwaKlasy : NazwaInterfejsu
 
 Implementacja interfejsu może odbywać się w sposób jawny lub niejawny.
 
-### Implementacja niejawna interfejsu
+#### Implementacja niejawna interfejsu
 Implementując interfejs niejawnie musimy nadpisać wszystkie jego składniki używając modyfikatora dostępu `public` (inaczej wystąpi błąd kompilacji). Oczywiście poza składnikami interfejsu możemy również dodać do klasy inne (dodatkowe) elementy. Zaimplementujmy więc nasz przykładowy interfejs.
 
 ```csharp =
@@ -3567,7 +3568,7 @@ public class Program
 
 Ponieważ podczas implementacji nadpisaliśmy w klasie wszystkie metody interfejsu, więc możemy uzyskać do nich dostęp zarówno za pośrednictwem zmiennej `IFile`, jak i zmiennej `FileInfo`.
 
-### Implementacja jawna interfejsu
+#### Implementacja jawna interfejsu
 Interfejs możemy również zaimplementować jawnie, stosując notację nazwa interfejsu, kropka, nazwa elementu interfejsu który chcemy zaimplementować (`NazwaInterfejsu.NazwaSkladnika`). Ten sposób jest szczególnie użyteczny w przypadku gdy implementujemy wiele interfejsów. Dzięki temu zwiększa się czytelność kodu. Niweluje to również problem z powtarzalnością nazw (gdy implementujemy jednocześnie interfejsy zawierające metody o takich samych nazwach). Używając implementacji jawnej nie stosujemy modyfikatora dostępu `public`, gdyż będzie to skutkować błędem kompilacji. Oczywiście w ty wypadku poza składnikami interfejsu (interfejsów) również możemy w klasie umieścić dodatkowe składniki. Zaimplementujmy więc nasz przykładowy interfejs (tym razem jawnie) i dodajmy jeszcze dodatkową metodę `Search`.
 
 ```csharp =
@@ -3613,7 +3614,7 @@ public class Program
 
 W przypadku implementacji jawnej zmienna typu interfejsu może uzyskać dostęp wyłącznie do składników interfejsu, a zmienna klasy do składników klasy (elementy zaimplementowane jawnie są składnikami interfejsu, ale nie klasy).
 
-### Implementacja kilku interfejsów
+#### Implementacja kilku interfejsów
 Jak już wspominaliśmy implementując kilka interfejsów zaleca się zrobienie tego w sposób jawny. Już omówiliśmy ten sposób, zobaczmy więc tylko przykład implementacji dwóch interfejsów tym właśnie sposobem.
 
 ```csharp =
@@ -3674,7 +3675,7 @@ public class Program
 }
 ```
 
-## Interfejs vs. klasa abstrakcyjna
+### Interfejs vs. klasa abstrakcyjna
 
 | Cecha | Interfejs | Klasa abstrakcyjna |
 | :--- | :---: | :---: |
@@ -3690,16 +3691,16 @@ public class Program
 | Może posiadać elementy o różnych modyfikatorach dostępu | nie (przed C# 8.0 tylko `public`) | tak |
 | Klasa musi zawierać | wszystkie elementy interfejsu | tylko elementy abstrakcyjne i te, które chcemy nadpisać |
 
-## Zastosowanie
+### Zastosowanie
 Interfejsy są szeroko stosowane w aplikacjach webowych, są podstawą ich architektury. Więcej na ten temat dowiemy się w dalszej części kursu. Warto jednak pamiętać, że bez interfejsów nie powstaje obecnie żadna aplikacja internetowa. Są niezbędne do zachowania wielu zasad nowoczesnego programowania.
 
-# [LEKCJA 9 – Typy generyczne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-9-typy-generyczne/)
+## [LEKCJA 9 – Typy generyczne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-9-typy-generyczne/)
 **Typy generyczne** - są to typy mogące obsługiwać różne typy danych. Stosuje się je, gdy na różnych typach danych chcemy wykonywać takie same operacje. Przykładem typu generycznego jest poznana już przez nas lista (`List<T>`) służąca do tworzenia i obsługi kolekcji obiektów danego typu (`T` - zamiast T wstawiamy dowolny typ danych), określonego w definicji. Wszystkie predefiniowane typy generyczne należą do namespace'u `System.Collection.Generic`. Typy generyczne często stosuje się w aplikacjach webowych do obsługi operacji CRUD-owych na klasach.
 
-## Operacje CRUD
+### Operacje CRUD
 Czyli operacje Create (tworzenia) - Read (odczytywania) - Update (aktualizacji) - Delete (usuwania). Są to najczęściej operacje związane z obsługą bazy danych. Właściwie na każdej tabeli z bazy danych wykonuje się takie operacje. Aby nie implementować tych metod dla każdej klasy osobno, często stosuje się właśnie klasy generyczne, które będą wykonywały te operacje podczas pracy programu. Będziemy musieli jedynie podać typ (klasę) dla jakiego te operacje mają być wykonane.
 
-## Definicja typu generycznego
+### Definicja typu generycznego
 Typ generyczny definiujemy prawie tak samo jak każdą inną klasę, dodając jedynie, za nazwą klasy, nawias ostry z literką `T` w środku.
 
 ```csharp =
@@ -3709,7 +3710,7 @@ ModyfikatorDostepu class NazwaKlasyGenerycznej<T>
 }
 ```
 
-### Przykład
+#### Przykład
 Stwórzmy przykładowy typ generyczny dla operacji CRUD.
 
 ```csharp =
@@ -3739,14 +3740,14 @@ public class GenericService<T>
 }
 ```
 
-## Korzystanie z typów generycznych
+### Korzystanie z typów generycznych
 Z typów generycznych korzystamy prawie tak samo jak z każdego innego typu, dodając jedynie po nazwie typu generycznego w nawiasach ostrych nazwę typu który chcemy, aby nasz typ generyczny obsłużył.
 
 ```csharp =
 NazwaKlasyGenerycznej<typ> nazwaZmiennej = new NazwaKlasyGenerycznej<typ>();
 ```
 
-### Przykład
+#### Przykład
 Załóżmy np. że mamy w programie zdefiniowany jakiś typ `Item`.
 
 ```csharp =
@@ -3762,7 +3763,7 @@ Console.WriteLine(list.Count);  //  0
 
 Moglibyśmy w ten sam sposób skorzystać z naszej klasy generycznej dla zupełnie innej klasy.
 
-## Przykłady typów generycznych C#
+### Przykłady typów generycznych C#
 Język C# ma już zdefiniowane wiele typów generycznych, z których możemy korzystać. Są to np. typy:
 * `List<T>` - listy,
 * `Dictionary<TKey, TValue>` - słowniki,
@@ -3772,9 +3773,9 @@ Język C# ma już zdefiniowane wiele typów generycznych, z których możemy kor
 
 Więcej informacji o tych i innych typach generycznych można znaleźć w [dokumentacji](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-7.0).
 
-## Ograniczanie klas generycznych
+### Ograniczanie klas generycznych
 Definiując typ generyczny możemy ograniczyć obsługi jakich typów będzie on dotyczył. Możemy np. stworzyć klasę generyczną tylko dla typów referencyjnych, albo tylko dla typów implementujących jakiś interfejs itd. Służy do tego słowo kluczowe `where`. W definicji klasy generycznej, za nawiasem ostrym z literką T (`<T>`) piszemy `where T : warunek`.
-### Przykłady
+#### Przykłady
 Typ generyczny obsługujący tylko klasy (gdy spróbujemy użyć go np. dla typu `int`, otrzymamy błąd kompilacji)
 
 ```csharp =
@@ -3795,40 +3796,40 @@ public class GenericService<T> where T : IItem
 
 itd.
 
-# [LEKCJA 10 – Refaktoryzacja](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-10-refaktoryzacja/)
+## [LEKCJA 10 – Refaktoryzacja](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-10-refaktoryzacja/)
 W tej lekcji zajmiemy się refaktoryzacją naszego programu, utworzonego w poprzednim tygodniu, z wykorzystaniem nabytej w tym tygodniu wiedzy. Skupimy się na trzech aspektach:
 1. Podział logiczny aplikacji - podzielimy solucję na dodatkowe projekty
 2. Wykorzystanie interfejsów - utworzymy interfejsy dla serwisów
 3. Wykorzystanie dziedziczenia i klas abstrakcyjnych - utworzenie bazowego serwisu i modelu
-## 1. Podzielić solucję na projekty
+### 1. Podzielić solucję na projekty
 Aby aplikacja była łatwiejsza w zarządzaniu i dalszym rozwoju, przeniesiemy część jej funkcjonalności do odrębnych projektów. Nie będą to jednak projekty konsolowe, a biblioteki klas (_Class Library (Standard .NET)_). Są to projekty, które nie kompilują się do pliku wykonywalnego (_.exe_) i co za tym idzie nie mogą funkcjonować jako samodzielne programy. Kompilują się natomiast do plików _.dll_, czyli właśnie bibliotek, i służą do implementacji funkcjonalności potrzebnych w programie. Takie biblioteki można później ponownie wykorzystywać w kolejnych aplikacjach. Utworzymy dwie biblioteki i usuniemy przykładową klasę z każdej z nich.
-### 1. _NazwaAplikacji.App_
+#### 1. _NazwaAplikacji.App_
 Po utworzeniu projektu i usunięci przykładowej klasy, jeszcze zanim utworzymy własną klasę, zajmijmy się zależnościami między projektami (ang. _dependencies_). Wiemy na pewno, że nasz główny projekt będzie korzystał z tego projektu. W naszym _Solution Explorer_ kliknijmy więc prawym przyciskiem myszki na _Dependencies_ naszego głównego projektu i wybierzmy _Add Project Reference..._. Otworzy nam się _Reference Manager_. Powinien automatycznie otworzyć się on na zakładce _Projects_ -> _Solution_, czyli liście projektów w naszej solucji (z wyłączeniem projektu, dla którego menadżer otworzyliśmy). Na liście zaznaczamy check box naszego nowo utworzonego projektu, dodając do niego referencję (informację dla kompilatora, że w danym projekcie będziemy korzystać z innego projektu), i klikamy _OK_.
 
 W tym projekcie znajdować się będzie cała logika naszej aplikacji. Umieścimy w niej wszystkie serwisy (klasy serwisowe) służące do sterowania naszą aplikacją.
 
 Podzielmy jeszcze projekt na foldery:
-#### 1. _Abstract_
+##### 1. _Abstract_
 Tu znajdą się interfejsy dla serwisów. Serwisy będą zajmować się manipulacją naszych obiektów entity. Ich dodawaniem, usuwaniem, aktualizacją, czy zwracaniem.
-#### 2. _Common_
+##### 2. _Common_
 Tu umieścimy bazowy serwis, implementujący interfejs bazowy dla serwisów.
-#### 3. _Concrete_
+##### 3. _Concrete_
 Tu znajdą się konkretne implementacje serwisów.
-#### 3. _Managers_
+##### 3. _Managers_
 Tu znajdą się nasze menadżery. Menadżery, są to swoiste kontrolery, decydujące co użytkownik chce zrobić i na tej podstawie wykonujące odpowiednie akcje (być może wywołujące odpowiednie metody z serwisu). W nich będą znajdywać się wszystkie kroki decyzyjne. Być może będzie to wyświetlenie dodatkowego menu i wybranie odpowiedniej opcji, czy przekazywanie do serwisu odpowiedniego obiektu, tak, aby dodać go do listy. Menadżery będziemy tworzyć dla konkretnych modeli.
-### 2. _NazwaAplikacji.Domain_
+#### 2. _NazwaAplikacji.Domain_
 W tym projekcie znajdować się będą wszystkie modele (klasy reprezentujące obiekt, który w przyszłości mógłby być obiektem bazodanowym).
 
 Podzielmy projekt na foldery według podobnej zasady jak powyższy.
-#### 1. _Common_
+##### 1. _Common_
 Tu umieścimy klasę bazową dla modeli.
-#### 2. _Entity_
+##### 2. _Entity_
 Tu będą się znajdywać implementacje konkretnych modeli.
-## 2. Dodać interfejsy dla serwisów
+### 2. Dodać interfejsy dla serwisów
 W projekcie _NazwaAplikacji.App_ w folderze _Abstract_ utwórzmy interfejsy dla naszych serwisów.
-### 1. `IService<T>`
+#### 1. `IService<T>`
 Zacznijmy od utworzenia interfejsu bazowy dla wszystkich serwisów. Będzie to publiczny (`public`) interfejs generyczny. Umieścimy w nim listę elementów typu `T` oraz podstawowe metody zwracające wszystkie elementy listy, pozwalające na dodanie, aktualizację lub usunięcie elementu listy.
-#### Przykład
+##### Przykład
 ```csharp =
 namespace NazwaAplikacji.App.Abstract
 {
@@ -3843,11 +3844,11 @@ namespace NazwaAplikacji.App.Abstract
     }
 }
 ```
-## 3. Dodać bazowy serwis i bazowy model
+### 3. Dodać bazowy serwis i bazowy model
 W naszej aplikacji utwórzmy bazowy serwis, po którym dziedziczyć będą inne klasy serwisowe, implementujące logikę związaną z konkretnym modelem. Następnie stwórzmy również bazowy model, czyli klasę będącą szkieletem dla wszystkich klas implementujących modele bazodanowe.
-### `BaseService`
+#### `BaseService`
 W projekcie _NazwaAplikacji.App_ w folderze _Common_ stwórzmy plik _BaseService.cs_ w którym umieścimy publiczną klasę generyczną będącą klasą bazową dla serwisów i implementującą bazowy interfejs (`IService<T>`). Tu możemy już stworzyć podstawowy konstruktor, w którym zainicjalizujemy naszą listę. Możemy również zaimplementować podstawowe metody.
-#### Przykład
+##### Przykład
 W przykładzie będziemy korzystać z utworzonego poniżej modelu bazowego. Ponieważ serwisy będą obsługiwać konkretne modele, więc chcielibyśmy zaznaczyć to w serwisie bazowym. Ponieważ jest to klasa generyczna, więc typ `T` będzie nam wskazywać, który model obsługujemy. `T` musi więc być typu `BaseEntity` (lub jakiejkolwiek klasy po nim dziedziczącej). Umieśćmy więc w definicji klauzulę `where`. Aby móc korzystać w naszym projekcie _NazwaAplikacji.App_ z elementów projektu  _NazwaAplikacji.Domain_, musimy w tym pierwszym dodać referencję do tego drugiego. Możemy to zrobić za pośrednictwem _Dependencies_ projektu _NazwaAplikacji.App_, analogicznie jak poprzednio, lub podczas pisania kodu, korzystając z inteligentnych podpowiedzi. Kiedy napiszemy nazwę klasy `BaseEntity` przed dodaniem referencji, Visual Studio zaznaczy nam błąd kompilacji, gdyż taka klas nie jest mu znana. Wówczas możemy uruchomić, na będzie, inteligentne podpowiedzi, np. korzystając ze skrótu klawiszowego **Alt + Enter** (lub **Ctrl + .**) i wybrać z listy _Add reference to 'NazwaAplikacji.Domain'._. Wybranie tej opcji spowoduje automatyczne dodanie odpowiedniej pozycji w _Dependencies_ projektu.
 ```csharp =
 namespace NazwaAplikacji.App.Common
@@ -3897,9 +3898,9 @@ namespace NazwaAplikacji.App.Common
     }
 }
 ```
-### `BaseEntity`
+#### `BaseEntity`
 W projekcie _NazwaAplikacji.Domain_ w folderze _Common_ stwórzmy plik _BaseEntity.cs_. Umieśćmy w nim publiczną klasę, która będzie klasą bazową dla wszystkich modeli (wszystkie modele będą po niej dziedziczyć).
-#### Przykład
+##### Przykład
 W przykładzie skorzystamy z utworzonej poniżej klasy `AuditableModel`. Ponieważ chcemy, aby wszystkie modele zawierały zdefiniowane w niej pola, więc nasz model bazowy będzie po niej dziedziczył.
 ```csharp =
 namespace NazwaAplikacji.Domain.Common
@@ -3910,9 +3911,9 @@ namespace NazwaAplikacji.Domain.Common
     }
 }
 ```
-### `AuditableModel`
+#### `AuditableModel`
 W projekcie _NazwaAplikacji.Domain_ w folderze _Common_ stwórzmy jeszcze jedną klasę, `AuditableModel`. Mówiliśmy już o niej przy okazji omawiania dziedziczenia (Tydzień 3., lekcja 4.). Przypomnijmy. Jest to popularna klasa bazowa dla modeli, często tworzona w aplikacjach webowych. Ponieważ modele służą najczęściej do odzwierciadlania tabel w bazie danych, a większość z nich zawiera współcześnie informacje o tym kto i kiedy utworzył/zmodyfikował dany rekord, to często tworzy się odrębną klasę przechowującą takie informacje, z której potem mogą korzystać nasze modele (mogą po niej dziedziczyć).
-#### Przykład
+##### Przykład
 ```csharp =
 namespace NazwaAplikacji.Domain.Common
 {
@@ -3925,54 +3926,54 @@ namespace NazwaAplikacji.Domain.Common
     }
 }
 ```
-## Uporządkowanie wcześniej utworzonych klas
+### Uporządkowanie wcześniej utworzonych klas
 Kiedy skończymy tworzyć nowe projekty, podzielimy je na foldery i utworzymy bazowe klasy i interfejsy należałoby dopasować utworzone wcześniej klasy do nowego porządku. Jeżeli jakaś klasa niema jeszcze własnego pliku, to go stwórzmy. Umieśćmy zaimplementowane serwisy w folderze _Concrete_ projektu _NazwaAplikacji.App_, a modele w folderze _Entity_ projektu _NazwaAplikacji.Domain_. Przenosząc pliki z jednego projektu do drugiego, musimy pamiętać o kilku rzeczach:
-### 1. Zmiana namespace'u
+#### 1. Zmiana namespace'u
 Na górze pliku zmieniamy namespace z nazwy projektu z której plik pochodzi na nazwę projektu do którego został przeniesiony, kropkę i nazwę folderu.
-### 2. Dodanie dziedziczenia
+#### 2. Dodanie dziedziczenia
 Do naszych serwisów i modeli dodajemy dziedziczenie po nowozaimplementowanych klasach bazowych (serwisy - `BaseService<NazwaOdpowiedniegoModelu>`, modele - `BaseEntity`).
-### 3. Dodanie właściwych usingów
+#### 3. Dodanie właściwych usingów
 Na górze plików dodajemy odpowiednie pozycje using potrzebne do korzystania z nowo utworzonych plików.
-### 4. Aktualizacja klas uwzględniająca klasy bazowe
+#### 4. Aktualizacja klas uwzględniająca klasy bazowe
 Z klas pochodnych usuwamy właściwości i metody, które zaimplementowaliśmy w nowoutworzonych klasach bazowych. Jeżeli chcemy natomiast nadpisać któreś z metod, to dodajemy odpowiednie słowa kluczowe. Dopasowujemy nazwy klas i właściwości.
-## Dodanie folderu _Helpers_ w głównym projekcie aplikacji
+### Dodanie folderu _Helpers_ w głównym projekcie aplikacji
 W głównym projekcie aplikacji, w razie potrzeby, możemy utworzyć dodatkowy folder _Helpers_. Możemy w nim przechowywać elementy pomocnicze dla naszej aplikacji. Mogą to być np. utworzone na potrzeby tej aplikacji enumy, czy klasy, porządkujące nam wyświetlanie w konsoli.
-## Poprawa metody `Main`
+### Poprawa metody `Main`
 Po zakończeniu porządkowania klas, musimy poprawić kod w klasie `Main` naszej aplikacji, uwzględniając wprowadzone zmiany.
-### Uprośćmy nasz kod
+#### Uprośćmy nasz kod
 Metoda `Main` powinna zawierać możliwie najmniej elementów. Powinny być one za to jak najbardziej podstawowe.
-#### 1. Korzystajmy z klas bazowych.
+##### 1. Korzystajmy z klas bazowych.
 Gdzie to tylko możliwe, korzystajmy z klas bazowych, aby zwiększyć elastyczność naszego kodu.
-#### 2. Przenieśmy co można do innych klas
+##### 2. Przenieśmy co można do innych klas
 Jeśli jest to możliwe, to kod dotyczący konkretnej klasy, przenieśmy do tej właśnie klasy. Stwórzmy np. odpowiednie konstruktory i wywoływane w nich metody do wypełniania obiektów klasy danymi inicjalizacyjnymi. Wykorzystajmy menadżery. Przenieśmy do nich interakcję z użytkownikiem.
 
-# [LEKCJA 11 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-11-bledy-poczatkujacych/)
+## [LEKCJA 11 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-11-bledy-poczatkujacych/)
 Aby unikać błędów pamiętaj o stosowaniu się do wszystkich poznanych w tym tygodniu zasad. Nawet jeśli nie jest jeszcze do końca jasne dlaczego tak robimy i część z nich może na razie wydawać się bez sensu, to przestrzegaj ich wszystkich, a zaprocentuje to w przyszłości. W miarę nabierania doświadczenia stanie się jasne dlaczego tak robimy, a stosowanie się teraz do zasad ułatwi nam dalszą pracę z programem.
-## 1. Dziedziczenie i polimorfizm
+### 1. Dziedziczenie i polimorfizm
 Nawet jeśli nie jest to jeszcze do końca jasne, pamiętaj, aby tworzyć klasy tak, aby dziedziczyły one po sobie. Zwróć przy tym uwagę, aby to dziedziczenie odbywało się w sposób analogiczny do tego, jak dzieje się to w świecie realnym. Czyli, obiekt klasy pochodnej jest również obiektem klasy bazowej (ryba jest zwierzęciem, krzesło jest meblem itp.). Klasa pochodna jedynie uszczegóławia i rozszerza klasę bazową (ryba jest zwierzęciem żyjącym w wodzie i oddychającym skrzelami (ale każde zwierzę żyje i oddycha), krzesło jest meblem służącym do siedzenia (ale każdy mebel ma jakąś funkcję)). Klasa `Person` (z ang. osoba) nie może natomiast dziedziczyć po klasie `File` (z ang. plik), tylko dla tego, że mamy jakiś plik będący spisem osób, bo osoba nie jest plikiem. Przy dziedziczeniu pamiętajmy również o nadpisywaniu metod. Stosujmy słowa kluczowe takie jak `override`, `new`, `virtual`, `abstract` itd. zgodnie z ich przeznaczeniem.
-## 2. Stosowanie modyfikatorów dostępu, enkapsulacja
+### 2. Stosowanie modyfikatorów dostępu, enkapsulacja
 Pamiętaj o enkapsulacji. Przed przystąpieniem do refaktoryzacji przemyśl, które elementy powinny być publiczne (`public` lub publiczne, ale dostępne tylko w danym projekcie - `internal`), a które prywatne (`private`) lub chronione (`protected`). Udostępnij publicznie tylko te elementy, które rzeczywiście muszą być publiczne. Jeżeli nie chcesz, aby jakaś właściwość mogła być zmieniana poza daną klasą, to ją przed tym zabezpiecz. Używaj również innych modyfikatorów: `seald`, `readonly`, `const`, `static` itd., zgodnie z ich przeznaczeniem.
 
-# [LEKCJA 12 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-12-praca-domowa/)
+## [LEKCJA 12 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-12-praca-domowa/)
 Pracą domową na ten tydzień jest oczywiście dalszy rozwój aplikacji. Zacznij od refaktoryzacji. Podziel aplikację na projekty w analogiczny sposób, jak to zostało przedstawione w lekcji 10. tego tygodnia. Utwórz odpowiednie interfejsy. Przydadzą nam się one już w kolejnym tygodniu podczas testowania. Dobrze zaprojektowana aplikacja jest łatwiejsza do przetestowania. Po zakończeniu refaktoryzacji, można zająć się dalszym rozwojem aplikacji. Dodać nowe funkcjonalności. Najeży jednak pamiętać o przestrzeganiu wszystkich poznanych dotychczas zasad.
 
-# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-1-powitanie/)
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-1-powitanie/)
 W tym tygodniu nauczymy się tworzyć testy jednostkowe. Jest to bardzo ważne, gdyż pozwala na wyłapanie wielu błędów na wczesnym etapie tworzenia oprogramowania. Dodatkowo zmniejsza czas jaki spędzimy nad debugowaniem naszej aplikacji. Pod koniec tygodnia dodamy takie testy do naszej aplikacji.
 
-# [LEKCJA 2 – Projekt z testami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-2-projekt-z-testami/)
+## [LEKCJA 2 – Projekt z testami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-2-projekt-z-testami/)
 Aby dodać testy do naszej aplikacji musimy umieścić w niej osobny projekt, w którym te testy będą się znajdować.
-## Dodanie projektu z testami
+### Dodanie projektu z testami
 Analogicznie jak to robiliśmy wcześniej, w przypadku innych projektów, klikamy prawym przyciskiem myszki w naszą solucję w _Solution Explorer_ i wybieramy _Add_ -> _New Project..._. Możemy zawęzić listę wyszukiwania wybierając język _C#_ i typ _Test_. Dla .NET Core mamy do wyboru kilka opcji. Są to testy przy użyciu bibliotek:
 1. _MSTest_
 2. _NUnit_
 3. _xUnit_
-### _MSTest_
+#### _MSTest_
 Najstarsza biblioteka .NET do testowania. Stworzona przez Microsoft. Wbudowana w .NET Core. Nie jest jednak specjalnie rozwijana, więc ma pewne niedoskonałości.
-### _NUnit_ i _xUnit_
+#### _NUnit_ i _xUnit_
 Biblioteki tworzone przez społeczność .NETową, przez osoby związane z testowaniem. Wybierając z której biblioteki chcemy korzystać przy pisaniu testów, powinniśmy rozważać właśnie którąś z tych bibliotek, gdyż są one najczęściej stosowane w komercyjnych projektach.
 
 Zaczniemy od projektu używającego biblioteki _xUnit_ (_xUnit Test Project (.NET Core)_), gdyż ma on najprostszą składnię, jeśli chodzi o budowę samych testów i prawdopodobnie najlepsze wsparcie, jeśli chodzi o dodatkowe biblioteki. Wybierzmy więc ten typ projektu i nadajmy mu nazwę. Nazwa może być dowolna, ale dla porządku nazwijmy go analogicznie jak poprzednie stworzone przez nas projekty np. _NazwaAplikacji.Tests_ (oczywiście zamiast _NazwaAplikacji_ wpisujemy nazwę, jaką nadaliśmy naszej aplikacji).
-## Podstawowa budowa testu
+### Podstawowa budowa testu
 W nowo stworzonym projekcie z testami, mamy domyślnie stworzony plik _UnitTest1.cs_ z pustym testem. Zobaczmy na jego przykładzie podstawową budowę testu.
 ```csharp =
 using System;
@@ -3991,9 +3992,9 @@ namespace NazwaAplikacji.Tests
 }
 ```
 Widzimy więc po pierwsze, że test to po prostu publiczna klasa. Będziemy w niej oczywiście korzystać z biblioteki `Xunit` (`using Xunit;`). Kolejną rzeczą na którą należy zwrócić uwagę jest adnotacja `[Fact]`, umieszczona powyżej pierwszej metody. Jest ona częścią biblioteki `Xunit` i wskazuje, że dana metoda jest metodą testową (powinna być uruchomiona przez _test runner_).
-## Uruchamianie testów
+### Uruchamianie testów
 Taki przykładowy test możemy sobie oczywiście uruchomić. Możemy to zrobić np. na dwa poniższe sposoby.
-### 1. Uruchomienie wszystkich testów
+#### 1. Uruchomienie wszystkich testów
 Po pierwsze w _Solution Explorer_, na naszym projekcie z testami, klikamy prawym przyciskiem myszki i wybieramy opcję _Run Tests_. Spowoduje to wyświetlenie okna eksploratora testów (_Test Explorer_) i uruchomienie wszystkich testów w tym projekcie. _Test Explorer_ wylistowane są wszystkie testy utworzone w danym projekcie. Po zakończeniu ich wykonywania, przy każdym z testów mamy zaznaczone, czy zakończył się powodzeniem (!["ptaszek" w zielonym kółku](https://learn.microsoft.com/en-us/visualstudio/media/yes-icon.png?view=vs-2022)), ile czasu się wykonywał (_Duration_), ewentualne komunikaty błędów (_Error Message_) itd. Mamy też podsumowanie dla danej grupy testów (_Group Summary_). Po nazwie grupy mamy podaną liczbę testów w grupie (_Tests in group:_), całkowity czas wykonywania testów (_Total Duration:_) oraz wynik testów (ile testów zakończyło się sukcesem - _Passed_, ile niepowodzeniem - _Failed_ itd.)
 
 ![przykładowy wygląd eksploratora testów po zakończeniu ich wykonywania](https://learn.microsoft.com/en-us/visualstudio/test/media/vs-2022/test-explorer-17-0.png?view=vs-2022)<br/>
@@ -4002,51 +4003,51 @@ _Przykładowy  wygląd eksploratora testów po zakończeniu wykonywania testowan
 
 Oczywiście w przypadku naszego przykładowego testu powinien zakończyć się on sukcesem, gdyż jest pusty (nic się w nim nie wykonuje).
 
-#### Używane w _Test Explorer_ ikony
+##### Używane w _Test Explorer_ ikony
 Na obrazku poniżej przedstawiono ikony używane w _Test Explorer_ (ikony mogą się nieznacznie różnić w zależności np. od wersji Visual Studio). Są używane m.in. do oznaczania wyniku testowania w danej grupie (projekcie, przestrzeni nazw, klasie). Na poniższej ilustracji przedstawiono je w sposób hierarchiczny.
 ![Hierarchia ikon w Test Explorer](https://learn.microsoft.com/en-us/visualstudio/test/media/testex-hierarchy-icons.png?view=vs-2022)<br/>
 _Hierarchia ikon użytych w Test Explorer do oznaczenia grup testowych_
-##### 1. _if group contains failed tests_
+###### 1. _if group contains failed tests_
 Jeżeli przynajmniej jeden z testów w grupie zakończył się niepowodzeniem, to grupa jest oznaczona jako zakończona niepowodzeniem (_Failed_). Oznacza się tak również pojedynczy test zakończony niepowodzeniem.
-##### 2. _if group contains passed tests and NO failed tests_
+###### 2. _if group contains passed tests and NO failed tests_
 Jeżeli przynajmniej jeden z testów w grupie zakończył się sukcesem (_Passed_) i żaden nie zakończył się niepowodzeniem (_Failed_), to grupa jest oznaczona jako _Passed_. Oznacza się tak również pojedynczy test zakończony sukcesem.
-##### 3. _if group contains skipped tests and NO failed or passed tests_
+###### 3. _if group contains skipped tests and NO failed or passed tests_
 Jeżeli grupa nie zawiera żadnych testów zakończonych sukcesem lub porażką, a zawiera przynajmniej jeden pominięty test to jest oznaczana jako pominięta (_Skipped_). Oznacza się tak również pojedynczy pominięty test.
-##### 4. _if group contains not run tests and NO failed, passed, or skipped tests_
+###### 4. _if group contains not run tests and NO failed, passed, or skipped tests_
 Jeżeli grupa nie zawiera żadnych testów zakończonych sukcesem, porażką lub pominiętych, a zawiera przynajmniej jeden nie uruchomiony test to jest oznaczana jako nieuruchomiona (_Not run_). Oznacza się tak również pojedynczy nie uruchomiony test.
-##### 5. _Passed tests that were not a part of the latest test run_
+###### 5. _Passed tests that were not a part of the latest test run_
 Test zakończony sukcesem, który nie był jednak przeprowadzony podczas ostatniego wykonywania testów (jego ostatni wynik był pozytywny, ale informacja ta może być już nieaktualna).
-##### 6. _Failed tests that were not a part of the latest test run_
+###### 6. _Failed tests that were not a part of the latest test run_
 Test zakończony niepowodzeniem, który nie był jednak przeprowadzony podczas ostatniego wykonywania testów (jego ostatni wynik był negatywny, ale informacja ta może być już nieaktualna).
-##### 7. _Ignored tests that were not a part of the latest test run_
+###### 7. _Ignored tests that were not a part of the latest test run_
 Testy zignorowane podczas tego i poprzedniego przeprowadzania testów.
-### 2. Uruchamianie pojedynczych testów
+#### 2. Uruchamianie pojedynczych testów
 Jeżeli dany test był już kiedykolwiek przeprowadzony, to wynik jego ostatniego wykonania jest zaznaczony w kodzie. Powyżej metody definiującej dany test znajduje się ikonka (analogiczna do tych używanych w _Test Explorer_). Kliknięcie w tą ikonkę wyświetli nam podsumowanie tego testu. Wybranie w rozwiniętym oknie opcji _Run_ umożliwia ponowne uruchomienie tego właśnie testu, bez konieczności korzystania z eksploratora testów lub wykonywania wszystkich zdefiniowanych przez nas testów.
 
-# [LEKCJA 3 – Twój pierwszy test](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-3-twoj-pierwszy-test/)
+## [LEKCJA 3 – Twój pierwszy test](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-3-twoj-pierwszy-test/)
 W tej lekcji napiszemy nasz pierwszy test jednostkowy. Na razie będzie to najbardziej podstawowy test, nie powiązany w żaden sposób z tworzoną przez nas aplikacją. Oczywiście, w kontekście tworzonego przez nas programu, nie będzie on miał sensu. Zależy nam jednak jedynie, aby nauczyć się w jaki sposób powinny być tworzone testy jednostkowe.
-## Struktura testu jednostkowego - **AAA**
+### Struktura testu jednostkowego - **AAA**
 Każdy test jednostkowy powinien być zbudowany zgodnie ze strukturą, nazywaną w skrócie **AAA** (ang. _Arrange - Act - Assert_).
-### 1. _Arrange_
+#### 1. _Arrange_
 Pierwszym krokiem testowym jest tzw. _Arrange_. Będziemy w nim przygotowywać dane, które będziemy testować.
-### 2. _Act_
+#### 2. _Act_
 Drugim krokiem testowym jest wykonanie działania logicznego, które ma zostać sprawdzone w tym teście jednostkowym.
-### 3. _Assert_
+#### 3. _Assert_
 W ostatnim kroku testowym musi znajdować się dowód na to, że kod działa w sposób prawidłowy. Służy do tego klasa `Assert`, będąca częścią biblioteki `Xunit`. Każda biblioteka służąca do testowania posiada na ogół klasę `Assert`.
-## Przykład
+### Przykład
 Stwórzmy dla przykładu prosty test sprawdzający, czy dodawanie dwóch liczb działa prawidłowo.
-### 1. _Arrange_
+#### 1. _Arrange_
 W pierwszym kroku zadeklarujemy dane testowe. W naszym przypadku będę to dwie zmienne przechowujące liczby, które będziemy dodawać. Np.:
 ```csharp =
 int a = 5;
 int b = 3;
 ```
-### 2. _Act_
+#### 2. _Act_
 Chcemy przetestować dodawanie dwóch zmiennych. Wykonajmy więc takie działanie, zapisując wynik w zmiennej `result`.
 ```csharp =
 int result = a + b;
 ```
-### 3. _Assert_
+#### 3. _Assert_
 Chcemy sprawdzić, czy w wyniku działań podjętych w poprzednim kroku, otrzymaliśmy oczekiwany rezultat. Wykorzystamy do tego jedną z metod klasy `Assert`, a mianowicie `Equal` (z ang. równy).
 W naszym przykładzie testujemy dodawanie liczb, na przykładzie liczb 5 i 3. Ponieważ wiemy, że
 <p align="center">5 + 3 = 8,</p>
@@ -4058,7 +4059,7 @@ Assert.Equal(8, result);
 ```
 
 W naszym przykładzie, chcieliśmy sprawdzić czy uzyskany wynik jest równy konkretnej liczbie. Oczywiście biblioteka `Assert` posiada jednak wiele metod i umożliwia nie tylko porównywanie.
-### Cały kod przykładowego testu
+#### Cały kod przykładowego testu
 Zapiszmy jeszcze łącznie cały kod testu.
 ```csharp =
 using System;
@@ -4083,35 +4084,35 @@ namespace NazwaAplikacji.Tests
 }
 ```
 Po utworzeniu testu możemy go uruchomić. Oczywiście z godnie z oczekiwaniami powinien zakończyć się on sukcesem.
-## Przykładowe metody klasy `Assert`
+### Przykładowe metody klasy `Assert`
 Poza metodą `Equal`, klasa `Assert` posiada wiele innych metod. Ciekawym przykładem jest metod 
-### `Throws`
+#### `Throws`
 Służy ona do sprawdzenia, czy w określonej sytuacji nasz program zwrócił wyjątek. Sprawdza, czy aplikacja w odpowiedni sposób obsługuje błąd na który może natrafić.
-### `NotNull`
+#### `NotNull`
 Służy do sprawdzenia, czy jakaś wartość jest nullem.
-### `NotEmpty`
+#### `NotEmpty`
 Służy do sprawdzenia, czy dany `string` (lub kolekcja) jest pusty.
-### `StartsWith`
+#### `StartsWith`
 Służy do sprawdzenia, czy dany `string` (lub kolekcja) rozpoczyna się danym elementem.
-### `Contains`
+#### `Contains`
 Służy do sprawdzenia, czy jakiś `string` (lub kolekcja) zawiera jakiś element.
-### `DoesNotContain`
+#### `DoesNotContain`
 Służy do sprawdzenia, czy jakiś `string` (lub kolekcja) nie zawiera jakiegoś elementu.
-## Pisanie testów
+### Pisanie testów
 Pisząc testy chcemy sprawdzić nie tylko nasz idealny wariant, który z założenia powinien być poprawnie wykonany. Powinniśmy sprawdzić wszystkie możliwości dotyczące naszego kodu. Im więcej wariantów sprawdzimy, im więcej testów napiszemy, tym mniej będziemy później musieli debugować nasz kod. Kiedy większość sytuacji zostanie przewidziana i sprawdzona w testach, to zamiast debugować kod, będziemy mogli uruchomić testy. Jeżeli któryś z nich wypadnie negatywnie, to będziemy wiedzieć w której części kodu znajduje się błąd. Nie będziemy więc musieli przechodzić debugerem krok po kroku przez cały kod, a jedynie najwyżej przez fragment w którym testy wykazały błąd.
 
-# [LEKCJA 4 – Testy jednostkowe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-4-testy-jednostkowe/)
+## [LEKCJA 4 – Testy jednostkowe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-4-testy-jednostkowe/)
 Testy jednostkowe, standardowo, mają sprawdzić, czy najmniejsza możliwa jednostka naszej aplikacji wykonywana jest w sposób prawidłowy i taki, jaki jesteśmy w stanie przewidzieć.
-## Co testujemy
+### Co testujemy
 Najmniejszą możliwą jednostką, którą powinniśmy testować, jest metoda danej klasy. Większość tworzonych przez nas metod powinna mieć pokrycie w testach. Dokładniej o tym co i w jakiej ilości powinniśmy testować dowiemy się w kolejnych lekcjach.
-## Kto pisze testy jednostkowe
+### Kto pisze testy jednostkowe
 W odróżnieniu od innych rodzajów testów, takich jak testy integracyjne, testy End-To-End, testy regresji itd., za testy jednostkowe zawsze powinien być odpowiedzialny programista piszący kod. Dzieje się tak, ponieważ testy jednostkowe tworzone są po to, aby ułatwić pracę programiście. Testerzy są natomiast odpowiedzialni za tworzenie testów wyższego poziomu. Mają za zadanie sprawdzić aplikację, przed jej wdrożeniem na serwer produkcyjny. Muszą sprawdzić czy nowe funkcjonalności nie niszczą starych funkcjonalności, czy połączenia pomiędzy funkcjonalnościami i aplikacjami działają prawidłowo itd. Sprawdzają aplikację jako całość oraz połączenia między różnymi aplikacjami, a nie wszystkie metody. Testy jednostkowe są natomiast sprawdzeniem dla samego programisty, czy jego kod wykonuje się w sposób jaki tego oczekuje. Mówi się, że programiści dzielą się na tych którzy już piszą testy i na tych, którzy będą pisać testy, albo na tych którzy piszą testy i na tych, którzy debugują.
 
-# [LEKCJA 5 – Moq](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-5-moq/)
+## [LEKCJA 5 – Moq](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-5-moq/)
 Biblioteka służąca do stworzenia pewnej ilości danych, która będzie nam potrzebna do sprawdzenia funkcjonalności. Zazwyczaj używamy jej do zasymulowania działania pewnych metod, których nie chcemy sprawdzać w danym teście lub do zasymulowania danych z bazy danych. Zazwyczaj podczas testowania nie chcemy opierać się na danych z bazy danych, gdyż nie jesteśmy w stanie przewidzieć co się tam w danej chwili znajduje.
-## Instalacja biblioteki _Moq_
+### Instalacja biblioteki _Moq_
 Zanim będziemy mogli wykorzystać tą bibliotekę, musimy ją oczywiście zainstalować. Otwieramy _NuGet Manager_. W tym celu wybieramy _Tools_ -> _NuGet Package Manager_ -> _Manage NuGet Packages for Solution..._ i  w zakładce _Browse_ wyszukujemy _Moq_ (na przykład poprzez wpisanie tej nazwy w polu wyszukiwarki - Ctrl+L). Następnie wybieramy i instalujemy naszą bibliotekę.
-## Wybór metody do przetestowania
+### Wybór metody do przetestowania
 Załóżmy, że mamy klasę `ItemManager`, o następującym konstruktorze:
 
 ```csharp =
@@ -4132,8 +4133,8 @@ public Item GetItemById(int id)
 }
 ```
 
-## Test z użyciem biblioteki _Moq_
-### Arrange
+### Test z użyciem biblioteki _Moq_
+#### Arrange
 Metoda którą chcemy przetestować korzysta z klasy `Item`. Ma ona m.in. właściwość `Id` i trzyargumentowy konstruktor, w którym pierwszy argument inicjalizuje `Id`. Poza tym `GetItemById` korzysta również z metody `GetItemById` klasy `IService<Item>`. W naszym teście nie chcemy jednak sprawdzać poprawności działania klasy serwisowej. Zakładamy, że działa ona poprawnie. Musimy więc w teście zasymulować jej działanie. Do tego właśnie użyjemy biblioteki _Moq_. Stwórzmy więc potrzebne nam dane.
 
 ```csharp =
@@ -4146,21 +4147,21 @@ mock.Setup(s => s.GetItemById(1)).Returns(item);
 var manager = new ItemManager(new MenuActionService(), mock.Object);
 ```
 
-### Act
+#### Act
 Mamy już przygotowane wszystkie potrzebne nam dane. Stwórzmy więc logikę naszego testu.
 
 ```csharp =
 var returnedItem = manager.GetItemById(item.Id);
 ```
 
-### Assert
+#### Assert
 Na koniec sprawdźmy uzyskany wynik. Spodziewamy się, że otrzymaliśmy taki sam obiekt `Item`, jak ten który na początku stworzyliśmy i którego `Id` przekazaliśmy jako parametr testowanej funkcji. Sprawdźmy więc, czy oba obiekty są sobie równe.
 
 ```csharp =
 Assert.Equal(item, returnedItem);
 ```
 
-### Cały test
+#### Cały test
 Kod całego testu będzie więc wyglądał następująco:
 
 ```csharp =
@@ -4195,11 +4196,11 @@ Jeżeli w naszej aplikacji mamy zdefiniowane wszystkie potrzebne klasy, to może
 
 Oczywiście jest to najprostszy test, służący tylko przedstawieniu biblioteki _Moq_. W prawdziwym projekcie prawdopodobnie będziemy musieli zasymulować więcej obiektów, metod. Będziemy też przy zapewne sprawdzać więcej uzyskanych wartości. Biblioteki _Moq_ będziemy najczęściej używać do zasymulowania danych uzyskiwanych bezpośrednio z bazy danych. Dzięki temu niezależnie od niej będziemy mogli sprawdzić logikę biznesową naszej aplikacji.
 
-# [LEKCJA 6 – FluentAssertions](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-6-fluentassertions/)
+## [LEKCJA 6 – FluentAssertions](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-6-fluentassertions/)
 Biblioteka rozszerzająca możliwości kroku _Assert_ testów[^*].
-## Instalacja biblioteki _FluentAssertions_
+### Instalacja biblioteki _FluentAssertions_
 Podobnie jak w poprzedniej lekcji, zanim będziemy mogli wykorzystać tą bibliotekę, musimy ją oczywiście zainstalować. Ponownie otwieramy _NuGet Manager_. W tym celu wybieramy _Tools_ -> _NuGet Package Manager_ -> _Manage NuGet Packages for Solution..._ i  w zakładce _Browse_ wyszukujemy _FluentAssertions_ (na przykład poprzez wpisanie tej nazwy w polu wyszukiwarki - Ctrl+L). Następnie wybieramy i instalujemy naszą bibliotekę.
-## Test z wykorzystaniem biblioteki _FluentAssertions_
+### Test z wykorzystaniem biblioteki _FluentAssertions_
 Wykorzystajmy test utworzony w poprzedniej lekcji.
 
 ```csharp =
@@ -4233,25 +4234,25 @@ namespace NazwaAplikacji.Tests
 Jak już wspomnieliśmy bibliotekę _FluentAssertions_ wykorzystujemy w kroku _Assert_. Będziemy więc modyfikować tylko ten krok. Posiada ona bardziej intuicyjną składnię, dzięki czemu łatwiej jest pisać testy i łatwiej sprawdzić wszystkie przypadki testowe.
 
 Zastanówmy się więc jeszcze raz co chcieliśmy sprawdzić powyższym testem. Upewnialiśmy się, że metoda `GetItemById` menadżera zwraca poprawną, oczekiwaną przez nas wartość. Co to jednak znaczy?
-### 1. Typ zwracanego obiektu
+#### 1. Typ zwracanego obiektu
 Po pierwsze spodziewamy się, że otrzymamy obiekt typu `Item`. Czyli obiekt `returnedItem` powinien być typu `Item`. To zdanie zapisane przy pomocy _FluentAssertions_ będzie wyglądać następująco:
 ```csharp =
 returnedItem.Should().BeOfType(typeof(Item));
 ```
 
-### 2. Wartość nie `null`
+#### 2. Wartość nie `null`
 Po drugie oczekujemy, że otrzymamy rzeczywiście jakiś konkretny obiekt. Czyli obiekt `returnedItem` nie powinien być `null`. To zdanie zapisane przy pomocy _FluentAssertions_ będzie wyglądać następująco:
 ```csharp =
 returnedItem.Should().NotBeNull();
 ```
 
-### 3. Zwracamy obiekt utworzony na początku
+#### 3. Zwracamy obiekt utworzony na początku
 I w końcu spodziewamy się otrzymać ten sam obiekt który na początku utworzyliśmy. Czyli obiekt `returnedItem` powinien być taki sam jak obiekt `item`. To zdanie zapisane przy pomocy _FluentAssertions_ będzie wyglądać następująco:
 ```csharp =
 returnedItem.Should().BeSameAs(item);
 ```
 
-### 4. Ulepszony test
+#### 4. Ulepszony test
 Jak widać biblioteka _FluentAssertions_ pozwala nam pisać sprawdzane wartości prawie dokładnie tak jak byśmy mówili to w języku naturalnym. Dzięki temu testy są łatwiejsze w pisaniu i czytelniejsze. Z tego względu warto z niej korzystać.
 
 Poprawmy więc nasz test:
@@ -4289,8 +4290,8 @@ namespace NazwaAplikacji.Tests
 
 [^*]: Jeśli ktoś woli może również korzystać z podobnej biblioteki - _Shouldly_.
 
-# [LEKCJA 7 – Pokrycie kodu testami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-7-pokrycie-kodu-testami/)
-## Co powinniśmy testować?
+## [LEKCJA 7 – Pokrycie kodu testami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-7-pokrycie-kodu-testami/)
+### Co powinniśmy testować?
 Po tym, jak mówiliśmy jakie ważne są testy, chciałoby się powiedzieć, że wszystko. Nie jest to jednak prawda. Zarówno brak testów, jak i 100% pokrycie kodu testami nie są dobre dla naszej aplikacji. Tak na prawdę powinniśmy przetestować tylko konkretne rzeczy.
 <table>
 <tr>
@@ -4324,24 +4325,24 @@ Po tym, jak mówiliśmy jakie ważne są testy, chciałoby się powiedzieć, że
 </tr>
 </table>
 
-# [LEKCJA 8 – TDD](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-8-tdd/)
+## [LEKCJA 8 – TDD](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-8-tdd/)
 TDD (ang. _Test Driven Development_) - metodologia w tworzeniu oprogramowania, polegająca na tym, że tworzenie oprogramowania rozpoczyna się od napisania testów.
-## Podejście klasyczne (najpierw kod, potem testy)
+### Podejście klasyczne (najpierw kod, potem testy)
 Do tej pory tworzyliśmy testy na podstawie metod.
 1. Na podstawie wymagań funkcjonalnych piszemy metodę.
 2. Wiemy co chcieliśmy, aby ta metoda robiła i zwracała.
 3. Piszemy test sprawdzający, czy w wyniku działania metody, rzeczywiście otrzymaliśmy spodziewane rezultaty.
 4. Przeprowadzamy test.
-## **TDD** (najpierw testy, potem kod)
+### **TDD** (najpierw testy, potem kod)
 Zgodnie z metodologią **TDD** postępujemy na odwrót.
 1. Na podstawie wymagań funkcjonalnych określamy jakie wyniki chcemy otrzymać.
 2. Na tej podstawie piszemy testy.
 3. Implementujemy metody wykonujące odpowiednie przekształcenia.
 4. Przeprowadzamy testy i sprawdzamy, czy przekształcenia dały oczekiwany rezultat.
-## Przykład
-### Test
+### Przykład
+#### Test
 Przypomnijmy sobie nasz ostatni test. Sprawdzaliśmy w nim, działanie funkcji menadżera, zwracającej obiekt `Item` na podstawie `Id`. Załóżmy teraz, że nasza aplikacja musi mieć również funkcjonalność usuwającą `Item` z bazy danych, na podstawie `Id`. Samo usuwanie obiektu z bazy danych będzie się odbywać oczywiście za pomocą serwisu i nie będziemy tej części testować. Chcemy jednak dokonać tego na podstawie `Id`. Nie mamy jeszcze zaimplementowanej takiej funkcjonalności, ale wiemy, że umieścimy ją w tym samym menadżerze, co metodę zwracającą obiekt na podstawie `Id`. Zanim jednak ją zaimplementujemy, zastanówmy się, czego oczekujemy w wyniku jej działania i co będzie nam potrzebne do wykonania testu. Zacznijmy od tej drugiej części.
-#### Arrange
+##### Arrange
 1. Musimy utworzyć jakiś obiekt `Item`, którego możliwość usunięcia będziemy sprawdzać. Np.:
 
 ```csharp =
@@ -4362,21 +4363,21 @@ mock.Setup(m => m.RemoveItem(It.IsAny<Item>()));
 var manager = new ItemManager(new MenuActionService(), mock.Object);
 ```
 
-#### Act
+##### Act
 Etapem _act_ będzie oczywiście wywołanie metody menadżera. Oczywiście ta metoda jeszcze nie istnieje. Po napisaniu poniższej linii kodu możemy ją od razu utworzyć korzystając z _Quick Actions_.
 
 ```csharp =
 manager.RemoveItemById(item.Id);
 ```
 
-#### Assert
+##### Assert
 Ostatnim etapem testów jest weryfikacja uzyskanych wyników. Jest ona w tym przypadku o tyle utrudniona, że ani metoda menadżera `RemoveItemById`, ani metoda serwisowa `RemoveItem` nie zwracają żadnych danych (są typu `void`). Dzieje się tak, gdyż ich zadanie polega jedynie na usunięciu odpowiedniego obiektu. Co możemy więc sprawdzić? Ponieważ nie testujemy samego procesu usuwania z bazy danych, możemy więc sprawdzić, czy przekazano do usunięcia oczekiwany obiekt. Robimy to przy pomocy metody `Verify` klasy `Mock`.
 
 ```csharp =
 mock.Verify(m => m.RemoveItem(item));
 ```
 
-#### Cały test
+##### Cały test
 
 ```csharp =
 using NazwaAplikacji.Domain.Entity;
@@ -4409,8 +4410,8 @@ namespace NazwaAplikacji.Tests
 
 Gdybyśmy teraz przeprowadzili test, to oczywiście wyjdzie on negatywny. Jeżeli podczas pisania testu utworzyliśmy naszą metodę przy pomocy _Quick Actions_ to zawiera ona wyłącznie wyrzucenie wyjątku o braku implementacji. Taką właśnie wiadomość uzyskamy w wyniku działania testu. Zaimplementujmy więc naszą metodę i przeprowadźmy test ponownie.
 
-### Metoda
-#### Automatycznie wygenerowany kod metody
+#### Metoda
+##### Automatycznie wygenerowany kod metody
 Jeżeli utworzyliśmy naszą metodę przy pomocy _Quick Actions_ to powinna ona wyglądać następująco:
 
 ```csharp =
@@ -4420,7 +4421,7 @@ public void RemoveItemById(int id)
 }
 ```
 
-#### Implementacja funkcjonalności
+##### Implementacja funkcjonalności
 Nasza metoda powinna pobierać odpowiedni obiekt na podstawie podanego `id`, a następnie usuwać go z bazy danych. Zapiszmy więc to.
 
 ```csharp =
@@ -4433,14 +4434,14 @@ public void RemoveItemById(int id)
 
 Jeżeli teraz ponownie przeprowadzimy test `CanDeleteItemWithProperId`, to powinien on wyjść pozytywnie (oczywiście jeśli mamy zaimplementowana wszystkie inne wymagane klasy i metody). Oznacza to, że do naszego testu napisaliśmy odpowiednią metodę, zachowującą się w sposób, jakiego oczekiwaliśmy.
 
-# [LEKCJA 9 – Testy integracyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-9-testy-integracyjne/)
+## [LEKCJA 9 – Testy integracyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-9-testy-integracyjne/)
 Pomimo, że nie są to testy jednostkowe, to testy tego rodzaju również często są pisane przez programistów.
 
 **Testy integracyjne** - służą do testowania integracji pomiędzy warstwami naszej aplikacji np. menadżerami i serwisami. Piszemy je podobnie, jak testy jednostkowe, tylko jeżeli np. sprawdzamy integrację między menadżerami i serwisami, to nie mokujemy już serwisów, ale działami na rzeczywistych obiektach. Ponieważ serwisy przeprowadzają operacje na bazie danych, to używając rzeczywistych obiektów serwisowych, podczas wykonywania testów, wprowadzimy rzeczywiste zmiany w bazie danych. Dlatego testy integracyjne poza etapami _Arrange_-_Act_-_Assert_ posiadają na końcu jeszcze jeden etap, _Clean_, w którym będziemy "sprzątać" po teście, czyli przywracać bazę danych do stanu przed testem.
 
-## Przykład
+### Przykład
 Stwórzmy przykładowy test integracyjny na podstawie testu jednostkowego z poprzedniej lekcji.
-### Test jednostkowy
+#### Test jednostkowy
 
 ```csharp =
 using NazwaAplikacji.Domain.Entity;
@@ -4471,9 +4472,9 @@ namespace NazwaAplikacji.Tests
 }
 ```
 
-### Test integracyjny
+#### Test integracyjny
 Powyżej, dla przypomnienia, znajduje się test jednostkowy, który stworzyliśmy w poprzedniej lekcji. Jak już wspominaliśmy w teście integracyjnym nie sprawdzamy działania poszczególnych funkcji, a współdziałanie między poszczególnymi warstwami aplikacji.
-#### _Arrange_
+##### _Arrange_
 Nie będziemy więc teraz mokować naszego serwisu, a stworzymy jego faktyczny obiekt. Wypełnimy też go od razu jakąś daną, czyli naszym obiektem `item`.
 
 ```csharp =
@@ -4483,9 +4484,9 @@ itemService.AddItem(item);
 var manager = new ItemManager(new MenuActionService(), itemService);
 ```
 
-#### _Act_
+##### _Act_
 Krok _act_ pozostawiamy bez zmian.
-#### _Assert_
+##### _Assert_
 Ponieważ nie mamy już obiektu `Mock`, krok _assert_ musimy zmodyfikować. Ponieważ w teście usuwaliśmy obiekt `item` z serwisu (bazy danych), to możemy sprawdzić, czy taki obiekt nadal w nim istnieje. Czyli oczekujemy, że próba odnalezienia obiektu o `Id` `item.Id`, da nam wynik `null`.
 
 ```csharp =
@@ -4498,10 +4499,10 @@ Możemy to również zapisać bardziej bezpośrednio, sprawdzając, czy na liśc
 itemService.Items.FirstOrDefault(p => p.Id == item.Id).Should().BeNull();
 ```
 
-#### _Clean_
+##### _Clean_
 W naszym przypadku, ponieważ w teście usuwaliśmy element, który na początku testu dodaliśmy, a w dodatku nie działamy jeszcze na bazie danych, więc nie mamy nic do czyszczenia.
 
-#### Cały test
+##### Cały test
 
 ```csharp =
 using NazwaAplikacji.Domain.Entity;
@@ -4537,16 +4538,16 @@ namespace NazwaAplikacji.Tests
 
 Jeżeli mamy zaimplementowane wszystkie wymagane elementy aplikacji, to wykonanie takiego testu powinno zakończyć się pozytywnie.
 
-## _Clean_
+### _Clean_
 Jak już wspominaliśmy, kiedy podczas wykonywania testu wprowadzamy jakieś zmiany w bazie danych, to na jego zakończenie, musimy wszystkie te zmiany cofnąć. W naszym przykładzie nie mieliśmy nic do czyszczenia, gdyż nie pracujemy jeszcze na bazie danych. Gdybyśmy jednak taki test wykonywali na serwisie dodającym i usuwającym obiekty z bazy danych, to musimy uważać. Na początku testu dodaliśmy do bazy danych obiekt, który następnie usunęliśmy w kroku _act_. Mogłoby się więc wydawać, że wszystko powinno być w porządku. Jeżeli jednak nasza baza danych korzystna z mechanizmów auto-inkrementacji np. numerów id, to może się okazać, że zwiększyliśmy odpowiedzialny za nią znacznik i kolejny obiekt jaki dodamy do bazy danych będzie miał id o jedno większe od obiektu, który właśnie usunęliśmy, a nie od ostatniego obiektu znajdującego się w bazie danych (obiektu, który był ostatni, przed wykonaniem testu). Wówczas testując aplikacją będziemy tworzyć "dziury" w numerach id (lub innych wartościach). Jeżeli tabela na której pracujemy podczas testu posiada jakieś mechanizmy auto-inkrementacji, to musimy pamiętać, aby po zakończeniu testu, w etapie czyszczenia (_Clean_) przywrócić znacznikom odpowiednie wartości. Jest to oczywiście możliwe. Dlatego przed przestąpieniem do pisania testów integracyjnych należy zapoznać się z takimi mechanizmami, tak aby testowanie aplikacji, nie przynosiło więcej szkody niż pożytku.
 
-# [LEKCJA 10 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-10-bledy-poczatkujacych/)
+## [LEKCJA 10 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-10-bledy-poczatkujacych/)
 Jeśli chodzi o testowanie, to możliwych błędów jest całkiem sporo. Pierwszy podstawowy to
 
-## Brak testów
+### Brak testów
 Wielu programistów w ogóle nie testuje swoich aplikacji, co jest pierwszym krokiem do ich klęski. Pamiętajmy, że każdy program powinien być odpowiednio przetestowany. Dzięki temu mamy pewność, że działa ona w taki sposób, jaki to zaplanowaliśmy. Dodatkowo, w przypadkach spornych (np. z administratorami sieci), pozwala nam to udowodnić, że nasz kod działa prawidłowo. W przypadku gdy natomiast coś cię wysypie, ułatwia to i przyśpiesza znalezienie źródła błędu. Pozwala nam również sprawdzić, że każda kolejna wersja aplikacji, działa w ten sam sposób.
 
-## Testowanie nieodpowiednich elementów aplikacji
+### Testowanie nieodpowiednich elementów aplikacji
 Po drugie, często testujemy nieodpowiednie elementy aplikacji.
 
 **Nie powinniśmy testować:**
@@ -4558,10 +4559,10 @@ Po drugie, często testujemy nieodpowiednie elementy aplikacji.
 
 Skupmy się na testowaniu tego, nad czym mamy panowanie, co sami zaimplementowaliśmy i powinniśmy sprawdzić, czyli na logice biznesowej naszej aplikacji. W naszym przypadku będą to menadżery i być może serwisy. W tym momencie, prawdopodobnie nie używamy w nich jeszcze bibliotek zewnętrznych, więc warto je przetestować.
 
-# [LEKCJA 11 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-11-praca-domowa/)
+## [LEKCJA 11 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-11-praca-domowa/)
 Pracą domową na ten tydzień jest dodanie do pisanej przez nas przez ostatnie tygodnie aplikacji konsolowej projektu z testami i napisanie testów do wszystkich, stworzonych w niej do tej pory, funkcjonalności. Ponieważ nasza aplikacja może wydawać się już dość duża, potraktujmy to jako dobre ćwiczenie na przyszłość, kiedy nasze aplikacje będą o wiele bardziej rozbudowane. Przećwiczmy więc tworzenie testów do kodu już istniejącego. Kiedy w kolejnych tygodniach będziemy tworzyć kolejną aplikację (aplikację internetową), to możemy pokusić się o stosowanie metody TDD (_Test Driven Development_). Wówczas tworzenie naszej aplikacji rozpoczniemy od napisania testów.
 
-# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-1-powitanie/)
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-1-powitanie/)
 W tygodniu 5 nauczymy się pracować z danymi zewnętrznymi. Poza danymi wprowadzonymi przez użytkownika przez terminal, mogą to być dane dostarczane przez pliki w różnych formatach. Poznamy m.in. czym jest:
 * JSON
 * XML
@@ -4570,27 +4571,27 @@ W tygodniu 5 nauczymy się pracować z danymi zewnętrznymi. Poza danymi wprowad
 
 W tym tygodniu zakończymy pracę nad naszą aplikacją konsolową.
 
-# [LEKCJA 2 – Kolekcje w .NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-2-kolekcje-w-net/)
+## [LEKCJA 2 – Kolekcje w .NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-2-kolekcje-w-net/)
 W naszych aplikacjach będziemy często korzystać z kolekcji. Są to swego rodzaju tablice, które przechowujemy na stercie. Wcześniej poznaliśmy już podstawowy typ kolekcji, czyli listę (`List<T>`). Jest ona najczęściej stosowanym typem kolekcji, jednak ma swoje ograniczenia. Może się więc zdarzyć, że do konkretnego celu bardziej odpowiedni będzie dla nas jeden z pozostałych typów. Warto więc po krótce poznać, kilka podstawowych typów.
 
 W C# wyróżniamy dwa rodzaje typów obsługujących kolekcje (zbiór) danych.
-## Kolekcje niegeneryczne
+### Kolekcje niegeneryczne
 Odkąd do standardu języka C# wprowadzono kolekcje generyczne, kolekcje niegeneryczne są rzadko stosowane. Przez to, że mogą one przechowywać dane różnego typu są one mniej wydajne.
-### `ArrayList`
+#### `ArrayList`
 Typ podobny do standardowej tablicy. W odróżnieniu od niej jest jednak przechowywany na stercie, a nie na stosie.
 
 ```csharp =
 ArrayList arrayList = new ArrayList();
 ```
 
-### `SortedList`
+#### `SortedList`
 Typ podobny do `ArrayList`, z tą różnicą, że składa się z pary klucz (_key_) - wartość (_value_). Przy czym klucz musi być unikalną liczbą typu `int`, inną dla każdego elementu (nie mogą się powtarzać w obrębie jednej kolekcji). Podczas dodawania nowych elementów do listy, jest ona automatycznie sortowana według klucza, w kolejności rosnącej.
 
 ```csharp =
 SortedList sortedList = new SortedList();
 ```
 
-### `Stack`
+#### `Stack`
 Czyli stos. Struktura podobna w budowie do stosu w pamięci. Jest to struktura typu LIFO (_Last In First Out_), czyli ostatnio dodany do kolekcji element jest z niej pobierany i usuwany jako pierwszy.
 
 ```csharp =
@@ -4598,14 +4599,14 @@ Stack stack = new Stack();
 ```
 
 Poza standardowymi metodami dodawania i usuwania jej elementów mamy tu dodatkowo trzy funkcje:
-#### `Push`
+##### `Push`
 Służy do dodania nowego elementu w odpowiednie miejsce kolekcji.
-#### `Pop`
+##### `Pop`
 Służy do pobrania i usunięcia ostatnio dodanego (przy pomocy metody `Push`) elementu kolekcji.
-#### `Peek`
+##### `Peek`
 Służy do pobrania ostatnio dodanego (przy pomocy metody `Push`) elementu kolekcji, jednak bez jego usuwania.
 
-### `Queue`
+#### `Queue`
 Czyli kolejka. Struktura typu FIFO (_First In First Out_), czyli pierwszy dodany do kolekcji element jest z niej usuwany jako pierwszy. Możemy sobie ją wyobrazić jako standardową kolejkę (np. w sklepie). Klient, który ustawił się w kolejce jako pierwszy, zostanie obsłużony w pierwszej kolejności.
 
 ```csharp =
@@ -4613,25 +4614,25 @@ Queue queue = new Queue();
 ```
 
 Poza standardowymi metodami dodawania i usuwania elementów kolekcji, mamy tu dodatkowo trzy funkcje:
-#### `Enqueue`
+##### `Enqueue`
 Służy do dodawania nowych elementów na końcu kolejki.
-#### `Dequeue`
+##### `Dequeue`
 Służy do pobierania i usuwania pierwszego (dodanego jako pierwszy) elementu kolejki.
-#### `Peek`
+##### `Peek`
 Służy do pobierania pierwszego (dodanego jako pierwszy) elementu kolejki, jednak bez jego usuwania.
 
-### `Hashtable`
+#### `Hashtable`
 Czyli tablica haszująca. Typ podobny do typu `SortedList`, również składający się z pary klucz - wartość. Tu jednak klucz jest typu `string`, a nie `int`, ale oczywiście wartości kluczy tu również nie mogą się powtarzać. W odróżnieniu od `SortedList` jej wartości nie są również w żaden sposób sortowane.
 
 ```csharp =
 Hashtable hashtable = new Hashtable();
 ```
 
-## Kolekcje generyczne
+### Kolekcje generyczne
 Znacznie częściej stosowane i szeroko rozpowszechnione typy kolekcji. Generyczne, czyli, dla przypomnienia, takie, w których podajemy jakiego typu dane będziemy w nich przechowywać. Oznacz to, że do kolekcji generycznej będziemy mogli dodawać wyłącznie elementy typu, podanego na początku podczas deklaracji obiektu. Dzięki temu kolekcje generyczne są zdecydowanie szybsze, bardziej wydajne, a co za tym idzie preferowane przez programistów. Jednym z typów kolekcji generycznych jest poznana przez nas wcześniej generyczna lista (`List<T>`).
-### `List<T>`
+#### `List<T>`
 Tradycyjna lista przechowująca elementy podanego typu `T`. Jest to najczęściej stosowany typ kolekcji, dający dużą swobodę dodawania i usuwania elementów.
-#### Przykład
+##### Przykład
 ```csharp =
 List<int> list = new List<int>();
 //dodawanie pojedynczych elementow
@@ -4666,9 +4667,9 @@ list.RemoveAt(3); // usuniecie elementu o indeksie 3
 list.AddRange(list);
 ```
 
-### `Dictionary<TKey, TValue>`
+#### `Dictionary<TKey, TValue>`
 Czyli słownik. Kolekcja, podobnie jak kolekcje `SortedList`, czy `Hashtable`, przechowywująca pary klucz - wartość. Zarówno klucz, jak i wartość może być dowolnego, podanego przez nas na początku, typu. Częstymi przykładami są słowniki przechowujące pary `<int, string>`, `<string, string>`, ale również zdefiniowane przez nas klasy np. `<int, Item>`. Elementy słownika nie są automatycznie posortowane. Poza metodami analogicznymi jak w liście, posiada on dodatkowo metody sprawdzające, czy słownik zawiera element o podanym kluczu (`slownik.ContainsKey(TKey key)`) lub wartości (`slownik.ContainsValue(TValue value)`), zwracające typ `bool` (`true`, jeśli zawiera, `false`, jeśli nie). Ciekawą metodą jest metoda `slownik.TryGetValue(TKey key, out TValue value)`, zwracająca wartość elementu o podanym kluczu, jeżeli został on znaleziony na liście. Oczywiście wartości kluczy w kolekcji nie mogą się powtarzać.
-#### Przykład
+##### Przykład
 ```csharp =
 Dictionary<int, Item> dictionary = new Dictionary<int, Item>();
 dictionary.Add(1, new Item(1, "Apple", 2));
@@ -4688,9 +4689,9 @@ dictionary.TryGetValue(i, out item);
 
 `Dictionary` najczęściej używane są do przechowywania różnego rodzaju wartości słownikowych, czyli np: kategorii, typów, państw, kodów pocztowych itp.
 
-### `SortedList<TKey, TValue>`
+#### `SortedList<TKey, TValue>`
 Czyli posortowana lista. Jest ona podobna do tradycyjnej listy, ale również zawiera elementy słownika. Podobnie do tego drugiego składa się ona z par klucz - wartość. Analogicznie, zarówno klucz jak i wartość, mogą być dowolnego, zadeklarowanego na początku typu. Podobnie jak w poprzednich przypadkach, klucz musi być unikatowy (jego wartość nie może powtarzać się w obrębie kolekcji). `SortedList<TKey, TValue>` posiada takie same metody jak słownik. W odróżnieniu od niego, podobnie jak niegeneryczna `SortedList`, podczas dodawania nowych elementów do listy, są one automatycznie sortowane, zgodnie z rosnącą wartością klucza. Co za tym idzie, dodawanie nowych elementów do posortowanej listy jest wolniejsze niż w przypadku słownika. Natomiast późniejsze wyszukiwanie elementów jest znacznie szybsze.
-#### Przykład
+##### Przykład
 ```csharp =
 SortedList<int, Item> sortedList = new SortedList<int, Item>();
 sortedList.Add(2, new Item(2, "Strawberry", 2));
@@ -4708,9 +4709,9 @@ sortedList.TryGetValue(i, out item);
 // item powinien rownac sie orange
 ```
 
-### `Queue<T>`
+#### `Queue<T>`
 Czyli kolejka. Jest to uporządkowana kolekcja, realizująca zasadę FIFO (_First In First Out_). Działa analogicznie jak kolejka niegeneryczna (`Queque`), z tym, że może przechowywać wyłącznie elementy określonego przez nas na początku (podczas tworzenia obiektu typu `Queue<T>`) typu (`T`).
-#### Przykład
+##### Przykład
 ```csharp =
 Queue<Item> queue = new Queue<Item>();
 Item apple = new Item(1, "Apple", 2), strawberry = new Item(2, "Strawberry", 2);
@@ -4728,9 +4729,9 @@ Item item2 = queue.Dequeue();
 //queue: strawberry
 ```
 
-### `Stack<T>`
+#### `Stack<T>`
 Czyli stos. Jest to uporządkowana kolekcja, realizująca zasadę LIFO (_Last In First Out_). Działa analogicznie jak stos niegeneryczny (`Stack`), z tym, że może przechowywać wyłącznie elementy określonego przez nas na początku (podczas tworzenia obiektu typu `Stack<T>`) typu (`T`).
-#### Przykład
+##### Przykład
 ```csharp =
 Stack<Item> stack = new Stack<Item>();
 Item apple = new Item(1, "Apple", 2), strawberry = new Item(2, "Strawberry", 2);
@@ -4748,10 +4749,10 @@ Item item2 = stack.Pop();
 //stack: apple
 ```
 
-# [LEKCJA 3 – IQueryable i IEnumerable](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-3-iqueryable-i-ienumerable/)
+## [LEKCJA 3 – IQueryable i IEnumerable](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-3-iqueryable-i-ienumerable/)
 Są to główne interfejsy kolekcji używane do pracy z LINQ (więcej o LINQ w kolejnej lekcji). Są one podstawą do pracy z danymi. Najczęściej stosuje się je w stosunku do danych pobieranych z bazą danych. Oba interfejsy są do siebie bardzo podobne, a główna różnica między nimi, leży właśnie we współpracy z LINQ.
 
-## Przykład
+### Przykład
 Napiszmy więc prosty przykład, który pomoże nam pokazać podstawową różnicę pomiędzy obydwoma interfejsami. Stworzymy w tym celu nową klasę `ItemService`. Jako naszą kolekcję wykorzystamy listę obiektów klasy `Item`. Ponieważ nie utworzyliśmy jeszcze żadnej bazy danych w nowo utworzonej klasie stworzymy pomocniczą metodę `Seed`, której zadaniem będzie stworzenie i zwrócenie przykładowych danych.
 
 ```csharp =
@@ -4841,7 +4842,7 @@ namespace Warehouse
 }
 ```
 
-## Porównanie interfejsów `IQueryable` i `IEnumerable`
+### Porównanie interfejsów `IQueryable` i `IEnumerable`
 Zapytanie SQLowe które zostałoby stworzone w przypadku metod `GetAllItemsQueryable` i `GetAllItemsEnumerable` wyglądałoby dokładnie tak samo. W uproszczeniu:
 ```sql =
 SELECT * FROM items;
@@ -4865,7 +4866,7 @@ Z powodu tych różnic kolekcje `IQueryable` używamy zawsze, gdy kolekcje pobie
 | Pobieranie i filtrowanie kolekcji przy pomocy LINQ | pobiera przefiltrowaną kolekcję <br/> (filtrowanie po stronie bazy danych) | pobiera całą kolekcję, a następnie ją filtruje <br/> (filtrowanie po stronie aplikacji) |
 | Zastosowanie | pobieranie przefiltrowanych danych z bazy danych | manipulacja danymi znajdującymi się już w pamięci programu lub pobieranie danych w całości (np. z pliku - filtracja możliwa dopiero w aplikacji, po pobraniu wszystkich danych) |
 
-# [LEKCJA 4 – LINQ podstawy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-4-linq-podstawy/)
+## [LEKCJA 4 – LINQ podstawy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-4-linq-podstawy/)
 LINQ (ang. _**L**anguage **IN**tegrated **Q**uery_) jest zbiorem metod rozszerzających służących do pracy z danymi (obiektami implementującymi interfejs `IQueryable`). Jest to właściwie podstawa współczesnego programowania. Jest używane głównie do zapisywania i odczytywania danych z bazy danych. Przy czym baza danych, nie musi być koniecznie bazą SQLową. Może być to dowolny obiekt zawierający dane (np. plik, dokument XML lub dowolne inne źródło danych) do którego odczytu (zapisu) mamy odpowiednią bibliotekę implementującą interfejs `IQueryable`. Dzięki temu nie interesuje nas skąd pochodzą dane. Niezależnie od źródła, operacje na danych (dodawanie, usuwanie itd.), wykonane przy pomocy LINQ, będą wyglądać tak samo.
 
 
@@ -4927,9 +4928,9 @@ namespace Warehouse.App.Concrete
 
 Każdą z metod LINQ można zapisać na dwa, równoważne sposoby. Pierwszy, choć nadal jest to język C#, ma przypominać wyglądem składnię SQL (ang. _query syntax_). Drugi natomiast, jest zapisem łańcuchowym, skróconym, i bardziej przypomina składnię języka C# (ang. _chain (method) syntax_). Wybór metody zapisu nie ma wpływu na działanie programu i zależy wyłącznie od indywidualnych preferencji programisty.
 
-## Wyszukiwanie
+### Wyszukiwanie
 
-### Zapis "SQL"
+#### Zapis "SQL"
 ```csharp =
 public void Method()
 {
@@ -4965,7 +4966,7 @@ public void Method()
 
 Jak widać LINQ pozwala nam uprościć zapis i usprawnić działanie programu. Jeżeli chcemy, możemy ten zapis skrócić jeszcze bardziej, używając zapisu łańcuchowego (ang. _chain syntax_).
 
-### Zapis łańcuchowy (metodowy)
+#### Zapis łańcuchowy (metodowy)
 Zapis łańcuchowy korzysta z odpowiednich metod rozszerzających. W tym wypadku będzie to metoda `Where`.
 ```csharp =
 public void Method()
@@ -4975,7 +4976,7 @@ public void Method()
 }
 ```
 
-## Uzyskiwanie przefiltrowanej kolekcji w postaci listy
+### Uzyskiwanie przefiltrowanej kolekcji w postaci listy
 W przypadku obu zapisów, otrzymamy w wyniku kolekcję typu `IEnumerable<Item>`. Gdybyśmy chcieli, żeby `items` było listą (typu `List<Item>`), to musielibyśmy na końcu dokonać konwersji, przy pomocy metody `ToList`. Czyli aby uzyskać taki sam efekt, jak w przypadku pętli:
 
 ```csharp =
@@ -4993,7 +4994,7 @@ public void Method()
 ```
 
 musimy zapisać
-### Zapis "SQL"
+#### Zapis "SQL"
 
 ```csharp =
 public void Method()
@@ -5006,7 +5007,7 @@ public void Method()
 ```
 
 lub
-### Zapis łańcuchowy (metodowy)
+#### Zapis łańcuchowy (metodowy)
 ```csharp =
 public void Method()
 {
@@ -5015,9 +5016,9 @@ public void Method()
 }
 ```
 
-## Sortowanie
+### Sortowanie
 Elementy kolekcji możemy również posortować, według wybranej właściwości (jednej lub kilku), w kolejności malejącej lub rosnącej.
-### Zapis "SQL"
+#### Zapis "SQL"
 
 ```csharp =
 public void Method()
@@ -5039,7 +5040,7 @@ public void Method()
 }
 ```
 
-### Zapis łańcuchowy (metodowy)
+#### Zapis łańcuchowy (metodowy)
 ```csharp =
 public void Method()
 {
@@ -5053,9 +5054,9 @@ public void Method()
 }
 ```
 
-## Zwracanie wybranych informacji z elementów kolekcji
+### Zwracanie wybranych informacji z elementów kolekcji
 Do tej pory, za każdym razem zwracaliśmy całe elementy kolekcji. Możemy jednak wyszukać tyko wybrane informacje o interesujących nas elementach kolekcji. Możemy zwracać zarówno wartości pojedynczych właściwości (np. `Id`, otrzymując kolekcję `IEnumerable<int>`), jak i kilku właściwości. W tym drugim przypadku możemy skorzystać np. z dynamicznie tworzonych typów anonimowych (tzw. typów `'a`). Są to typy, które nie mają określonej nazwy, mają za to ściśle określoną listę nazwanych elementów.
-### Zapis "SQL"
+#### Zapis "SQL"
 ```csharp =
 public void Method()
 {
@@ -5074,7 +5075,7 @@ public void Method()
 }
 ```
 
-### Zapis łańcuchowy (metodowy)
+#### Zapis łańcuchowy (metodowy)
 ```csharp =
 public void Method()
 {
@@ -5089,9 +5090,9 @@ public void Method()
 }
 ```
 
-## Wyszukiwanie jednego elementu
+### Wyszukiwanie jednego elementu
 Do tej pory za każdym razem zwracaliśmy kolekcję elementów. Może nas jednak interesować otrzymanie tylko jednego elementu. W tym celu stworzono metodę `FirstOrDefault` zwracającą pierwszy element spełniający dany warunek, bądź wartość domyślną, jeżeli nie znaleziono żadnego elementu, który by go spełniał. Wartością domyślną dla typów referencyjnych jest `null`, a np. dla typu `int` jest to `0`.
-### Zapis łańcuchowy (metodowy)
+#### Zapis łańcuchowy (metodowy)
 ```csharp =
 public void Method()
 {
@@ -5101,7 +5102,7 @@ public void Method()
 }
 ```
 
-### Zapis "SQL"
+#### Zapis "SQL"
 Powyższa metoda niema swojego odpowiednika w składni _query_. Jeżeli chcemy możemy więc jedynie połączyć obie formy zapisu.
 ```csharp =
 public void Method()
@@ -5115,11 +5116,11 @@ public void Method()
 }
 ```
 
-# [LEKCJA 5 – Manipulacje plikami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-5-manipulacje-plikami/)
+## [LEKCJA 5 – Manipulacje plikami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-5-manipulacje-plikami/)
 Aplikacje często korzystają z plików zewnętrznych. Pobieramy z nich dodatkowe informacje potrzebne do działania programu albo generujemy pliki zewnętrzne np. raporty, które będziemy chcieli potem rozesłać. Dlatego ważne jest, aby nauczyć się poprawnej pracy z plikami. Poznajmy więc podstawy odczytu i zapisu informacji do plików.
-## Przykładowy plik
+### Przykładowy plik
 Zrobimy to na podstawie pliku CSV (_Comma Separated Value_), czyli formatu pliku w którym przechowywane wartości oddzielone są od siebie przecinkami, a w jednej linii umieszcza się informacje dotyczące tylko jednego elementu. W naszym pliku będziemy przechowywać informacje potrzebne do stworzenia kilku obiektów typu `Item`.
-### Klasa `Item`
+#### Klasa `Item`
 Dla przypomnienia klasa Item wyglądała następująco:
 ```csharp =
 using System;
@@ -5147,7 +5148,7 @@ namespace Warehouse.Domain.Entity
     }
 }
 ```
-### Plik CSV
+#### Plik CSV
 Nasz przykładowy plik nazwiemy _items.csv_ i umieścimy w folderze _Temp_ na dysku _C_. Pełna ścieżka do pliku będzie więc wyglądać następująco: _C:\Temp\items.csv_. Przykładowa treść pliku:
 ```
 1,Apple,2
@@ -5158,17 +5159,17 @@ Nasz przykładowy plik nazwiemy _items.csv_ i umieścimy w folderze _Temp_ na dy
 1,Laptop,1
 2,Screen,1
 ```
-## Strumień pliku
-### Instrukcja _using_
+### Strumień pliku
+#### Instrukcja _using_
 Instrukcja, która pomaga w zarządzaniu pamięcią naszego programu. Zapewnia ona poprawne użycie obiektów `IDisposable`. W obrębie instrukcji `using` taki obiekt jest tylko do odczytu. `IDisposable` jest interfejsem udostępniającym mechanizmy zwalniania niezarządzanych zasobów, czyli takich których usuwanie nie odbywa się automatycznie. Przykładem klasy implementującej ten interfejs jest klasa `Stream` (strumień), czyli abstrakcyjna klasa zajmująca się obsługą strumieni danych. Jedną z jej klas pochodnych jest natomiast klasa `FileStream`, której zaraz użyjemy.
 
 Tradycyjnie instrukcja `using` składa się ze słowa kluczowego `using` po którym w nawiasie okrągłym umieszczamy obiekt `IDisposable`, którego będziemy używać. Na końcu znajduje się umieszczony w klamrach blok instrukcji wykonywanych na tym obiekcie. Po zakończeniu ich wykonywania odpowiednia informacja trafia do _garbage collector_ i obiekt ten zostaje usunięty z pamięci programu.
 
 Począwszy od C# 8.0 możliwy jest uproszczony zapis instrukcji `using`, bez nawiasów. Składa się on wówczas jedynie ze słowa kluczowego `using` i obiektu `IDisposable`. Na końcu instrukcji stawiamy tu oczywiście średnik. W tym wypadku blok instrukcji związanych z tą instrukcją `using` kończy się wraz z końcem bloku zawierającego instrukcję `using` (czyli najczęściej metody). Tam też właśnie zostaje automatycznie wywołana metoda `Dispose` obiektu `IDisposable`, odpowiedzialna za zwolnienie zajmowanej przez niego pamięci.
 
-### `FileStream`
+#### `FileStream`
 Jak już wspominaliśmy przykładową klasą implementującą interfejs `IDisposable` jest klasa `FileStream`. Zajmuje się ona obsługą strumienia danych związanego z plikami zewnętrznymi. Kiedy nasz program uzyskuje dostęp do jakiegoś pliku znajdującego się na dysku, taki dostęp jest równocześnie zablokowany dla wszystkich innych. To znaczy, że jeżeli otworzymy w naszej aplikacji jakiś plik, to nie będziemy mogli tego pliku otworzyć i modyfikować w żadnym innym programie. Ponadto mogą to być bardzo duże pliki, a co za tym idzie, kiedy wczytamy je do programu, zajmą one dużo jego pamięci. Ze względu na te dwa powody, bardzo ważne jest aby kontrolować jak używamy plików w programie (kiedy dokładnie powinniśmy je otworzyć, a kiedy zamknąć i zwolnić pamięć). Klasa `FileStream`, jak każda klasa dziedzicząca po klasie `Stream` zawiera dane w postaci sekwencji bajtów. Odczytując dane z plików będziemy więc je uzyskiwać właśnie w takiej formie. Aby były one użyteczne w naszym programie będziemy musieli je najpierw zdekodować, a następnie odpowiednio obrobić.
-### Przykład
+#### Przykład
 Zobaczmy więc jak wygląda instrukcja `using` i działa strumień plików na przykładzie prostego odczytu danych z naszego pliku _items.csv_.
 ```csharp =
 public void Method()
@@ -5237,7 +5238,7 @@ public void Method()
 
 **`fs.Read(byte[] array, int offset, int count)`** - metoda klasy `FileStream` odczytująca `count` bajtów danych ze strumienia i zastępująca nimi dane z tablicy `array` począwszy od indeksu `offset`. Metoda zwraca liczbę rzeczywiście odczytanych bajtów.
 
-### `FileMode`
+#### `FileMode`
 Enum określający jak system operacyjny powinien otworzyć plik.
 ```csharp =
 namespace System.IO
@@ -5255,20 +5256,20 @@ namespace System.IO
     }
 }
 ```
-#### 1. `CreateNew`
+##### 1. `CreateNew`
 Oznacza, że system operacyjny powinien stworzyć nowy plik. Jeżeli plik już istnieje, to zostaje wyrzucony wyjątek `System.IO.IOException`. Użycie tej opcji wymaga uprawnienia do zapisu (`System.Security.Permissions.FileIOPermissionAccess.Write`).
-#### 2. `Create`
+##### 2. `Create`
 Oznacza, że system operacyjny powinien stworzyć nowy plik. Jeżeli natomiast plik już istnieje, to zostanie on nadpisany. Użycie tej opcji również wymaga uprawnienia do zapisu (`System.Security.Permissions.FileIOPermissionAccess.Write`). Wybór tej opcji jest równoznaczny ze stwierdzeniem: jeżeli plik jeszcze nie istnieje to wybierz opcję `CreateNew`, w przeciwnym razie wybierz opcję `Truncate`. Jeżeli plik już istnieje, ale jest to plik ukryty zostaje wyrzucony wyjątek `System.UnauthorizedAccessException`, o nieautoryzowanym dostępie.
-#### 3. `Open`
+##### 3. `Open`
 Oznacza, że system operacyjny powinien otworzyć istniejący plik. Jeżeli plik nie istnieje, zostaje wyrzucony wyjątek `System.IO.FileNotFoundException`. To jaki dostęp mamy do otwartego pliku (odczyt, zapis, oba) określa enum `System.IO.FileAccess`.
-#### 4. `OpenOrCreate`
+##### 4. `OpenOrCreate`
 Oznacza, że jeżeli plik istnieje, system operacyjny powinien go otworzyć, w przeciwnym razie powinien stworzyć nowy plik. Jeżeli otwieramy plik do odczytu (`FileAccess.Read`), to jest wymagane uprawnienie do odczytu (`System.Security.Permissions.FileIOPermissionAccess.Read`). Jeżeli otwieramy plik do zapisu (`FileAccess.Write`), to wymagane jest uprawnienie do zapisu (`System.Security.Permissions.FileIOPermissionAccess.Write`). Gdy natomiast otwieramy plik do odczytu i zapisu (`FileAccess.ReadWrite`), to oba uprawnienia są wymagane (`System.Security.Permissions.FileIOPermissionAccess.Read` i `System.Security.Permissions.FileIOPermissionAccess.Write`).
-#### 5. `Truncate`
+##### 5. `Truncate`
 Oznacza, że system operacyjny powinien otworzyć istniejący plik, a następnie wyczyścić całą jego zawartość, tak, aby jego rozmiar wynosił zero bajtów. Użycie tej opcji wymaga uprawnienia do zapisu (`System.Security.Permissions.FileIOPermissionAccess.Write`). Próba odczytu z pliku otwartego z opcją `Truncate` wywołuje wyjątek `System.ArgumentException`.
-#### 6. `Append`
+##### 6. `Append`
 Oznacza, że system operacyjny powinien otworzyć plik, jeśli istnieje, i wyszukać jego koniec, lub stworzyć nowy plik. Wybór tej opcji wymaga pozwolenia do dołączania (`System.Security.Permissions.FileIOPermissionAccess.Append`). Może być ona stosowana wyłącznie w połączeniu z modyfikatorem dostępu do zapisu (`FileAccess.Write`). Po wybraniu tej opcji, próba wyszukania pozycji przed końcem pliku skutkuje wyjątkiem `System.IO.IOException`, natomiast próba odczytu z pliku wyjątkiem `System.NotSupportedException`.
 
-### `FileAccess`
+#### `FileAccess`
 Enum określający tryb dostępu do pliku.
 ```csharp
 namespace System.IO
@@ -5285,13 +5286,13 @@ namespace System.IO
 }
 ```
 
-#### 1. `Read`
+##### 1. `Read`
 Oznacza dostęp do pliku w trybie odczytu. Dane mogą być więc odczytywane z pliku. Można zastosować go w połączeniu z trybem `Write`, aby umożliwić zarówno odczyt jaki zapis informacji do pliku.
-#### 2. `Write`
+##### 2. `Write`
 Oznacza dostęp do pliku w trybie zapisu. Dane mogą być zapisywane do pliku. Można zastosować go w połączeniu z trybem `Read`, aby umożliwić zarówno zapis, jak i odczyt informacji z pliku.
-#### 3. `ReadWrite`
+##### 3. `ReadWrite`
 Oznacza dostęp do pliku w trybie odczytu i zapisu. Dane mogą być zarówno zapisywane jak i odczytywane z pliku.
-### `FileShare`
+#### `FileShare`
 Enum zawierający stałe określające jaki dostęp mogą mieć inne obiekty `System.IO.FileStream` do tego samego pliku.
 ```csharp =
 namespace System.IO
@@ -5311,35 +5312,35 @@ namespace System.IO
 }
 ```
 
-#### 0. `None`
+##### 0. `None`
 Odmawia dzielenia się dostępem do tego pliku. Jakiekolwiek próby otwarcia tego pliku przez ten lub inny proces nie powiodą się, dopóki plik nie zostanie zamknięty.
-#### 1. `Read`
+##### 1. `Read`
 Pozwala na dalsze otwieranie pliku do odczytu. Jeśli ten znacznik nie jest określony, to wszelkie próby otwarcia pliku do odczytu przez ten lub inny proces nie powiodą się, dopóki plik nie zostanie zamknięty. Jednakże, nawet jeżeli ta flaga jest określona, to do otwarcia pliku wciąż mogą być potrzebne dodatkowe pozwolenia.
-#### 2. `Write`
+##### 2. `Write`
 Pozwala na dalsze otwieranie pliku do zapisu. Jeśli ten znacznik nie jest określony, to wszelkie próby otwarcia pliku do zapisu przez ten lub inny proces nie powiodą się, dopóki plik nie zostanie zamknięty. Jednakże, nawet jeżeli ta flaga jest określona, to do otwarcia pliku wciąż mogą być potrzebne dodatkowe pozwolenia.
-#### 3. `ReadWrite`
+##### 3. `ReadWrite`
 Pozwala na dalsze otwieranie pliku do odczytu lub zapisu. Jeśli ten znacznik nie jest określony, to wszelkie próby otwarcia pliku do odczytu lub zapisu przez ten lub inny proces nie powiodą się, dopóki plik nie zostanie zamknięty. Jednakże, nawet jeżeli ta flaga jest określona, to do otwarcia pliku wciąż mogą być potrzebne dodatkowe pozwolenia.
-#### 4. `Delete`
+##### 4. `Delete`
 Pozwala na późniejsze usunięcie pliku.
-#### 16. `Inheritable`
+##### 16. `Inheritable`
 Sprawia, że deskryptor pliku (ang. _file handle_) jest dziedziczony przez procesy potomne. Nie jest to bezpośrednio obsługiwane przez Win32.
 
-## Odczyt (_Read_)
-### Metoda `Read` klasy `FileStream`
+### Odczyt (_Read_)
+#### Metoda `Read` klasy `FileStream`
 ```csharp
 public override int Read([In][Out] byte[] array, int offset, int count)
 ```
 Metoda odczytuje blok bajtów ze strumienia i zapisuje dane w danym buforze.
-#### Parametry:
+##### Parametry:
 1. `array`:<br/>
 Gdy metoda wraca, parametr zawiera określoną tablicę bajtów z wartościami pomiędzy `offset` i `(offset + count - 1)` zastąpionymi przez bajty odczytane ze strumienia.
 2. `offset`:<br/>
 Przesunięcie bajtów w tablicy, w którym zostaną umieszczone odczytane bajty (numer indeksu od którego wartości zaczną być podmieniane).
 3. `count`:<br/>
 Maksymalna liczba bajtów do odczytu (ile bajtów chcemy odczytać). Zostanie odczytane `count` bajtów lub tyle ile zostało, jeżeli zostało mniej niż `count`.
-#### Zwraca:
+##### Zwraca:
 Metoda zwraca całkowitą liczbę bajtów wczytanych do bufora. Może to być mniej niż chcieliśmy, jeżeli taka liczba bajtów nie jest aktualnie dostępna, lub zero, jeżeli dotarliśmy do końca pliku.
-#### Wyjątki:
+##### Wyjątki:
 1. `System.ArgumentNullException`:<br/>
 Jeśli `array` jest `null`.
 2. `System.ArgumentOutOfRangeException`:<br/>
