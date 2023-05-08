@@ -1675,7 +1675,7 @@ Możemy to zrobić na kilka sposobów:
 1. razem z inicjalizacją, czyli po nawiasie kwadratowym w klamrach podać wartości wszystkich kolejnych elementów oddzielone od siebie przecinkami. Jeżeli tablica jest wielowymiarowa to będziemy zagnieżdżać w sobie nawiasy klamrowe. Np. dla tablicy dwuwymiarowej piszemy nawias klamrowy w jego wnętrzu wstawiamy nawiasy klamrowe oddzielone przecinkami - tyle nawiasów klamrowych ile mamy rzędów (wielkość pierwszego wymiaru), a w każdym z tych nawiasów wypisujemy tyle przedzielonych przecinkami wartości ile rzędów ma nasza tablica (wielkość drugiego wymiaru). Czyli wracając do naszego przykładu z regałem - zewnętrzne klamry będą naszym regałem. Wewnątrz regału mamy półki (nawiasy klamrowe) które są porozdzielane (przecinki). Na każdej półce znajdują się książki (wartości jakie chcemy wpisać do tablicy), które również są pooddzielane przecinkami (nie chcemy przecież aby książki na półce skleiły się w jedną całość). Przy tym sposobie możemy pominąć podawanie wielkości tablicy w wyrażeniu inicjalizacyjnym, gdyż zostanie ona sprecyzowana przez ilość wartości które przypisujemy.
 2. po inicjalizacji, w dowolnym miejscu programu. Wpisujemy wartość do konkretnej komórki tabeli. W tym celu podajemy nazwę tabeli, ujęty w nawias kwadratowy indeks, znak przypisania (`=`) i wartość jaką chcemy przypisać. Indeks mówi nam w którym miejscu tabeli mamy wpisać daną wartość (na której półce, w którym miejscu mam wsadzić tą książkę). Jeżeli tablica jest wielowymiarowa, to indeksy poszczególnych wymiarów rozdzielamy przecinkami. Indeksację w tablicach zaczynamy od zera tzn. pierwszy element w tablicy jednowymiarowej będzie miał indeks `[0]`, w dwuwymiarowej `[0, 0]`, t trójwymiarowej `[0, 0, 0]` itd. Możemy oczywiście ręcznie podawać indeksy wszystkich kolejnych elementów tablicy, ale przy wypełnianiu najczęściej robi się to przy pomocy pętli `for`, gdzie za indeks służy zmienna będąca iteratorem pętli. Jeżeli tablica jest wielowymiarowa, to stosuje się zagnieżdżone pętle 'for'. Przypisanie wartości do konkretnej komórki tabeli stosuje się też później w programie do zmian wartości konkretnej komórki.
 
-Pokażmy więc przykład tablicy jedno-, dwu- i trzywymiarowej:
+Pokażmy więc przykład tablicy jedno-, dwu- i trójwymiarowej:
 
 ```csharp =
 string[] animals;
@@ -1834,6 +1834,48 @@ Array.Sort(animalsSorted);
 3. `Clear` - metoda służąca do czyszczenia ("zerowania") tablicy. Przez czyszczenie rozumie się przypisanie takich wartości jak w przypadku inicjalizacji pustej tablicy (czyli dla typu `int` wartości `0`, dla typu `string` `String.Empty`, dla typów mogących przyjmować wartość `null` wartość `null` itd.). Można stosować ją na dwa sposoby. Aby wyczyścić całą tablicę napiszemy: `Array.Clear(nazwaTablicy);`. Gdy natomiast chcemy wyczyścić tylko część tablicy, możemy to zrobić podając dodatkowo jako parametr indeks elementu od którego chcemy zacząć czyszczenie i liczbę elementów które chcemy wyczyścić (`Array.Clear(nazwaTablicy, indeksElementuOdKtoregoZaczynamyCzyszczenie, liczbaElementowDoWyczyszczenia);`).
 
 Metody `IndexOf` i `Sort` można stosować tylko w przypadku tablic jednowymiarowych. Mogą one przyjmować też inne argumenty (inna liczba i/lub typ). Np. w przykładowym kodzie użyliśmy metody `Sort` przyjmującej dwa argumenty typu `Array` (tablice). Pierwszy przechowuje klucze (identyfikatory), a drugi wartości. Pierwsza tablica zostanie posortowana normalnie, a druga według tej samej kolejności co pierwsza (jeżeli pierwszy element tablicy kluczy stanie się teraz jej trzecim elementem, to pierwszy element tablicy wartości również stanie się jej trzecim elementem). Więcej informacji dotyczących tych metod można znaleźć w dokumentacji ([`IndexOf`](https://learn.microsoft.com/en-us/dotnet/api/system.array.indexof?view=net-7.0), [`Sort`](https://learn.microsoft.com/en-us/dotnet/api/system.array.sort?view=net-7.0), [`Clear`](https://learn.microsoft.com/en-us/dotnet/api/system.array.clear?view=net-7.0)). Można tam też znaleźć więcej właściwości i metod klasy [`System.Array`](https://learn.microsoft.com/en-us/dotnet/api/system.array?view=net-7.0), np. użytą w przykładzie `Sort` metodę do kopiowania tablic [`CopyTo`](https://learn.microsoft.com/en-us/dotnet/api/system.array.copyto?view=net-7.0) lub [`Copy`](https://learn.microsoft.com/en-us/dotnet/api/system.array.copy?view=net-7.0).
+
+### Operatory indeksu i zakresu
+Począwszy od C# 8.0 wprowadzono nowe operatory do obsługi kolekcji.
+
+#### Operator `^` - `System.Index` od końca
+Prefix `^` użyty wraz z numerem indeksu, oznacza numer indeksu liczony od końca kolekcji. `^indeks`, oznacza więc to samo co `dlugoscKolekcji - indeks`.
+
+Na przykład:
+```csharp =
+var array = new int[] { 1, 2, 3, 4, 5 };
+var thirdItem = array[2];    // array[2]
+var lastItem = array[^1];    // array[new Index(1, fromEnd: true)], czyli array[array.Length - 1], czyli array[4]
+
+//wartosci array:			 1	 2	 3	 4	 5
+//numer indeksu:			 0	 1	 2	 3	 4
+//numer indeksu od konca:	^5	^4	^3	^2	^1
+```
+
+Zachowanie tego operatora jest zdefiniowane tylko dla wartości większych lub równych zero. Należy pamiętać, że indeksy `^0` i `^n`, gdzie `n` jest większe niż długość kolekcji, będę wskazywać na wartości spoza zakresu (za ostatnim lub przed pierwszym elementem kolekcji) - wyjątek `IndexOutOfRangeException`.
+
+#### Operator zakresu `x..y`
+Stosuje się go jako uproszczony zapis, który wywołuje odpowiednią metodę struktury `System.Range`. `x` w powyższym zapisie oznacza indeks początkowy, a `y` indeks końcowy zakresu. Przy czym obiekt o indeksie `x`, będzie znajdował się w tworzonym fragmencie kolekcji, natomiast obiekt o indeksie `y` nie. Zarówno argument `x` jak i `y` może być w tym zapisie pominięty. Pominięcie `x` oznacza, że wyznaczamy zakres od początku kolekcji, natomiast pominięcie `y`, że do końca.
+
+Pokażmy to na przykładach:
+```csharp =
+var array = new int[] { 1, 2, 3, 4, 5 };
+var slice1 = array[2..3];    // array[new Range(2, 3)], czyli { 3 }
+var slice2 = array[..3];     // array[Range.EndAt(3)] lub inaczej array[0..3], czyli array[new Range(0, 3)], czyli { 1, 2, 3}
+var slice3 = array[2..];     // array[Range.StartAt(2)] lub inaczej array[2..array.Length], czyli array[new Range(2, array.Length)], czyli { 3, 4, 5 }
+var slice4 = array[..];      // array[Range.All], czyli cała tablica array, { 1, 2, 3, 4, 5 }
+```
+
+Możemy również łączyć oba operatory. Np.:
+```csharp =
+var array = new int[] { 1, 2, 3, 4, 5 };
+var slice1 = array[2..^3];    // array[new Range(2, new Index(3, fromEnd: true))], czyli { } pusta kolekcja
+var slice2 = array[..^3];     // array[Range.EndAt(new Index(3, fromEnd: true))], czyli { 1, 2 }
+var slice3 = array[^2..];     // array[Range.StartAt(new Index(2, fromEnd: true))], czyli { 4, 5 }
+var slice4 = array[0..^0];    // array[Range.All], czyli cała tablica array, { 1, 2, 3, 4, 5 }
+```
+
+Jeżeli indeks końcowy jest mniejszy niż początkowy, to zostanie wyrzucony wyjątek `IndexOutOfRangeException`.
 
 ## [LEKCJA 11 – Listy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-11-listy/)
 Klasa `System.Collections.Generic.List` należy do tzw. typów generycznych. Oznacza to, że lista jest zawsze obiektem typu `List`, ale może przetrzymywać obiekty innego typu, który definiujemy podczas inicjalizacji. Podobnie jak tablice, listy służą do przechowywania wielu obiektów tego samego typu. Różnice między tymi dwoma typami powodują jednak, że stosuje się je w różnych sytuacjach.
