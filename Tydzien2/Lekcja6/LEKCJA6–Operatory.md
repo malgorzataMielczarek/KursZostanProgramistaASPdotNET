@@ -202,3 +202,36 @@ a += " ma kota."; // to samo co a = a + " ma kota."
 | Operator | Znaczenie | Przykład |
 | :---: | :--- | :--- |
 | `+` | dla argumentów typu `string` oznacza konkatenację, połączenie dwóch stringów w jeden | `string a = "Ala" + " miała kota." // wynik: Ala miała kota.` |
+
+## Łączenia wartości null
+ang. _null coalescing operator_. Operatorem łączenia wartości null jest podwójny znak zapytania (`??`). Jest to operator dwuargumentowy.
+
+Budowa wyrażenia: `x ?? y`, gdzie `x` jest wyrażeniem dowolnego typu, który może przyjmować wartość `null`, a `y` typu, który może zostać przypisany do `x` (nie musi móc przyjmować wartości `null`).
+
+Działanie:</br>
+1. Obliczenie wartości wyrażenia `x`
+2. Jeżeli `x` wynosi `null` to patrz 3., przeciwnie patrz 4.
+3. Obliczanie wyrażenia `y`. `x ?? y` ma wartość wyrażenia `y`.
+4. `x ?? y` ma wartość wyrażenia `x`.
+
+Np.:
+```csharp =
+string? nullableString = null;
+string notNullString = nullableString ?? "Tu jest NULL";
+Console.WriteLine(notNullString); //zostanie wypisane: Tu jest NULL
+
+nullableString = "Już niema NULL";
+notNullString = nullableString ?? "Tu jest NULL";
+Console.WriteLine(notNullString); //zostanie wypisane: Już niema NULL
+```
+
+Począwszy od C# 8.0 operator łączenia wartości null można również stosować w połączeniu z operatorem przypisania (`??=`). Wówczas wartość wyrażenia łączenia wartości null jest przypisywana do lewego argumentu tego wyrażenia. W tym wypadku lewy argument musi być zmienną, właściwością lub indeksatorem. Np.:
+
+```csharp =
+int? a = null;
+
+a ??= 5; //to samo co a = a ?? 5;, czyli a jest teraz równe 5
+a ??= 7; //to samo co a = a ?? 7;, czyli a jest nadal równe 5
+```
+
+Operatory `??` i `??=` są prawostronnie asocjacyjne. Oznacza to, że operatory te są grupowane od prawej do lewej. Czyli wyrażenie `a ?? b ?? c`, jest przetwarzane jako `a ?? (b ?? c)`, a wyrażenie `d ??= e ??= f`, jako `d ??= (e ??= f)`. Ogólnie wyrażenie postaci `E1 ?? E2 ?? ... ?? EN` zwraca wartość pierwszego argumentu różnego niż `null` lub `null`, jeżeli wszystkie argumenty mają wartość `null`. Analogicznie w wyrażeniu `E1 ??= E2 ??= ... ??= EN` `E1` będzie miał wartość pierwszego argumentu różnego od `null` lub `null`, jeżeli wszystkie argumentu mają wartość `null`.

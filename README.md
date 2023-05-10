@@ -1387,6 +1387,39 @@ a += " ma kota."; // to samo co a = a + " ma kota."
 | :---: | :--- | :--- |
 | `+` | dla argumentów typu `string` oznacza konkatenację, połączenie dwóch stringów w jeden | `string a = "Ala" + " miała kota." // wynik: Ala miała kota.` |
 
+### Łączenia wartości null
+ang. _null coalescing operator_. Operatorem łączenia wartości null jest podwójny znak zapytania (`??`). Jest to operator dwuargumentowy.
+
+Budowa wyrażenia: `x ?? y`, gdzie `x` jest wyrażeniem dowolnego typu, który może przyjmować wartość `null`, a `y` typu, który może zostać przypisany do `x` (nie musi móc przyjmować wartości `null`).
+
+Działanie:</br>
+1. Obliczenie wartości wyrażenia `x`
+2. Jeżeli `x` wynosi `null` to patrz 3., przeciwnie patrz 4.
+3. Obliczanie wyrażenia `y`. `x ?? y` ma wartość wyrażenia `y`.
+4. `x ?? y` ma wartość wyrażenia `x`.
+
+Np.:
+```csharp =
+string? nullableString = null;
+string notNullString = nullableString ?? "Tu jest NULL";
+Console.WriteLine(notNullString); //zostanie wypisane: Tu jest NULL
+
+nullableString = "Już niema NULL";
+notNullString = nullableString ?? "Tu jest NULL";
+Console.WriteLine(notNullString); //zostanie wypisane: Już niema NULL
+```
+
+Począwszy od C# 8.0 operator łączenia wartości null można również stosować w połączeniu z operatorem przypisania (`??=`). Wówczas wartość wyrażenia łączenia wartości null jest przypisywana do lewego argumentu tego wyrażenia. W tym wypadku lewy argument musi być zmienną, właściwością lub indeksatorem. Np.:
+
+```csharp =
+int? a = null;
+
+a ??= 5; //to samo co a = a ?? 5;, czyli a jest teraz równe 5
+a ??= 7; //to samo co a = a ?? 7;, czyli a jest nadal równe 5
+```
+
+Operatory `??` i `??=` są prawostronnie asocjacyjne. Oznacza to, że operatory te są grupowane od prawej do lewej. Czyli wyrażenie `a ?? b ?? c`, jest przetwarzane jako `a ?? (b ?? c)`, a wyrażenie `d ??= e ??= f`, jako `d ??= (e ??= f)`. Ogólnie wyrażenie postaci `E1 ?? E2 ?? ... ?? EN` zwraca wartość pierwszego argumentu różnego niż `null` lub `null`, jeżeli wszystkie argumenty mają wartość `null`. Analogicznie w wyrażeniu `E1 ??= E2 ??= ... ??= EN` `E1` będzie miał wartość pierwszego argumentu różnego od `null` lub `null`, jeżeli wszystkie argumentu mają wartość `null`.
+
 ## [LEKCJA 7 – Operatory Logiczne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-7-operatory-logiczne/)
 W lekcji tej poznamy operatory logiczne warunkowe. Wyróżniamy operatory logiczne jednoargumentowe i dwuargumentowe. Wszystkie argumenty są typu `bool`. Wynik operacji logicznych również jest tego typu. Operatory logiczne są często stosowane w wyrażeniach warunkowych instrukcji `if`, pętli itp.
 
@@ -1876,6 +1909,45 @@ var slice4 = array[0..^0];    // array[Range.All], czyli cała tablica array, { 
 ```
 
 Jeżeli indeks końcowy jest mniejszy niż początkowy, to zostanie wyrzucony wyjątek `IndexOutOfRangeException`.
+
+### Operatory warunkowe null `?.` i `?[]`
+W C# 6.0 wprowadzono operatory warunkowe null (ang. _null-conditional operators_) odnoszące się do operacji dostępu do składowej (`?.`) i elementu (`?[]`) obiektu. 
+
+Budowa wyrażeń: `a?.x`, `a?[x]`
+
+Działanie:
+* Jeżeli `a` ma wartość `null`, to wyrażenia `a?.x` i `a?[x]` mają wartość `null`
+* Jeżeli `a` ma wartość różną od `null`, to wyrażenie `a?.x` ma wartość wyrażenia `a.x`, natomiast wyrażenie `a?[x]` wyrażenia `a[x]`.
+
+Np.:
+
+```csharp =
+string[] animals;
+string pet = animals?[1]; // pet jest równe null
+
+string[] pets = new string[3];
+animals?.CopyTo(pets, 0); // wyrażenie ma wartość null i nic nie zostanie skopiowane
+
+animals = new string[] {'dog', 'cat', 'parrot'};
+pet = animals?[1]; // pet jest równe 'cat'
+animals?.CopyTo(pets, 0); // pets jest równe {'dog', 'cat', 'parrot'}
+```
+
+Operatory te przydają się, gdy nie mamy pewności, czy używany obiekt została zainicjalizowany. Często będziemy go stosować w połączeniu z operatorem `??`. Np.:
+```csharp =
+int GetSumOfFirstTwoOrDefault(int[] numbers)
+{
+    if ((numbers?.Length ?? 0) < 2)
+    {
+        return 0;
+    }
+    return numbers[0] + numbers[1];
+}
+
+Console.WriteLine(GetSumOfFirstTwoOrDefault(null));  // output: 0
+Console.WriteLine(GetSumOfFirstTwoOrDefault(new int[0]));  // output: 0
+Console.WriteLine(GetSumOfFirstTwoOrDefault(new[] { 3, 4, 5 }));  // output: 7
+```
 
 ## [LEKCJA 11 – Listy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-11-listy/)
 Klasa `System.Collections.Generic.List` należy do tzw. typów generycznych. Oznacza to, że lista jest zawsze obiektem typu `List`, ale może przetrzymywać obiekty innego typu, który definiujemy podczas inicjalizacji. Podobnie jak tablice, listy służą do przechowywania wielu obiektów tego samego typu. Różnice między tymi dwoma typami powodują jednak, że stosuje się je w różnych sytuacjach.

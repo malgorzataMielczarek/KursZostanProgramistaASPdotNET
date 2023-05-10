@@ -213,3 +213,42 @@ var slice4 = array[0..^0];    // array[Range.All], czyli cała tablica array, { 
 ```
 
 Jeżeli indeks końcowy jest mniejszy niż początkowy, to zostanie wyrzucony wyjątek `IndexOutOfRangeException`.
+
+## Operatory warunkowe null `?.` i `?[]`
+W C# 6.0 wprowadzono operatory warunkowe null (ang. _null-conditional operators_) odnoszące się do operacji dostępu do składowej (`?.`) i elementu (`?[]`) obiektu. 
+
+Budowa wyrażeń: `a?.x`, `a?[x]`
+
+Działanie:
+* Jeżeli `a` ma wartość `null`, to wyrażenia `a?.x` i `a?[x]` mają wartość `null`
+* Jeżeli `a` ma wartość różną od `null`, to wyrażenie `a?.x` ma wartość wyrażenia `a.x`, natomiast wyrażenie `a?[x]` wyrażenia `a[x]`.
+
+Np.:
+
+```csharp =
+string[] animals;
+string pet = animals?[1]; // pet jest równe null
+
+string[] pets = new string[3];
+animals?.CopyTo(pets, 0); // wyrażenie ma wartość null i nic nie zostanie skopiowane
+
+animals = new string[] {'dog', 'cat', 'parrot'};
+pet = animals?[1]; // pet jest równe 'cat'
+animals?.CopyTo(pets, 0); // pets jest równe {'dog', 'cat', 'parrot'}
+```
+
+Operatory te przydają się, gdy nie mamy pewności, czy używany obiekt została zainicjalizowany. Często będziemy go stosować w połączeniu z operatorem `??`. Np.:
+```csharp =
+int GetSumOfFirstTwoOrDefault(int[] numbers)
+{
+    if ((numbers?.Length ?? 0) < 2)
+    {
+        return 0;
+    }
+    return numbers[0] + numbers[1];
+}
+
+Console.WriteLine(GetSumOfFirstTwoOrDefault(null));  // output: 0
+Console.WriteLine(GetSumOfFirstTwoOrDefault(new int[0]));  // output: 0
+Console.WriteLine(GetSumOfFirstTwoOrDefault(new[] { 3, 4, 5 }));  // output: 7
+```
