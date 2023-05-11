@@ -3,7 +3,7 @@
 ### Tydzien1
 #### [BONUS 1 – Tworzenie Repozytorium GitHub](#bonus-1--tworzenie-repozytorium-github-1)
 #### [BONUS 2 – Podstawy pracy z GITem](#bonus-2--podstawy-pracy-z-gitem-1)
-#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-1)
+#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-5)
 #### [LEKCJA 2 – Plan gry](#lekcja-2--plan-gry-1)
 #### [LEKCJA 3 – Jak studiować ten kurs](#lekcja-3--jak-studiować-ten-kurs-1)
 #### [LEKCJA 4 – Co musisz umieć zanim przejdziesz dalej](#lekcja-4--co-musisz-umieć-zanim-przejdziesz-dalej-1)
@@ -17,7 +17,7 @@
 #### [LEKCJA 12 – Błędy początkujących](#lekcja-12--błędy-początkujących-1)
 #### [LEKCJA 13 – Praca domowa](#lekcja-13--praca-domowa-1)
 ### Tydzien2
-#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-2)
+#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-6)
 #### [LEKCJA 2 – Zmienne i stałe](#lekcja-2--zmienne-i-stałe-1)
 #### [LEKCJA 3 – Typy wartościowe](#lekcja-3--typy-wartościowe-1)
 #### [LEKCJA 4 – Typy referencyjne](#lekcja-4--typy-referencyjne-1)
@@ -38,7 +38,7 @@
 #### [LEKCJA 19 – Błędy początkujących](#lekcja-19--błędy-początkujących-1)
 #### [LEKCJA 20 – Praca domowa](#lekcja-20--praca-domowa-1)
 ### Tydzien3
-#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-3)
+#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-7)
 #### [LEKCJA 2 – Konstruktory](#lekcja-2--konstruktory-1)
 #### [LEKCJA 3 – Przeciążenia](#lekcja-3--przeciążenia-1)
 #### [LEKCJA 4 – Dziedziczenie](#lekcja-4--dziedziczenie-1)
@@ -51,7 +51,7 @@
 #### [LEKCJA 11 – Błędy początkujących](#lekcja-11--błędy-początkujących-1)
 #### [LEKCJA 12 – Praca domowa](#lekcja-12--praca-domowa-1)
 ### Tydzien4
-#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-4)
+#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-8)
 #### [LEKCJA 2 – Projekt z testami](#lekcja-2--projekt-z-testami-1)
 #### [LEKCJA 3 – Twój pierwszy test](#lekcja-3--twój-pierwszy-test-1)
 #### [LEKCJA 4 – Testy jednostkowe](#lekcja-4--testy-jednostkowe-1)
@@ -63,7 +63,7 @@
 #### [LEKCJA 10 – Błędy początkujących](#lekcja-10--błędy-początkujących-1)
 #### [LEKCJA 11 – Praca domowa](#lekcja-11--praca-domowa-1)
 ### Tydzien5
-#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-5)
+#### [LEKCJA 1 – Powitanie](#lekcja-1--powitanie-9)
 #### [LEKCJA 2 – Kolekcje w .NET](#lekcja-2--kolekcje-w-net-1)
 #### [LEKCJA 3 – IQueryable i IEnumerable](#lekcja-3--iqueryable-i-ienumerable-1)
 #### [LEKCJA 4 – LINQ podstawy](#lekcja-4--linq-podstawy-1)
