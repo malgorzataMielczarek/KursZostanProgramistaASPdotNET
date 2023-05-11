@@ -21,7 +21,7 @@ Można przy jej pomocy tworzyć aplikacje:
         Gry w technologii .NET tworzy się przy pomocy silnika gier Unity.
 4. mobilne, <br/>
         Aplikacje mobilne, czyli programy przeznaczone na urządzenia przenośne. Mogą być to zarówno aplikacje:
-    * samodzielne, czyli działające bez dostępu do internetu (odpowiednik aplikacji desktopowych),
+    * samodzielne, czyli działające bez dostępu do Internetu (odpowiednik aplikacji desktopowych),
     * klienckie, aplikacja (klient) jest zainstalowana i działa na urządzeniu użytkownika, jednak na życzenie klienta łączy się z serwerem (pobieranie, zapisywanie danych) poprzez sieć internetową,
     * internetowe, czyli aplikacje mobilne przystosowane do obsługi na urządzeniach mobilnych,
     * gry komputerowe, w technologii .NET również tworzone najczęściej przy pomocy silnika Unity, zaprojektowane jednak do obsługi na urządzeniach mobilnych.

@@ -121,10 +121,10 @@ Jeżeli chcemy na razie zapisać w repozytorium tylko część zmienionych plik�
 Jeżeli wykonaliśmy sam commit, bez pusha, to w efekcie otrzymamy coś takiego:
 ![Widok górnego paska _Git Changes_ po wykonaniu 1 commita bez pusha](https://learn.microsoft.com/en-us/visualstudio/version-control/media/vs-2022/git-changes-window-outgoing-incoming.png?view=vs-2017&viewFallbackFrom=vs-2022)
 
-Możemy teraz zrobić push klikając widoczną na rysunku powyżej ikonkę ze strzałką w górę. Oczywiście możemy odrazu zapisać na repozytorium zdalnym kilka commitów.
-<br/>Na powyższej ilustracji po lewej od ikonki _push_ widzimy jeszcze dwie przydatne funkcje. Pierwsza z nich (ta bardziej po lewej) to _Fetch_ jej kliknięcie spowoduje sprawdzenie, czy mamy aktualną wersję projektu (czy na repozytorim zdalnym ktoś nie zapisał jakichś commitów, których nie mamy na swoim repozytorium lokalnym). Jeżeli _fetch_ wykryje jakieś różnice należy zrobić _pull_, używając do tego sąsiedniego przycisku. Spowoduje to pobranie z repozytorium zdalnego "dodatkowych" commitów i zapisanie ich w naszym repozytorium lokalnym.
+Możemy teraz zrobić push klikając widoczną na rysunku powyżej ikonkę ze strzałką w górę. Oczywiście możemy od razu zapisać na repozytorium zdalnym kilka commitów.
+<br/>Na powyższej ilustracji po lewej od ikonki _push_ widzimy jeszcze dwie przydatne funkcje. Pierwsza z nich (ta bardziej po lewej) to _Fetch_ jej kliknięcie spowoduje sprawdzenie, czy mamy aktualną wersję projektu (czy na repozytorium zdalnym ktoś nie zapisał jakichś commitów, których nie mamy na swoim repozytorium lokalnym). Jeżeli _fetch_ wykryje jakieś różnice należy zrobić _pull_, używając do tego sąsiedniego przycisku. Spowoduje to pobranie z repozytorium zdalnego "dodatkowych" commitów i zapisanie ich w naszym repozytorium lokalnym.
 
-Repozytoria mają tzw. branche (ang. _branch_ - gałąź). Główna gałąź projektu najczęściej nazywana jest _master_, jeżeli tworzymy nowe repozytorium przy pomocy Visual Studio lub _main_, jeżeli robimy to na stronie github.com. Branch jest to można powiedzieć odmiana/wariant naszego projektu. Jeżeli planujemy wprowadzić w projekcie jakieś duże zmiany, albo przetestować jakieś rozwiązanie to dobrą praktyką jest utworzenie nowej gałęzi i przeprowadzanie tych zmian właśnie w niej. Oznacza to, że od pewnego momentu nasz projekt będzie mógł składać się z różnych plików lub te same pliki będą mogły mieć różną zawartość w zależności od tego na który branchu będziemy pracować. Dzięki temu możemy mieć w jednym miejscu działający program, a w drugim swobodnie go modyfikować i ulepszać bez obaw, że coś zepsujemy. Jeżeli przeprowadzone przez nas zmiany uzmamy za sukces, możemy gałęzie połączyć i ponownie mieć tylko jedną wersję programu.
+Repozytoria mają tzw. branche (ang. _branch_ - gałąź). Główna gałąź projektu najczęściej nazywana jest _master_, jeżeli tworzymy nowe repozytorium przy pomocy Visual Studio lub _main_, jeżeli robimy to na stronie github.com. Branch jest to można powiedzieć odmiana/wariant naszego projektu. Jeżeli planujemy wprowadzić w projekcie jakieś duże zmiany, albo przetestować jakieś rozwiązanie to dobrą praktyką jest utworzenie nowej gałęzi i przeprowadzanie tych zmian właśnie w niej. Oznacza to, że od pewnego momentu nasz projekt będzie mógł składać się z różnych plików lub te same pliki będą mogły mieć różną zawartość w zależności od tego na który branchu będziemy pracować. Dzięki temu możemy mieć w jednym miejscu działający program, a w drugim swobodnie go modyfikować i ulepszać bez obaw, że coś zepsujemy. Jeżeli przeprowadzone przez nas zmiany uznamy za sukces, możemy gałęzie połączyć i ponownie mieć tylko jedną wersję programu.
 
 ## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-1-powitanie/)
 Zaczynam Kurs Szkoły Dotneta [Zostań programistą ASP.NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/).
@@ -165,7 +165,7 @@ Można przy jej pomocy tworzyć aplikacje:
         Gry w technologii .NET tworzy się przy pomocy silnika gier Unity.
 4. mobilne, <br/>
         Aplikacje mobilne, czyli programy przeznaczone na urządzenia przenośne. Mogą być to zarówno aplikacje:
-    * samodzielne, czyli działające bez dostępu do internetu (odpowiednik aplikacji desktopowych),
+    * samodzielne, czyli działające bez dostępu do Internetu (odpowiednik aplikacji desktopowych),
     * klienckie, aplikacja (klient) jest zainstalowana i działa na urządzeniu użytkownika, jednak na życzenie klienta łączy się z serwerem (pobieranie, zapisywanie danych) poprzez sieć internetową,
     * internetowe, czyli aplikacje mobilne przystosowane do obsługi na urządzeniach mobilnych,
     * gry komputerowe, w technologii .NET również tworzone najczęściej przy pomocy silnika Unity, zaprojektowane jednak do obsługi na urządzeniach mobilnych.
@@ -2029,7 +2029,7 @@ for(int i = 0; i < list.Count; i++)
 ```
 
 ##### 3. Metoda `Insert`
-Metoda klasy `System.Collections.Generic.List` pozwalająca dodać jeden nowy obiekt w wybranym miejscu listy. Jako parametry tej metody podajemy numer indeksu pod którym ma się znaleźć nowy element, oraz dodawany obiekt. Numer indeksu jest liczbą całkowitą niemniejszą od zera i nie większą od liczby elementów w liście (wskazanej przez właściwość `Count`). Np. do tworzonej przez nas listy dodajmy liczbę `5` po liczbie `4`:
+Metoda klasy `System.Collections.Generic.List` pozwalająca dodać jeden nowy obiekt w wybranym miejscu listy. Jako parametry tej metody podajemy numer indeksu pod którym ma się znaleźć nowy element, oraz dodawany obiekt. Numer indeksu jest liczbą całkowitą nie mniejszą od zera i nie większą od liczby elementów w liście (wskazanej przez właściwość `Count`). Np. do tworzonej przez nas listy dodajmy liczbę `5` po liczbie `4`:
 
 ```csharp =
 int index = list.IndexOf(4);
@@ -2051,7 +2051,7 @@ for(int i = 0; i < list.Count; i++)
 ```
 
 ##### 4. Metoda `InsertRange`
-Metoda klasy `System.Collections.Generic.List` pozwalająca dodać listę obiektów w wybranym miejscu naszej listy. Jako parametry tej metody podajemy numer indeksu pod którym ma się zaczynać dodawana lista, oraz dodawana list. Numer indeksu jest liczbą całkowitą niemniejszą od zera i nie większą od liczby elementów w liście (wskazanej przez właściwość `Count`). Np. do tworzonej przez nas listy dodajmy listę `new List<int>() { 6, 7, 8, 9 }`, zaraz za dodaną przed chwilą cyfrą `5`:
+Metoda klasy `System.Collections.Generic.List` pozwalająca dodać listę obiektów w wybranym miejscu naszej listy. Jako parametry tej metody podajemy numer indeksu pod którym ma się zaczynać dodawana lista, oraz dodawana list. Numer indeksu jest liczbą całkowitą nie mniejszą od zera i nie większą od liczby elementów w liście (wskazanej przez właściwość `Count`). Np. do tworzonej przez nas listy dodajmy listę `new List<int>() { 6, 7, 8, 9 }`, zaraz za dodaną przed chwilą cyfrą `5`:
 
 ```csharp =
 list.InsertRange(index + 2, new List<int>() { 6, 7, 8, 9 });
