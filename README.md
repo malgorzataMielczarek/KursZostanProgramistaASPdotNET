@@ -214,7 +214,7 @@ namespace HelloWorld
     }
 }
 ```
-![Kod programu HelloWorld](Ilustracje/Program.png)
+![Kod programu HelloWorld](Tydzien1\Lekcja7\Ilustracje\Program.png)
 
 
 Aplikacja tworzona w nowszych wersjach (począwszy od .NET 5 - C# 9) może używać tzw. instrukcji najwyższego poziomu (ang. _top-level statements_). Oznacza to, że nie musimy już jawnie ustawiać metody Main(). Powyższy zapis może więc wyglądać prościej:
@@ -298,7 +298,7 @@ Na potrzeby tej lekcji wykorzystamy zmodyfikowany program z lekcji poprzedniej -
 ><br/> _Źródło: [Wikipedia](https://pl.wikipedia.org/wiki/Zintegrowane_środowisko_programistyczne)_
 
 ### Podstawowe okno programu Visual Studio
-![Przykładowe okno programu Visual Studio](Ilustracje/PrzykladoweOknoVS.png)
+![Przykładowe okno programu Visual Studio](Tydzien1\Lekcja8\Ilustracje\PrzykladoweOknoVS.png)
 
 #### :red_circle: Okno edytora kodu
 Obszar IDE w którym wyświetlany jest cały kod klasy/pliku który przeglądamy.
@@ -320,7 +320,7 @@ Rozwiązanie przedstawione na obrazku powyżej zawiera tylko jeden projekt (_Hel
 Pasek w górnej części okna programu, zawierający ikonki z podstawowymi funkcjami.<br/>
 Jego prawa część składa się z typowych funkcjonalności programu, takich jak: przyciski nawigacji, nowy projekt, otwórz plik, zapisz plik wyświetlany aktualnie w oknie edytora kodu, zapisz wszystkie pliki, cofnij zmiany, wprowadź ponownie cofnięte zmiany itd.. Następnie znajdują się pola związane z uruchamianiem pisanej aplikacji. Możemy wybrać konfigurację w jakiej ma być uruchomiona solucja, platformy na których ma działać i uruchomić program (pole z zieloną strzałką "play"). Na końcu mamy inne przydatne funkcjonalności. Wyświetlany pasek może w rzeczywistości składać się z wielu pasków narzędzi. W standardowym układzie są to trzy paski: standardowych opcji, związany z edycją tekstu oraz z funkcjonalnościami dotyczącymi kontroli źródła. Paski narzędzi można dostosować do swoich potrzeb wybierając te, z pośród wielu dostępnych pasków i funkcjonalności programu, z których korzystamy najczęściej. Po lewej stronie paska znajdują się jeszcze dwa przyciski: do współpracy z innymi programistami w czasie rzeczywistym (_Visual Studio Live Share_) oraz do komunikacji z wytwórcą IDE.
 ### Okno programu Visual Studio podczas działania aplikacji
-![Przykładowe okno programu Visual Studio podczas działania aplikacji](Ilustracje/OknoVSPodczasPracyProgramu.png)
+![Przykładowe okno programu Visual Studio podczas działania aplikacji](Tydzien1\Lekcja8\Ilustracje\OknoVSPodczasPracyProgramu.png)
 
 #### :large_blue_circle: Narzędzia diagnostyczne
 Wyświetlają się tylko podczas pracy pisanej aplikacji. Umożliwia monitorowanie ilości zasobów używanych przez nasz program (ilość zajmowanej przez proces pamięci – _Process Memory_) oraz obciążenie procesorów (_CPU_).
@@ -415,27 +415,27 @@ Kompilator jest narzędziem służącym do kompilacji naszego kodu.
 Proces tłumaczenia kodu programu napisanego w języku programowania (np. C#) na tzw. kod pośredni (ang. _Intermediate Code_). W jego wyniku tworzony jest dodatkowy plik możliwy do uruchomienia w danym środowisku. W przypadku platformy .NET i systemu operacyjnego Windows jest to plik .exe (ang. _executive_ – wykonywalny).
 Jeżeli uruchomimy program w Visual Studio przy pomocy odpowiedniego przycisku z paska narzędzi w konfiguracji _Debug_, to zostanie uruchomiona kompilacja, nasz projekt zostanie zbudowany i uruchomiony, a w folderze _bin_ > _Debug_ utworzą nam się pliki wynikowe m.in. właśnie plik .exe
 
-![Pliki utworzone przez kompilator](Ilustracje/PlikiUtworzonePrzezKompilator.png)<br/>
+![Pliki utworzone przez kompilator](Tydzien1\Lekcja10\Ilustracje\PlikiUtworzonePrzezKompilator.png)<br/>
 _Rysunek 1 Pliki utworzone przez kompilator_
 
 Pliki utworzone podczas poprzednich uruchomień programu można łatwo usunąć. W tym celu klikamy prawym przyciskiem myszki na nazwę solucji w _Solution Explorer_, a następnie wybieramy opcję _Clean Solution_. 
 
-![Czyszczenie solucji](Ilustracje/CzyszczenieSolucji.png)<br/>
+![Czyszczenie solucji](Tydzien1\Lekcja10\Ilustracje\CzyszczenieSolucji.png)<br/>
 _Rysunek 2 Czyszczenie solucji_
 
-![Folder z Rysunku 1. po wyczyszczeniu solucji](Ilustracje/FolderPoWyczyszczeniuSolucji.png)<br/>
+![Folder z Rysunku 1. po wyczyszczeniu solucji](Tydzien1\Lekcja10\Ilustracje\FolderPoWyczyszczeniuSolucji.png)<br/>
 _Rysunek 3 Folder z Rysunku 1. po wyczyszczeniu solucji_
 
 Nasz program możemy również skompilować bez jego uruchamiania. W tym celu ponownie klikamy prawym przyciskiem myszki na nazwę solucji w _Solution Explorer_, a następnie wybieramy opcję _Build Solution_.
 
-![Kompilowanie solucji](Ilustracje/KompilowanieSolucji.png)<br/>
+![Kompilowanie solucji](Tydzien1\Lekcja10\Ilustracje\KompilowanieSolucji.png)<br/>
 _Rysunek 4 Kompilowanie solucji_
 
 W ten sposób otrzymamy takie same pliki wynikowe co podczas uruchomienia programu „zieloną strzałką”, jednak bez uruchomienia programu. W tym wypadku polegało by ono na otwarciu konsoli i wyświetleniu w niej napisu:<br/>
 Hello World!<br/>
 Nazywam się Małgorzata Mielczarek.
 
-![Folder z Rysunku 1. po zbudowaniu solucji](Ilustracje/FolderPoZbudowaniuSolucji.png)<br/>
+![Folder z Rysunku 1. po zbudowaniu solucji](Tydzien1\Lekcja10\Ilustracje\FolderPoZbudowaniuSolucji.png)<br/>
 _Rysunek 5 Folder z Rysunku 1. po zbudowaniu solucji_
 
 #### Plik .exe
@@ -454,12 +454,12 @@ konsola zostanie zamknięta. Efekt będzie więc taki, że okno konsoli tylko mi
 #### 1.	Uruchomienie programu z konsoli
 Po pierwsze zamiast tradycyjnego sposobu uruchamiania, możemy najpierw otworzyć konsolę Windows (cmd – ang. _Commend Line_), a następnie z jej poziomu uruchomić naszą aplikację. Skoro mamy już otwarty folder zawierający nasz plik .exe to najprościej będzie to zrobić poprzez kliknięcie w pasek adresu eksploratora plików, wpisanie „cmd” i wciśnięcie klawisza _Enter_.
 
-![Otwieranie konsoli Windows w danej lokalizacji](Ilustracje/OtwieranieKonsoliWindowsWDanejLokalizacji.png)<br/>
+![Otwieranie konsoli Windows w danej lokalizacji](Tydzien1\Lekcja10\Ilustracje\OtwieranieKonsoliWindowsWDanejLokalizacji.png)<br/>
 _Rysunek 6 Otwieranie konsoli Windows w danej lokalizacji_
 
 Spowoduje to otwarcie konsoli Windows w tej lokalizacji (w naszym folderze _Debug_). Następnie uruchamiamy nasz program poprzez wpisanie nazwy pliku (_HelloWorld.exe_) i wciśnięcie _Enter_. Nie trzeba przy tym ręcznie wpisywać całej nazwy pliku. Można zacząć ją wpisywać a następnie wybrać odpowiedni plik poprzez wciskanie klawisza _Tab_. Można również oczywiście skopiować i wkleić nazwę pliku.
 
-![Uruchomienie programu w konsoli](Ilustracje/UruchomienieProgramuWKonsoli.png)<br/>
+![Uruchomienie programu w konsoli](Tydzien1\Lekcja10\Ilustracje\UruchomienieProgramuWKonsoli.png)<br/>
 _Rysunek 7 Uruchomienie programu w konsoli_
 
 Jak widać na obrazku powyżej program zakończył swoją pracę, ale konsola w tym wypadku nie została zamknięta. Jeżeli jednak chcemy móc otwierać naszą aplikację tradycyjnie, również na to istnieją sposoby.
@@ -508,7 +508,7 @@ Jeszcze dodatkowo możemy chcieć dodać instrukcję `try{}`, aby pozostawić ok
 ```
 Po dopisaniu na końcu kodu naszego programu wybranego fragmentu kodu po dwukrotnym kliknięciu na nazwę pliku (_HelloWorld.exe_) otworzy nam się konsola w której zostanie wyświetlone np.:
 
-![Przykładowa konsola programu po dopisaniu kodu wstrzymującego jego pracę](Ilustracje/PrzykladowaKonsolaProgramuPoDopisaniuKoduWstrzymujacegoJegoPrace.png)<br/>
+![Przykładowa konsola programu po dopisaniu kodu wstrzymującego jego pracę](Tydzien1\Lekcja10\Ilustracje\PrzykladowaKonsolaProgramuPoDopisaniuKoduWstrzymujacegoJegoPrace.png)<br/>
 _Rysunek 8 Przykładowa konsola programu po dopisaniu kodu wstrzymującego jego pracę_
 
 W powyższym przykładzie program będzie działał, a co za tym idzie konsola będzie otwarta, tak długo dopóki użytkownik nie wciśnie klawisza _Enter_ lub nie zamknie konsoli.
@@ -540,9 +540,9 @@ Polecenie którego dotyczy wstawiony punkt zatrzymania programu zaznaczone będz
 #### Kontynuacja debugowania
 Kiedy praca naszego programu została już wstrzymana możemy ją kontynuować na kilka sposobów.
 ##### Przejście do kolejnego polecenia
-Możemy przejść do kolejnego polecenia (wykonać tylko jedną instrukcję i ponownie zatrzymać program). W tym celu możemy użyć skrótu __F10__, odpowiedniego przycisku z paska narzędzi (_Step Over_), opcji z menu głównego (_Debug_ > _Step Over_) lub sposobu opisanego niżej jako [„Kontynuowanie działania programu do wybranej linii”](#Kontynuowanie-działania-programu-od-wybranej-linii), wybierając kolejną linię.
+Możemy przejść do kolejnego polecenia (wykonać tylko jedną instrukcję i ponownie zatrzymać program). W tym celu możemy użyć skrótu __F10__, odpowiedniego przycisku z paska narzędzi (_Step Over_), opcji z menu głównego (_Debug_ > _Step Over_) lub sposobu opisanego niżej jako [„Kontynuowanie działania programu do wybranej linii”](Tydzien1\Lekcja11\#Kontynuowanie-działania-programu-od-wybranej-linii), wybierając kolejną linię.
 ##### Wejście do wnętrza klasy/metody
-Zamiast przechodzić do kolejnego polecenia można wejść do wnętrza metody/klasy użytej w instrukcji przed którą program został wstrzymany. W tym celu możemy użyć skrótu __F11__, odpowiedniego przycisku z paska narzędzi (_Step Into_), opcji z menu głównego (_Debug_ > _Step Into_) lub sposobu opisanego niżej jako [„Kontynuowanie działania programu od wybranej linii”](#Kontynuowanie-działania-programu-od-wybranej-linii) wybierając pierwszą linię implementacji tej metody.
+Zamiast przechodzić do kolejnego polecenia można wejść do wnętrza metody/klasy użytej w instrukcji przed którą program został wstrzymany. W tym celu możemy użyć skrótu __F11__, odpowiedniego przycisku z paska narzędzi (_Step Into_), opcji z menu głównego (_Debug_ > _Step Into_) lub sposobu opisanego niżej jako [„Kontynuowanie działania programu od wybranej linii”](Tydzien1\Lekcja11\#Kontynuowanie-działania-programu-od-wybranej-linii) wybierając pierwszą linię implementacji tej metody.
 ##### Wyjście z wnętrza klasy/metody
 Debuger Visual Studio umożliwia również wyjście z metody/klasy w której właśnie się znajdujemy. W tym celu możemy użyć skrótu __Shift + F11__, odpowiedniego przycisku z paska narzędzi (_Step Out_) lub opcji z menu głównego (_Debug_ > _Step Out_). Powoduje to przejście do miejsca w kodzie po wykonaniu metody, w której właśnie się znajdujemy. Tak więc jeżeli znajdujemy się w metodzie _Main_ spowoduje to zakończenie działania programu (kontynuację jego pracy do kolejnego _Breakpointa_ lub innego zatrzymania niezwiązanego z debugerem). W innym wypadku przechodzimy do poleceń metody znajdującej się o poziom wyżej. Załóżmy, że zatrzymaliśmy program przed instrukcją przypisania wyniku działania jakiejś metody do zmiennej. Np.:
  ``` csharp
@@ -550,9 +550,9 @@ Debuger Visual Studio umożliwia również wyjście z metody/klasy w której wł
  ```
 Przeszliśmy następnie do wnętrza konstruktora _Person_. Po sprawdzeniu w nim co chcieliśmy wyszliśmy z jego wnętrza. Wykonywanie metody _Person_ zostało więc zakończone. Krok wyjścia spowodował przeniesienie wykonywania programu przed operację przypisania (przed powyższą przykładową instrukcję).
 ##### Kontynuowanie działania programu od wybranej linii
-Możemy również kontynuować wykonywanie programu zatrzymując go dopiero w wybranym miejscu. W tym celu możemy oczywiście wstawić kolejny punkt zatrzymania programu (zgodnie z opisem z punktu [„Utworzenie/usunięcie punktu zatrzymania programu (ang. _Breakpoint_)”](#utworzenieusunięcie-punktu-zatrzymania-programu-ang-breakpoint)) i kontynuować jego wykonywanie zgodnie ze sposobami opisanymi poniżej w punkcie [„Kontynuowanie działania programu”](#Kontynuowanie-działania-programu). Można to również zrobić bez wstawiania nowych _Breakpointów_. Podczas działania programu w konfiguracji _Debug_ po najechaniu wskaźnikiem myszki na linijki kodu na początku linii pojawia się ikonka <img src="Ilustracje/Run.png" alt="zielona strzałka z pionową linią" width="12px" height="12px"> _Run execution to here_). Jej kliknięcie powoduje zatrzymanie działania programu przed rozpoczęciem wykonywania znajdujących się w niej instrukcji. Ten sposób sprawdza się, gdy chcemy coś jednorazowo sprawdzić, gdyż nie będziemy musieli wówczas kasować _Breakpointa_. Jeżeli jednak kilkukrotnie będziemy chcieli wykonać program zatrzymując go za każdym razem w tym samym miejscu, warto wstawić tam punkt zatrzymania pracy programu.
+Możemy również kontynuować wykonywanie programu zatrzymując go dopiero w wybranym miejscu. W tym celu możemy oczywiście wstawić kolejny punkt zatrzymania programu (zgodnie z opisem z punktu [„Utworzenie/usunięcie punktu zatrzymania programu (ang. _Breakpoint_)”](Tydzien1\Lekcja11\#utworzenieusunięcie-punktu-zatrzymania-programu-ang-breakpoint)) i kontynuować jego wykonywanie zgodnie ze sposobami opisanymi poniżej w punkcie [„Kontynuowanie działania programu”](#Kontynuowanie-działania-programu). Można to również zrobić bez wstawiania nowych _Breakpointów_. Podczas działania programu w konfiguracji _Debug_ po najechaniu wskaźnikiem myszki na linijki kodu na początku linii pojawia się ikonka <img src="Ilustracje/Run.png" alt="zielona strzałka z pionową linią" width="12px" height="12px"> _Run execution to here_). Jej kliknięcie powoduje zatrzymanie działania programu przed rozpoczęciem wykonywania znajdujących się w niej instrukcji. Ten sposób sprawdza się, gdy chcemy coś jednorazowo sprawdzić, gdyż nie będziemy musieli wówczas kasować _Breakpointa_. Jeżeli jednak kilkukrotnie będziemy chcieli wykonać program zatrzymując go za każdym razem w tym samym miejscu, warto wstawić tam punkt zatrzymania pracy programu.
 ##### Kontynuowanie działania programu
-Wykonywanie programu można również kontynuować do momentu napotkania kolejnego punktu zatrzymania lub innego wydarzenia powodującego wstrzymanie programu (np. polecenia pobierającego dane od użytkownika). W tym celu można użyć skrótu __F5__, odpowiedniego przycisku z paska narzędzi (zielona strzałka _Continue_) lub opcji z menu głównego (_Debug_ > _Continue_). Jeżeli znajdujemy się w funkcji _Main_, to możemy również skorzystać z opisanego wcześniej sposobu na wyjście z wnętrza metody ([„Wyjście z wnętrza klasy/metody”](#Wyjście-z-wnętrza-klasymetody)). Jeżeli w pozostałej części programu nie ma już żadnych przyczyn powodujących zatrzymanie pracy programu, to wówczas jego działanie zostaje zakończone.
+Wykonywanie programu można również kontynuować do momentu napotkania kolejnego punktu zatrzymania lub innego wydarzenia powodującego wstrzymanie programu (np. polecenia pobierającego dane od użytkownika). W tym celu można użyć skrótu __F5__, odpowiedniego przycisku z paska narzędzi (zielona strzałka _Continue_) lub opcji z menu głównego (_Debug_ > _Continue_). Jeżeli znajdujemy się w funkcji _Main_, to możemy również skorzystać z opisanego wcześniej sposobu na wyjście z wnętrza metody ([„Wyjście z wnętrza klasy/metody”](Tydzien1\Lekcja11\#Wyjście-z-wnętrza-klasymetody)). Jeżeli w pozostałej części programu nie ma już żadnych przyczyn powodujących zatrzymanie pracy programu, to wówczas jego działanie zostaje zakończone.
 #### Sprawdzanie wartości zmiennych podczas debugowania
 Podczas działania programu w konfiguracji _Debug_, możemy sprawdzać wartości zmiennych w danym momencie wykonywania programu. Ich zmieniające się wartości możemy podglądać w monitorze zmiennych. W zakładce _Locals_ znajdziemy aktualne wartości wszystkich zmiennych, które istnieją w naszym programie. Istnieją, oznacza, że zostały zainicjowane, zadeklarowane i wciąż przetrzymują jakąś wartość. Jeżeli wyjdziemy z jakiejś metody/klasy to, o ile nie wskażemy inaczej, utworzone w niej zmienne przestają istnieć, więc znikają z zakładki _Locals_. Poza tym wartości zmiennych można podejrzeć najeżdżając wskaźnikiem myszki na nazwy zmiennych w kodzie programu w czasie debugowania. Jeżeli zmienna w danym momencie istnieje przy wskaźniku pojawi nam się okienko z nazwą zmiennej i jej aktualną wartością.
 
