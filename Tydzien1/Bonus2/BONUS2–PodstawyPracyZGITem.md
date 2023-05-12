@@ -5,8 +5,11 @@ W Visual Studio możemy nie tylko tworzyć repozytoria, ale również na bieżą
  <ul>
  A - od ang. <i>added</i>, oznacza nowo dodany plik, czyli plik który nie istniał jeszcze podczas ostatniego zapisywania projektu w repozytorium.
  <br/>M - od ang. <i>modified</i>, oznacza zmieniony plik, czyli taki, który istnieje już w repozytorium, jednak od ostatniego zapisu zostały w nim wprowadzone zmiany.
+ <br/>D - od ang. <i>deleted</i>, oznacza plik który istnieje obecnie w repozytorium, ale został usunięty od czasu ostatniego zapisu.
  </ul>
- 
+
+Jeżeli np. zmienimy nazwę jakiegoś pliku to w _Git Changes_ pojawią nam się dwa pliki: ze starą nazwą, oznaczony jako **D** i z nową nazwą, oznaczony **A**.
+
  W _Solution Explorer_ przed nazwami plików widzimy teraz dodatkowe ikonki.
 <ul>
 <img alt="Niebieska zamknięta kłódka" src="https://learn.microsoft.com/en-us/previous-versions/images/ms181372.local_-2077883695_tfsc_checkedin(en-us,vs.80).gif"> oznacza, że plik jest zapisany w repozytorium i nie został zmieniony od czasów ostatniego zapisu.

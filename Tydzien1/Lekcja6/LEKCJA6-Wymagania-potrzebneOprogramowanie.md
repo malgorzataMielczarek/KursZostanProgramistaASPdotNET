@@ -3,7 +3,6 @@ W tej lekcji pobieramy i instalujemy oprogramowanie z którego będziemy korzyst
 * Visual Studio 2022 Community
 * Visual Studio Code
 * SQL Server Management Studio
-* Postman
 
 1. Przed instalacją należy sprawdzić czy nasz sprzęt spełnia wymagania systemowe: [link](https://docs.microsoft.com/en-us/visualstudio/releases/2022/system-requirements)  
 Powyższy link kieruje do strony z wymaganiami systemowymi oprogramowania Visual Studio 2022 Community. Jeżeli sprzęt spełnia te wymagania, to na pewno spełni też wymagania wszystkich innych programów.

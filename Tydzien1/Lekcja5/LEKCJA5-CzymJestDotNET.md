@@ -23,7 +23,7 @@ Można przy jej pomocy tworzyć aplikacje:
         Aplikacje mobilne, czyli programy przeznaczone na urządzenia przenośne. Mogą być to zarówno aplikacje:
     * samodzielne, czyli działające bez dostępu do Internetu (odpowiednik aplikacji desktopowych),
     * klienckie, aplikacja (klient) jest zainstalowana i działa na urządzeniu użytkownika, jednak na życzenie klienta łączy się z serwerem (pobieranie, zapisywanie danych) poprzez sieć internetową,
-    * internetowe, czyli aplikacje mobilne przystosowane do obsługi na urządzeniach mobilnych,
+    * internetowe, czyli aplikacje webowe przystosowane do obsługi na urządzeniach mobilnych,
     * gry komputerowe, w technologii .NET również tworzone najczęściej przy pomocy silnika Unity, zaprojektowane jednak do obsługi na urządzeniach mobilnych.
 
     Do tworzenia cross-platformowych aplikacji mobilnych technologia .NET posiada specjalną platformę Xamarin, do programowania najczęściej w języku C#.
