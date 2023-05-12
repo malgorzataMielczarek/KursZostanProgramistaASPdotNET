@@ -22,7 +22,7 @@ Nasz program możemy również skompilować bez jego uruchamiania. W tym celu po
 _Rysunek 4 Kompilowanie solucji_
 
 W ten sposób otrzymamy takie same pliki wynikowe co podczas uruchomienia programu „zieloną strzałką”, jednak bez uruchomienia programu. W tym wypadku polegałoby ono na otwarciu konsoli i wyświetleniu w niej napisu:
->Hello World!
+>Hello World!  
 >Nazywam się Małgorzata Mielczarek.
 
 ![Folder z Rysunku 1. po zbudowaniu solucji](Ilustracje/FolderPoZbudowaniuSolucji.png)<br/>
@@ -41,8 +41,9 @@ Program skompilowaliśmy na system operacyjny Windows. Gdybyśmy zrobili to na i
 
 ## Uruchomienie
 Uruchomić możemy również bezpośrednio skompilowany plik .exe. Można to zrobić tradycyjnie poprzez dwukrotne kliknięcie na nazwę pliku w folderze. Takie uruchomienie spowoduje jednak automatyczne zamknięcie konsoli z naszym programem po zakończeniu jego działania. W naszym wypadku zaraz po wyświetleniu napisu:
->Hello World!
+>Hello World!  
 >Nazywam się Małgorzata Mielczarek.
+
 konsola zostanie zamknięta. Efekt będzie więc taki, że okno konsoli tylko mignie nam przed oczami i nie zdążymy przeczytać co zostało w nim wyświetlone. Możemy tego uniknąć na kilka sposobów.
 
 ### 1.	Uruchomienie programu z konsoli
