@@ -10,6 +10,7 @@ using NazwaAplikacji.Domain.Entity;
 using NazwaAplikacji.App.Abstract;
 using NazwaAplikacji.App.Concrete;
 using NazwaAplikacji.App.Managers;
+using Moq;
 using Xunit;
 
 namespace NazwaAplikacji.Tests
@@ -19,14 +20,16 @@ namespace NazwaAplikacji.Tests
         [Fact]
         public void Test1()
         {
-            //Arrange
+            // Arrange
             Item item = new Item(1, "Apple", 2);
             var mock = new Mock<IService<Item>>();
             mock.Setup(s => s.GetItemById(1)).Returns(item);
             var manager = new ItemManager(new MenuActionService(), mock.Object);
-            //Act
+
+            // Act
             var returnedItem = manager.GetItemById(item.Id);
-            //Assert
+            
+            // Assert
             Assert.Equal(item, returnedItem);
         }
     }
@@ -64,6 +67,7 @@ using NazwaAplikacji.Domain.Entity;
 using NazwaAplikacji.App.Abstract;
 using NazwaAplikacji.App.Concrete;
 using NazwaAplikacji.App.Managers;
+using Moq;
 using Xunit;
 using FluentAssertions;
 
@@ -74,14 +78,16 @@ namespace NazwaAplikacji.Tests
         [Fact]
         public void Test1()
         {
-            //Arrange
+            // Arrange
             Item item = new Item(1, "Apple", 2);
             var mock = new Mock<IService<Item>>();
             mock.Setup(s => s.GetItemById(1)).Returns(item);
             var manager = new ItemManager(new MenuActionService(), mock.Object);
-            //Act
+            
+            // Act
             var returnedItem = manager.GetItemById(item.Id);
-            //Assert
+            
+            // Assert
             returnedItem.Should().BeOfType(typeof(Item));
             returnedItem.Should().NotBeNull();
             returnedItem.Should().BeSameAs(item);

@@ -59,6 +59,7 @@ using NazwaAplikacji.Domain.Entity;
 using NazwaAplikacji.App.Abstract;
 using NazwaAplikacji.App.Concrete;
 using NazwaAplikacji.App.Managers;
+using Moq;
 using Xunit;
 
 namespace NazwaAplikacji.Tests
@@ -68,14 +69,16 @@ namespace NazwaAplikacji.Tests
         [Fact]
         public void Test1()
         {
-            //Arrange
+            // Arrange
             Item item = new Item(1, "Apple", 2);
             var mock = new Mock<IService<Item>>();
             mock.Setup(s => s.GetItemById(1)).Returns(item);
             var manager = new ItemManager(new MenuActionService(), mock.Object);
-            //Act
+
+            // Act
             var returnedItem = manager.GetItemById(item.Id);
-            //Assert
+            
+            // Assert
             Assert.Equal(item, returnedItem);
         }
     }
@@ -84,4 +87,4 @@ namespace NazwaAplikacji.Tests
 
 Jeżeli w naszej aplikacji mamy zdefiniowane wszystkie potrzebne klasy, to możemy teraz uruchomić test. Powinien zakończyć się on pozytywnie.
 
-Oczywiście jest to najprostszy test, służący tylko przedstawieniu biblioteki _Moq_. W prawdziwym projekcie prawdopodobnie będziemy musieli zasymulować więcej obiektów, metod. Będziemy też przy zapewne sprawdzać więcej uzyskanych wartości. Biblioteki _Moq_ będziemy najczęściej używać do zasymulowania danych uzyskiwanych bezpośrednio z bazy danych. Dzięki temu niezależnie od niej będziemy mogli sprawdzić logikę biznesową naszej aplikacji.
+Oczywiście jest to najprostszy test, służący tylko przedstawieniu biblioteki _Moq_. W prawdziwym projekcie prawdopodobnie będziemy musieli zasymulować więcej obiektów, metod. Będziemy też zapewne sprawdzać więcej uzyskanych wartości. Biblioteki _Moq_ będziemy najczęściej używać do zasymulowania danych uzyskiwanych bezpośrednio z bazy danych. Dzięki temu niezależnie od niej będziemy mogli sprawdzić logikę biznesową naszej aplikacji.

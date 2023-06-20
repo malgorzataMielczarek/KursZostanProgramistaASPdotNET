@@ -1,5 +1,5 @@
 # [LEKCJA 3 – Przeciążenia](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-3-przeciazenia/)
-**Przeciążanie metod** jest to stworzenie drugiej (kolejnej) metody o takiej samej nazwie, ale o innej liczbie i/lub typie przekazywanych parametrów. Standardowo metoda i jaj przeciążenia zwracają ten sam typ (chociaż możliwe jest zwracanie różnych typów).<br/>
+**Przeciążanie metod** jest to stworzenie drugiej (kolejnej) metody o takiej samej nazwie, ale o innej liczbie i/lub typie przekazywanych parametrów. Standardowo metoda i jej przeciążenia zwracają ten sam typ (chociaż możliwe jest zwracanie różnych typów).<br/>
 Standardowo przeciążenia różnią się więc między sobą tylko argumentami i ciałem metody.
 
 ## Przykład zastosowania

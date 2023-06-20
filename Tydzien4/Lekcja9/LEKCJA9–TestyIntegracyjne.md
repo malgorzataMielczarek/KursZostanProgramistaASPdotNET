@@ -12,6 +12,7 @@ using NazwaAplikacji.Domain.Entity;
 using NazwaAplikacji.App.Abstract;
 using NazwaAplikacji.App.Concrete;
 using NazwaAplikacji.App.Managers;
+using Moq;
 using Xunit;
 
 namespace NazwaAplikacji.Tests
@@ -21,15 +22,17 @@ namespace NazwaAplikacji.Tests
         [Fact]
         public void CanDeleteItemWithProperId()
         {
-            //Arrange
+            // Arrange
             Item item = new Item(1, "Apple", 2);
             var mock = new Mock<IService<Item>>();
             mock.Setup(s => s.GetItemById(1)).Returns(item);
             mock.Setup(m => m.RemoveItem(It.IsAny<Item>()));
             var manager = new ItemManager(new MenuActionService(), mock.Object);
-            //Act
+            
+            // Act
             manager.RemoveItemById(item.Id);
-            //Assert
+            
+            // Assert
             mock.Verify(m => m.RemoveItem(item));
         }
     }
@@ -82,19 +85,19 @@ namespace NazwaAplikacji.Tests
         [Fact]
         public void CanDeleteItemWithProperId()
         {
-            //Arrange
+            // Arrange
             Item item = new Item(1, "Apple", 2);
             IService<Item> itemService = newService();
             itemService.AddItem(item);
             var manager = new ItemManager(new MenuActionService(), itemService);
-            //Act
+            
+            // Act
             manager.RemoveItemById(item.Id);
-            //Assert
+            
+            // Assert
+            itemService.Items.FirstOrDefault(p => p.Id == item.Id).Should().BeNull();   // itemService.GetItemById(item.Id).Should().BeNull();
 
-            //itemService.GetItemById(item.Id).Should().BeNull();
-            itemService.Items.FirstOrDefault(p => p.Id == item.Id).Should().BeNull();
-
-            //Clean
+            // Clean
         }
     }
 }

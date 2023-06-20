@@ -1,18 +1,23 @@
 # [LEKCJA 2 – Zmienne i stałe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-2-zmienne-i-stale/)
 Zaczynamy tworzenie naszej aplikacji konsolowej.
+
 ## Utworzenie nowego projektu
-Tworzymy nowy projekt (_Create a new project_) aplikacji konsolowej .NET Core (_Console App (.NET Core)_). Aby zawęzić opcje wyszukiwania odpowiedniego typu aplikacji możemy ustawić język wyszukiwania (rozwijane menu z napisem _All languages_) wybierając opcję **C#**. Następnie możemy ustawić platformę, na której ma działać nasz program (rozwijane menu z napisem _All platforms_) jako **Windows**, oraz wybrać typ projektu (rozwijane menu z napisem _All project types_) – aplikacja konsolowa (**Console**). Przy wyborze typu projektu należy zwrócić uwagę, aby wybrać opcję z językiem _C#_, a nie np. _Visual Basic_ (_VB_). Następnie nadajemy nazwę naszemu projektowi. Przypominamy, że nazwa powinna być w formacie PascalCase (wyrazy pisane łącznie, pierwsza litera każdego wyrazu wielka, nazwa najlepiej w języku angielskim). Jeżeli chcemy możemy zmienić lokalizację projektu (_Location_), aby później łatwo było nam go znaleźć. Tworzymy nasz projekt. Możemy go od razu umieścić na naszym koncie na githubie, tworząc nowe repozytorium.
+Tworzymy nowy projekt (**Create a new project**) aplikacji konsolowej .NET Core (**Console App (.NET Core)**). Aby zawęzić opcje wyszukiwania odpowiedniego typu aplikacji możemy ustawić język wyszukiwania (rozwijane menu z napisem **All languages**) wybierając opcję **C#**. Następnie możemy ustawić platformę, na której ma działać nasz program (rozwijane menu z napisem **All platforms**) jako **Windows**, oraz wybrać typ projektu (rozwijane menu z napisem **All project types**) – aplikacja konsolowa (**Console**). Przy wyborze typu projektu należy zwrócić uwagę, aby wybrać opcję z językiem **C#**, a nie np. _Visual Basic_ (**VB**). Następnie nadajemy nazwę naszemu projektowi. Przypominamy, że nazwa powinna być w formacie **PascalCase** (wyrazy pisane łącznie, pierwsza litera każdego wyrazu wielka, nazwa najlepiej w języku angielskim). Jeżeli chcemy możemy zmienić lokalizację projektu (**Location**), aby później łatwo było nam go znaleźć. Tworzymy nasz projekt. Możemy go od razu umieścić na naszym koncie na githubie, tworząc nowe repozytorium.
+
 ## Umieszczenie projektu na naszym koncie na githubie
+
 ### Za pośrednictwem Visual Studio
-Można to zrobić np. poprzez kliknięcie zakładki _Git_ z menu głównego i wybranie opcji _Create Git Repository_. Następnie uzupełniamy dane w oknie _Create a Git Repository_, które nam się pojawi. Zmieniamy w nim typ repozytorium z prywatnego (odznaczamy opcję _Private repository_, jeżeli jest zaznaczona) na publiczny (dostępny dla wszystkich).
+Można to zrobić np. poprzez kliknięcie zakładki **Git** z menu głównego i wybranie opcji **Create Git Repository**. Następnie uzupełniamy dane w oknie **Create a Git Repository**, które nam się pojawi. Zmieniamy w nim typ repozytorium z prywatnego (odznaczamy opcję **Private repository**, jeżeli jest zaznaczona) na publiczny (dostępny dla wszystkich).
+
 ### Za pośrednictwem strony internetowej
 Alternatywnie możemy utworzyć nowe repozytorium na swoim koncie przez [stronę internetową](https://github.com/login), a następnie umieścić w nim nasz projekt.
 
 1.	Zaloguj się na swoim koncie github.
-2.	Kliknij przycisk _New_ przy _Repositories_.
-3.	Wpisz nazwę repozytorium (_Repository name_), najlepiej taką samą jak nazwa naszego projektu. Jeśli chcemy możemy dodać opis projektu (_Description_). Pozostawiamy wybraną opcję _Public_ (tworzymy repozytorium publiczne – dostępne dla wszystkich).
-4.	Można również dodać plik **README**, zaznaczając opcję _Add a README file_, w którym możemy opisać nasz projekt.
-5.	Od razu możemy dodać też plik **.gitignore** zawierający pliki będące częścią naszego projektu, które nie chcemy jednak, aby zostały umieszczone w naszym repozytorium. Możemy wybrać gotowy szablon pliku (_.gitignore template_). Nie ma na razie szablonu dla platformy .NET Core. Możemy więc wybrać szablon _Visual Studio_ lub utworzyć pusty plik (typ szablonu _None_). Utworzony plik można później zmodyfikować do naszych potrzeb.
+2.	Kliknij przycisk **New** przy **Repositories**.
+3.	Wpisz nazwę repozytorium (**Repository name**), najlepiej taką samą jak nazwa naszego projektu. Jeśli chcemy możemy dodać opis projektu (**Description**). Pozostawiamy wybraną opcję **Public** (tworzymy repozytorium publiczne – dostępne dla wszystkich).
+4.	Można również dodać plik **README**, zaznaczając opcję **Add a README file**, w którym możemy opisać nasz projekt.
+5.	Od razu możemy dodać też plik **.gitignore** zawierający pliki będące częścią naszego projektu, które nie chcemy jednak, aby zostały umieszczone w naszym repozytorium. Możemy wybrać gotowy szablon pliku (**.gitignore template**). Nie ma na razie szablonu dla platformy .NET Core. Możemy więc wybrać szablon **Visual Studio** lub utworzyć pusty plik (typ szablonu **None**). Utworzony plik można później zmodyfikować do naszych potrzeb.
+
 ### Przy pomocy konsoli Windows (cmd – ang. _Command Line_ - Wiersz poleceń)
 Można również wykonać te czynności za pośrednictwem konsoli Windows, poprzez użycie odpowiednich poleceń (tekst po polsku należy zastąpić właściwymi danymi):
  
@@ -24,7 +29,21 @@ git add -A
 git commit -m "Initialize project"
 ```
 
-Jeżeli nasza konsola nie obsługuje poleceń git, to być może nie mamy go jeszcze zainstalowanego w naszym systemie. Należy go wówczas pobrać i zainstalować zgodnie ze wskazówkami ze [strony](https://github.com/git-guides/install-git). Dotneta zainstalowaliśmy razem z programem Visual Studio, ale jeżeli nasza konsola nie obsługuje polecenia _dotnet_, być może musimy dodać jego lokalizację do Path w zmiennych środowiskowych (Klikamy ikonkę Windows i wyszukujemy _Edytuj zmienne środowiskowe systemu_. -\> Po kliknięciu na wynik wyszukiwania pojawi nam się okno _Właściwości systemu_, zakładka _Zaawansowane_. -\> Klikamy _Zmienne środowiskowe..._ -\>  W _Zmienne systemowe_ wybieramy zmienną _Path_, _path_ lub _PATH_ i klikamy _Edytuj... _-\> Klikamy _Nowy_. -\> Wpisujemy ścieżkę dostępu do folderu zawierającego plik _dotnet.exe_, np. _C:\Program Files\dotnet_. -\> Na zakończanie klikamy _OK_.). Jeżeli nasza konsola nie obsługuje poleceń _git_, pomimo, że jest on zainstalowany w systemie to być może również trzeba dodać go do Path w zmiennych środowiskowych, analogicznie jak dotnet. Kiedy już wszystko zainstalujemy i wykonamy powyższe polecenia, to znaczy, że utworzyliśmy już lokalne repozytorium gitowe i umieściliśmy w nim nasz projekt. Teraz musimy wejść na nasze konto github na [stronie internetowej](https://github.com/login) i utworzyć nowe puste repozytorium, najlepiej o tej samej nazwie co nasz projekt. Następnie możemy wrócić do naszej konsoli i wykonać kolejne polecenia:
+Jeżeli nasza konsola nie obsługuje poleceń `git`, to być może nie mamy go jeszcze zainstalowanego w naszym systemie. Należy go wówczas pobrać i zainstalować zgodnie ze wskazówkami ze [strony](https://github.com/git-guides/install-git). Dotneta zainstalowaliśmy razem z programem Visual Studio, ale jeżeli nasza konsola nie obsługuje polecenia `dotnet`, być może musimy dodać jego lokalizację do _Path_ w zmiennych środowiskowych:
+
+1. Klikamy **ikonkę Windows** i wyszukujemy **Edytuj zmienne środowiskowe systemu**.
+2. Po kliknięciu na wynik wyszukiwania pojawi nam się okno **Właściwości systemu**, zakładka **Zaawansowane**.
+3. Klikamy **Zmienne środowiskowe...**.
+4. W **Zmienne systemowe** wybieramy zmienną **Path** (**path** lub **PATH**) i klikamy **Edytuj...**.
+5. Klikamy **Nowy**.
+6. Wpisujemy ścieżkę dostępu do folderu zawierającego plik _dotnet.exe_, np. _C:\Program Files\dotnet_.
+7. Na zakończanie klikamy **OK**.
+
+Jeżeli nasza konsola nie obsługuje poleceń `git`, pomimo, że jest on zainstalowany w systemie to być może również trzeba dodać go do _Path_ w zmiennych środowiskowych, analogicznie jak _dotnet_.
+
+Kiedy już wszystko zainstalujemy i wykonamy powyższe polecenia, to znaczy, że utworzyliśmy już lokalne repozytorium gitowe i umieściliśmy w nim nasz projekt.
+
+Teraz musimy wejść na nasze konto github na [stronie internetowej](https://github.com/login) i utworzyć nowe puste repozytorium, najlepiej o tej samej nazwie co nasz projekt. Następnie możemy wrócić do naszej konsoli i wykonać kolejne polecenia:
  
 ```
 git remote add origin url/utworzonego/przed/chwilą/ repozytorium/na/naszym/koncie/github

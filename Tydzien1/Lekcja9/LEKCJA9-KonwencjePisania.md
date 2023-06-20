@@ -25,38 +25,43 @@ Konwencje programowania, są to ogólnie przyjęte zasady pisania kodu. Nie maj�
 | Np.: `PI_NUMBER`, `AGE_OF_CONSENT`, `NUMBER_OF_THREADS`. ||
 
 ## Konwencja zapisu nawiasów klamrowych
-Nawiasy klamrowe są częstym elementem kodu w języku C#. Definiują zasięgi przestrzeni nazw, klas, metod oraz instrukcji warunkowych i pętli. W odróżnieniu od większości instrukcji, po nawiasie klamrowym nie stawia się średnika. W języku C# przyjęło się, że nawias klamrowy stawiamy w kolejnej linii niż instrukcja której dotyczy. Visual Studio domyślnie pomaga w utrzymaniu tej konwencji.
+Nawiasy klamrowe są częstym elementem kodu w języku C#. Definiują zasięgi przestrzeni nazw, klas, metod oraz instrukcji warunkowych i pętli. W odróżnieniu od większości instrukcji, po nawiasie klamrowym nie stawia się średnika. W języku C# przyjęło się, że nawias klamrowy stawiamy w kolejnej linii niż instrukcja której dotyczy. Visual Studio domyślnie pomaga w utrzymaniu tej konwencji. Po zamykającym nawiasie klamrowym wstawiamy linię odstępu (pustą linię), chyba, że w kolejnej linijce jest kolejny zamykający nawias klamrowy. Wówczas nie ma pustej linii. W przypadku bloku instrukcji `if...else`, `if...else if...else` najlepiej zawsze stosować nawiasy klamrowe, nawet jeżeli blok instrukcji składa się tylko z jednego polecenia.
 
 Np.:
 ```csharp
 namespace HelloWorld
 {
-	wnętrzePrzestrzeniNazw;
-}
-```
-```csharp
-public class Program
-{
-	wnętrzeKlasy;
-}
-```
-```csharp
-public static void Main(string[] args)
-{
-	instrukcjeMetody;
-}
-```
-```csharp
-if(a>b)
-{
-	instrukcjeWykonywaneWPrzypadkuSpełnieniaWarunku;
-}
-```
-```csharp
-while(a>b)
-{
-	instrukcjeWykonywaneWPrzypadkuSpełnieniaWarunku;
-	a--;
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+			int a = GetA(args);
+			int b = GetB(args);
+
+			while (a > b)
+			{
+				// instrukcje wykonywane w przypadku spełnienia warunku;
+				a--;
+			}
+
+			if (a == b)
+			{
+				// instrukcje wykonywane w przypadku spełnienia warunku;
+			}
+
+			// kolejne instrukcje
+		}
+
+		private static int GetA(string[] args)
+		{
+			// instrukcje do uzyskania wartości zmiennej a z argumentów wywołania programu
+		}
+
+		private static int GetB(string[] args)
+		{
+			// instrukcje do uzyskania wartości zmiennej b z argumentów wywołania programu
+		}
+	}
 }
 ```
 
@@ -76,5 +81,43 @@ Np.:
 ```csharp
 public interface IProgram
 {
+	// 
+}
+```
+
+## Kolejność elementów w klasach (strukturach)
+Elementy każdej klasy porządkujemy zgodnie z przynależnością do poniższych grup:
+1. zmienne
+2. właściwości
+3. konstruktory
+4. metody
+
+Lub
+
+1. zmienne
+2. konstruktory
+3. właściwości
+4. metody
+
+W obrębie każdej z tych grup porządkujemy elementy według modyfikatorów dostępu (od `public` do `private`), a następnie alfabetycznie wg. nazw.
+
+## Komentarze
+Pomiędzy znakami komentarza, a jego treścią stawiamy spację. Czyli
+```csharp =
+//źle
+// dobrze
+```
+
+## Instrukcje warunkowe (`if`, `while`, `for` itd.)
+W instrukcjach warunkowych pomiędzy słowem kluczowym, a nawiasem okrągłym z warunkiem stawiamy spację. Czyli:
+```csharp =
+if(a > b)
+{
+	// źle
+}
+
+if (a > b)
+{
+	// dobrze
 }
 ```

@@ -32,7 +32,7 @@ więc oczekujemy, że wynik, który uzyskaliśmy na skutek działań podjętych 
 Assert.Equal(8, result);
 ```
 
-W naszym przykładzie, chcieliśmy sprawdzić czy uzyskany wynik jest równy konkretnej liczbie. Oczywiście biblioteka `Assert` posiada jednak wiele metod i umożliwia nie tylko porównywanie.
+W naszym przykładzie, chcieliśmy sprawdzić czy uzyskany wynik jest równy konkretnej liczbie. Oczywiście biblioteka `Assert` posiada wiele metod i umożliwia nie tylko porównywanie.
 ### Cały kod przykładowego testu
 Zapiszmy jeszcze łącznie cały kod testu.
 ```csharp =
@@ -46,12 +46,14 @@ namespace NazwaAplikacji.Tests
         [Fact]
         public void Test1()
         {
-            //Arrange
+            // Arrange
             int a = 5;
             int b = 3;
-            //Act
+
+            // Act
             int result = a + b;
-            //Assert
+
+            // Assert
             Assert.Equal(8, result);
         }
     }
@@ -59,13 +61,13 @@ namespace NazwaAplikacji.Tests
 ```
 Po utworzeniu testu możemy go uruchomić. Oczywiście z godnie z oczekiwaniami powinien zakończyć się on sukcesem.
 ## Przykładowe metody klasy `Assert`
-Poza metodą `Equal`, klasa `Assert` posiada wiele innych metod. Ciekawym przykładem jest metod 
+Poza metodą `Equal`, klasa `Assert` posiada wiele innych metod. Ciekawymi przykładami są metody:
 ### `Throws`
 Służy ona do sprawdzenia, czy w określonej sytuacji nasz program zwrócił wyjątek. Sprawdza, czy aplikacja w odpowiedni sposób obsługuje błąd na który może natrafić.
 ### `NotNull`
-Służy do sprawdzenia, czy jakaś wartość jest nullem.
+Służy do sprawdzenia, czy jakaś wartość nie jest nullem.
 ### `NotEmpty`
-Służy do sprawdzenia, czy dany `string` (lub kolekcja) jest pusty.
+Służy do sprawdzenia, czy dany `string` (lub kolekcja) nie jest pusty(a).
 ### `StartsWith`
 Służy do sprawdzenia, czy dany `string` (lub kolekcja) rozpoczyna się danym elementem.
 ### `Contains`

@@ -37,7 +37,7 @@ var manager = new ItemManager(new MenuActionService(), mock.Object);
 ```
 
 #### Act
-Etapem _act_ będzie oczywiście wywołanie metody menadżera. Oczywiście ta metoda jeszcze nie istnieje. Po napisaniu poniższej linii kodu możemy ją od razu utworzyć korzystając z _Quick Actions_.
+Etapem _act_ będzie wywołanie metody menadżera. Oczywiście ta metoda jeszcze nie istnieje. Po napisaniu poniższej linii kodu możemy ją od razu utworzyć korzystając z _Quick Actions_.
 
 ```csharp =
 manager.RemoveItemById(item.Id);
@@ -57,6 +57,7 @@ using NazwaAplikacji.Domain.Entity;
 using NazwaAplikacji.App.Abstract;
 using NazwaAplikacji.App.Concrete;
 using NazwaAplikacji.App.Managers;
+using Moq;
 using Xunit;
 
 namespace NazwaAplikacji.Tests
@@ -66,15 +67,17 @@ namespace NazwaAplikacji.Tests
         [Fact]
         public void CanDeleteItemWithProperId()
         {
-            //Arrange
+            // Arrange
             Item item = new Item(1, "Apple", 2);
             var mock = new Mock<IService<Item>>();
             mock.Setup(s => s.GetItemById(1)).Returns(item);
             mock.Setup(m => m.RemoveItem(It.IsAny<Item>()));
             var manager = new ItemManager(new MenuActionService(), mock.Object);
-            //Act
+            
+            // Act
             manager.RemoveItemById(item.Id);
-            //Assert
+            
+            // Assert
             mock.Verify(m => m.RemoveItem(item));
         }
     }

@@ -17,7 +17,7 @@ Tu znajdą się interfejsy dla serwisów. Serwisy będą zajmować się manipula
 Tu umieścimy bazowy serwis, implementujący interfejs bazowy dla serwisów.
 #### 3. _Concrete_
 Tu znajdą się konkretne implementacje serwisów.
-#### 3. _Managers_
+#### 4. _Managers_
 Tu znajdą się nasze menadżery. Menadżery, są to swoiste kontrolery, decydujące co użytkownik chce zrobić i na tej podstawie wykonujące odpowiednie akcje (być może wywołujące odpowiednie metody z serwisu). W nich będą znajdywać się wszystkie kroki decyzyjne. Być może będzie to wyświetlenie dodatkowego menu i wybranie odpowiedniej opcji, czy przekazywanie do serwisu odpowiedniego obiektu, tak, aby dodać go do listy. Menadżery będziemy tworzyć dla konkretnych modeli.
 ### 2. _NazwaAplikacji.Domain_
 W tym projekcie znajdować się będą wszystkie modele (klasy reprezentujące obiekt, który w przyszłości mógłby być obiektem bazodanowym).
@@ -30,7 +30,7 @@ Tu będą się znajdywać implementacje konkretnych modeli.
 ## 2. Dodać interfejsy dla serwisów
 W projekcie _NazwaAplikacji.App_ w folderze _Abstract_ utwórzmy interfejsy dla naszych serwisów.
 ### 1. `IService<T>`
-Zacznijmy od utworzenia interfejsu bazowy dla wszystkich serwisów. Będzie to publiczny (`public`) interfejs generyczny. Umieścimy w nim listę elementów typu `T` oraz podstawowe metody zwracające wszystkie elementy listy, pozwalające na dodanie, aktualizację lub usunięcie elementu listy.
+Zacznijmy od utworzenia interfejsu bazowego dla wszystkich serwisów. Będzie to publiczny (`public`) interfejs generyczny. Umieścimy w nim listę elementów typu `T` oraz podstawowe metody zwracające wszystkie elementy listy, pozwalające na dodanie, aktualizację lub usunięcie elementu listy.
 #### Przykład
 ```csharp =
 namespace NazwaAplikacji.App.Abstract
@@ -51,43 +51,50 @@ W naszej aplikacji utwórzmy bazowy serwis, po którym dziedziczyć będą inne 
 ### `BaseService`
 W projekcie _NazwaAplikacji.App_ w folderze _Common_ stwórzmy plik _BaseService.cs_ w którym umieścimy publiczną klasę generyczną będącą klasą bazową dla serwisów i implementującą bazowy interfejs (`IService<T>`). Tu możemy już stworzyć podstawowy konstruktor, w którym zainicjalizujemy naszą listę. Możemy również zaimplementować podstawowe metody.
 #### Przykład
-W przykładzie będziemy korzystać z utworzonego poniżej modelu bazowego. Ponieważ serwisy będą obsługiwać konkretne modele, więc chcielibyśmy zaznaczyć to w serwisie bazowym. Ponieważ jest to klasa generyczna, więc typ `T` będzie nam wskazywać, który model obsługujemy. `T` musi więc być typu `BaseEntity` (lub jakiejkolwiek klasy po nim dziedziczącej). Umieśćmy więc w definicji klauzulę `where`. Aby móc korzystać w naszym projekcie _NazwaAplikacji.App_ z elementów projektu  _NazwaAplikacji.Domain_, musimy w tym pierwszym dodać referencję do tego drugiego. Możemy to zrobić za pośrednictwem _Dependencies_ projektu _NazwaAplikacji.App_, analogicznie jak poprzednio, lub podczas pisania kodu, korzystając z inteligentnych podpowiedzi. Kiedy napiszemy nazwę klasy `BaseEntity` przed dodaniem referencji, Visual Studio zaznaczy nam błąd kompilacji, gdyż taka klas nie jest mu znana. Wówczas możemy uruchomić, na będzie, inteligentne podpowiedzi, np. korzystając ze skrótu klawiszowego **Alt + Enter** (lub **Ctrl + .**) i wybrać z listy _Add reference to 'NazwaAplikacji.Domain'._. Wybranie tej opcji spowoduje automatyczne dodanie odpowiedniej pozycji w _Dependencies_ projektu.
+W przykładzie będziemy korzystać z utworzonego poniżej modelu bazowego. Ponieważ serwisy będą obsługiwać konkretne modele, więc chcielibyśmy zaznaczyć to w serwisie bazowym. Ponieważ jest to klasa generyczna, więc typ `T` będzie nam wskazywać, który model obsługujemy. `T` musi więc być typu `BaseEntity` (lub jakiejkolwiek klasy po nim dziedziczącej). Umieśćmy więc w definicji klauzulę `where`. Aby móc korzystać w naszym projekcie _NazwaAplikacji.App_ z elementów projektu  _NazwaAplikacji.Domain_, musimy w tym pierwszym dodać referencję do tego drugiego. Możemy to zrobić za pośrednictwem _Dependencies_ projektu _NazwaAplikacji.App_, analogicznie jak poprzednio, lub podczas pisania kodu, korzystając z inteligentnych podpowiedzi. Kiedy napiszemy nazwę klasy `BaseEntity` przed dodaniem referencji, Visual Studio zaznaczy nam błąd kompilacji, gdyż taka klas nie jest mu znana. Wówczas możemy uruchomić, na będzie, inteligentne podpowiedzi, np. korzystając ze skrótu klawiszowego **Alt + Enter** (lub **Ctrl + .**) i wybrać z listy _Add reference to 'NazwaAplikacji.Domain'_. Wybranie tej opcji spowoduje automatyczne dodanie odpowiedniej pozycji w _Dependencies_ projektu.
 ```csharp =
 namespace NazwaAplikacji.App.Common
 {
     public class BaseService<T> : IService<T> where T : BaseEntity
     {
         public List<T> Items { get; set; }
+
         public BaseService()
         {
             Items = new List<T>();
         }
-        public int GetLastId() //pobierz najwyższe Id n liście
+
+        public int GetLastId() // get highest Id on the list
         {
             int lastId;
-            if(Items.Any()) //list is not empty
+            if(Items.Any()) // list is not empty
             {
-                lastId = Items.OrderBy(p => p.Id).LastOrDefault().Id; //sort list and get Id of the last element
+                lastId = Items.OrderBy(p => p.Id).LastOrDefault().Id; // sort list and get Id of the last element
             }
-            else //no elements on the list
+            else // no elements on the list
             {
                 lastId = 0;
             }
+
             return lastId;
         }
+
         public int AddItem(T item)
         {
             Items.Add(item);
             return item.Id;
         }
+
         public List<T> GetAllItems()
         {
             return Items;
         }
+
         public void RemoveItem(T item)
         {
             Items.Remove(item);
         }
+        
         public int UpdateItem(T item)
         {
             var entity = Items.FirstOrDefault(p => p.Id == item.Id);
@@ -95,6 +102,7 @@ namespace NazwaAplikacji.App.Common
             {
                 entity = item;
             }
+
             return entity.Id;
         }
     }

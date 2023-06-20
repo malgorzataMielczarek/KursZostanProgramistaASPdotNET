@@ -10,7 +10,7 @@ Typ generyczny definiujemy prawie tak samo jak każdą inną klasę, dodając je
 ```csharp =
 ModyfikatorDostepu class NazwaKlasyGenerycznej<T>
 {
-    //cialo klasy
+    // cialo klasy
 }
 ```
 
@@ -85,7 +85,7 @@ Typ generyczny obsługujący tylko klasy (gdy spróbujemy użyć go np. dla typu
 ```csharp =
 public class GenericService<T> where T : class
 {
-    //cialo klasy
+    // cialo klasy
 }
 ```
 
@@ -94,7 +94,7 @@ albo tylko klasy implementujące interfejs `IItem` (gdy spróbujemy użyć go dl
 ```csharp =
 public class GenericService<T> where T : IItem
 {
-    //cialo klasy
+    // cialo klasy
 }
 ```
 

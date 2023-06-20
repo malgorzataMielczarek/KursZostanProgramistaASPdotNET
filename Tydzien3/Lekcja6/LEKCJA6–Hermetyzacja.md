@@ -1,7 +1,7 @@
 # [LEKCJA 6 – Hermetyzacja](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-6-hermetyzacja/)
 **Hermetyzacja**, inaczej **enkapsulacja**, jest trzecim i ostatnim paradygmatem (filarem) programowania obiektowego. Oznacza ona ograniczenie dostępu użytkownika (np. innej klasy) do elementów programu. Tworząc nową klasę musimy świadomie udzielać dostępu tylko do tych jej elementów, do których inne klasy powinny mieć dostęp, i tylko w takim zakresie jaki jest konieczny. To znaczy elementy związane z wewnętrznymi procesami zachodzącymi w klasie ukrywamy całkowicie, a inne możemy chcieć udostępnić tylko do odczytu, albo tylko za pośrednictwem określonych metod. Jest to możliwe przy pomocy modyfikatorów dostępu (`public`, `internal`, `protected`, `private`) oraz innych modyfikatorów (`readonly`, `const` itd.).
 
-Wcześniej omówiliśmy już modyfikatory dostępu (tydzień 2., lekcja 17.) oraz stałe (tydzień 2., lekcja 2.). Powiedzmy więc jeszcze po krótce co oznacza słowo kluczowe `readonly`.
+Wcześniej omówiliśmy już modyfikatory dostępu (tydzień 2., lekcja 17.) oraz stałe (tydzień 2., lekcja 2.). Powiedzmy więc jeszcze pokrótce co oznacza słowo kluczowe `readonly`.
 
 ## Słowo kluczowe `readonly`
 Słowem kluczowym `readonly` (z ang. tylko do odczytu), jak sama nazwa wskazuje, oznacza się element których odczyt chcemy umożliwić, ale chcemy je zabezpieczyć przed zmianą ich wartości. Tego słowa kluczowego możemy użyć w czterech sytuacjach:

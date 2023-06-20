@@ -65,7 +65,7 @@ Wówczas możemy stworzyć obiekt tej klasy nie podając żadnych parametrów:
 User guest = new User();
 ```
 
-W ten sposób, wywołamy konstruktor bezparametrowy, który wywoła z kolei wywoła konstruktor z parametrami, przypisując argumentom odpowiednie wartości podane w liście inicjalizacyjnej (`: this("guest", "1234")`). Czyli pod parametr `login` podstawi wartość `"guest"`, a pod parametr `pwd` wartość `"1234"`.
+W ten sposób, wywołamy konstruktor bezparametrowy, który z kolei wywoła konstruktor z parametrami, przypisując argumentom odpowiednie wartości podane w liście inicjalizacyjnej (`: this("guest", "1234")`). Czyli pod parametr `login` podstawi wartość `"guest"`, a pod parametr `pwd` wartość `"1234"`.
 
 Stosowanie konstruktorów z listą inicjalizacyjną jest dobrą metodą, jeżeli mamy możliwość nadania naszym wymaganym do wypełnienia właściwością wartości domyślnych.
 

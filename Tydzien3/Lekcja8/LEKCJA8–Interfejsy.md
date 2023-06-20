@@ -65,9 +65,9 @@ Jak już wiemy, klasa może dziedziczyć tylko po jednej klasie. Może ona jedna
 ```csharp =
 ModyfikatorDostepu class NazwaKlasy : NazwaInterfejsu
 {
-    //cialo klasy
-    //implementacja interfejsu
-    //ewentualnie dodatkowe elementy
+    // cialo klasy
+    // implementacja interfejsu
+    // ewentualnie dodatkowe elementy
 }
 ```
 
@@ -153,11 +153,11 @@ public class Program
 		
         file1.ReadFile(); 
         file1.WriteFile("content"); 
-        //file1.Search("text to be searched")   //bład kompilacji
+        // file1.Search("text to be searched")   // blad kompilacji
         
         file2.Search("text to be searched");
-        //file2.ReadFile();     //blad kompilacji
-        //file2.WriteFile("content");   //blad kompilacji
+        // file2.ReadFile();     // blad kompilacji
+        // file2.WriteFile("content");   // blad kompilacji
     }
 }
 ```
@@ -211,16 +211,16 @@ public class Program
         FileInfo file3 = new FileInfo();
 		
         file1.ReadFile(); 
-        //file1.OpenBinaryFile();     //blad kompilacji
-        //file1.SearchFile("text to be searched");     //blad kompilacji
+        // file1.OpenBinaryFile();     // blad kompilacji
+        // file1.SearchFile("text to be searched");     // blad kompilacji
         
         file2.OpenBinaryFile();
         file2.ReadFile();
-        //file2.SearchFile("text to be searched");     //blad kompilacji
+        // file2.SearchFile("text to be searched");     // blad kompilacji
     
         file3.Search("text to be searched");
-        //file3.ReadFile();     //blad kompilacji
-        //file3.OpenBinaryFile();     //blad kompilacji
+        // file3.ReadFile();     // blad kompilacji
+        // file3.OpenBinaryFile();     // blad kompilacji
     }
 }
 ```
