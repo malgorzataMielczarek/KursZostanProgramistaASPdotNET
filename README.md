@@ -69,7 +69,7 @@
 #### [LEKCJA 4 – LINQ podstawy](#lekcja-4--linq-podstawy-1)
 #### [LEKCJA 5 – Manipulacje plikami](#lekcja-5--manipulacje-plikami-1)
 
-## BONUS 1 – Tworzenie Repozytorium GitHub
+## [BONUS 1 – Tworzenie Repozytorium GitHub](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/bonus-1-tworzenie-repozytorium-github/)
 Pracę z GitHubem rozpoczynamy od założenia konta na stronie [github.com](https://github.com/) poprzez kliknięcie przycisku ___Sign up___. Następnie wypełniamy formularz postępując zgodnie z instrukcjami pojawiającymi się na ekranie. Po założeniu konta możemy utworzyć nasze pierwsze repozytorium.
 
 __Repozytorium__ - czyli po prostu nasz projekt, a dokładniej zapis składających się na niego plików, wraz z nanoszonymi na nie zmianami. Można powiedzieć, że jest to historia powstawania naszego projektu.
@@ -90,7 +90,7 @@ Tworząc projekty w Visual Studio najłatwiej zarządzać repozytoriami poprzez 
     * Na końcu możemy wybrać opcję _Private repository_. Jej zaznaczenie spowoduje, że nasze zdalne repozytorium będzie prywatne, czyli widoczne i dostępne tylko dla nas i użytkowników z którymi je współtworzymy. Inni użytkownicy nie będą mogli go znaleźć. Odznaczenie tej opcji spowoduje utworzenie repozytorium publicznego, czyli takiego do którego dostęp mają wszyscy.
 5. Po wypełnieniu wszystkich pól klikamy przycisk _Create and Push_. Spowoduje to utworzenie repozytorium lokalnego i zdalnego, i zapisanie w nich plików naszego projektu, w takim stanie, w jakim są obecnie.
 
-## BONUS 2 – Podstawy pracy z GITem
+## [BONUS 2 – Podstawy pracy z GITem](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/bonus-2-podstawy-pracy-z-gitem/)
 W Visual Studio możemy nie tylko tworzyć repozytoria, ale również na bieżąco nimi zarządzać. Jeśli nasz projekt jest połączony z repozytorium możemy śledzić jakie zmiany wprowadziliśmy od czasu jego ostatniego zapisania w repozytorium.
 
  W używanej ostatnio zakładce _Git Changes_ będziemy mieli wypisane wszystkie zmienione pliki. Będą one miały odpowiednie statusy. Status można sprawdzić najeżdżając myszką na nazwę pliku lub patrząc na oznaczenie literowe znajdujące się na końcu linii.
@@ -129,23 +129,23 @@ Możemy teraz zrobić push klikając widoczną na rysunku powyżej ikonkę ze st
 
 Repozytoria mają tzw. branche (ang. _branch_ - gałąź). Główna gałąź projektu najczęściej nazywana jest _master_, jeżeli tworzymy nowe repozytorium przy pomocy Visual Studio lub _main_, jeżeli robimy to na stronie github.com. Branch jest to można powiedzieć odmiana/wariant naszego projektu. Jeżeli planujemy wprowadzić w projekcie jakieś duże zmiany, albo przetestować jakieś rozwiązanie to dobrą praktyką jest utworzenie nowej gałęzi i przeprowadzanie tych zmian właśnie w niej. Oznacza to, że od pewnego momentu nasz projekt będzie mógł składać się z różnych plików lub te same pliki będą mogły mieć różną zawartość w zależności od tego na który branchu będziemy pracować. Dzięki temu możemy mieć w jednym miejscu działający program, a w drugim swobodnie go modyfikować i ulepszać bez obaw, że coś zepsujemy. Jeżeli przeprowadzone przez nas zmiany uznamy za sukces, możemy gałęzie połączyć i ponownie mieć tylko jedną wersję programu.
 
-## LEKCJA 1 – Powitanie
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-1-powitanie/)
 Zaczynam Kurs Szkoły Dotneta [Zostań programistą ASP.NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/).
 W takich plikach będę zamieszczać swoje notatki i przemyślenia dotyczące kolejnych lekcji.
 
-## LEKCJA 2 – Plan gry
+## [LEKCJA 2 – Plan gry](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-3-plan-gry/)
 * Tydzień 1 – Wprowadzenie, pierwszy program, wybór projektów
 * Tygodnie 2-4 – Aplikacja konsolowa – nauka podstaw składni języka C# (zmienne, pętle, warunki itd.)
 * Tygodnie 5-8 – Aplikacja internetowa w ASP.NET Core MVC
 
-## LEKCJA 3 – Jak studiować ten kurs
+## [LEKCJA 3 – Jak studiować ten kurs](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-4-jak-studiowac-ten-kurs/)
 Kurs należy studiować po kolei, nawet jeżeli coś już się umie. Pomaga to w usystematyzowaniu swojej wiedzy i nauczeniu się dobrych praktyk. Co więcej ułatwia to zrozumienie i zmniejsza prawdopodobieństwo pogubienia się w dalszej części kursu. Należy również wykonywać wszystkie zadania domowe umieszczone na końcu każdego tygodnia. Po ich zrobieniu publikuje się je na przeznaczonej do tego grupie.
 
-## LEKCJA 4 – Co musisz umieć zanim przejdziesz dalej
+## [LEKCJA 4 – Co musisz umieć zanim przejdziesz dalej](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-5-czym-jest-net/)
 Co musisz umieć zanim przejdziesz dalej? 	–	 **Nic**:bangbang: :scream_cat:
 Wszystkie potrzebne informacje zostaną podane w kursie, w lekcjach video lub w dodatkowych materiałach pdf do których linki umieszczone są w opisach pod filmikami.
 
-## LEKCJA 5 – Czym jest .NET
+## [LEKCJA 5 – Czym jest .NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-6-co-musisz-umiec-zanim-przejdziesz-dalej/)
 #### Co to jest .NET?
 .NET jest technologią cross-platformową służącą do tworzenia oprogramowania.
 
@@ -181,7 +181,7 @@ Można przy jej pomocy tworzyć aplikacje:
 ####
 .NET jest technologią firmy Microsoft, aktywnie przez nią wspieraną i rozwijaną. Posiada ponadto duże środowisko używających jej i rozwijających ją programistów. Dzięki temu łatwiej znaleźć pomoc przy pisaniu programów, a sama technologia nie prędko wyjdzie z użytku.
 
-## LEKCJA 6 – Wymagania (potrzebne oprogramowanie)
+## [LEKCJA 6 – Wymagania (potrzebne oprogramowanie)](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-7-wymagania-potrzebne-oprogramowanie/)
 W tej lekcji pobieramy i instalujemy oprogramowanie z którego będziemy korzystać podczas wykonywania kursu. Będziemy korzystać z programów:
 * Visual Studio 2022 Community
 * Visual Studio Code
@@ -198,7 +198,7 @@ Powyższy link kieruje do strony z wymaganiami systemowymi oprogramowania Visual
 Jak zainstalować poszczególne programy można zobaczyć w filmie instruktarzowym z [tej lekcji](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-7-wymagania-potrzebne-oprogramowanie/) lub instrukcjach instalacji poszczególnych programów. Instalacja programów szczególnie Visual Studio zajmie sporo czasu.
 
 
-## LEKCJA 7 – Twój pierwszy program
+## [LEKCJA 7 – Twój pierwszy program](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-8-konwencje-pisania/)
 W tej lekcji piszemy pierwszy program w języku C#. Zgodnie z programistyczną tradycją będzie to Hello World. Stworzymy cross-platformową konsolową aplikację desktopową w technologii ASP.NET Core. Należy zwrócić uwagę aby wybrać wersję aplikacji konsolowej wspierającej wszystkie platformy (Window, Linux, macOS), w odróżnieniu od starszej wersji tworzonej przy użyciu .NET Framework, wspierającej jedynie platformę Windows. Zarówno tworzonemu projektowi (_Project name_) jak i solucji (_Solution name_) nadajemy nazwę HelloWorld. W nowszej wersji kursu używa się frameworka .NET 6.0. Poniżej opisany program był tworzony wcześniej jeszcze w starszej wersji 3.1.
 
 ### 1. [Kod programu HelloWorld](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs)
@@ -303,7 +303,7 @@ Stworzona przez nas publiczna, statyczna metoda klasy `Program`. Nasza metoda ni
 Metoda klasy `Console` wyświetlająca w konsoli podaną linijkę tekstu (wypisywanie tekstu jest zakończone przejściem do nowej linii). Metoda przyjmuje jako argument ciąg znaków alfanumerycznych łącznie ze znakami białymi (spacje itp.) – typ `string`. Tekst który chcemy wyświetlić w konsoli umieszczamy wewnątrz nawiasu okrągłego wywołania metody, w cudzysłowie. Pierwsze z wywołań spowoduje pojawienie się w konsoli linijki tekstu – [_Hello World!_](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L9). Drugie natomiast linijki – [_Nazywam się Małgorzata Mielczarek._](https://github.com/malgorzataMielczarek/HelloWorld/blob/cbc46abed557bb000ed8696b578ac3c082309107/Program.cs#L10).
 
 
-## LEKCJA 8 – Jak pracować z Visual Studio
+## [LEKCJA 8 – Jak pracować z Visual Studio](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-9-pierwszy-program/)
 Na potrzeby tej lekcji wykorzystamy zmodyfikowany program z lekcji poprzedniej - [HelloWorld](https://github.com/malgorzataMielczarek/HelloWorld/tree/fb82e35c1d13ff597543adc0384cb5bfe5577c85). W tej lekcji poznajemy podstawowy układ IDE w którym będziemy pracować – **Visual Studio**.
 
 ##### IDE (ang. _integrated development environment_ – zintegrowane środowisko programistyczne)
@@ -360,7 +360,7 @@ Narzędzie proponujące zmiany w kodzie i wprowadzające je za zgodą programist
 #### :yellow_circle: Punkt przerwania pracy programu (ang. _Breakpoint_)
 Zaznaczone przez programistę miejsce w kodzie, w którym wykonywanie programu będzie przerwane podczas debugowania. Breakpointy wstawia się poprzez kliknięcie lewym przyciskiem myszki na szary pasek po lewej stronie okna edytora kodu na wysokości linii przed którą chcemy zatrzymać program. Punkty przerwania pracy programu są widoczne zarówno podczas edycji kodu, jak i podczas działania aplikacji. W obu przypadkach można również wstawiać nowe punkty. Działający program zatrzyma się we wprowadzanych na bieżąco punktach o ile występują one w miejscach gdzie jeszcze się nie wykonał.
 
-## LEKCJA 9 – Konwencje pisania (Dobre praktyki programowania)
+## [LEKCJA 9 – Konwencje pisania (Dobre praktyki programowania)](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-10-kompilator/)
 Konwencje programowania, są to ogólnie przyjęte zasady pisania kodu. Nie mają one wpływu na działanie programu. Stosowanie ich zwiększa jednak czytelność i ułatwia programistą czytanie cudzego kodu. Konwencji programowania jest bardzo dużo. W tej lekcji poznamy tylko kilka z nich. Warto od razu wyrobić sobie nawyk ich stosowania, aby ułatwić sobie pracę w przyszłości.
 
 ### Konwencje nazywania elementów programu
@@ -484,7 +484,7 @@ if (a > b)
 }
 ```
 
-## LEKCJA 10 – Kompilator
+## [LEKCJA 10 – Kompilator](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-11-jak-pracowac-z-visual-studio/)
 Kompilator jest narzędziem służącym do kompilacji naszego kodu.
 
 ### Kompilacja
@@ -617,7 +617,7 @@ Kiedy oddajemy aplikację do użytku nasza praca jest więc lepiej zabezpieczona
 2.	Aplikacja napisana w języku kompilowanym jest lepiej zoptymalizowana pod kontem uruchomienia na danej platformie.
 Podczas kompilacji naszego kodu do kodu pośredniego, jest on dostosowywany do konkretnego systemu operacyjnego. Następnie jest on przystosowywany do danego komputera przez JIT. Oznacza to, że takie aplikacje są o wiele wydajniejsze, lepiej wykorzystują dostępne zasoby. Minusem jest jednak konieczność osobnej kompilacji kodu na różne systemy operacyjne.
 
-## LEKCJA 11 – Debugowanie
+## [LEKCJA 11 – Debugowanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-12-debugowanie/)
 Debugowanie, z ang. odrobaczanie, polega na sprawdzaniu wykonywania programu (czy jest zgodne z oczekiwaniami) poprzez jego zatrzymywanie, w wybranych miejscach. Jest to funkcja każdego dobrego IDE. Znacznie ułatwia ona pracę programisty, a w szczególności wyszukiwanie błędów w kodzie. Bez debugera (narzędzia do debugowania) trzeba ręcznie wypisywać wszystkie wartości, które chcemy sprawdzić, do konsoli, co wydłuża proces i zaciemnia obraz programu. Narzędzie to jest tym bardziej potrzebne, że debugowanie zajmuje przeciętnie 80 procent czasu pracy programisty. Można spróbować go jednak nieco skrócić poprzez stosowanie testów.
 
 ### Debuger w Visual Studio
@@ -648,7 +648,7 @@ Debuger Visual Studio umożliwia również wyjście z metody/klasy w której wł
 Przeszliśmy następnie do wnętrza konstruktora `Person`. Po sprawdzeniu w nim co chcieliśmy wyszliśmy z jego wnętrza. Wykonywanie metody `Person` zostało więc zakończone. Krok wyjścia spowodował przeniesienie wykonywania programu przed operację przypisania (przed powyższą przykładową instrukcję).
 
 ##### Kontynuowanie działania programu od wybranej linii
-Możemy również kontynuować wykonywanie programu zatrzymując go dopiero w wybranym miejscu. W tym celu możemy oczywiście wstawić kolejny punkt zatrzymania programu (zgodnie z opisem z punktu [„Utworzenie/usunięcie punktu zatrzymania programu (ang. _Breakpoint_)”](#utworzenieusunięcie-punktu-zatrzymania-programu-ang-breakpoint)) i kontynuować jego wykonywanie zgodnie ze sposobami opisanymi poniżej w punkcie [„Kontynuowanie działania programu”](#Kontynuowanie-działania-programu). Można to również zrobić bez wstawiania nowych _Breakpointów_. Podczas działania programu w konfiguracji _Debug_ po najechaniu wskaźnikiem myszki na linijki kodu na początku linii pojawia się ikonka <img src="Tydzien1/Lekcja11/Ilustracje/Run.png" alt="zielona strzałka z pionową linią" width="12px" height="12px"> (**Run execution to her**). Jej kliknięcie powoduje zatrzymanie działania programu przed rozpoczęciem wykonywania znajdujących się w niej instrukcji. Ten sposób sprawdza się, gdy chcemy coś jednorazowo sprawdzić, gdyż nie będziemy musieli wówczas kasować _Breakpointa_. Jeżeli jednak kilkukrotnie będziemy chcieli wykonać program zatrzymując go za każdym razem w tym samym miejscu, warto wstawić tam punkt zatrzymania pracy programu.
+Możemy również kontynuować wykonywanie programu zatrzymując go dopiero w wybranym miejscu. W tym celu możemy oczywiście wstawić kolejny punkt zatrzymania programu (zgodnie z opisem z punktu [„Utworzenie/usunięcie punktu zatrzymania programu (ang. _Breakpoint_)”](#utworzenieusunięcie-punktu-zatrzymania-programu-ang-breakpoint)) i kontynuować jego wykonywanie zgodnie ze sposobami opisanymi poniżej w punkcie [„Kontynuowanie działania programu”](#Kontynuowanie-działania-programu). Można to również zrobić bez wstawiania nowych _Breakpointów_. Podczas działania programu w konfiguracji _Debug_ po najechaniu wskaźnikiem myszki na linijki kodu na początku linii pojawia się ikonka <img src="Ilustracje/Run.png" alt="zielona strzałka z pionową linią" width="12px" height="12px"> (**Run execution to her**). Jej kliknięcie powoduje zatrzymanie działania programu przed rozpoczęciem wykonywania znajdujących się w niej instrukcji. Ten sposób sprawdza się, gdy chcemy coś jednorazowo sprawdzić, gdyż nie będziemy musieli wówczas kasować _Breakpointa_. Jeżeli jednak kilkukrotnie będziemy chcieli wykonać program zatrzymując go za każdym razem w tym samym miejscu, warto wstawić tam punkt zatrzymania pracy programu.
 
 ##### Kontynuowanie działania programu
 Wykonywanie programu można również kontynuować do momentu napotkania kolejnego punktu zatrzymania lub innego wydarzenia powodującego wstrzymanie programu (np. polecenia pobierającego dane od użytkownika). W tym celu można użyć skrótu **F5**, odpowiedniego przycisku z paska narzędzi (zielona strzałka **Continue**) lub opcji z menu głównego (**Debug > Continue**). Jeżeli znajdujemy się w funkcji `Main`, to możemy również skorzystać z opisanego wcześniej sposobu na wyjście z wnętrza metody ([„Wyjście z wnętrza klasy/metody”](#Wyjście-z-wnętrza-klasymetody)). Jeżeli w pozostałej części programu nie ma już żadnych przyczyn powodujących zatrzymanie pracy programu, to wówczas jego działanie zostaje zakończone.
@@ -656,13 +656,13 @@ Wykonywanie programu można również kontynuować do momentu napotkania kolejne
 #### Sprawdzanie wartości zmiennych podczas debugowania
 Podczas działania programu w konfiguracji _Debug_, możemy sprawdzać wartości zmiennych w danym momencie wykonywania programu. Ich zmieniające się wartości możemy podglądać w monitorze zmiennych. W zakładce _Locals_ znajdziemy aktualne wartości wszystkich zmiennych, które istnieją w naszym programie. Istnieją, oznacza, że zostały zainicjowane, zadeklarowane i wciąż przetrzymują jakąś wartość. Jeżeli wyjdziemy z jakiejś metody/klasy to, o ile nie wskażemy inaczej, utworzone w niej zmienne przestają istnieć, więc znikają z zakładki _Locals_. Poza tym wartości zmiennych można podejrzeć najeżdżając wskaźnikiem myszki na nazwy zmiennych w kodzie programu w czasie debugowania. Jeżeli zmienna w danym momencie istnieje przy wskaźniku pojawi nam się okienko z nazwą zmiennej i jej aktualną wartością.
 
-## LEKCJA 12 – Błędy początkujących
+## [LEKCJA 12 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-13-bledy-poczatkujacych/)
 Od początku nauki warto wyłapywać i poprawiać swoje błędy. Po pierwsze zwróćmy więc uwagę na użyte w naszych programach nazewnictwo. Nazwy naszych zmiennych, metod, klas itd. powinny być w języku angielskim. Jest to ogólnie przyjęta zasada w środowisku programistów. Zwiększa to uniwersalność naszego kodu. Po drugie naprawdę warto mieć po angielsku również samo IDE Visual Studio. Jest to najpowszechniej używana jego wersja. Jeżeli więc będziemy szukać pomocy dotyczącej tego oprogramowania, nazwy funkcjonalności itp. najczęściej występować więc będą w tym języku.
 
-## LEKCJA 13 – Praca domowa
+## [LEKCJA 13 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-1-plan-gry/lekcja-14-praca-domowa/)
 Pracą domową na pierwszy tydzień jest dołączenie do grupy, przywitanie się na forum (#tydzien1 #przywitanie) i założenie konta na [githubie](https://github.com/) (#tydzien1 #github [link do githuba](https://github.com/malgorzataMielczarek)).
 
-## LEKCJA 1 – Powitanie
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-1-powitanie/)
 W tygodniu 2. poznamy między innymi:
 * jakie typy danych występują w języku C#,
 * instrukcje warunkowe,
@@ -677,7 +677,7 @@ W tygodniu 2. poznamy między innymi:
 
 Wybierzemy również projekt do wykonania. W pliku załączonym do lekcji podano przykładowe projekty.
 
-## LEKCJA 2 – Zmienne i stałe
+## [LEKCJA 2 – Zmienne i stałe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-2-zmienne-i-stale/)
 Zaczynamy tworzenie naszej aplikacji konsolowej.
 
 ### Utworzenie nowego projektu
@@ -801,7 +801,7 @@ actionNo = 2;
 
 Zmienna przestaje istnieć w momencie gdy program wyjdzie poza zakres w którym została utworzona (najczęściej poza nawiasy klamrowe między którymi znajduje się jej definicja). Wyjątek stanowią zmienne globalne, które istnieją przez cały czas trwania programu.
 
-## LEKCJA 3 – Typy wartościowe
+## [LEKCJA 3 – Typy wartościowe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-3-typy-wartosciowe/)
 
 Typy wartościowe, są to typy których zmienne są przechowywane na stosie. Oznacza to, że ilość zajmowanej przez nie pamięci musi być góry wiadoma, w momencie kompilacji i zawsze jest taka sama, nie zależnie od przechowywanych w nich danych. Stos jest bowiem bardzo uporządkowaną strukturą pamięci podręcznej. Przeszukiwanie jej jest bardzo wydajne, jednak może ona bezpośrednio przechowywać jedynie typy wartościowe alokowane w sposób statyczny i zajmującą stałą ilość pamięci. Do typów wartościowych zaliczamy przede wszystkim
 ### 1. Typy proste
@@ -1012,7 +1012,7 @@ int a = default;
 | `struct` (struktura) | wartość uzyskana w wyniku przypisania wszystkim polom typów wartościowych odpowiadających im wartości domyślnych, a polom typów referencyjnych wartości `null` |
 | Wszystkie typy wartościowe nullowalne (typy wartościowe mogące przyjąć wartość `null` np. `int?`, `bool?` itd.) | Instancja, dla której właściwość `HasValue` ma wartość `false`, a właściwość `Value` jest niezdefiniowana (`undefined`). Jest znana również jako wartość `null` typu wartościowego nullowalnego (dopuszczającego wartość `null`) |
 
-## LEKCJA 4 – Typy referencyjne
+## [LEKCJA 4 – Typy referencyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-4-typy-referencyjne/)
 
 Zmienne w programie są przechowywane na dwóch typach pamięci: na stosie i na stercie.
 
@@ -1150,7 +1150,7 @@ const string SMILEY_PATH = @"C:\Users\adam\Images\smiley.bmp";
 
 Wstawiony przed rozpoczynającym string cudzysłowem znaku `$` daje znać kompilatorowi, że chcemy w stringu używać wartości innych zmiennych. Możemy wówczas wpisać wewnątrz stringu nazwę zmiennej otoczoną klamrami. Kompilator zastąpi nam tą sekwencję aktualną wartością zmiennej przekonwertowaną do typu `string`;
 
-## LEKCJA 5 – Warunki
+## [LEKCJA 5 – Warunki](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-5-warunki/)
 Instrukcje warunkowe umożliwiają wykonanie określonych instrukcji lub zwrócenie określonej wartości w zależności od spełnienia jakiegoś warunku.
 ### if
 Podstawową instrukcją warunkową jest instrukcja `if`. Ma ona postać:
@@ -1301,7 +1301,7 @@ Ma ona następujące działanie:
 
 Począwszy od C# 7 `argument` zarówno w instrukcji jak i wyrażeniu `switch` może być obiektem lub tulpem (zestawem wartości, zamiast jedną wartością). Począwszy od C# 9 możliwe jest również poza prostym porównaniem, porównanie relacyjne (<, <=, >, >=).
 
-## LEKCJA 6 – Operatory
+## [LEKCJA 6 – Operatory](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-6-operatory/)
 
 Kolejność wykonywania działań z użyciem operatorów jest zgodna z zasadami matematyki. Jeżeli kilka operacji jest równoważnych (tak samo ważnych jeśli chodzi o kolejność wykonywania działań) to są one wykonywane od lewej do prawej. Jeżeli ostateczny wynik będziemy znać po wykonaniu tylko części operacji (będzie to czasem miało miejsce np. w przypadku operacji logicznych), to dalsze operacje nie są wykonywane.
 
@@ -1539,7 +1539,7 @@ a ??= 7; //to samo co a = a ?? 7;, czyli a jest nadal równe 5
 
 Operatory `??` i `??=` są prawostronnie asocjacyjne. Oznacza to, że operatory te są grupowane od prawej do lewej. Czyli wyrażenie `a ?? b ?? c`, jest przetwarzane jako `a ?? (b ?? c)`, a wyrażenie `d ??= e ??= f`, jako `d ??= (e ??= f)`. Ogólnie wyrażenie postaci `E1 ?? E2 ?? ... ?? EN` zwraca wartość pierwszego argumentu różnego niż `null` lub `null`, jeżeli wszystkie argumenty mają wartość `null`. Analogicznie w wyrażeniu `E1 ??= E2 ??= ... ??= EN` `E1` będzie miał wartość pierwszego argumentu różnego od `null` lub `null`, jeżeli wszystkie argumentu mają wartość `null`.
 
-## LEKCJA 7 – Operatory Logiczne
+## [LEKCJA 7 – Operatory Logiczne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-7-operatory-logiczne/)
 W lekcji tej poznamy operatory logiczne warunkowe. Wyróżniamy operatory logiczne jednoargumentowe i dwuargumentowe. Wszystkie argumenty są typu `bool`. Wynik operacji logicznych również jest tego typu. Operatory logiczne są często stosowane w wyrażeniach warunkowych instrukcji `if`, pętli itp.
 
 ### Operatory logiczne jednoargumentowe
@@ -1597,7 +1597,7 @@ Operacje logiczne, podobnie jak arytmetyczne można ze sobą łączyć w jedno w
 5. Warunkowy operator logiczny AND (`&&`)
 6. Warunkowy operator logiczny OR (`||`)
 
-## LEKCJA 8 – Pętle
+## [LEKCJA 8 – Pętle](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-8-petle/)
 Służą do iteracyjnego powtórzenia jakiejś czynności. Oznacza to, że dany blok kodu wykona się określoną ilość razy, zależną od warunków początkowych jakie przyjmiemy i warunku przerwania. W języku C# wyróżniamy cztery rodzaje pętli:
 
 ### while
@@ -1739,7 +1739,7 @@ foreach(var element in kolekcja)
 
 Ten typ pętli zostanie dokładniej omówiony w lekcji 10, gdy poznamy tablice.
 
-## LEKCJA 9 – Instrukcje skoku
+## [LEKCJA 9 – Instrukcje skoku](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-9-instrukcje-skoku/)
 Instrukcje składające się z określonego słowa kluczowego i średnika. Najogólniej mówiąc służą do przenoszenia do innej części kodu. Najczęściej stosuje się je w połączeniu z instrukcją warunkową `if`. Wyróżniamy następujące instrukcje skoku:
 
 ### break
@@ -1813,7 +1813,7 @@ Stosowana głównie w metodach. Zostanie omówiona później w tym tygodniu w le
 ### throw
 Stosowana do wyrzucania wyjątków. Zostanie omówiona później w kursie, przy okazji omawiania obsługi wyjątków.
 
-## LEKCJA 10 – Tablice
+## [LEKCJA 10 – Tablice](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-10-tablice/)
 Obiekty służące do przetrzymywania z góry określonej liczby danych tego samego typu. Klasą bazową dla tablic jest zawsze klasa `System.Array` (nie zależnie od tego jakiego typu dane przechowuje tablica). 
 
 ### Tworzenie tablic
@@ -2068,7 +2068,7 @@ Console.WriteLine(GetSumOfFirstTwoOrDefault(new int[0]));  // output: 0
 Console.WriteLine(GetSumOfFirstTwoOrDefault(new[] { 3, 4, 5 }));  // output: 7
 ```
 
-## LEKCJA 11 – Listy
+## [LEKCJA 11 – Listy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-11-listy/)
 Klasa `System.Collections.Generic.List` należy do tzw. typów generycznych. Oznacza to, że lista jest zawsze obiektem typu `List`, ale może przetrzymywać obiekty innego typu, który definiujemy podczas inicjalizacji. Podobnie jak tablice, listy służą do przechowywania wielu obiektów tego samego typu. Różnice między tymi dwoma typami powodują jednak, że stosuje się je w różnych sytuacjach.
 
 ### Różnice między listami a tablicami
@@ -2329,7 +2329,7 @@ list.ForEach(delegate(int item)
 
 Więcej o argumentach tego typu dowiemy się w dalszej części kursu.
 
-## LEKCJA 12 – Enum
+## [LEKCJA 12 – Enum](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-12-enum/)
 Enum należy do wyliczeniowych typów wartościowych. Wspominaliśmy już o nim przy okazji omawiania typów wartościowych. Służy do przechowywania określonych danych słownikowych, których ilość się nie zmienia. Przypomnijmy sobie jak tworzy sią typ `enum`:
 
 ```csharp =
@@ -2381,7 +2381,7 @@ public enum PeriodsOfTime
 
 Typy wyliczeniowe są stosunkowo szybkie w użyciu, jednak mają ograniczone zastosowanie. Należy pamiętać, że nie można ich dynamicznie zmieniać (dopisywać kolejnych wartości), więc ich zastosowanie należy dobrze przemyśleć. Późniejsze zmiany warunków lub wymagań w naszej aplikacji, które będą wiązały się z typami enum będą również oznaczały zmiany w innych częściach kodu programu.
 
-## LEKCJA 13 – Klasy i obiekty
+## [LEKCJA 13 – Klasy i obiekty](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-13-klasy-i-obiekty/)
 Klasy są podstawą języka C#, ponieważ jest to język obiektowy. Z założenia wszystkie jego elementy są więc obiektami.
 
 **Klasy** - definicje dla obiektów jakiegoś typu (tej klasy).
@@ -2467,7 +2467,7 @@ Console.WriteLine("Dog weight after activities: " + dog.Weight);
 
 Kiedy będziemy operować na danych z bazy danych, będziemy je na ogół tłumaczyć na obiekty klasy. Później będziemy mogli nimi manipulować przy użyciu metod danej klasy i zmiany właściwości obiektów.
 
-## LEKCJA 14 – Metody
+## [LEKCJA 14 – Metody](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-14-metody/)
 Jak wspomnieliśmy w poprzedniej lekcji, klasy składają się z właściwości i metod.
 
 Współcześnie często tworzymy osobne klasy z samymi właściwościami, gdyż są one najczęściej odzwierciedleniem bazy danych, więc ma to sens, aby nie zawierały żadnych metod.
@@ -2571,7 +2571,7 @@ Oczywiście jest to przeliczenie wieku w miesiącach zaokrąglonego do pełnych 
 
 **Klasy statyczne** są to klasy których wszystkie składniki (zarówno właściwości jak i metody) muszą być statyczne. Klasy statyczne tworzymy dodając słowo kluczowe `static` pomiędzy modyfikator dostępu (np. `public`) a słowo kluczowe `class`. Nie można tworzyć obiektów klas statycznych.
 
-## LEKCJA 15 – Parametry metod
+## [LEKCJA 15 – Parametry metod](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-15-parametry-metod/)
 Jak wiemy z poprzednich lekcji metody mogą przyjmować dowolną liczbę argumentów. Jeżeli jednak nasza funkcja musi przyjąć ich wiele (powyżej 7), to dobrą praktyką jest, aby utworzyć nową klasę przechowującą wartości tych argumentów i przekazywać do metody obiekt tej klasy. Argumenty podajemy w nawiasie okrągłym za nazwą funkcji i oddzielamy od siebie przecinkami. Istnieją one tylko w obrębie metody.
 
 ### Parametry w definicji metody
@@ -2668,7 +2668,7 @@ Użycie słów kluczowych `ref` lub `out` oznacza, że ten argument przekazujemy
 2. Pamiętajmy również, że właściwości metod nie są zmiennymi. Nie możemy więc ich przekazać jako parametrów `out` lub `ref`.
 3. Argumenty `out` i `ref` nie mogą być również argumentami domyślnymi.
 
-## LEKCJA 16 – Pola i właściwości
+## [LEKCJA 16 – Pola i właściwości](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-16-pola-i-wlasciwosci/)
 ### Pola
 Mówiliśmy już, że klasa składa się z właściwości i metod. Nic nie stoi jednak na przeszkodzie, aby w klasie stworzyć też zwykłą zmienną. Robimy to podając modyfikator dostępu, typ i nazwę zmiennej. Na końcu oczywiście stawiamy średnik. Zmienną będącą składnikiem klasy nazywamy polem. Np.:
 
@@ -2813,7 +2813,7 @@ public class Person
 
 Można też oczywiście mieszać oba zapisy (np. skrócony zapis dla `get`tera i normalny dla `set`tera).
 
-## LEKCJA 17 – Zakresy widoczności
+## [LEKCJA 17 – Zakresy widoczności](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-17-zakresy-widocznosci/)
 Poszczególne elementy programu (klasy, metody, właściwości, zmienne) mają różną widoczność w zależności od miejsca w programie. Definiujemy ją przy pomocy tzw. modyfikatorów dostępu.
 ### Modyfikatory dostępu
 Są to słowa kluczowe które umieszczaliśmy na początku każdej deklaracji. Podawanie ich jawnie za każdym razem, nawet w sytuacjach gdy nie są wymagane, zwiększa czytelność i przeszukiwanie kodu. Należy więc to do dobrych praktyk programowania. Wyróżniamy cztery podstawowe modyfikatory dostępu:
@@ -2826,7 +2826,7 @@ Do tak oznaczonych elementów klasy, mamy dostęp tylko wewnątrz tej klasy, ora
 #### `internal`
 Oznacza elementy do których mamy dostęp tylko wewnątrz danego projektu. To znaczy nie możemy się do nich odwołać z innych projektów jakie dodamy do naszej solucji. Jeżeli w definicji klasy nie ma podanego modyfikatora dostępu, to są one domyślnie `internal`.
 
-## LEKCJA 18 – Piszemy aplikację
+## [LEKCJA 18 – Piszemy aplikację](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-18-piszemy-aplikacje/)
 W tej lekcji możemy zobaczyć początek implementacji przykładowej aplikacji. Kod programu możemy znaleźć [tutaj](https://github.com/szkoladotneta/warehouse/tree/tydz2).
 
 ### 1. Utworzenie projektu
@@ -2876,7 +2876,7 @@ Po zaimplementowaniu jakiejś funkcjonalności (lub jej etapu), możemy usunąć
 ### 9. Refaktoryzacja
 W dalszych etapach nauki dokonamy refaktoryzacji naszego kodu. Kiedy lepiej poznamy język C# i nauczymy się nowych mechanizmów zobaczymy, że niektóre fragmenty naszego programu można napisać lepiej, zwiększyć ich czytelność lub sprawność działania. Wówczas zaczniemy modyfikować nasz kod, zgodnie z naszą aktualną wiedzą.
 
-## LEKCJA 19 – Błędy początkujących
+## [LEKCJA 19 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-19-bledy-poczatkujacych/)
 ### Tworzenie metod
 Nie twórz klas ze zbyt dużą liczbą argumentów. Jeżeli nie możesz zapamiętać kolejności w jakiej występują, to znaczy, że jest ich prawdopodobnie za dużo. Wtedy warto utworzyć dodatkową klasę pomocniczą, która zbierze wszystkie argumenty które chcieliśmy przekazać. Wówczas do naszej metody będziemy przekazywać tylko jeden argument typu tej klasy pomocniczej.
 ### Typy danych
@@ -2888,13 +2888,13 @@ W instrukcjach warunkowych uważaj na wzajemnie się wykluczające warunki.
 ### Pętle nieskończone
 Uważaj na pętle nieskończone. Stosuj je świadomie i pamiętaj, że są kosztowne dla programu.
 
-## LEKCJA 20 – Praca domowa
+## [LEKCJA 20 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-2-podstawy-jezyka-c/lekcja-20-praca-domowa/)
 Zaczynamy pisać naszą aplikację konsolową. Tworzymy projekt i implementujemy pierwsze funkcjonalności. Celem zadania jest stworzenie działającego programu z dostępną określoną liczbą funkcjonalności. Pamiętajmy o przestrzeganiu wszystkich poznanych dobrych praktyk programowania, ale nie przejmujmy się, że nie będą one jeszcze zgodne ze wszystkimi standardami. Tym zajmiemy się później w dalszej części nauki. Pisząc program wykorzystajmy całą naszą dotychczasową wiedzę. Zawrzyjmy w nich wszystkie elementy, które poznaliśmy w tym tygodniu. Stwórzmy tablice, listy, wykorzystajmy większość typów wartościowych i referencyjnych. Zaimplementujmy pierwsze klasy i metody, oraz połączmy je w funkcjonalności, które można zaprezentować innym. Poza stworzeniem samego projektu opiszmy go również. powiedz jakie funkcjonalności są w nim w tej chwili dostępne dla użytkownika i jak używać naszego programu.
 
-## LEKCJA 1 – Powitanie
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-1-powitanie/)
 Przechodzimy do poznawania programowania obiektowego. W tym tygodniu poznamy co to jest dziedziczenie, hermetyzacja, polimorfizm. Poznamy również takie struktury jak interfejsy, czy klasy abstrakcyjne. Pod koniec tego tygodnia dokonamy refaktoryzacji naszej aplikacji, z uwzględnieniem wszystkich zasad jakie poznamy w tym tygodniu.
 
-## LEKCJA 2 – Konstruktory
+## [LEKCJA 2 – Konstruktory](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-2-konstruktory/)
 **Konstruktor** jest to specjalny rodzaj metody, wywoływanej podczas inicjalizacji obiektu danej klasy.
 
 ### Tworzenie konstruktora
@@ -2988,7 +2988,7 @@ Item item = new Item() { Id = 1, Name = "bear", Type = "toy" };
 
 **Konstruktory tworzymy więc najczęściej jeżeli mamy tylko część właściwości jako dane wymagane.**
 
-## LEKCJA 3 – Przeciążenia
+## [LEKCJA 3 – Przeciążenia](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-3-przeciazenia/)
 **Przeciążanie metod** jest to stworzenie drugiej (kolejnej) metody o takiej samej nazwie, ale o innej liczbie i/lub typie przekazywanych parametrów. Standardowo metoda i jej przeciążenia zwracają ten sam typ (chociaż możliwe jest zwracanie różnych typów).<br/>
 Standardowo przeciążenia różnią się więc między sobą tylko argumentami i ciałem metody.
 
@@ -3040,7 +3040,7 @@ Jak widać stworzyliśmy trzy przeciążone metody `AddItem`. Każda z nich przy
 
 Inne przykłady metod przeciążonych można znaleźć w poprzedniej lekcji, gdzie m.in. przeciążaliśmy konstruktory.
 
-## LEKCJA 4 – Dziedziczenie
+## [LEKCJA 4 – Dziedziczenie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-4-polimorfizm/)
 **Dziedziczenie** jest to jeden z trzech paradygmatów (filarów) programowania obiektowego. Pozwala ona na przejście od ogółu do szczegółu. Tzn. mamy jakąś ogólną klasę (np. Ssak) i klasy szczegółowe (np. Pies, Kot, Małpa, Człowiek itp.), które będą w sobie zawierać wszystkie cechy klasy ogólnej (pola, właściwości, metody). Dodatkowo każda z tych bardziej szczegółowych klas będzie posiadała własne, charakterystyczne tylko dla siebie cechy (pola, właściwości, metody). Oczywiście dziedziczenie możemy realizować wielopoziomowo. Możemy np. mieć klasę Zwierzę, po której będą dziedziczyć klasy Ssak, Ptak, Gad, Płaz itd. Później np. po klasie Ssak będą dziedziczyć klasy Naczelny, Gryzoń itd., a po klasie Gryzoń np. Wiewiórka, Szczur itd. Wówczas klasa Szczur będzie posiadać wszystkie składniki klas Zwierzę, Ssak, Gryzoń i Szczur. Dziedziczenie może odbywać się jednak tylko po jednej klasie (dana bardziej szczegółowa klasa może mieć tylko jedną klasę bazową). Czyli np. nasza klasa Szczur, ponieważ dziedziczy już po klasie Gryzoń, nie mogłaby jeszcze dodatkowo dziedziczyć po klasie ZwierzątkoDomowe. Klasa może natomiast implementować kilka interfejsów, ale o tym w dalszych lekcjach tego tygodnia. Pokażmy więc jak wygląda dziedziczenie na przykładzie.
 
 ### Przykład
@@ -3184,7 +3184,7 @@ public class AuditableModel
 
 Wówczas wszystkie klasy będące odzwierciedleniem tabel bazy danych (oczywiście tych zawierające takie dane) będą dziedziczyć po klasie `AudiatableModel`.
 
-## LEKCJA 5 – Polimorfizm
+## [LEKCJA 5 – Polimorfizm](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-5-dziedziczenie/)
 **Polimorfizm** jest to drugi paradygmat (filar) programowania obiektowego. Z języka greckiego _polys_ - wiele, _morfe_ - kształt, czyli wielopostaciowość (coś o wielu kształtach), oznacza, że dany obiekt może występować w różnych kształtach. W programowaniu oznacza to, że wszystkie elementy mogą mieć jeden interfejs i wiele funkcji do użycia. Polimorfizm jest ściśle związany z poznanym w poprzedniej lekcji dziedziczeniem. Mówiliśmy np., że po klasie bazowej Zwierzę mogą dziedziczyć m.in. klasy Ptak, Ssak, Gad. Czyli obiekt klasy Zwierzę może mieć różne postaci. Może być ptakiem (obiektem klasy Ptak), albo ssakiem (obiektem klasy Ssak), albo gadem (obiektem klasy Gad) itd. Może też być bliżej nieokreślonym Zwierzęciem (czyli po prostu obiektem klasy Zwierzę). Wyróżniamy dwa rodzaje polimorfizmu: statyczny i dynamiczny.
 
 ### Polimorfizm statyczny
@@ -3371,7 +3371,7 @@ foreach(var el in electronics)
 
 Jak widać otrzymaliśmy dokładnie to, czego się spodziewaliśmy.
 
-## LEKCJA 6 – Hermetyzacja
+## [LEKCJA 6 – Hermetyzacja](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-6-hermetyzacja/)
 **Hermetyzacja**, inaczej **enkapsulacja**, jest trzecim i ostatnim paradygmatem (filarem) programowania obiektowego. Oznacza ona ograniczenie dostępu użytkownika (np. innej klasy) do elementów programu. Tworząc nową klasę musimy świadomie udzielać dostępu tylko do tych jej elementów, do których inne klasy powinny mieć dostęp, i tylko w takim zakresie jaki jest konieczny. To znaczy elementy związane z wewnętrznymi procesami zachodzącymi w klasie ukrywamy całkowicie, a inne możemy chcieć udostępnić tylko do odczytu, albo tylko za pośrednictwem określonych metod. Jest to możliwe przy pomocy modyfikatorów dostępu (`public`, `internal`, `protected`, `private`) oraz innych modyfikatorów (`readonly`, `const` itd.).
 
 Wcześniej omówiliśmy już modyfikatory dostępu (tydzień 2., lekcja 17.) oraz stałe (tydzień 2., lekcja 2.). Powiedzmy więc jeszcze pokrótce co oznacza słowo kluczowe `readonly`.
@@ -3431,7 +3431,7 @@ modyfikatorDostepu ref readonly typ NazwaMetody(/*parametry*/)
 
 Taki zapis oznacza, że nie możemy modyfikować obiektu na który wskazuje referencja zwrócona nam przez metodę. Ten obiekt jest tylko do odczytu (`readonly`). A dokładniej nie można tego obiektu modyfikować przy użyciu zwróconej referencji.
 
-## LEKCJA 7 – Klasy abstrakcyjne
+## [LEKCJA 7 – Klasy abstrakcyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-7-klasy-abstrakcyjne/)
 **Klasa abstrakcyjna** jest to klasa bazowa, swoisty szablon dla innych klas (które będą po niej dziedziczyć). Nie można natomiast utworzyć obiektu tej klasy (klasy abstrakcyjnej). Tworzy się ją dodając w deklaracji klasy słowo kluczowe `abstract`, przed słowem kluczowym `class`. Mimo, że nie możemy utworzyć obiektu klasy abstrakcyjnej, to możemy dokonać rzutowania na ten typ. Przypomnijmy sobie nasze klasy z lekcji dotyczącej polimorfizmu (tydzień 3, lekcja 5).
 
 ```csharp =
@@ -3681,7 +3681,7 @@ ModyfikatorDostepu sealed class NazwaKlasy
 
 Stosuje się je raczej rzadko, gdy chcemy uniemożliwić tworzenie klas pochodnych od danej klasy. Próba utworzenia klasy dziedziczącej po klasie sealed będzie skutkować błędem kompilacji. Ponieważ nie można po niej dziedziczyć, nie może ona posiadać metod abstrakcyjnych, ani wirtualnych. Nie możemy jej już zmieniać (nadpisywać), ani rozszerzać.
 
-## LEKCJA 8 – Interfejsy
+## [LEKCJA 8 – Interfejsy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-8-interfejsy/)
 Typ w C# stosowany, podobnie jak klasa abstrakcyjna, do tworzenia szkieletu elementów. Interfejs jest to zbiór deklaracji związanych ze sobą funkcjonalności. Składa się wyłącznie z deklaracji właściwości, metod, indeksatorów i zdarzeń (od C# 8.0 interfejs może zawierać również implementacje metod, choć na razie stosowanie tego nie jest zbyt popularne). Nie może jednak zawierać pól. Interfejs może dziedziczyć jeden lub więcej interfejsów. 
 
 ### Tworzenie interfejsu
@@ -3927,7 +3927,7 @@ public class Program
 ### Zastosowanie
 Interfejsy są szeroko stosowane w aplikacjach webowych, są podstawą ich architektury. Więcej na ten temat dowiemy się w dalszej części kursu. Warto jednak pamiętać, że bez interfejsów nie powstaje obecnie żadna aplikacja internetowa. Są niezbędne do zachowania wielu zasad nowoczesnego programowania.
 
-## LEKCJA 9 – Typy generyczne
+## [LEKCJA 9 – Typy generyczne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-9-typy-generyczne/)
 **Typy generyczne** - są to typy mogące obsługiwać różne typy danych. Stosuje się je, gdy na różnych typach danych chcemy wykonywać takie same operacje. Przykładem typu generycznego jest poznana już przez nas lista (`List<T>`) służąca do tworzenia i obsługi kolekcji obiektów danego typu (`T` - zamiast T wstawiamy dowolny typ danych), określonego w definicji. Wszystkie predefiniowane typy generyczne należą do namespace'u `System.Collection.Generic`. Typy generyczne często stosuje się w aplikacjach webowych do obsługi operacji CRUD-owych na klasach.
 
 ### Operacje CRUD
@@ -4029,7 +4029,7 @@ public class GenericService<T> where T : IItem
 
 itd.
 
-## LEKCJA 10 – Refaktoryzacja
+## [LEKCJA 10 – Refaktoryzacja](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-10-refaktoryzacja/)
 W tej lekcji zajmiemy się refaktoryzacją naszego programu, utworzonego w poprzednim tygodniu, z wykorzystaniem nabytej w tym tygodniu wiedzy. Skupimy się na trzech aspektach:
 1. Podział logiczny aplikacji - podzielimy solucję na dodatkowe projekty
 2. Wykorzystanie interfejsów - utworzymy interfejsy dla serwisów
@@ -4188,20 +4188,20 @@ Gdzie to tylko możliwe, korzystajmy z klas bazowych, aby zwiększyć elastyczno
 ##### 2. Przenieśmy co można do innych klas
 Jeśli jest to możliwe, to kod dotyczący konkretnej klasy, przenieśmy do tej właśnie klasy. Stwórzmy np. odpowiednie konstruktory i wywoływane w nich metody do wypełniania obiektów klasy danymi inicjalizacyjnymi. Wykorzystajmy menadżery. Przenieśmy do nich interakcję z użytkownikiem.
 
-## LEKCJA 11 – Błędy początkujących
+## [LEKCJA 11 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-11-bledy-poczatkujacych/)
 Aby unikać błędów pamiętaj o stosowaniu się do wszystkich poznanych w tym tygodniu zasad. Nawet jeśli nie jest jeszcze do końca jasne dlaczego tak robimy i część z nich może na razie wydawać się bez sensu, to przestrzegaj ich wszystkich, a zaprocentuje to w przyszłości. W miarę nabierania doświadczenia stanie się jasne dlaczego tak robimy, a stosowanie się teraz do zasad ułatwi nam dalszą pracę z programem.
 ### 1. Dziedziczenie i polimorfizm
 Nawet jeśli nie jest to jeszcze do końca jasne, pamiętaj, aby tworzyć klasy tak, aby dziedziczyły one po sobie. Zwróć przy tym uwagę, aby to dziedziczenie odbywało się w sposób analogiczny do tego, jak dzieje się to w świecie realnym. Czyli, obiekt klasy pochodnej jest również obiektem klasy bazowej (ryba jest zwierzęciem, krzesło jest meblem itp.). Klasa pochodna jedynie uszczegóławia i rozszerza klasę bazową (ryba jest zwierzęciem żyjącym w wodzie i oddychającym skrzelami (ale każde zwierzę żyje i oddycha), krzesło jest meblem służącym do siedzenia (ale każdy mebel ma jakąś funkcję)). Klasa `Person` (z ang. osoba) nie może natomiast dziedziczyć po klasie `File` (z ang. plik), tylko dla tego, że mamy jakiś plik będący spisem osób, bo osoba nie jest plikiem. Przy dziedziczeniu pamiętajmy również o nadpisywaniu metod. Stosujmy słowa kluczowe takie jak `override`, `new`, `virtual`, `abstract` itd. zgodnie z ich przeznaczeniem.
 ### 2. Stosowanie modyfikatorów dostępu, enkapsulacja
 Pamiętaj o enkapsulacji. Przed przystąpieniem do refaktoryzacji przemyśl, które elementy powinny być publiczne (`public` lub publiczne, ale dostępne tylko w danym projekcie - `internal`), a które prywatne (`private`) lub chronione (`protected`). Udostępnij publicznie tylko te elementy, które rzeczywiście muszą być publiczne. Jeżeli nie chcesz, aby jakaś właściwość mogła być zmieniana poza daną klasą, to ją przed tym zabezpiecz. Używaj również innych modyfikatorów: `sealed`, `readonly`, `const`, `static` itd., zgodnie z ich przeznaczeniem.
 
-## LEKCJA 12 – Praca domowa
+## [LEKCJA 12 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-3-programowanie-obiektowe/lekcja-12-praca-domowa/)
 Pracą domową na ten tydzień jest oczywiście dalszy rozwój aplikacji. Zacznij od refaktoryzacji. Podziel aplikację na projekty w analogiczny sposób, jak to zostało przedstawione w lekcji 10. tego tygodnia. Utwórz odpowiednie interfejsy. Przydadzą nam się one już w kolejnym tygodniu podczas testowania. Dobrze zaprojektowana aplikacja jest łatwiejsza do przetestowania. Po zakończeniu refaktoryzacji, można zająć się dalszym rozwojem aplikacji. Dodać nowe funkcjonalności. Najeży jednak pamiętać o przestrzeganiu wszystkich poznanych dotychczas zasad.
 
-## LEKCJA 1 – Powitanie
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-1-powitanie/)
 W tym tygodniu nauczymy się tworzyć testy jednostkowe. Jest to bardzo ważne, gdyż pozwala na wyłapanie wielu błędów na wczesnym etapie tworzenia oprogramowania. Dodatkowo zmniejsza czas jaki spędzimy nad debugowaniem naszej aplikacji. Pod koniec tygodnia dodamy takie testy do naszej aplikacji.
 
-## LEKCJA 2 – Projekt z testami
+## [LEKCJA 2 – Projekt z testami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-2-projekt-z-testami/)
 Aby dodać testy do naszej aplikacji musimy umieścić w niej osobny projekt, w którym te testy będą się znajdować.
 ### Dodanie projektu z testami
 Analogicznie jak to robiliśmy wcześniej, w przypadku innych projektów, klikamy prawym przyciskiem myszki w naszą solucję w _Solution Explorer_ i wybieramy _Add_ -> _New Project..._. Możemy zawęzić listę wyszukiwania wybierając język _C#_ i typ _Test_. Dla .NET Core mamy do wyboru kilka opcji. Są to testy przy użyciu bibliotek:
@@ -4265,7 +4265,7 @@ Testy zignorowane podczas tego i poprzedniego przeprowadzania testów.
 #### 2. Uruchamianie pojedynczych testów
 Jeżeli dany test był już kiedykolwiek przeprowadzony, to wynik jego ostatniego wykonania jest zaznaczony w kodzie. Powyżej metody definiującej dany test znajduje się ikonka (analogiczna do tych używanych w _Test Explorer_). Kliknięcie w tą ikonkę wyświetli nam podsumowanie tego testu. Wybranie w rozwiniętym oknie opcji _Run_ umożliwia ponowne uruchomienie tego właśnie testu, bez konieczności korzystania z eksploratora testów lub wykonywania wszystkich zdefiniowanych przez nas testów.
 
-## LEKCJA 3 – Twój pierwszy test
+## [LEKCJA 3 – Twój pierwszy test](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-3-twoj-pierwszy-test/)
 W tej lekcji napiszemy nasz pierwszy test jednostkowy. Na razie będzie to najbardziej podstawowy test, nie powiązany w żaden sposób z tworzoną przez nas aplikacją. Oczywiście, w kontekście tworzonego przez nas programu, nie będzie on miał sensu. Zależy nam jednak jedynie, aby nauczyć się w jaki sposób powinny być tworzone testy jednostkowe.
 ### Struktura testu jednostkowego - **AAA**
 Każdy test jednostkowy powinien być zbudowany zgodnie ze strukturą, nazywaną w skrócie **AAA** (ang. _Arrange - Act - Assert_).
@@ -4344,14 +4344,14 @@ Służy do sprawdzenia, czy jakiś `string` (lub kolekcja) nie zawiera jakiegoś
 ### Pisanie testów
 Pisząc testy chcemy sprawdzić nie tylko nasz idealny wariant, który z założenia powinien być poprawnie wykonany. Powinniśmy sprawdzić wszystkie możliwości dotyczące naszego kodu. Im więcej wariantów sprawdzimy, im więcej testów napiszemy, tym mniej będziemy później musieli debugować nasz kod. Kiedy większość sytuacji zostanie przewidziana i sprawdzona w testach, to zamiast debugować kod, będziemy mogli uruchomić testy. Jeżeli któryś z nich wypadnie negatywnie, to będziemy wiedzieć w której części kodu znajduje się błąd. Nie będziemy więc musieli przechodzić debugerem krok po kroku przez cały kod, a jedynie najwyżej przez fragment w którym testy wykazały błąd.
 
-## LEKCJA 4 – Testy jednostkowe
+## [LEKCJA 4 – Testy jednostkowe](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-4-testy-jednostkowe/)
 Testy jednostkowe, standardowo, mają sprawdzić, czy najmniejsza możliwa jednostka naszej aplikacji wykonywana jest w sposób prawidłowy i taki, jaki jesteśmy w stanie przewidzieć.
 ### Co testujemy
 Najmniejszą możliwą jednostką, którą powinniśmy testować, jest metoda danej klasy. Większość tworzonych przez nas metod powinna mieć pokrycie w testach. Dokładniej o tym co i w jakiej ilości powinniśmy testować dowiemy się w kolejnych lekcjach.
 ### Kto pisze testy jednostkowe
 W odróżnieniu od innych rodzajów testów, takich jak testy integracyjne, testy End-To-End, testy regresji itd., za testy jednostkowe zawsze powinien być odpowiedzialny programista piszący kod. Dzieje się tak, ponieważ testy jednostkowe tworzone są po to, aby ułatwić pracę programiście. Testerzy są natomiast odpowiedzialni za tworzenie testów wyższego poziomu. Mają za zadanie sprawdzić aplikację, przed jej wdrożeniem na serwer produkcyjny. Muszą sprawdzić czy nowe funkcjonalności nie niszczą starych funkcjonalności, czy połączenia pomiędzy funkcjonalnościami i aplikacjami działają prawidłowo itd. Sprawdzają aplikację jako całość oraz połączenia między różnymi aplikacjami, a nie wszystkie metody. Testy jednostkowe są natomiast sprawdzeniem dla samego programisty, czy jego kod wykonuje się w sposób jaki tego oczekuje. Mówi się, że programiści dzielą się na tych którzy już piszą testy i na tych, którzy będą pisać testy, albo na tych którzy piszą testy i na tych, którzy debugują.
 
-## LEKCJA 5 – Moq
+## [LEKCJA 5 – Moq](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-5-moq/)
 Biblioteka służąca do stworzenia pewnej ilości danych, która będzie nam potrzebna do sprawdzenia funkcjonalności. Zazwyczaj używamy jej do zasymulowania działania pewnych metod, których nie chcemy sprawdzać w danym teście lub do zasymulowania danych z bazy danych. Zazwyczaj podczas testowania nie chcemy opierać się na danych z bazy danych, gdyż nie jesteśmy w stanie przewidzieć co się tam w danej chwili znajduje.
 ### Instalacja biblioteki _Moq_
 Zanim będziemy mogli wykorzystać tą bibliotekę, musimy ją oczywiście zainstalować. Otwieramy _NuGet Manager_. W tym celu wybieramy _Tools_ -> _NuGet Package Manager_ -> _Manage NuGet Packages for Solution..._ i  w zakładce _Browse_ wyszukujemy _Moq_ (na przykład poprzez wpisanie tej nazwy w polu wyszukiwarki - Ctrl+L). Następnie wybieramy i instalujemy naszą bibliotekę.
@@ -4442,7 +4442,7 @@ Jeżeli w naszej aplikacji mamy zdefiniowane wszystkie potrzebne klasy, to może
 
 Oczywiście jest to najprostszy test, służący tylko przedstawieniu biblioteki _Moq_. W prawdziwym projekcie prawdopodobnie będziemy musieli zasymulować więcej obiektów, metod. Będziemy też zapewne sprawdzać więcej uzyskanych wartości. Biblioteki _Moq_ będziemy najczęściej używać do zasymulowania danych uzyskiwanych bezpośrednio z bazy danych. Dzięki temu niezależnie od niej będziemy mogli sprawdzić logikę biznesową naszej aplikacji.
 
-## LEKCJA 6 – FluentAssertions
+## [LEKCJA 6 – FluentAssertions](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-6-fluentassertions/)
 Biblioteka rozszerzająca możliwości kroku _Assert_ testów[^*].
 ### Instalacja biblioteki _FluentAssertions_
 Podobnie jak w poprzedniej lekcji, zanim będziemy mogli wykorzystać tą bibliotekę, musimy ją oczywiście zainstalować. Ponownie otwieramy _NuGet Manager_. W tym celu wybieramy _Tools_ -> _NuGet Package Manager_ -> _Manage NuGet Packages for Solution..._ i  w zakładce _Browse_ wyszukujemy _FluentAssertions_ (na przykład poprzez wpisanie tej nazwy w polu wyszukiwarki - Ctrl+L). Następnie wybieramy i instalujemy naszą bibliotekę.
@@ -4542,7 +4542,7 @@ namespace NazwaAplikacji.Tests
 
 [^*]: Jeśli ktoś woli może również korzystać z podobnej biblioteki - _Shouldly_.
 
-## LEKCJA 7 – Pokrycie kodu testami
+## [LEKCJA 7 – Pokrycie kodu testami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-7-pokrycie-kodu-testami/)
 ### Co powinniśmy testować?
 Po tym, jak mówiliśmy jakie ważne są testy, chciałoby się powiedzieć, że wszystko. Nie jest to jednak prawda. Zarówno brak testów, jak i 100% pokrycie kodu testami nie są dobre dla naszej aplikacji. Tak na prawdę powinniśmy przetestować tylko konkretne rzeczy.
 <table>
@@ -4577,7 +4577,7 @@ Po tym, jak mówiliśmy jakie ważne są testy, chciałoby się powiedzieć, że
 </tr>
 </table>
 
-## LEKCJA 8 – TDD
+## [LEKCJA 8 – TDD](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-8-tdd/)
 TDD (ang. _Test Driven Development_) - metodologia w tworzeniu oprogramowania, polegająca na tym, że tworzenie oprogramowania rozpoczyna się od napisania testów.
 ### Podejście klasyczne (najpierw kod, potem testy)
 Do tej pory tworzyliśmy testy na podstawie metod.
@@ -4689,7 +4689,7 @@ public void RemoveItemById(int id)
 
 Jeżeli teraz ponownie przeprowadzimy test `CanDeleteItemWithProperId`, to powinien on wyjść pozytywnie (oczywiście jeśli mamy zaimplementowana wszystkie inne wymagane klasy i metody). Oznacza to, że do naszego testu napisaliśmy odpowiednią metodę, zachowującą się w sposób, jakiego oczekiwaliśmy.
 
-## LEKCJA 9 – Testy integracyjne
+## [LEKCJA 9 – Testy integracyjne](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-9-testy-integracyjne/)
 Pomimo, że nie są to testy jednostkowe, to testy tego rodzaju również często są pisane przez programistów.
 
 **Testy integracyjne** - służą do testowania integracji pomiędzy warstwami naszej aplikacji np. menadżerami i serwisami. Piszemy je podobnie, jak testy jednostkowe, tylko jeżeli np. sprawdzamy integrację między menadżerami i serwisami, to nie mokujemy już serwisów, ale działami na rzeczywistych obiektach. Ponieważ serwisy przeprowadzają operacje na bazie danych, to używając rzeczywistych obiektów serwisowych, podczas wykonywania testów, wprowadzimy rzeczywiste zmiany w bazie danych. Dlatego testy integracyjne poza etapami _Arrange_-_Act_-_Assert_ posiadają na końcu jeszcze jeden etap, _Clean_, w którym będziemy "sprzątać" po teście, czyli przywracać bazę danych do stanu przed testem.
@@ -4799,7 +4799,7 @@ Jeżeli mamy zaimplementowane wszystkie wymagane elementy aplikacji, to wykonani
 ### _Clean_
 Jak już wspominaliśmy, kiedy podczas wykonywania testu wprowadzamy jakieś zmiany w bazie danych, to na jego zakończenie, musimy wszystkie te zmiany cofnąć. W naszym przykładzie nie mieliśmy nic do czyszczenia, gdyż nie pracujemy jeszcze na bazie danych. Gdybyśmy jednak taki test wykonywali na serwisie dodającym i usuwającym obiekty z bazy danych, to musimy uważać. Na początku testu dodaliśmy do bazy danych obiekt, który następnie usunęliśmy w kroku _act_. Mogłoby się więc wydawać, że wszystko powinno być w porządku. Jeżeli jednak nasza baza danych korzystna z mechanizmów auto-inkrementacji np. numerów id, to może się okazać, że zwiększyliśmy odpowiedzialny za nią znacznik i kolejny obiekt jaki dodamy do bazy danych będzie miał id o jedno większe od obiektu, który właśnie usunęliśmy, a nie od ostatniego obiektu znajdującego się w bazie danych (obiektu, który był ostatni, przed wykonaniem testu). Wówczas testując aplikacją będziemy tworzyć "dziury" w numerach id (lub innych wartościach). Jeżeli tabela na której pracujemy podczas testu posiada jakieś mechanizmy auto-inkrementacji, to musimy pamiętać, aby po zakończeniu testu, w etapie czyszczenia (_Clean_) przywrócić znacznikom odpowiednie wartości. Jest to oczywiście możliwe. Dlatego przed przestąpieniem do pisania testów integracyjnych należy zapoznać się z takimi mechanizmami, tak aby testowanie aplikacji, nie przynosiło więcej szkody niż pożytku.
 
-## LEKCJA 10 – Błędy początkujących
+## [LEKCJA 10 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-10-bledy-poczatkujacych/)
 Jeśli chodzi o testowanie, to możliwych błędów jest całkiem sporo. Pierwszy podstawowy to
 
 ### Brak testów
@@ -4817,10 +4817,10 @@ Po drugie, często testujemy nieodpowiednie elementy aplikacji.
 
 Skupmy się na testowaniu tego, nad czym mamy panowanie, co sami zaimplementowaliśmy i powinniśmy sprawdzić, czyli na logice biznesowej naszej aplikacji. W naszym przypadku będą to menadżery i być może serwisy. W tym momencie, prawdopodobnie nie używamy w nich jeszcze bibliotek zewnętrznych, więc warto je przetestować.
 
-## LEKCJA 11 – Praca domowa
+## [LEKCJA 11 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-4-testowanie/lekcja-11-praca-domowa/)
 Pracą domową na ten tydzień jest dodanie do pisanej przez nas przez ostatnie tygodnie aplikacji konsolowej projektu z testami i napisanie testów do wszystkich, stworzonych w niej do tej pory, funkcjonalności. Ponieważ nasza aplikacja może wydawać się już dość duża, potraktujmy to jako dobre ćwiczenie na przyszłość, kiedy nasze aplikacje będą o wiele bardziej rozbudowane. Przećwiczmy więc tworzenie testów do kodu już istniejącego. Kiedy w kolejnych tygodniach będziemy tworzyć kolejną aplikację (aplikację internetową), to możemy pokusić się o stosowanie metody TDD (_Test Driven Development_). Wówczas tworzenie naszej aplikacji rozpoczniemy od napisania testów.
 
-## LEKCJA 1 – Powitanie
+## [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-1-powitanie/)
 W tygodniu 5 nauczymy się pracować z danymi zewnętrznymi. Poza danymi wprowadzonymi przez użytkownika przez terminal, mogą to być dane dostarczane przez pliki w różnych formatach. Poznamy m.in. czym jest:
 * JSON
 * XML
@@ -4829,8 +4829,8 @@ W tygodniu 5 nauczymy się pracować z danymi zewnętrznymi. Poza danymi wprowad
 
 W tym tygodniu zakończymy pracę nad naszą aplikacją konsolową.
 
-## LEKCJA 2 – Kolekcje w .NET
-W naszych aplikacjach będziemy często korzystać z kolekcji. Są to swego rodzaju tablice, które przechowujemy na stercie. Wcześniej poznaliśmy już podstawowy typ kolekcji, czyli listę (`List<T>`). Jest ona najczęściej stosowanym typem kolekcji, jednak ma swoje ograniczenia. Może się więc zdarzyć, że do konkretnego celu bardziej odpowiedni będzie dla nas jeden z pozostałych typów. Warto więc po krótce poznać, kilka podstawowych typów.
+## [LEKCJA 2 – Kolekcje w .NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-2-kolekcje-w-net/)
+W naszych aplikacjach będziemy często korzystać z kolekcji. Są to swego rodzaju tablice, które przechowujemy na stercie. Wcześniej poznaliśmy już podstawowy typ kolekcji, czyli listę (`List<T>`). Jest ona najczęściej stosowanym typem kolekcji, jednak ma swoje ograniczenia. Może się więc zdarzyć, że do konkretnego celu bardziej odpowiedni będzie dla nas jeden z pozostałych typów. Warto więc pokrótce poznać, kilka podstawowych typów.
 
 W C# wyróżniamy dwa rodzaje typów obsługujących kolekcje (zbiór) danych.
 ### Kolekcje niegeneryczne
@@ -4880,7 +4880,7 @@ Służy do pobierania i usuwania pierwszego (dodanego jako pierwszy) elementu ko
 Służy do pobierania pierwszego (dodanego jako pierwszy) elementu kolejki, jednak bez jego usuwania.
 
 #### `Hashtable`
-Czyli tablica haszująca. Typ podobny do typu `SortedList`, również składający się z pary klucz - wartość. Tu jednak klucz jest typu `string`, a nie `int`, ale oczywiście wartości kluczy tu również nie mogą się powtarzać. W odróżnieniu od `SortedList` jej wartości nie są również w żaden sposób sortowane.
+Czyli tablica haszująca. Typ podobny do typu `SortedList`, również składający się z pary klucz - wartość. Tu jednak klucz jest typu `string`, a nie `int`, ale oczywiście wartości kluczy tu również nie mogą się powtarzać. W odróżnieniu od `SortedList` jej wartości nie są w żaden sposób sortowane.
 
 ```csharp =
 Hashtable hashtable = new Hashtable();
@@ -4903,7 +4903,7 @@ list.Add(3);
 list.Remove(3); // usuniecie elementu 3
 // 1, 2
 
-//usuwanie wszystkich elementów spełniających podany warunek
+//usuwanie wszystkich elementow spełniających podany warunek
 list.RemoveAll(item => item < 3);
 // 
 
@@ -4913,7 +4913,7 @@ for(int i = 0; i < 10; i++)
 }
 // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
-//usuwanie kilku elementów
+//usuwanie kilku elementow
 list.RemoveRange(3, 5); // 5 elementow, rozpoczynajac od indeksu 3
 // 0, 1, 2, 8, 9
 
@@ -4921,12 +4921,13 @@ list.RemoveRange(3, 5); // 5 elementow, rozpoczynajac od indeksu 3
 list.RemoveAt(3); // usuniecie elementu o indeksie 3
 // 0, 1, 2, 9
 
-//dodawanie na koniec kolekcji elementów z innej kolekcji
+//dodawanie na koniec kolekcji elementow z innej kolekcji
 list.AddRange(list);
+// 0, 1, 2, 9, 0, 1, 2, 9
 ```
 
 #### `Dictionary<TKey, TValue>`
-Czyli słownik. Kolekcja, podobnie jak kolekcje `SortedList`, czy `Hashtable`, przechowywująca pary klucz - wartość. Zarówno klucz, jak i wartość może być dowolnego, podanego przez nas na początku, typu. Częstymi przykładami są słowniki przechowujące pary `<int, string>`, `<string, string>`, ale również zdefiniowane przez nas klasy np. `<int, Item>`. Elementy słownika nie są automatycznie posortowane. Poza metodami analogicznymi jak w liście, posiada on dodatkowo metody sprawdzające, czy słownik zawiera element o podanym kluczu (`slownik.ContainsKey(TKey key)`) lub wartości (`slownik.ContainsValue(TValue value)`), zwracające typ `bool` (`true`, jeśli zawiera, `false`, jeśli nie). Ciekawą metodą jest metoda `slownik.TryGetValue(TKey key, out TValue value)`, zwracająca wartość elementu o podanym kluczu, jeżeli został on znaleziony na liście. Oczywiście wartości kluczy w kolekcji nie mogą się powtarzać.
+Czyli słownik. Kolekcja, podobnie jak kolekcje `SortedList`, czy `Hashtable`, przechowuje pary klucz - wartość. Zarówno klucz, jak i wartość może być dowolnego, podanego przez nas na początku, typu. Częstymi przykładami są słowniki przechowujące pary `<int, string>`, `<string, string>`, ale również zdefiniowane przez nas klasy np. `<int, Item>`. Elementy słownika nie są automatycznie sortowane. Poza metodami analogicznymi jak w liście, posiada on dodatkowo metody sprawdzające, czy słownik zawiera element o podanym kluczu (`slownik.ContainsKey(TKey key)`) lub wartości (`slownik.ContainsValue(TValue value)`), zwracające typ `bool` (`true`, jeśli zawiera, `false`, jeśli nie). Ciekawą metodą jest metoda `slownik.TryGetValue(TKey key, out TValue value)`, zwracająca wartość elementu o podanym kluczu, jeżeli został on znaleziony na liście. Oczywiście wartości kluczy w kolekcji nie mogą się powtarzać.
 ##### Przykład
 ```csharp =
 Dictionary<int, Item> dictionary = new Dictionary<int, Item>();
@@ -4996,18 +4997,18 @@ Item apple = new Item(1, "Apple", 2), strawberry = new Item(2, "Strawberry", 2);
 stack.Push(apple);
 //stack: apple
 stack.Push(strawberry);
-//stack: strawberry, apple
+//stack: apple, strawberry
 
 Item item =  stack.Peek();
 //item: strawberry
-//stack: strawberry, apple
+//stack: apple, strawberry
 
 Item item2 = stack.Pop();
 //item2: strawberry
 //stack: apple
 ```
 
-## LEKCJA 3 – IQueryable i IEnumerable
+## [LEKCJA 3 – IQueryable i IEnumerable](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-3-iqueryable-i-ienumerable/)
 Są to główne interfejsy kolekcji używane do pracy z LINQ (więcej o LINQ w kolejnej lekcji). Są one podstawą do pracy z danymi. Najczęściej stosuje się je w stosunku do danych pobieranych z bazą danych. Oba interfejsy są do siebie bardzo podobne, a główna różnica między nimi, leży właśnie we współpracy z LINQ.
 
 ### Przykład
@@ -5124,7 +5125,7 @@ Z powodu tych różnic kolekcje `IQueryable` używamy zawsze, gdy kolekcje pobie
 | Pobieranie i filtrowanie kolekcji przy pomocy LINQ | pobiera przefiltrowaną kolekcję <br/> (filtrowanie po stronie bazy danych) | pobiera całą kolekcję, a następnie ją filtruje <br/> (filtrowanie po stronie aplikacji) |
 | Zastosowanie | pobieranie przefiltrowanych danych z bazy danych | manipulacja danymi znajdującymi się już w pamięci programu lub pobieranie danych w całości (np. z pliku - filtracja możliwa dopiero w aplikacji, po pobraniu wszystkich danych) |
 
-## LEKCJA 4 – LINQ podstawy
+## [LEKCJA 4 – LINQ podstawy](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-4-linq-podstawy/)
 LINQ (ang. _**L**anguage **IN**tegrated **Q**uery_) jest zbiorem metod rozszerzających służących do pracy z danymi (obiektami implementującymi interfejs `IQueryable`). Jest to właściwie podstawa współczesnego programowania. Jest używane głównie do zapisywania i odczytywania danych z bazy danych. Przy czym baza danych, nie musi być koniecznie bazą SQLową. Może być to dowolny obiekt zawierający dane (np. plik, dokument XML lub dowolne inne źródło danych) do którego odczytu (zapisu) mamy odpowiednią bibliotekę implementującą interfejs `IQueryable`. Dzięki temu nie interesuje nas skąd pochodzą dane. Niezależnie od źródła, operacje na danych (dodawanie, usuwanie itd.), wykonane przy pomocy LINQ, będą wyglądać tak samo.
 
 
@@ -5374,7 +5375,7 @@ public void Method()
 }
 ```
 
-## LEKCJA 5 – Manipulacje plikami
+## [LEKCJA 5 – Manipulacje plikami](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-5-manipulacje-plikami/)
 Aplikacje często korzystają z plików zewnętrznych. Pobieramy z nich dodatkowe informacje potrzebne do działania programu albo generujemy pliki zewnętrzne np. raporty, które będziemy chcieli potem rozesłać. Dlatego ważne jest, aby nauczyć się poprawnej pracy z plikami. Poznajmy więc podstawy odczytu i zapisu informacji do plików.
 ### Przykładowy plik
 Zrobimy to na podstawie pliku CSV (_Comma Separated Value_), czyli formatu pliku w którym przechowywane wartości oddzielone są od siebie przecinkami, a w jednej linii umieszcza się informacje dotyczące tylko jednego elementu. W naszym pliku będziemy przechowywać informacje potrzebne do stworzenia kilku obiektów typu `Item`.

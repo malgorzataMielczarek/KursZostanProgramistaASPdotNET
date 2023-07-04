@@ -1,5 +1,5 @@
 # [LEKCJA 2 – Kolekcje w .NET](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-2-kolekcje-w-net/)
-W naszych aplikacjach będziemy często korzystać z kolekcji. Są to swego rodzaju tablice, które przechowujemy na stercie. Wcześniej poznaliśmy już podstawowy typ kolekcji, czyli listę (`List<T>`). Jest ona najczęściej stosowanym typem kolekcji, jednak ma swoje ograniczenia. Może się więc zdarzyć, że do konkretnego celu bardziej odpowiedni będzie dla nas jeden z pozostałych typów. Warto więc po krótce poznać, kilka podstawowych typów.
+W naszych aplikacjach będziemy często korzystać z kolekcji. Są to swego rodzaju tablice, które przechowujemy na stercie. Wcześniej poznaliśmy już podstawowy typ kolekcji, czyli listę (`List<T>`). Jest ona najczęściej stosowanym typem kolekcji, jednak ma swoje ograniczenia. Może się więc zdarzyć, że do konkretnego celu bardziej odpowiedni będzie dla nas jeden z pozostałych typów. Warto więc pokrótce poznać, kilka podstawowych typów.
 
 W C# wyróżniamy dwa rodzaje typów obsługujących kolekcje (zbiór) danych.
 ## Kolekcje niegeneryczne
@@ -49,7 +49,7 @@ Służy do pobierania i usuwania pierwszego (dodanego jako pierwszy) elementu ko
 Służy do pobierania pierwszego (dodanego jako pierwszy) elementu kolejki, jednak bez jego usuwania.
 
 ### `Hashtable`
-Czyli tablica haszująca. Typ podobny do typu `SortedList`, również składający się z pary klucz - wartość. Tu jednak klucz jest typu `string`, a nie `int`, ale oczywiście wartości kluczy tu również nie mogą się powtarzać. W odróżnieniu od `SortedList` jej wartości nie są również w żaden sposób sortowane.
+Czyli tablica haszująca. Typ podobny do typu `SortedList`, również składający się z pary klucz - wartość. Tu jednak klucz jest typu `string`, a nie `int`, ale oczywiście wartości kluczy tu również nie mogą się powtarzać. W odróżnieniu od `SortedList` jej wartości nie są w żaden sposób sortowane.
 
 ```csharp =
 Hashtable hashtable = new Hashtable();
@@ -72,7 +72,7 @@ list.Add(3);
 list.Remove(3); // usuniecie elementu 3
 // 1, 2
 
-//usuwanie wszystkich elementów spełniających podany warunek
+//usuwanie wszystkich elementow spełniających podany warunek
 list.RemoveAll(item => item < 3);
 // 
 
@@ -82,7 +82,7 @@ for(int i = 0; i < 10; i++)
 }
 // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
-//usuwanie kilku elementów
+//usuwanie kilku elementow
 list.RemoveRange(3, 5); // 5 elementow, rozpoczynajac od indeksu 3
 // 0, 1, 2, 8, 9
 
@@ -90,12 +90,13 @@ list.RemoveRange(3, 5); // 5 elementow, rozpoczynajac od indeksu 3
 list.RemoveAt(3); // usuniecie elementu o indeksie 3
 // 0, 1, 2, 9
 
-//dodawanie na koniec kolekcji elementów z innej kolekcji
+//dodawanie na koniec kolekcji elementow z innej kolekcji
 list.AddRange(list);
+// 0, 1, 2, 9, 0, 1, 2, 9
 ```
 
 ### `Dictionary<TKey, TValue>`
-Czyli słownik. Kolekcja, podobnie jak kolekcje `SortedList`, czy `Hashtable`, przechowywująca pary klucz - wartość. Zarówno klucz, jak i wartość może być dowolnego, podanego przez nas na początku, typu. Częstymi przykładami są słowniki przechowujące pary `<int, string>`, `<string, string>`, ale również zdefiniowane przez nas klasy np. `<int, Item>`. Elementy słownika nie są automatycznie posortowane. Poza metodami analogicznymi jak w liście, posiada on dodatkowo metody sprawdzające, czy słownik zawiera element o podanym kluczu (`slownik.ContainsKey(TKey key)`) lub wartości (`slownik.ContainsValue(TValue value)`), zwracające typ `bool` (`true`, jeśli zawiera, `false`, jeśli nie). Ciekawą metodą jest metoda `slownik.TryGetValue(TKey key, out TValue value)`, zwracająca wartość elementu o podanym kluczu, jeżeli został on znaleziony na liście. Oczywiście wartości kluczy w kolekcji nie mogą się powtarzać.
+Czyli słownik. Kolekcja, podobnie jak kolekcje `SortedList`, czy `Hashtable`, przechowuje pary klucz - wartość. Zarówno klucz, jak i wartość może być dowolnego, podanego przez nas na początku, typu. Częstymi przykładami są słowniki przechowujące pary `<int, string>`, `<string, string>`, ale również zdefiniowane przez nas klasy np. `<int, Item>`. Elementy słownika nie są automatycznie sortowane. Poza metodami analogicznymi jak w liście, posiada on dodatkowo metody sprawdzające, czy słownik zawiera element o podanym kluczu (`slownik.ContainsKey(TKey key)`) lub wartości (`slownik.ContainsValue(TValue value)`), zwracające typ `bool` (`true`, jeśli zawiera, `false`, jeśli nie). Ciekawą metodą jest metoda `slownik.TryGetValue(TKey key, out TValue value)`, zwracająca wartość elementu o podanym kluczu, jeżeli został on znaleziony na liście. Oczywiście wartości kluczy w kolekcji nie mogą się powtarzać.
 #### Przykład
 ```csharp =
 Dictionary<int, Item> dictionary = new Dictionary<int, Item>();
@@ -165,11 +166,11 @@ Item apple = new Item(1, "Apple", 2), strawberry = new Item(2, "Strawberry", 2);
 stack.Push(apple);
 //stack: apple
 stack.Push(strawberry);
-//stack: strawberry, apple
+//stack: apple, strawberry
 
 Item item =  stack.Peek();
 //item: strawberry
-//stack: strawberry, apple
+//stack: apple, strawberry
 
 Item item2 = stack.Pop();
 //item2: strawberry
