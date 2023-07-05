@@ -1,5 +1,5 @@
 # [LEKCJA 3 – IQueryable i IEnumerable](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-3-iqueryable-i-ienumerable/)
-Są to główne interfejsy kolekcji używane do pracy z LINQ (więcej o LINQ w kolejnej lekcji). Są one podstawą do pracy z danymi. Najczęściej stosuje się je w stosunku do danych pobieranych z bazą danych. Oba interfejsy są do siebie bardzo podobne, a główna różnica między nimi, leży właśnie we współpracy z LINQ.
+Są to główne interfejsy kolekcji używane do pracy z LINQ (więcej o LINQ w kolejnej lekcji). Są one podstawą do pracy z danymi. Najczęściej stosuje się je w stosunku do danych pobieranych z bazy danych. Oba interfejsy są do siebie bardzo podobne, a główna różnica między nimi, leży właśnie we współpracy z LINQ.
 
 ## Przykład
 Napiszmy więc prosty przykład, który pomoże nam pokazać podstawową różnicę pomiędzy obydwoma interfejsami. Stworzymy w tym celu nową klasę `ItemService`. Jako naszą kolekcję wykorzystamy listę obiektów klasy `Item`. Ponieważ nie utworzyliśmy jeszcze żadnej bazy danych w nowo utworzonej klasie stworzymy pomocniczą metodę `Seed`, której zadaniem będzie stworzenie i zwrócenie przykładowych danych.
@@ -109,8 +109,8 @@ W przypadku kolekcji `IEnumerable` zapytanie SQLowe pozostanie natomiast bez zmi
 
 Z powodu tych różnic kolekcje `IQueryable` używamy zawsze, gdy kolekcje pobieramy z bazy danych. Kolekcje `IEnumerable` są natomiast stosowane, gdy dane mamy już w pamięci programu (np. zostały stworzone przez inny serwis aplikacji) lub tak czy inaczej musimy pobrać do pamięci programu wszystkie dane (np. dla tego, że pobieramy je z pliku, a nie z bazy danych).
 
-| Cecha | `IQueryable` | `IEnumerable` |
+| Cecha | `System.Linq.IQueryable<T>` | `System.Collections.Generic.IEnumerable<T>` |
 | ---: | :---: | :---: |
-| Implementuje | `IEnumerable` | tylko jedną metodę `IEnumerator<T> GetEnumerator()`, która pozwala iterować po kolekcji |
+| Implementuje | `IEnumerable<T>`, `IEnumerable`, `IQueryable` | tylko jedną metodę `IEnumerator<T> GetEnumerator()`, która pozwala iterować po kolekcji |
 | Pobieranie i filtrowanie kolekcji przy pomocy LINQ | pobiera przefiltrowaną kolekcję <br/> (filtrowanie po stronie bazy danych) | pobiera całą kolekcję, a następnie ją filtruje <br/> (filtrowanie po stronie aplikacji) |
 | Zastosowanie | pobieranie przefiltrowanych danych z bazy danych | manipulacja danymi znajdującymi się już w pamięci programu lub pobieranie danych w całości (np. z pliku - filtracja możliwa dopiero w aplikacji, po pobraniu wszystkich danych) |

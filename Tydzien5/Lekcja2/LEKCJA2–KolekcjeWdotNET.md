@@ -62,17 +62,17 @@ Tradycyjna lista przechowująca elementy podanego typu `T`. Jest to najczęście
 #### Przykład
 ```csharp =
 List<int> list = new List<int>();
-//dodawanie pojedynczych elementow
+// dodawanie pojedynczych elementow
 list.Add(1);
 list.Add(2);
 list.Add(3);
 // 1, 2, 3
 
-//usuwanie pojedynczych elementow
+// usuwanie pojedynczych elementow
 list.Remove(3); // usuniecie elementu 3
 // 1, 2
 
-//usuwanie wszystkich elementow spełniających podany warunek
+// usuwanie wszystkich elementow spełniajacych podany warunek
 list.RemoveAll(item => item < 3);
 // 
 
@@ -82,15 +82,15 @@ for(int i = 0; i < 10; i++)
 }
 // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
-//usuwanie kilku elementow
+// usuwanie kilku elementow
 list.RemoveRange(3, 5); // 5 elementow, rozpoczynajac od indeksu 3
 // 0, 1, 2, 8, 9
 
-//usuwanie elementu o okreslonym indeksie
+// usuwanie elementu o okreslonym indeksie
 list.RemoveAt(3); // usuniecie elementu o indeksie 3
 // 0, 1, 2, 9
 
-//dodawanie na koniec kolekcji elementow z innej kolekcji
+// dodawanie na koniec kolekcji elementow z innej kolekcji
 list.AddRange(list);
 // 0, 1, 2, 9, 0, 1, 2, 9
 ```
@@ -144,17 +144,17 @@ Czyli kolejka. Jest to uporządkowana kolekcja, realizująca zasadę FIFO (_Firs
 Queue<Item> queue = new Queue<Item>();
 Item apple = new Item(1, "Apple", 2), strawberry = new Item(2, "Strawberry", 2);
 queue.Enqueue(apple);
-//queue: apple
+// queue: apple
 queue.Enqueue(strawberry);
-//queue: apple, strawberry
+// queue: apple, strawberry
 
 Item item =  queue.Peek();
-//item: apple
-//queue: apple, strawberry
+// item: apple
+// queue: apple, strawberry
 
 Item item2 = queue.Dequeue();
-//item2: apple
-//queue: strawberry
+// item2: apple
+// queue: strawberry
 ```
 
 ### `Stack<T>`
@@ -164,15 +164,15 @@ Czyli stos. Jest to uporządkowana kolekcja, realizująca zasadę LIFO (_Last In
 Stack<Item> stack = new Stack<Item>();
 Item apple = new Item(1, "Apple", 2), strawberry = new Item(2, "Strawberry", 2);
 stack.Push(apple);
-//stack: apple
+// stack: apple
 stack.Push(strawberry);
-//stack: apple, strawberry
+// stack: apple, strawberry
 
 Item item =  stack.Peek();
-//item: strawberry
-//stack: apple, strawberry
+// item: strawberry
+// stack: apple, strawberry
 
 Item item2 = stack.Pop();
-//item2: strawberry
-//stack: apple
+// item2: strawberry
+// stack: apple
 ```

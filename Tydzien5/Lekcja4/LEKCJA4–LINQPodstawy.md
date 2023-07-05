@@ -77,6 +77,7 @@ Powyższa instrukcja LINQ oznacza:
 1. Z elementu `i` (lokalna nazwa zmiennej przechowującej obecnie przetwarzany element kolekcji) kolekcji `list`
 2. gdzie `i.Quantity >= 500`
 3. zwróć cały ten element.
+
 Czyli podsumowując: Zwróć wszystkie elementy kolekcji `list`, których `Quantity` wynosi przynajmniej `500`.
 
 To samo moglibyśmy zapisać przy pomocy pętli `foreach` i warunku `if`. Wyglądałoby to mniej więcej tak:
@@ -156,15 +157,18 @@ Elementy kolekcji możemy również posortować, według wybranej właściwości
 public void Method()
 {
     List<Item> list = Seed();
-    //sortowanie wdlug rosnacego Id
+    
+    // sortowanie wdlug rosnacego Id
     var itemsIdAsc = from i in list
                 orderby i.Id ascending
                 select i;
-    //sortowanie wdlug malejącego Id
+    
+    // sortowanie wdlug malejacego Id
     var itemsIdAsc = from i in list
                 orderby i.Id descending
                 select i;
-    //sortowanie według rosnącego TypeId i rosnącego Id
+    
+    // sortowanie wedlug rosnacego TypeId i rosnacego Id
     var itemsIdAsc = from i in list
                 orderby i.TypeId ascending
                 orderby i.Id ascending
@@ -177,11 +181,14 @@ public void Method()
 public void Method()
 {
     List<Item> list = Seed();
-    //sortowanie wdlug rosnacego Id
+    
+    // sortowanie wdlug rosnacego Id
     var itemsIdAsc = list.OrderBy(i => i.Id);
-    //sortowanie wdlug malejącego Id
+    
+    // sortowanie wdlug malejacego Id
     var itemsIdDesc = list.OrderByDescending(i => i.Id);
-    //sortowanie według rosnącego TypeId i rosnącego Id
+    
+    // sortowanie wedlug rosnacego TypeId i rosnacego Id
     var itemsTypeIdAscIdAsc = list.OrderBy(i => i.TypeId).ThenBy(i => i.Id);
 }
 ```
@@ -193,17 +200,17 @@ Do tej pory, za każdym razem zwracaliśmy całe elementy kolekcji. Możemy jedn
 public void Method()
 {
     List<Item> list = Seed();
-    //wyszukiwanie Id elementów, o Quantity przynajmniej 500
+
+    // wyszukiwanie Id elementow, o Quantity przynajmniej 500
     var items = (from i in list
                 where i.Quantity >= 500
-                select i.Id).ToList();  //items jest typu List<int>
+                select i.Id).ToList();  // items jest typu List<int>
 
-    //wyszukiwanie Id i Name elementów, o Quantity przynajmniej 500
+    // wyszukiwanie Id i Name elementow, o Quantity przynajmniej 500
     var items = (from i in list
                 where i.Quantity >= 500
                 select new { IdOfElement = i.Id, NameOfElement = i.Name }).ToList();  
-                //items jest typu List<'a>,
-                    //gdzie 'a jest typem anonimowym składajacym się z dwoch elementow: int IdOfElement i string NameOfElement
+                // items jest typu List<'a>, gdzie 'a jest typem anonimowym skladajacym sie z dwoch elementow: int IdOfElement i string NameOfElement
 }
 ```
 
@@ -212,13 +219,13 @@ public void Method()
 public void Method()
 {
     List<Item> list = Seed();
-    //wyszukiwanie Id elementów, o Quantity przynajmniej 500
-    var items = list.Where(i => i.Quantity >= 500).Select(i => i.Id).ToList();  //items jest typu List<int>
+
+    // wyszukiwanie Id elementow, o Quantity przynajmniej 500
+    var items = list.Where(i => i.Quantity >= 500).Select(i => i.Id).ToList();  // items jest typu List<int>
     
-    //wyszukiwanie Id i Name elementów, o Quantity przynajmniej 500
+    // wyszukiwanie Id i Name elementow, o Quantity przynajmniej 500
     var items = list.Where(i => i.Quantity >= 500).Select(i => new { IdOfElement = i.Id, NameOfElement = i.Name }).ToList();  
-        //items jest typu List<'a>,
-            //gdzie 'a jest typem anonimowym składajacym się z dwoch elementow: int IdOfElement i  string NameOfElement
+        // items jest typu List<'a>, gdzie 'a jest typem anonimowym skladajacym sie z dwoch elementow: int IdOfElement i string NameOfElement
 }
 ```
 
@@ -229,8 +236,9 @@ Do tej pory za każdym razem zwracaliśmy kolekcję elementów. Może nas jednak
 public void Method()
 {
     List<Item> list = Seed();
-    //wyszukiwanie elementu, o Id rownym 1 (pierwszego takiego elementu w kolekcji, czyli new Item(1, "TShirt", 3){Quantity = 200})
-    var selectedItem = list.FirstOrDefault(i => i.Id == 1); //selectedItem jest typu Item
+
+    // wyszukiwanie elementu, o Id rownym 1 (pierwszego takiego elementu w kolekcji, czyli new Item(1, "TShirt", 3) { Quantity = 200 })
+    var selectedItem = list.FirstOrDefault(i => i.Id == 1); // selectedItem jest typu Item
 }
 ```
 
@@ -240,10 +248,11 @@ Powyższa metoda niema swojego odpowiednika w składni _query_. Jeżeli chcemy m
 public void Method()
 {
     List<Item> list = Seed();
-    //wyszukiwanie elementu, o Id rownym 1 (pierwszego takiego elementu w kolekcji, czyli new Item(1, "TShirt", 3){Quantity = 200})
+
+    // wyszukiwanie elementu, o Id rownym 1 (pierwszego takiego elementu w kolekcji, czyli new Item(1, "TShirt", 3) { Quantity = 200 })
     var selectedItem = (from i in list select i).FirstOrDefault(i => i.Id == 1);
-    //lub
+    // lub
     selectedItem = (from i in list where i.Id == 1 select i).FirstOrDefault();
-        //selectedItem jest typu Item
+    // W obu przypadkach selectedItem jest typu Item
 }
 ```
