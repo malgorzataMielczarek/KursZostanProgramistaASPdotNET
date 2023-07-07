@@ -401,8 +401,9 @@ public void Method()
 2. Następnie również tworzymy bufor bajtów. Tym razem będzie on jednak zawierał informacje, które chcemy zapisać. Aby zakodować `string`, jako tablicę bajtów, ponownie sięgamy do klasy `System.Text.Encoding`, a właściwie do dziedziczącej po niej klasy `System.Text.UTF8Encoding`. Implementuje ona metodę `GetBytes`, która koduje podany `string` na bajty, przy pomocy kodowania UTF-8 i zwraca uzyskane wartości jako tablicę.
 3. Tym razem nie musimy więc tworzyć pętli, tylko możemy od razu zapisać wszystkie informacje.
 
-> **Uwaga!!!**
-> Należy pamiętać, że metoda `Write` zapisuje dane do strumienia rozpoczynając od aktualnej pozycji strumienia. Ponieważ otwarcie strumienia pliku metodą `File.Open` w trybie `FileMode.Open` otwiera plik i ustawia pozycję strumienia na jego początku, oznacza to, że dane znajdujące się na początku pliku zostaną nadpisane przez nowe dane, a dalsza część pliku pozostanie bez zmian. Kiedy chcemy dopisać dane na końcu pliku, tak, aby obecna zawartość pliku pozostała nienaruszona, musimy zastosować modyfikator `Append`, jak to zrobiliśmy w powyższym przykładzie. Możemy również użyć opcji `Truncate`, gdybyśmy chcieli usunąć zawartość pliku i wstawić do niego wyłącznie nowe dane.
+| :warning:**UWAGA!** |
+| :---: |
+| Należy pamiętać, że metoda `Write` zapisuje dane do strumienia rozpoczynając od aktualnej pozycji strumienia. Ponieważ otwarcie strumienia pliku metodą `File.Open` w trybie `FileMode.Open` otwiera plik i ustawia pozycję strumienia na jego początku, oznacza to, że dane znajdujące się na początku pliku zostaną nadpisane przez nowe dane, a dalsza część pliku pozostanie bez zmian. Kiedy chcemy dopisać dane na końcu pliku, tak, aby obecna zawartość pliku pozostała nienaruszona, musimy zastosować modyfikator `Append`, jak to zrobiliśmy w powyższym przykładzie. Możemy również użyć opcji `Truncate`, gdybyśmy chcieli usunąć zawartość pliku i wstawić do niego wyłącznie nowe dane. |
 
 Po zakończeniu zapisu metodą `Write`, pozycja strumienia jest ustawiona w miejscu zakończenia zapisu.
 
@@ -416,8 +417,9 @@ lub
 ```csharp =
 using StreamWriter sw = new StreamWriter(@"C:\Temp\items.csv");
 ```
-> **Uwaga!!!**
-> Jeżeli używamy konstruktora przyjmującego ścieżkę do pliku i taki plik już istnieje, to zostanie on nadpisany. W przeciwnym razie, plik zostanie utworzony.
+| :warning:**UWAGA!** |
+| :---: |
+| Jeżeli używamy konstruktora przyjmującego ścieżkę do pliku i taki plik już istnieje, to zostanie on nadpisany. W przeciwnym razie, plik zostanie utworzony. |
 
 Obiekt klasy `StreamWriter` można również utworzyć wywołując metodę `CreateText` na obiekcie klasy `FileInfo`:
 ```csharp =
@@ -428,8 +430,9 @@ lub jej statycznej wersji z klasy `File`:
 ```csharp =
 using StreamWriter sw = File.CreateText(@"C:\Temp\items.csv");
 ```
-> **Uwaga!!!**
-> Wywołanie tej metody powoduje utworzenie nowego pliku (nadpisanie pliku, jeżeli już istnieje).
+| :warning:**UWAGA!** |
+| :---: |
+| Wywołanie tej metody powoduje utworzenie nowego pliku (nadpisanie pliku, jeżeli już istnieje). |
 
 Jeżeli chcemy dopisać tekst do istniejącego pliku możemy natomiast skorzystać z metody `AppendText`:
 ```csharp =
@@ -440,8 +443,9 @@ lub w wersji statycznej:
 ```csharp =
 using StreamWriter sw = File.AppendText(@"C:\Temp\items.csv");
 ```
-> **Uwaga!!!**
-> Wywołanie tej metody powoduje otwarcie istniejącego pliku i ustawienie się na jego końcu lub, gdy jeszcze nie istnieje, utworzenie nowego pliku.
+| :warning:**UWAGA!** |
+| :---: |
+| Wywołanie tej metody powoduje otwarcie istniejącego pliku i ustawienie się na jego końcu lub, gdy jeszcze nie istnieje, utworzenie nowego pliku. |
 
 Klasa posiada różne metody do zapisu tekstu do strumienia bajtów.
 #### `Write`
