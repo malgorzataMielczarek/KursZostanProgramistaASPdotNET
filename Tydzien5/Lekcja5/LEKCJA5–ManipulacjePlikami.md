@@ -432,7 +432,7 @@ using StreamWriter sw = File.CreateText(@"C:\Temp\items.csv");
 ```
 | :warning:**UWAGA!** |
 | :---: |
-| Wywołanie tej metody powoduje utworzenie nowego pliku (nadpisanie pliku, jeżeli już istnieje). |
+| Wywołanie tej metody powoduje utworzenie nowego pliku (nadpisanie pliku, jeżeli już istnieje). Plik o podanej ścieżce nie musi istnieć, ale musi istnieć katalog w którym się on znajduje. |
 
 Jeżeli chcemy dopisać tekst do istniejącego pliku możemy natomiast skorzystać z metody `AppendText`:
 ```csharp =
@@ -445,7 +445,7 @@ using StreamWriter sw = File.AppendText(@"C:\Temp\items.csv");
 ```
 | :warning:**UWAGA!** |
 | :---: |
-| Wywołanie tej metody powoduje otwarcie istniejącego pliku i ustawienie się na jego końcu lub, gdy jeszcze nie istnieje, utworzenie nowego pliku. |
+| Wywołanie tej metody powoduje otwarcie istniejącego pliku i ustawienie się na jego końcu lub, gdy jeszcze nie istnieje, utworzenie nowego pliku. Plik o podanej nazwie nie musi istnieć, ale musi istnieć katalog, w którym ten plik ma się znaleźć. |
 
 Klasa posiada różne metody do zapisu tekstu do strumienia bajtów.
 #### `Write`
