@@ -1,0 +1,2 @@
+# [LEKCJA 9 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-5-praca-z-danymi/lekcja-9-praca-domowa/)
+W tym tygodniu, do naszej aplikacji dodajmy pracę z plikami. Przenieśmy część danych z kodu do pliku i wczytajmy je z niego. Zapiszmy też jakieś dane do pliku, np. wynik działania naszej aplikacji, wynik rozgrywki, raport itp.
