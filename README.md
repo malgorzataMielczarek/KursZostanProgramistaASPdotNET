@@ -6267,10 +6267,6 @@ Jeżeli chcemy zmienić sposób serializowania np. jakiegoś typu danych, używa
 ##### Użycie atrybutów - wybór właściwości do serializacja
 Podobnie jak to było w przypadku biblioteki do serializowania obiektów do XML, biblioteka `Newtonsoft.Json` umożliwia nam również przypisanie atrybutów do poszczególnych właściwości. Jeśli więc chcielibyśmy otrzymać wynik zbliżony do pokazanego w przykładzie na początku tej lekcji, musimy zmodyfikować kod naszej klasy `Item` dodając atrybuty:
 ```csharp =
-
-```
-Wówczas wywołując metodę:
-```csharp =
 namespace NazwaAplikacji.Domain.Entity
 {
     public class Item
@@ -6322,6 +6318,10 @@ namespace NazwaAplikacji.Domain.Entity
         }
     }
 }
+```
+Wówczas wywołując metodę:
+```csharp =
+string output = JsonConvert.SerializeObject(list, Formatting.Indented);
 ```
 Otrzymamy `string`:
 ```json =
