@@ -1,0 +1,2 @@
+# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-6-aplikacje-webowe-w-asp-net-core/lekcja-1-powitanie/)
+W tym tygodniu zaczniemy tworzyć aplikację webową w ASP.NET Core. Poznamy wszystkie elementy wzorca MVC (_Model-View-Controller_) i dowiemy się w jaki sposób realizuje się tzw. czystą architekturę (ang. _Clean architecture_) nowoczesnych aplikacji internetowych. Poznamy więc podstawy organizacji naszej przyszłej aplikacji.
