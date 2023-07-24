@@ -1,4 +1,12 @@
 # Kurs "Zostań programistą ASP.NET" - notatki
+Notatki z poszczególnych tygodni:
+* [TYDZIEŃ 1 – PLAN GRY](Tydzien1/Tydzien1-PlanGry.md)
+* [TYDZIEŃ 2 – Podstawy języka C#](Tydzien2/Tydzien2-PodstawyJezykaC%23.md)
+* [TYDZIEŃ 3 – Programowanie obiektowe](Tydzien3/Tydzien3-ProgramowanieObiektowe.md)
+* [TYDZIEŃ 4 – Testowanie](Tydzien4/Tydzien4-Testowanie.md)
+* [TYDZIEŃ 5 – Praca z danymi](Tydzien5/Tydzien5-PracaZDanymi.md)
+* [TYDZIEŃ 6 – Aplikacje webowe w ASP.NET Core](Tydzien6/Tydzien6-AplikacjeWeboweWASP.NETCore.md)
+
 ## Spis treści
 ### Tydzien1
 #### [BONUS 1 – Tworzenie Repozytorium GitHub](#bonus-1--tworzenie-repozytorium-github-1)
