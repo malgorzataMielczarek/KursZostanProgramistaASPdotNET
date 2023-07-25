@@ -28,7 +28,7 @@ Aby ułatwić sobie szukanie możemy ustawić filtry kolejno na
         * _None_ - standardowo wybrana opcja, oznaczająca brak zarządzania użytkownikami,
         * **_Individual Accounts_** - oznacza, że będziemy tworzyć użytkowników w naszej bazie danych. Będziemy w niej mieć specjalne table _AspNetUserRoles_, _AspNetUsers_ itd. Na nasze potrzeby wybierzemy tą właśnie opcję.
         * _Microsoft identity platform_ - wybieramy, gdy chcemy skorzystać z zewnętrznych źródeł uwierzytelniania, np. mamy skonfigurowane usługi _Azure Active Directory B2C_ (_Azure AD B2C_), _IdentityServer_ itd.
-        * _Windows_ - oznacza uwierzytelnienie przy pomocy użytkowników domenowych. Jeżeli tworzymy aplikację do wewnętrznego użytku np. w firmie i mamy skonfigurowaną domeną _Active Directory_, to możemy wybrać uwierzytelnianie Windowsowe i będziemy mogli bez problemu skomunikować się z domeną.
+        * _Windows_ - oznacza uwierzytelnienie przy pomocy użytkowników domenowych. Jeżeli tworzymy aplikację do wewnętrznego użytku np. w firmie i mamy skonfigurowaną domenę _Active Directory_, to możemy wybrać uwierzytelnianie Windowsowe i będziemy mogli bez problemu skomunikować się z domeną.
     * _Configure for HTTPS_ - zaznaczamy czy chcemy, aby nasza aplikacja używała połączenia szyfrowanego przez protokół HTTPS. Zawsze powinniśmy zostawiać tą opcję zaznaczoną.
     * Enable Docker - zaznaczamy tą opcję jeśli będziemy chcieli skonteneryzować naszą aplikację (skorzystać z Dockera). Na razie nie będziemy z niego korzystać, więc zostawiamy tą opcję odznaczoną.
     * _Do not use top-level statements_ - omawialiśmy już tą opcję przy okazji tworzenia projektu konsolowego. Jeśli chcemy uprościć wygląd naszego pliku _Program.cs_, to możemy ją wybrać. Jak kto chce.
