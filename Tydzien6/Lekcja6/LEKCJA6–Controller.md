@@ -219,13 +219,6 @@ Używamy gdy chcemy usunąć jakiś element. Przesyłamy wtedy np. samo id. Mogl
 
 Nie musimy stosować żądań HttpDelete i HttpPut, gdyż ich funkcję mogą z powodzeniem wykonać żądania HttpGet iHttpPut. Są one jedynie dodatkowym potwierdzeniem.
 
-[^webdav]: WebDAV (_Web Distributed Authoring and Versioning_) jest rozszerzeniem protokołu HTTP pozwalającym na zarządzanie i kontrolę wersji plików na serwerze WWW. Standard ten dodaje do protokołu HTTP takie metody jak:
-* PROPFIND - pobierz własności zasobu
-* PROPPATCH - zmień lub skasuj różne własności zasobu w atomowej operacji
-* MKCOL - utwórz "kolekcję" (katalog)
-* COPY - skopiuj zasób z jednego adresu na drugi
-* MOVE - przenieś zasób z jednego adresu na drugi
-* LOCK - zablokuj zasób (zarówno dzielone jak i wyłączne blokady)
-* UNLOCK - usuń blokadę z zasobu
+[^webdav]: WebDAV (_Web Distributed Authoring and Versioning_) jest rozszerzeniem protokołu HTTP pozwalającym na zarządzanie i kontrolę wersji plików na serwerze WWW. Standard ten dodaje do protokołu HTTP takie metody jak:<ul><li>PROPFIND - pobierz własności zasobu</li><li>PROPPATCH - zmień lub skasuj różne własności zasobu w atomowej operacji</li><li>MKCOL - utwórz "kolekcję" (katalog)</li><li>COPY - skopiuj zasób z jednego adresu na drugi</li><li>MOVE - przenieś zasób z jednego adresu na drugi</li><li>LOCK - zablokuj zasób (zarówno dzielone jak i wyłączne blokady)</li><li>UNLOCK - usuń blokadę z zasobu</li></ul>
 
 [^ietf]: Internet Engineering Task Force - nieformalne, międzynarodowe stowarzyszenie osób zainteresowanych ustanawianiem standardów technicznych i organizacyjnych w Internecie oraz sieciami komputerowymi.
