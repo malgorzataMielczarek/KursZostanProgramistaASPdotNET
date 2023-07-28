@@ -80,14 +80,6 @@ Innym kodem z którym często się stykamy jest kod 400 (Bad Request), informuj�
 ##### [Kody statusów HTTP](https://www.restapitutorial.com/httpstatuscodes.html#)
 Definiują one odpowiedzi jakie może wysłać serwer w odpowiedzi na otrzymane żądanie. Kody podzielono na klasy kodów, zawierające odpowiedzi o podobnym zastosowaniu. W poniższej tabeli przedstawiono kody z podziałem na klasy. Pogrubiono numery kodów, które są najczęściej używane.
 
-WebDav (_Web Distributed Authoring and Versioning_) jest rozszerzeniem protokołu HTTP pozwalającym na zarządzanie i kontrolę wersji plików na serwerze WWW. Standard ten dodaje do protokołu HTTP takie metody jak:
-* PROPFIND - pobierz własności zasobu
-* PROPPATCH - zmień lub skasuj różne własności zasobu w atomowej operacji
-* MKCOL - utwórz "kolekcję" (katalog)
-* COPY - skopiuj zasób z jednego adresu na drugi
-* MOVE - przenieś zasób z jednego adresu na drugi
-* LOCK - zablokuj zasób (zarówno dzielone jak i wyłączne blokady)
-* UNLOCK - usuń blokadę z zasobu
 <table>
 <thead><tr><th style="text-align:center">Klasa kodów</th><th style="text-align:center">Nazwa EN</th><th style="text-align:center">Nazwa PL</th><th style="text-align:center">Opis</th></tr></thead>
 <tbody>
@@ -101,7 +93,7 @@ Rozwiń kody klasy 1xx
 | ---: | :---: | :---: | --- |
 | 100 | _Continue_ | Kontynuuj | Wskazuje, że klient powinien kontynuować swoje zapytanie.<br /> Taka odpowiedź może zostać wysłana, aby poinformować klienta, że otrzymano początkową część zapytania i nie została ona jeszcze odrzucona przez serwer. Klient powinien kontynuować wysyłanie reszty zapytania, lub zignorować tą odpowiedź, jeżeli całe zapytanie zostało już wysłane. Po zakończeniu obsługi zapytania, serwer musi wysłać ostateczną odpowiedź. |
 | 101 | _Switching Protocols_ | Przełącz protokoły |Oznacza, że serwer zrozumiał i jest gotowy zrealizować wysłaną prośbę o zmianę protokołu.<br />Serwer zmieni protokół na ten o który proszono, zaraz za pustą linią znajdującą się na końcu tej odpowiedzi.<br />Protokół powinien zostać zamieniony, gdy jest to korzystne, np. gdy poproszono o nowszą wersję HTTP. |
-| 102 | _Processing (WebDAV)_ | Przetwarzanie | Jest to tymczasowa odpowiedź używana do poinformowania klienta, że serwer zaakceptował całe żądanie, ale jeszcze go nie ukończył.<br />Ten kod stanu powinien zostać wysłany tylko wtedy, gdy serwer ma uzasadnione oczekiwania, że wykonanie żądania zajmie dużo czasu. Jako wskazówka, jeśli wykonanie metody trwa dłużej niż 20 sekund, serwer powinien zwrócić tą odpowiedź. Serwer musi wysłać ostateczną odpowiedź po zakończeniu przetwarzania żądania. Jest ona np. wysyłana aby zapobiec automatycznemu wylogowaniu użytkownika z powodu przekroczenia czasu, gdy czeka on na odpowiedź. |
+| 102 | _Processing (WebDAV[^WebDAV])_ | Przetwarzanie | Jest to tymczasowa odpowiedź używana do poinformowania klienta, że serwer zaakceptował całe żądanie, ale jeszcze go nie ukończył.<br />Ten kod stanu powinien zostać wysłany tylko wtedy, gdy serwer ma uzasadnione oczekiwania, że wykonanie żądania zajmie dużo czasu. Jako wskazówka, jeśli wykonanie metody trwa dłużej niż 20 sekund, serwer powinien zwrócić tą odpowiedź. Serwer musi wysłać ostateczną odpowiedź po zakończeniu przetwarzania żądania. Jest ona np. wysyłana aby zapobiec automatycznemu wylogowaniu użytkownika z powodu przekroczenia czasu, gdy czeka on na odpowiedź. |
 </details></td></tr>
 <tr><th style="text-align:center">2xx</th><td style="text-align:center"><i>Success</i></td><td style="text-align:center">Sukces</td><td>Kody tej klasy oznaczają, że żądanie klienta zostało pomyślnie przyjęte, zrozumiane i przetworzone.</td></tr>
 <tr><td colspan=5><details>
@@ -116,8 +108,8 @@ Rozwiń kody klasy 1xx
 | **204** | **_No Content_** | **Brak zawartości** | Serwer spełnił żądanie, ale nie musi zwracać entity-body i może chcieć zwrócić zaktualizowane metainformacje.<br />Odpowiedź może zawierać nowe lub zaktualizowane metainformacje w postaci nagłówków encji, które, jeśli są obecne, powinny być powiązane z żądanym wariantem.<br />Jeśli klient jest przeglądarką, nie powinien zmieniać widoku swojego dokumentu z tego, który spowodował wysłanie żądania. Ta odpowiedź ma przede wszystkim na celu umożliwienie wykonania akcji, bez powodowania zmian w aktywnym widoku dokumentu, chociaż wszelkie nowe lub zaktualizowane metainformacje powinny zostać do niego zastosowane.<br />Odpowiedź nie może zawierać message-body, dlatego jest zawsze zakończona pierwszą pustą linią po polach nagłówka. |
 | 205 | _Reset Content_ | Resetuj zawartość | Serwer spełnił żądanie, a agent użytkownika powinien zresetować widok dokumentu, który spowodował wysłanie żądania.<br />Tą odpowiedź stosuje się, aby przeprowadzić akcję za pośrednictwem danych wprowadzonych przez użytkownika, po której następuje wyczyszczenie inputów na dane wejściowe, aby użytkownik mógł łatwo wprowadzić kolejne dane.<br />Odpowiedź nie może zawierać entity. |
 | 206 | _Partial Content_ | Częściowa zawartość | Serwer wykonał żądanie GET o część zasobu. |
-| 207 | _Multi-Status (WebDAV)_ | Multi-Status | Zapewnia status dla wielu niezależnych operacji.<br />Treść wiadomości, która następuje po niej, jest wiadomością XML i może zawierać kilka oddzielnych kodów odpowiedzi, w zależności od liczby złożonych żądań podrzędnych. |
-| 208 | _Already Reported (WebDAV)_ | Już zgłoszone | Członkowie powiązania DAV zostali już wymienieni w poprzedniej odpowiedzi na to żądanie i nie są uwzględniani ponownie.<br />Kod używany wewnątrz elementu odpowiedzi DAV: propstat. |
+| 207 | _Multi-Status (WebDAV[^WebDAV])_ | Multi-Status | Zapewnia status dla wielu niezależnych operacji.<br />Treść wiadomości, która następuje po niej, jest wiadomością XML i może zawierać kilka oddzielnych kodów odpowiedzi, w zależności od liczby złożonych żądań podrzędnych. |
+| 208 | _Already Reported (WebDAV[^WebDAV])_ | Już zgłoszone | Członkowie powiązania DAV zostali już wymienieni w poprzedniej odpowiedzi na to żądanie i nie są uwzględniani ponownie.<br />Kod używany wewnątrz elementu odpowiedzi DAV: propstat. |
 | 226 | _IM Used_| Użyto manipulacji instancji | Serwer wypełnił żądanie GET o zasób, a odpowiedź jest reprezentacją rezultatu jednej lub więcej manipulacji instancji, wykonanych na obecnej instancji.<br />Rzeczywista aktualna instancja może nie być dostępna, chyba, że przez połączenie odpowiedzi z innymi poprzednimi lub przyszłymi odpowiedziami. |
 </details></td></tr>
 <tr><th style="text-align:center">3xx</th><td style="text-align:center"><i>Redirection</i></td><td style="text-align:center">Przekierowanie</td><td>Ta klasa kodów stanu wskazuje, że agent użytkownika musi podjąć dalsze działania, aby spełnić żądanie.<br/>Wymagane działanie może zostać przeprowadzone przez agenta użytkownika bez interakcji z użytkownikiem wtedy i tylko wtedy, gdy metodą użytą w drugim żądaniu jest GET lub HEAD. Klient powinien wykrywać nieskończone pętle przekierowań, ponieważ takie pętle generują ruch sieciowy dla każdego przekierowania.<br /><b>Uwaga!</b> Poprzednie wersje tej specyfikacji zalecały maksymalnie pięć przekierowań. Twórcy treści powinni mieć świadomość, że mogą istnieć klienci, którzy wprowadzają takie stałe ograniczenie.</td></tr>
@@ -161,12 +153,12 @@ Jeśli odpowiedź może być nieakceptowalna, agent użytkownika powinien tymcza
 | 415 | _Unsupported Media Type_ | Nieobsługiwany typ nośnika | Serwer odmawia obsługi żądania, ponieważ przesłany obiekt ma format nieobsługiwany przez żądany zasób dla żądanej metody.<br />Na przykład klient przesyła obraz jako image/svg+xml, ale serwer wymaga, aby obrazy używały innego formatu. |
 | 416 | _Requested Range Not Satisfiable_ | Żądany zakres nie jest zadowalający | Klient zażądał części zasobu, spoza jego zakresu.<br />Serwer powinien zwrócić odpowiedź z tym kodem stanu, jeśli żądanie zawierało pole nagłówka _Range_ i żadna z wartości specyfikatora zakresu w tym polu nie pokrywa się z bieżącym zasięgiem wybranego zasobu, a żądanie nie zawierać pole nagłówka żądania If-Range. (Dla zakresów bajtów oznacza to, że pozycja pierwszego bajtu wszystkich wartości specyfikacji zakresu bajtów była większa niż bieżąca długość wybranego zasobu).<br />Kiedy ten kod stanu jest zwracany dla żądania zakresu bajtów, odpowiedź powinna zawierać pole nagłówka Content-Range określające aktualną długość wybranego zasobu. Ta odpowiedź nie może używać zawartości typu multipart/byteranges.<br />Serwer powinien zwrócić tą odpowiedź przykładowo, gdy klient poprosił o część pliku, która znajduje się poza końcem pliku. |
 | 417 | _Expectation Failed_ | Nie spełnione oczekiwanie | Serwer nie może spełnić wymagań podanych w polu Expect nagłówka żądania.<bbr />Oczekiwanie podane w polu Expect nagłówka nie mogło zostać spełnione przez ten serwer lub, jeśli serwer jest proxy, serwer ma jednoznaczny dowód, że żądanie nie mogło zostać spełnione przez serwer następnego przeskoku. |
-| 418 | _I'm a teapot (RFC 2324)_ |  |  |
-| 420 | _Enhance Your Calm (Twitter)_ |  |  |
-| 422 | _Unprocessable Entity (WebDAV)_ |  |  |
-| 423 | _Locked (WebDAV)_ |  |  |
-| 424 | _Failed Dependency (WebDAV)_ |  |  |
-| 425 | _Reserved for WebDAV_ |  |  |
+| 418 | _I'm a teapot (RFC 2324)_ | Jestem czajniczkiem | Kod będący żartem.<br />Ten kod został zdefiniowany w 1998 roku jako jeden z tradycyjnych primaaprilisowych żartów IETF[^IETF] w RFC 2324 (Hyper Text Coffee Pot Control Protocol) i nie oczekuje się, że zostanie zaimplementowany przez rzeczywiste serwery HTTP. Istnieją jednak znane implementacje. Serwer HTTP Nginx używa tego kodu do symulacji zachowania podobnego do goto w swojej konfiguracji. |
+| 420 | _Enhance Your Calm (Twitter)_ | Zwiększ swój spokój | Kod własny Twittera.<br />Zwracany przez _Twitter Search and Trends API_ gdy klient ma ograniczoną szybkość. Tekst jest cytatem z filmu „Człowiek demolka”, a kod „420” jest prawdopodobnie odniesieniem do związku tej liczby z marihuaną. Zamiast tego inne usługi mogą chcieć zaimplementować kod odpowiedzi 429. |
+| 422 | _Unprocessable Entity (WebDAV[^WebDAV])_ | Nieprzetwarzalne entity | Żądanie było dobrze sformułowane, ale nie można było go wykonać z powodu błędów semantycznych.<br />Serwer rozumie typ zawartości encji żądania (stąd kod stanu 415 jest niewłaściwy), a składnia encji żądania jest poprawna (stąd kod stanu 400 jest niewłaściwy), ale nie był w stanie przetworzyć zawartych instrukcji. Na przykład ten warunek błędu może wystąpić, jeśli treść żądania XML zawiera dobrze sformułowane (tj. poprawne składniowo), ale semantycznie błędne instrukcje XML. |
+| 423 | _Locked (WebDAV[^WebDAV])_ |  |  |
+| 424 | _Failed Dependency (WebDAV[^WebDAV])_ |  |  |
+| 425 | _Reserved for WebDAV[^WebDAV]_ |  |  |
 | 426 | _Upgrade Required_ |  |  |
 | 428 | _Precondition Required_ |  |  |
 | 429 | _Too Many Requests_ |  |  |
@@ -190,8 +182,8 @@ Jeśli odpowiedź może być nieakceptowalna, agent użytkownika powinien tymcza
 | 504 | _Gateway Timeout_ |  |  |
 | 505 | _HTTP Version Not Supported_ |  |  |
 | 506 | _Variant Also Negotiates (Experimental)_ |  |  |
-| 507 | _Insufficient Storage (WebDAV)_ |  |  |
-| 508 | _Loop Detected (WebDAV)_ |  |  |
+| 507 | _Insufficient Storage (WebDAV[^WebDAV])_ |  |  |
+| 508 | _Loop Detected (WebDAV[^WebDAV])_ |  |  |
 | 509 | _Bandwidth Limit Exceeded (Apache)_ |  |  |
 | 510 | _Not Extended_ |  |  |
 | 511 | _Network Authentication Required_ |  |  |
@@ -227,3 +219,14 @@ Używamy gdy chcemy usunąć jakiś element. Przesyłamy wtedy np. samo id. Mogl
 Żądanie zbliżone z HttpPost, związane jednak z tworzeniem nowego obiektu. Przy pomocy HttpPost możemy np. modyfikować istniejący obiekt, natomiast HttpPut będzie zazwyczaj oznaczał dodanie nowego rekordu do bazy danych.
 
 Nie musimy stosować żądań HttpDelete i HttpPut, gdyż ich funkcję mogą z powodzeniem wykonać żądania HttpGet iHttpPut. Są one jedynie dodatkowym potwierdzeniem.
+
+[^WebDAV]: WebDAV (_Web Distributed Authoring and Versioning_) jest rozszerzeniem protokołu HTTP pozwalającym na zarządzanie i kontrolę wersji plików na serwerze WWW. Standard ten dodaje do protokołu HTTP takie metody jak:
+* PROPFIND - pobierz własności zasobu
+* PROPPATCH - zmień lub skasuj różne własności zasobu w atomowej operacji
+* MKCOL - utwórz "kolekcję" (katalog)
+* COPY - skopiuj zasób z jednego adresu na drugi
+* MOVE - przenieś zasób z jednego adresu na drugi
+* LOCK - zablokuj zasób (zarówno dzielone jak i wyłączne blokady)
+* UNLOCK - usuń blokadę z zasobu
+
+[^IETF]: Internet Engineering Task Force - nieformalne, międzynarodowe stowarzyszenie osób zainteresowanych ustanawianiem standardów technicznych i organizacyjnych w Internecie oraz sieciami komputerowymi.
