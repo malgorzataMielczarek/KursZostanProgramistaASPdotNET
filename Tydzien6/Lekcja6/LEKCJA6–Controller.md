@@ -168,21 +168,21 @@ Rozwiń kody klasy 1xx
 | 451 | _Unavailable For Legal Reasons_ | Niedostępne z powodów prawnych | Przeznaczony do użycia w przypadku odmowy dostępu do zasobów z powodów prawnych.<br />Przykładami powodów prawnych może być cenzura lub zablokowanie dostępu przez rząd.<br />Numer kodu jest odniesieniem do dystopijnej powieści Fahrenheit 451 z 1953 roku, w której książki są zakazane, a temperatura samozapłonu papieru wynosi 451°F. |
 | 499 | _Client Closed Request (Nginx)_ | Klienckie żądanie zamknięcia | Połączenie zamknięte przez klienta.<br />Rozszerzenie serwera HTTP Nginx. Ten kod jest wprowadzany w celu rejestrowania przypadku, gdy połączenie jest zamykane przez klienta, gdy serwer HTTP przetwarza swoje żądanie, uniemożliwiając serwerowi odesłanie nagłówka HTTP. |
 </details></td></tr>
-<tr><th style="text-align:center">5xx</th><td style="text-align:center"><i>Server Error</i></td><td style="text-align:center"></td><td></td></tr>
+<tr><th style="text-align:center">5xx</th><td style="text-align:center"><i>Server Error</i></td><td style="text-align:center">Błąd serwera</td><td>Klasa kodów stanu, wskazująca na przypadki, w których serwer ma świadomość, że popełnił błąd lub nie jest w stanie wykonać żądania.<br />Z wyjątkiem odpowiedzi na żądanie HEAD, serwer powinien zawierać wyjaśnienie sytuacji błędu oraz informację, czy jest to stan tymczasowy, czy stały. Aplikacje klienckie powinny wyświetlać użytkownikowi wszelkie uzyskane w odpowiedzi informacje. Kody tej klasy mają zastosowanie do dowolnej metody żądania.</td></tr>
 <tr><td colspan=5><details>
 <summary style="text-align:center">Rozwiń kody klasy 5xx</summary>
 
 | Kod | Nazwa EN | Nazwa PL | Opis |
 | ---: | :---: | :---: | --- |
-| **500** | **_Internal Server Error_** | **** |  |
-| 501 | _Not Implemented_ |  |  |
-| 502 | _Bad Gateway_ |  |  |
-| 503 | _Service Unavailable_ |  |  |
-| 504 | _Gateway Timeout_ |  |  |
-| 505 | _HTTP Version Not Supported_ |  |  |
-| 506 | _Variant Also Negotiates (Experimental)_ |  |  |
-| 507 | _Insufficient Storage (WebDAV[^webdav])_ |  |  |
-| 508 | _Loop Detected (WebDAV[^webdav])_ |  |  |
+| **500** | **_Internal Server Error_** | **Wewnętrzny błąd serwera** | Ogólny błąd typu catch-all, gdy serwer zgłasza wyjątek.<br />Oznacza, że serwer napotkał nieoczekiwany stan, który uniemożliwił mu wykonanie żądania.<br />Jest używany, gdy żaden bardziej szczegółowy komunikat nie jest odpowiedni. |
+| 501 | _Not Implemented_ | Niewdrożone | Serwer nie obsługuje funkcji wymaganych do realizacji żądania.<br />Jest to właściwa odpowiedź, gdy serwer nie rozpoznaje metody żądania i nie jest w stanie jej obsłużyć dla żadnego zasobu. |
+| 502 | _Bad Gateway_ | Zła bramka | Serwer, działając jako brama lub serwer proxy, otrzymał nieprawidłową odpowiedź od serwera nadrzędnego, do którego uzyskał dostęp, próbując spełnić żądanie. |
+| 503 | _Service Unavailable_ | Usługa niedostępna | Serwer obecnie nie może obsłużyć żądania z powodu tymczasowego przeciążenia lub konserwacji serwera.<br />Oznacza to, że jest to stan tymczasowy, który zostanie złagodzony po pewnym czasie. Jeśli jest znana, długość opóźnienia może być wskazana w nagłówku Retry-After. Jeśli nie podano Retry-After, klient powinien obsłużyć odpowiedź tak, jak w przypadku odpowiedzi 500.<br />**Uwaga!** Istnienie kodu stanu 503 nie oznacza, że serwer musi go używać w przypadku przeciążenia. Niektóre serwery mogą chcieć po prostu odrzucić połączenie. |
+| 504 | _Gateway Timeout_ | Upłynął limit czasu bramki | Serwer, działając jako brama lub serwer proxy, nie otrzymał na czas odpowiedzi od serwera nadrzędnego.<br />Serwer nadrzędny jest określony przez URI. Może to być np. serwer HTTP, FTP, LDAP lub inny serwer pomocniczy, np. DNS. Serwer otrzymujący żądanie potrzebował uzyskać dostęp do serwera nadrzędnego w celu realizacji żądania.<br />**Uwaga!** Niektóre wdrożone serwery proxy zwracają 400 lub 500, gdy upłynie limit czasu wyszukiwania DNS. |
+| 505 | _HTTP Version Not Supported_ | Wersja HTTP nie jest obsługiwana | Serwer nie obsługuje lub odmawia obsługi wersji protokołu HTTP użytej w komunikacie żądania.<br />Serwer wskazuje, że nie może lub nie chce wykonać żądania przy użyciu tej samej wersji głównej co klient inaczej niż za pomocą tego komunikatu o błędzie. Odpowiedź powinna zawierać element opisujący, dlaczego ta wersja nie jest obsługiwana i jakie inne protokoły są obsługiwane przez ten serwer. |
+| 506 | _Variant Also Negotiates (Experimental)_ | Wariant również negocjuje | Przejrzysta negocjacja treści dla żądania skutkuje odwołaniem cyklicznym.<br />Kod eksperymentalny wskazujący, że serwer ma wewnętrzny błąd konfiguracji: wybrany zasób wariantu jest skonfigurowany do angażowania się w przejrzystą negocjację zawartości, a zatem nie jest właściwym punktem końcowym procesu negocjacji. |
+| 507 | _Insufficient Storage (WebDAV[^webdav])_ | Za mało pamięci | Serwer nie może zapisać reprezentacji potrzebnej do zrealizowania żądania.<br />Oznacza, że nie można wykonać metody na zasobie, ponieważ serwer nie może przechowywać reprezentacji potrzebnej do pomyślnego wykonania żądania. Ten stan jest uważany za tymczasowy. Jeśli żądanie, które otrzymało ten kod stanu, było wynikiem działania użytkownika, nie wolno go powtarzać, dopóki nie zażąda tego oddzielne działanie użytkownika. |
+| 508 | _Loop Detected (WebDAV[^webdav])_ | Wykryto pętlę | Serwer zakończył operację, ponieważ napotkał nieskończoną pętlę podczas przetwarzania żądania z _Depth: infinity_.<br />Ten stan wskazuje, że cała operacja nie powiodła się. |
 | 509 | _Bandwidth Limit Exceeded (Apache)_ |  |  |
 | 510 | _Not Extended_ |  |  |
 | 511 | _Network Authentication Required_ |  |  |
