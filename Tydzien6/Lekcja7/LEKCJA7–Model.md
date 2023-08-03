@@ -88,6 +88,7 @@ Pozostałe opcje zostawiamy w tej chwili tak jak są i klikamy _Add_. Spowoduje 
 ```
 
 Na górze wygenerowanego widoku możemy zobaczyć, że modelem dla niego jest właśnie lista `Item`ów. Poniżej mamy m.in. stworzoną tabelę HTML. W jej nagłówku znajdą się nazwy wszystkich właściwości klasy `Item`, a w ciele wartości, jakie przyjmą te właściwości dla kolejnych obiektów. W ostatniej kolumnie tabeli zostaną umieszczone linki do edycji (`"Edit"` - edytuj, `"Details"` - szczegóły, `"Delete"` - usuń). Ponieważ na razie nie mamy jeszcze utworzonych tych akcji będę to tylko szablony do późniejszego wypełnienia. Nasz nowo stworzony widok po wyświetleniu będzie wyglądał mniej więcej tak:
+
 ![Wygląd widoku w przeglądarce](Ilustracje/DisplayedView.png)<br />
 _Rysunek 1 Wygląd nowostworzonego widoku w przeglądarce_
 
