@@ -1,7 +1,7 @@
 # [LEKCJA 3 – Code first](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-7-bazy-danych/lekcja-3-code-first/)
 _Code first_ jest metodą tworzenia baz danych prawie całkowicie z poziomu kodu aplikacji.
 
-Kiedyś standardowo mieliśmy bardzo duże rozróżnienie pomiędzy programistami webowymi a programistami baz danych. Oczywiście w dużych projektach wymagających optymalizacji praca programistów baz danych dalej jest nieoceniona. Jednak dzięki nowoczesnym narzędziom takim jak _Entity Framework Core_ w prostszych projektach programiści webowi radzą sobie sami, nawet przy niewielkiej znajomości SQLa.
+Kiedyś standardowo mieliśmy bardzo duże rozróżnienie pomiędzy programistami webowymi a programistami baz danych. Oczywiście w dużych projektach wymagających optymalizacji praca programistów baz danych dalej jest nieoceniona. Jednak dzięki nowoczesnym narzędziom takim jak _Entity Framework Core_ w prostszych projektach programiści webowi radzą sobie sami, nawet przy niewielkiej znajomości SQL-a.
 
 Kiedyś aby utworzyć bazę danych standardowo łączyliśmy się bezpośrednio z naszym silnikiem bazodanowym (np. Microsoft SQL Server np. przez Microsoft SQL Server Management Studio) i tworzyliśmy tam bezpośrednio nową bazę danych i nasze tabele. Następnie można było wrócić do kodu naszej aplikacji, gdzie przy pomocy _Entity Framework_ łączyliśmy się z utworzoną bazą danych i generowaliśmy modele. Takie podejście nazywa się _database first_. Czyli najpierw tworzymy wszystkie tabele i relacje między nimi w naszej bazie danych, a dopiero potem przechodzimy do kodu. Programistą jednak takie podejście się nie podobało. Nie chcieli oni być skazani na pracę bezpośrednio na silniku bazodanowym, a zlecanie tworzenia klas modeli zewnętrznemu narzędzi. Szczególnie, że _Entity Framework_ działało według własnych schematów i wygenerowane przy jego pomocy klasy nie do końca odpowiadały wymaganiom programistów. Trzeba je było zatem jeszcze później poprawiać. Dlatego w nowej wersji _Entity Framework_ (_Core_) zaimplementowano podejście _code first_.
 
@@ -62,7 +62,7 @@ public class Item
     public virtual Type Type { get; set; }
 }
 ```
-Widzimy tu, że każdy obiekt `Item` jest powiązany z dokładnie jednym obiektem `Type`. Relacja jest jednak dwustronna. Tutaj mamy do czynienia z najbardziej podstawowym typem relacji, czyli tzw. relacja jeden do wielu. Oznacza to, że Jeden obiekt `Type` może być w relacji z wieloma obiektami `Item`. Musimy więc jeszcze zmodyfikować naszą klasę `Type`, aby muc w niej przechowywać powiązaną z danym obiektem `Type` kolekcję obiektów `Item`:
+Widzimy tu, że każdy obiekt `Item` jest powiązany z dokładnie jednym obiektem `Type`. Relacja jest jednak dwustronna. Tutaj mamy do czynienia z najbardziej podstawowym typem relacji, czyli tzw. relacja jeden do wielu. Oznacza to, że Jeden obiekt `Type` może być w relacji z wieloma obiektami `Item`. Musimy więc jeszcze zmodyfikować naszą klasę `Type`, aby móc w niej przechowywać powiązaną z danym obiektem `Type` kolekcję obiektów `Item`:
 ```csharp =
 public class Type
 {

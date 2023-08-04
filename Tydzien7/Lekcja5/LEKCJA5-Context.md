@@ -1,7 +1,7 @@
 # [LEKCJA 5 – Context](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-7-bazy-danych/lekcja-5-context/)
 Kontekst jest to specjalna klasa wymagana przez _Entity Framework Core_ definiująca tabele i relacje jakie mają zostać utworzone w bazie danych. Pozwala ona na zmapowanie stworzonych przez nas modeli domenowych na tabele bazodanowe. Tworzy sesję z bazą danych i umożliwia wysyłanie zapytań, pobieranie i modyfikację danych w bazie danych.
 
-Kontekst zależy od typu używanego silnika bazodanowego (np. od paczki _Microsoft.EntityFrameworkCore.SqlServer_) oraz od użytego ORM-a (np. _Entity Framework Core_). Dlatego też utworzymy go w projekcie _.Infrastructure_ (bezpośrednio w projekcie, a nie w folderze). Dzięki temu nasze modele mogą byś bez problemu używane przez aplikację, nawet jeśli w pewnym momencie zdecydujemy się na użycie innego silnika bazodanowego, czy innego ORM-a. Będziemy wówczas musieli jedynie podmienić nasz projekt _.Infrastructure_, bez wpływu na resztę aplikacji.
+Kontekst zależy od typu używanego silnika bazodanowego (np. od paczki _Microsoft.EntityFrameworkCore.SqlServer_) oraz od użytego ORM-a (np. _Entity Framework Core_). Dlatego też utworzymy go w projekcie _.Infrastructure_ (bezpośrednio w projekcie, a nie w folderze). Dzięki temu nasze modele mogą być bez problemu używane przez aplikację, nawet jeśli w pewnym momencie zdecydujemy się na użycie innego silnika bazodanowego, czy innego ORM-a. Będziemy wówczas musieli jedynie podmienić nasz projekt _.Infrastructure_, bez wpływu na resztę aplikacji.
 
 Stworzymy zwykłą publiczną klasę i nazwiemy ją `Context`. W przypadku _Entity Framework Core_ musi ona dziedziczyć po klasie _Microsoft.EntityFrameworkCore.DbContext_. Zawiera ona najbardziej podstawową implementację kontekstu. Ponieważ jednak zaznaczyliśmy, że chcemy przeprowadzać autoryzację użytkowników przy pomocy _Individual Accounts_, to nasza klasa `Context` będzie dziedziczyć po bardziej rozbudowanej klasie bazowej `Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`. Poza implementacją podstawowych funkcjonalności kontekstu, zawiera ona odpowiednią implementację wspierającą ten typ autoryzacji. Stwórzmy więc odpowiednią klasę, np.:
 ```csharp =
@@ -16,7 +16,7 @@ namespace TitlesOrganizer.Infrastructure
     }
 }
 ```
-Będzie to wymagało doinstalowania jeszcze jednej paszki (_Microsoft.AspNetCore.Identity.EntityFrameworkCore_).
+Będzie to wymagało doinstalowania jeszcze jednej paczki (_Microsoft.AspNetCore.Identity.EntityFrameworkCore_).
 
 W naszej nowej klasie musimy utworzyć jeszcze odpowiedni konstruktor, który umożliwi inicjalizację podstawowych funkcjonalności kontekstu zaimplementowaną w konstruktorze bazowej klasy `DbContext`:
 ```csharp =
@@ -26,7 +26,7 @@ public Context(DbContextOptions options) : base(options)
 ```
 Jeżeli nasza baza danych może być zmapowana wyłącznie przy użyciu konwencji _Entity Framework Core_ to wystarczy jeszcze tylko dodać właściwości z naszymi DbSetami.
 ## `DbSet<TEntity>`
-Jest to klasa pozwalająca na zapytywanie i zapisywanie instancji `TEntity`. Zapytania LINQ wykonywane na `DbSet<TEntity>` będą tłumaczone na zapytania na bazie danych. Pozwala więc nam na utworzenie na podstawie modeli domenowych odpowiednich tabeli w bazie danych i wykonywanie na nich operacji. W naszej klasie `Context` tworzymy więc właściwość `DbSet` dla każdej tabeli bazodanowej (dla każdego modelu domenowego). Np. jeśli mamy modele
+Jest to klasa pozwalająca na zapytywanie i zapisywanie instancji `TEntity`. Zapytania LINQ wykonywane na `DbSet<TEntity>` będą tłumaczone na zapytania na bazie danych. Pozwala więc nam na utworzenie na podstawie modeli domenowych odpowiednich tabel w bazie danych i wykonywanie na nich operacji. W naszej klasie `Context` tworzymy więc właściwość `DbSet` dla każdej tabeli bazodanowej (dla każdego modelu domenowego). Np. jeśli mamy modele
 
 `Book` (książka):
 ```csharp =

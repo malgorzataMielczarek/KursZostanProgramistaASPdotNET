@@ -129,18 +129,18 @@ W tym przykładzie będziemy musieli mieć klucz złożony.
 
 Rekordy (wiersze tabeli) nie powinny zależeć od niczego innego, niż od klucza głównego.
 #### Przykład
-Znormalizujmy dalej naszą przykładową tabelę do drugiej postaci normalnej. Wyodrębnijmy więc adresy do oddzielnej tabeli. Czyli zamiast tabel Customer:
+Znormalizujmy dalej naszą przykładową tabelę do drugiej postaci normalnej. Wyodrębnijmy więc adresy do oddzielnej tabeli. Czyli zamiast tabeli Customers:
 Id|Name|NIP|City|Address|ZIP
 --:|:-:|:-:|:--|:--|:--
 1|Examplex|154742373|Przykładno|ul. Źródłowa 15f/4|54-294
 1|Examplex|154742373|Probowo|up. Druga 2|93-850
 
-będziemy mieć dwie tabele, Customer:
+będziemy mieć dwie tabele, Customers:
 Id|Name|NIP
 --:|:-:|:-:
 1|Examplex|154742373
 
-i Address:
+i Addresses:
 Id|City|Address|ZIP|CustomerId
 --:|:-|:--|:--|:--:
 1|Przykładno|ul. Źródłowa 15f/4|54-294|1
@@ -152,31 +152,31 @@ powiązane relacją jeden do wielu.
 
 Miejsce wartości w tabeli, które nie zależą od klucza, nie jest w tej tabeli. Generalnie, jeżeli istnieje prawdopodobieństwo, że zawartość grupy pól może mieć zastosowanie do więcej niż jednego rekordu w tabeli, należy zastanowić się nad umieszczeniem ich w osobnej tabeli.
 #### Przykład
-Gdybyśmy chcieli znormalizować nasz przykład do trzeciej postaci normalnej moglibyśmy wyodrębnić np. nazwy miast, kody pocztowe i nazwy ulic do osobnych tabeli, gdyż możemy mieć wiele adresów z tego samego miasta, kodu pocztowego i tej samej ulicy. Czyli zamiast Address:
+Gdybyśmy chcieli znormalizować nasz przykład do trzeciej postaci normalnej moglibyśmy wyodrębnić np. nazwy miast, kody pocztowe i nazwy ulic do osobnych tabeli, gdyż możemy mieć wiele adresów z tego samego miasta, kodu pocztowego i tej samej ulicy. Czyli zamiast Addresses:
 Id|City|Address|ZIP|CustomerId
 --:|:-|:--|:--|:--:
 1|Przykładno|ul. Źródłowa 15f/4|54-294|1
 2|Probowo|up. Druga 2|93-850|1
 
-mielibyśmy City:
+mielibyśmy Cities:
 Id|Name
 --:|:--
 1|Przykładno
 2|Probowo
 
-Zip:
+Zips:
 Id|No|CityId
 --:|:--|:-:
 1|54-294|1
 2|93-850|2
 
-Street:
+Streets:
 Id|Name|ZIPId
 --:|:--|:--:
 1|ul. Źródłowa|1
 2|ul. Druga|2
 
-i Address:
+i Addresses:
 Id|StreetId|Local|CustomerId
 --:|:-:|:--|:--:
 1|1|15f/4|1
@@ -184,4 +184,4 @@ Id|StreetId|Local|CustomerId
 
 | :warning:**UWAGA!** |
 | :---: |
-|Do powyższych zasad należy się jednak stosować, gdy ma to sens. Trzecią formę normalną stosuje się przykładowo tylko dla często zmieniających się danych. Np. przeprowadzona w powyższym przykładzie normalizacja do trzeciej postaci normalnej niema sensu. Miało by ono sens, gdyby nazwy ulic, czy miejscowości często się zmieniały. Wówczas takie poprawki musielibyśmy nanieść tylko w jednym miejscu, zamiast w wielu rekordach. Ponieważ jednak zdarza się to sporadycznie i prawdopodobieństwo konieczności naniesienia takich poprawek jest bliskie zeru, więc lepiej pozostawić naszą tabelę Address w drugiej postaci normalnej. Szczególnie, że wiele małych tabel może obniżać wydajność lub przekraczać pojemność otwartych plików i pamięci. Wyodrębnienie nazw miast, kodów pocztowych itd. mogłoby mieć jeszcze sens, gdybyśmy mieli w bazie z góry zdefiniowaną listę miast, kodów itp. Wówczas wprowadzając nowy adres klienta będziemy np. wybierać dane z rozwijanej listy, zamiast wpisywać ręcznie, co zmniejszy ryzyko błędu.|
+|Do powyższych zasad należy się stosować, gdy ma to sens. Trzecią formę normalną stosuje się przykładowo tylko dla często zmieniających się danych. Np. przeprowadzona w powyższym przykładzie normalizacja do trzeciej postaci normalnej niema sensu. Miałaby ono sens, gdyby nazwy ulic, czy miejscowości często się zmieniały. Wówczas takie poprawki musielibyśmy nanieść tylko w jednym miejscu, zamiast w wielu rekordach. Ponieważ jednak zdarza się to sporadycznie i prawdopodobieństwo konieczności naniesienia takich poprawek jest bliskie zeru, więc lepiej pozostawić naszą tabelę Addresses w drugiej postaci normalnej. Szczególnie, że wiele małych tabel może obniżać wydajność lub przekraczać pojemność otwartych plików i pamięci. Wyodrębnienie nazw miast, kodów pocztowych itd. mogłoby mieć jeszcze sens, gdybyśmy mieli w bazie z góry zdefiniowaną listę miast, kodów itp. Wówczas wprowadzając nowy adres klienta będziemy np. wybierać dane z rozwijanej listy, zamiast wpisywać ręcznie, co zmniejszy ryzyko błędu.|

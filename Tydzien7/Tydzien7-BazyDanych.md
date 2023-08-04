@@ -37,12 +37,12 @@ Ogólnie będziemy chcieli zainstalować 3 paczki:
 Po wyszukaniu odpowiedniej paczki instalujemy ją. Jeżeli otworzyliśmy menadżer dla całej solucji (pierwsza opcja z pierwszego punktu), to musimy jeszcze wybrać projekt dla którego chcemy wykonać instalację. Zaznaczamy wówczas nasz projekt _.Infrastructure_.
 
 ### _Entity Framework Core_ vs. _Entity Framework_
-Zanim powstał .NET Core mieliśmy do dyspozycji _Entity Framework_. Obecnie został on zastąpiony przez napisany od nowa ORM _Entity Framework Core_. Przynajmniej na razie nie zostały w nim zaimplementowane wszystkie funkcjonalności z ostatniej (6.) wersji _Entity Framework_. Najważniejsze elementy, takie jak kontekst bazy danych, DbSety, czyli obiekty, które mapowane są na tabele bazy danych (dzięki nim mamy prostą możliwość dodawania, usuwania i wyszukiwania elementów w bazie danych), oczywiście działają. Dodatkowo mamy możliwość migracji, co ułatwia podejście _Code First_. Nie mamy natomiast kilku elementów takich jak chociażby automatyczne migracje (podczas uruchamiania projektu), czy część funkcjonalności związanych z leniwym ładowaniem (_lazy loading_) dla relacyjnych tabel. Istnieją jednak sposoby na obejście tych braków. Jest jednak kilka rzeczy, których nie było w _Entity Framework_, a które dodano do _Entity Framework Core_. Jest to między innymi baza danych _In-Memory_, czyli prosty framework do testowania połączenia z bazą danych (Obecnie trwa dyskusja, czy programiści testować części aplikacji w jakikolwiek sposób związane z _Entity Framework Core_, gdyż są to już wówczas de facto testy integracyjne, a nie jednostkowe.). Innym ważnym elementem, który dodano, jest standardowe wsparcie dla _Inversion of Control_, czyli dla implementacji _Dependenci Injection_, dzięki czemu można ją używać bez żadnych dodatkowych konfiguracji.
+Zanim powstał .NET Core mieliśmy do dyspozycji _Entity Framework_. Obecnie został on zastąpiony przez napisany od nowa ORM _Entity Framework Core_. Przynajmniej na razie nie zostały w nim zaimplementowane wszystkie funkcjonalności z ostatniej (6.) wersji _Entity Framework_. Najważniejsze elementy, takie jak kontekst bazy danych, DbSety, czyli obiekty, które mapowane są na tabele bazy danych (dzięki nim mamy prostą możliwość dodawania, usuwania i wyszukiwania elementów w bazie danych), oczywiście działają. Dodatkowo mamy możliwość migracji, co ułatwia podejście _Code First_. Nie mamy natomiast kilku elementów takich jak chociażby automatyczne migracje (podczas uruchamiania projektu), czy część funkcjonalności związanych z leniwym ładowaniem (_lazy loading_) dla relacyjnych tabel. Istnieją jednak sposoby na obejście tych braków. Jest jednak kilka rzeczy, których nie było w _Entity Framework_, a które dodano do _Entity Framework Core_. Jest to między innymi baza danych _In-Memory_, czyli prosty framework do testowania połączenia z bazą danych (Obecnie trwa dyskusja, czy programiści powinni testować części aplikacji w jakikolwiek sposób związane z _Entity Framework Core_. Są to bowiem de facto testy integracyjne, a nie jednostkowe.). Innym ważnym elementem, który dodano, jest standardowe wsparcie dla _Inversion of Control_, czyli dla implementacji _Dependenci Injection_, dzięki czemu można ją używać bez żadnych dodatkowych konfiguracji.
 
 ## [LEKCJA 3 – Code first](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-7-bazy-danych/lekcja-3-code-first/)
 _Code first_ jest metodą tworzenia baz danych prawie całkowicie z poziomu kodu aplikacji.
 
-Kiedyś standardowo mieliśmy bardzo duże rozróżnienie pomiędzy programistami webowymi a programistami baz danych. Oczywiście w dużych projektach wymagających optymalizacji praca programistów baz danych dalej jest nieoceniona. Jednak dzięki nowoczesnym narzędziom takim jak _Entity Framework Core_ w prostszych projektach programiści webowi radzą sobie sami, nawet przy niewielkiej znajomości SQLa.
+Kiedyś standardowo mieliśmy bardzo duże rozróżnienie pomiędzy programistami webowymi a programistami baz danych. Oczywiście w dużych projektach wymagających optymalizacji praca programistów baz danych dalej jest nieoceniona. Jednak dzięki nowoczesnym narzędziom takim jak _Entity Framework Core_ w prostszych projektach programiści webowi radzą sobie sami, nawet przy niewielkiej znajomości SQL-a.
 
 Kiedyś aby utworzyć bazę danych standardowo łączyliśmy się bezpośrednio z naszym silnikiem bazodanowym (np. Microsoft SQL Server np. przez Microsoft SQL Server Management Studio) i tworzyliśmy tam bezpośrednio nową bazę danych i nasze tabele. Następnie można było wrócić do kodu naszej aplikacji, gdzie przy pomocy _Entity Framework_ łączyliśmy się z utworzoną bazą danych i generowaliśmy modele. Takie podejście nazywa się _database first_. Czyli najpierw tworzymy wszystkie tabele i relacje między nimi w naszej bazie danych, a dopiero potem przechodzimy do kodu. Programistą jednak takie podejście się nie podobało. Nie chcieli oni być skazani na pracę bezpośrednio na silniku bazodanowym, a zlecanie tworzenia klas modeli zewnętrznemu narzędzi. Szczególnie, że _Entity Framework_ działało według własnych schematów i wygenerowane przy jego pomocy klasy nie do końca odpowiadały wymaganiom programistów. Trzeba je było zatem jeszcze później poprawiać. Dlatego w nowej wersji _Entity Framework_ (_Core_) zaimplementowano podejście _code first_.
 
@@ -103,7 +103,7 @@ public class Item
     public virtual Type Type { get; set; }
 }
 ```
-Widzimy tu, że każdy obiekt `Item` jest powiązany z dokładnie jednym obiektem `Type`. Relacja jest jednak dwustronna. Tutaj mamy do czynienia z najbardziej podstawowym typem relacji, czyli tzw. relacja jeden do wielu. Oznacza to, że Jeden obiekt `Type` może być w relacji z wieloma obiektami `Item`. Musimy więc jeszcze zmodyfikować naszą klasę `Type`, aby muc w niej przechowywać powiązaną z danym obiektem `Type` kolekcję obiektów `Item`:
+Widzimy tu, że każdy obiekt `Item` jest powiązany z dokładnie jednym obiektem `Type`. Relacja jest jednak dwustronna. Tutaj mamy do czynienia z najbardziej podstawowym typem relacji, czyli tzw. relacja jeden do wielu. Oznacza to, że Jeden obiekt `Type` może być w relacji z wieloma obiektami `Item`. Musimy więc jeszcze zmodyfikować naszą klasę `Type`, aby móc w niej przechowywać powiązaną z danym obiektem `Type` kolekcję obiektów `Item`:
 ```csharp =
 public class Type
 {
@@ -246,18 +246,18 @@ W tym przykładzie będziemy musieli mieć klucz złożony.
 
 Rekordy (wiersze tabeli) nie powinny zależeć od niczego innego, niż od klucza głównego.
 ##### Przykład
-Znormalizujmy dalej naszą przykładową tabelę do drugiej postaci normalnej. Wyodrębnijmy więc adresy do oddzielnej tabeli. Czyli zamiast tabel Customer:
+Znormalizujmy dalej naszą przykładową tabelę do drugiej postaci normalnej. Wyodrębnijmy więc adresy do oddzielnej tabeli. Czyli zamiast tabeli Customers:
 Id|Name|NIP|City|Address|ZIP
 --:|:-:|:-:|:--|:--|:--
 1|Examplex|154742373|Przykładno|ul. Źródłowa 15f/4|54-294
 1|Examplex|154742373|Probowo|up. Druga 2|93-850
 
-będziemy mieć dwie tabele, Customer:
+będziemy mieć dwie tabele, Customers:
 Id|Name|NIP
 --:|:-:|:-:
 1|Examplex|154742373
 
-i Address:
+i Addresses:
 Id|City|Address|ZIP|CustomerId
 --:|:-|:--|:--|:--:
 1|Przykładno|ul. Źródłowa 15f/4|54-294|1
@@ -269,31 +269,31 @@ powiązane relacją jeden do wielu.
 
 Miejsce wartości w tabeli, które nie zależą od klucza, nie jest w tej tabeli. Generalnie, jeżeli istnieje prawdopodobieństwo, że zawartość grupy pól może mieć zastosowanie do więcej niż jednego rekordu w tabeli, należy zastanowić się nad umieszczeniem ich w osobnej tabeli.
 ##### Przykład
-Gdybyśmy chcieli znormalizować nasz przykład do trzeciej postaci normalnej moglibyśmy wyodrębnić np. nazwy miast, kody pocztowe i nazwy ulic do osobnych tabeli, gdyż możemy mieć wiele adresów z tego samego miasta, kodu pocztowego i tej samej ulicy. Czyli zamiast Address:
+Gdybyśmy chcieli znormalizować nasz przykład do trzeciej postaci normalnej moglibyśmy wyodrębnić np. nazwy miast, kody pocztowe i nazwy ulic do osobnych tabeli, gdyż możemy mieć wiele adresów z tego samego miasta, kodu pocztowego i tej samej ulicy. Czyli zamiast Addresses:
 Id|City|Address|ZIP|CustomerId
 --:|:-|:--|:--|:--:
 1|Przykładno|ul. Źródłowa 15f/4|54-294|1
 2|Probowo|up. Druga 2|93-850|1
 
-mielibyśmy City:
+mielibyśmy Cities:
 Id|Name
 --:|:--
 1|Przykładno
 2|Probowo
 
-Zip:
+Zips:
 Id|No|CityId
 --:|:--|:-:
 1|54-294|1
 2|93-850|2
 
-Street:
+Streets:
 Id|Name|ZIPId
 --:|:--|:--:
 1|ul. Źródłowa|1
 2|ul. Druga|2
 
-i Address:
+i Addresses:
 Id|StreetId|Local|CustomerId
 --:|:-:|:--|:--:
 1|1|15f/4|1
@@ -301,12 +301,12 @@ Id|StreetId|Local|CustomerId
 
 | :warning:**UWAGA!** |
 | :---: |
-|Do powyższych zasad należy się jednak stosować, gdy ma to sens. Trzecią formę normalną stosuje się przykładowo tylko dla często zmieniających się danych. Np. przeprowadzona w powyższym przykładzie normalizacja do trzeciej postaci normalnej niema sensu. Miało by ono sens, gdyby nazwy ulic, czy miejscowości często się zmieniały. Wówczas takie poprawki musielibyśmy nanieść tylko w jednym miejscu, zamiast w wielu rekordach. Ponieważ jednak zdarza się to sporadycznie i prawdopodobieństwo konieczności naniesienia takich poprawek jest bliskie zeru, więc lepiej pozostawić naszą tabelę Address w drugiej postaci normalnej. Szczególnie, że wiele małych tabel może obniżać wydajność lub przekraczać pojemność otwartych plików i pamięci. Wyodrębnienie nazw miast, kodów pocztowych itd. mogłoby mieć jeszcze sens, gdybyśmy mieli w bazie z góry zdefiniowaną listę miast, kodów itp. Wówczas wprowadzając nowy adres klienta będziemy np. wybierać dane z rozwijanej listy, zamiast wpisywać ręcznie, co zmniejszy ryzyko błędu.|
+|Do powyższych zasad należy się stosować, gdy ma to sens. Trzecią formę normalną stosuje się przykładowo tylko dla często zmieniających się danych. Np. przeprowadzona w powyższym przykładzie normalizacja do trzeciej postaci normalnej niema sensu. Miałaby ono sens, gdyby nazwy ulic, czy miejscowości często się zmieniały. Wówczas takie poprawki musielibyśmy nanieść tylko w jednym miejscu, zamiast w wielu rekordach. Ponieważ jednak zdarza się to sporadycznie i prawdopodobieństwo konieczności naniesienia takich poprawek jest bliskie zeru, więc lepiej pozostawić naszą tabelę Addresses w drugiej postaci normalnej. Szczególnie, że wiele małych tabel może obniżać wydajność lub przekraczać pojemność otwartych plików i pamięci. Wyodrębnienie nazw miast, kodów pocztowych itd. mogłoby mieć jeszcze sens, gdybyśmy mieli w bazie z góry zdefiniowaną listę miast, kodów itp. Wówczas wprowadzając nowy adres klienta będziemy np. wybierać dane z rozwijanej listy, zamiast wpisywać ręcznie, co zmniejszy ryzyko błędu.|
 
 ## [LEKCJA 5 – Context](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-7-bazy-danych/lekcja-5-context/)
 Kontekst jest to specjalna klasa wymagana przez _Entity Framework Core_ definiująca tabele i relacje jakie mają zostać utworzone w bazie danych. Pozwala ona na zmapowanie stworzonych przez nas modeli domenowych na tabele bazodanowe. Tworzy sesję z bazą danych i umożliwia wysyłanie zapytań, pobieranie i modyfikację danych w bazie danych.
 
-Kontekst zależy od typu używanego silnika bazodanowego (np. od paczki _Microsoft.EntityFrameworkCore.SqlServer_) oraz od użytego ORM-a (np. _Entity Framework Core_). Dlatego też utworzymy go w projekcie _.Infrastructure_ (bezpośrednio w projekcie, a nie w folderze). Dzięki temu nasze modele mogą byś bez problemu używane przez aplikację, nawet jeśli w pewnym momencie zdecydujemy się na użycie innego silnika bazodanowego, czy innego ORM-a. Będziemy wówczas musieli jedynie podmienić nasz projekt _.Infrastructure_, bez wpływu na resztę aplikacji.
+Kontekst zależy od typu używanego silnika bazodanowego (np. od paczki _Microsoft.EntityFrameworkCore.SqlServer_) oraz od użytego ORM-a (np. _Entity Framework Core_). Dlatego też utworzymy go w projekcie _.Infrastructure_ (bezpośrednio w projekcie, a nie w folderze). Dzięki temu nasze modele mogą być bez problemu używane przez aplikację, nawet jeśli w pewnym momencie zdecydujemy się na użycie innego silnika bazodanowego, czy innego ORM-a. Będziemy wówczas musieli jedynie podmienić nasz projekt _.Infrastructure_, bez wpływu na resztę aplikacji.
 
 Stworzymy zwykłą publiczną klasę i nazwiemy ją `Context`. W przypadku _Entity Framework Core_ musi ona dziedziczyć po klasie _Microsoft.EntityFrameworkCore.DbContext_. Zawiera ona najbardziej podstawową implementację kontekstu. Ponieważ jednak zaznaczyliśmy, że chcemy przeprowadzać autoryzację użytkowników przy pomocy _Individual Accounts_, to nasza klasa `Context` będzie dziedziczyć po bardziej rozbudowanej klasie bazowej `Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`. Poza implementacją podstawowych funkcjonalności kontekstu, zawiera ona odpowiednią implementację wspierającą ten typ autoryzacji. Stwórzmy więc odpowiednią klasę, np.:
 ```csharp =
@@ -321,7 +321,7 @@ namespace TitlesOrganizer.Infrastructure
     }
 }
 ```
-Będzie to wymagało doinstalowania jeszcze jednej paszki (_Microsoft.AspNetCore.Identity.EntityFrameworkCore_).
+Będzie to wymagało doinstalowania jeszcze jednej paczki (_Microsoft.AspNetCore.Identity.EntityFrameworkCore_).
 
 W naszej nowej klasie musimy utworzyć jeszcze odpowiedni konstruktor, który umożliwi inicjalizację podstawowych funkcjonalności kontekstu zaimplementowaną w konstruktorze bazowej klasy `DbContext`:
 ```csharp =
@@ -331,7 +331,7 @@ public Context(DbContextOptions options) : base(options)
 ```
 Jeżeli nasza baza danych może być zmapowana wyłącznie przy użyciu konwencji _Entity Framework Core_ to wystarczy jeszcze tylko dodać właściwości z naszymi DbSetami.
 ### `DbSet<TEntity>`
-Jest to klasa pozwalająca na zapytywanie i zapisywanie instancji `TEntity`. Zapytania LINQ wykonywane na `DbSet<TEntity>` będą tłumaczone na zapytania na bazie danych. Pozwala więc nam na utworzenie na podstawie modeli domenowych odpowiednich tabeli w bazie danych i wykonywanie na nich operacji. W naszej klasie `Context` tworzymy więc właściwość `DbSet` dla każdej tabeli bazodanowej (dla każdego modelu domenowego). Np. jeśli mamy modele
+Jest to klasa pozwalająca na zapytywanie i zapisywanie instancji `TEntity`. Zapytania LINQ wykonywane na `DbSet<TEntity>` będą tłumaczone na zapytania na bazie danych. Pozwala więc nam na utworzenie na podstawie modeli domenowych odpowiednich tabel w bazie danych i wykonywanie na nich operacji. W naszej klasie `Context` tworzymy więc właściwość `DbSet` dla każdej tabeli bazodanowej (dla każdego modelu domenowego). Np. jeśli mamy modele
 
 `Book` (książka):
 ```csharp =
