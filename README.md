@@ -6,6 +6,7 @@ Notatki z poszczególnych tygodni:
 * [TYDZIEŃ 4 – Testowanie](Tydzien4/Tydzien4-Testowanie.md)
 * [TYDZIEŃ 5 – Praca z danymi](Tydzien5/Tydzien5-PracaZDanymi.md)
 * [TYDZIEŃ 6 – Aplikacje webowe w ASP.NET Core](Tydzien6/Tydzien6-AplikacjeWeboweWASP.NETCore.md)
+* [TYDZIEŃ 7 - Bazy danych](Tydzien7/Tydzien7-BazyDanych.md)
 
 ## Spis treści
 ### Tydzien1
