@@ -185,3 +185,219 @@ Id|StreetId|Local|CustomerId
 | :warning:**UWAGA!** |
 | :---: |
 |Do powyższych zasad należy się stosować, gdy ma to sens. Trzecią formę normalną stosuje się przykładowo tylko dla często zmieniających się danych. Np. przeprowadzona w powyższym przykładzie normalizacja do trzeciej postaci normalnej niema sensu. Miałaby ono sens, gdyby nazwy ulic, czy miejscowości często się zmieniały. Wówczas takie poprawki musielibyśmy nanieść tylko w jednym miejscu, zamiast w wielu rekordach. Ponieważ jednak zdarza się to sporadycznie i prawdopodobieństwo konieczności naniesienia takich poprawek jest bliskie zeru, więc lepiej pozostawić naszą tabelę Addresses w drugiej postaci normalnej. Szczególnie, że wiele małych tabel może obniżać wydajność lub przekraczać pojemność otwartych plików i pamięci. Wyodrębnienie nazw miast, kodów pocztowych itd. mogłoby mieć jeszcze sens, gdybyśmy mieli w bazie z góry zdefiniowaną listę miast, kodów itp. Wówczas wprowadzając nowy adres klienta będziemy np. wybierać dane z rozwijanej listy, zamiast wpisywać ręcznie, co zmniejszy ryzyko błędu.|
+### Konwencje
+Aby _EF Core_ automatycznie wykrywał relacje i dokonywał mapowania, pisany przez nas kod musi przestrzegać ustalonych konwencji.
+#### Wykrywanie nawigacji
+Wykrywanie relacji rozpoczyna się wykrywaniem nawigacji pomiędzy typami encji.
+##### Referencje
+Właściwość typu encji jest wykrywana jako nawigacja referencyjne gdy:
+* Właściwość jest publiczna (`public`).
+* Właściwość ma getter i setter.
+    * Setter nie musi być publiczny, może być prywatny lub mieć inny modyfikator dostępu.
+    * Setter może być `init`.
+* Typ właściwości jest, lub może być, typem encji. Oznacza to, że typ właściwości:
+    * Musi być typem referencyjnym.
+    * Nie może być jawnie skonfigurowany jako prymitywny typ danych (`bool`, `int`, `string` itd.).
+    * Nie może być zmapowany jako prymitywny typ danych przez używany silnik bazodanowy.
+    * Nie może być automatycznie konwertowalny do prymitywnego typu danych  mapowanego przez użyty silnik bazodanowy.
+* Właściwość nie jest statyczna.
+* Właściwość nie jest właściwością indeksatora.
+###### Przykład
+```csharp =
+public class Blog
+{
+    // Not discovered as reference navigations:
+    public int Id { get; set; }
+    public string Title { get; set; } = null!;
+    public Uri? Uri { get; set; }
+    public ConsoleKeyInfo ConsoleKeyInfo { get; set; }
+    public Author DefaultAuthor => new() { Name = $"Author of the blog {Title}" };
+
+    // Discovered as a reference navigation:
+    public Author? Author { get; private set; }
+}
+
+public class Author
+{
+    // Not discovered as reference navigations:
+    public Guid Id { get; set; }
+    public string Name { get; set; } = null!;
+    public int BlogId { get; set; }
+
+    // Discovered as a reference navigation:
+    public Blog Blog { get; init; } = null!;
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#reference-navigations_
+
+W powyższym przykładzie `Blog.Author` i `Author.Blog` są rozpoznane jako nawigacje referencyjne (_reference navigations_). Z drugiej strony, pozostałe właściwości nie zostały rozpoznane jako nawigacje, gdyż:
+* `Blog.Id`, bo `int` jest mapowany jako typ prymitywny
+* `Blog.Title`, bo `string` jest mapowany jako typ prymitywny
+* `Blog.Uri`, bo `Uri` jest automatycznie konwertowany do mapowanego typu prymitywnego
+* `Blog.ConsoleKeyInfo`, bo `ConsoleKeyInfo` jest typem wartościowym C#
+* `Blog.DefaultAuthor`, bo właściwość nie ma settera
+* `Author.Id`, bo `Guid` jest mapowany do typu prymitywnego
+* `Author.Name`, bo `string` jest mapowany do typu prymitywnego
+* `Author.BlogId`, bo `int` jest mapowany do typu prymitywnego
+
+##### Kolekcje
+Właściwość typu encji jest wykrywana jako nawigacja po kolekcji gdy:
+* Właściwość jest publiczna.
+* Właściwość ma getter. Właściwość może mieć również setter, jednak nie jest on wymagany.
+* Typem właściwości jest lub implementuje `IEnumerable<TEntity>`, gdzie `TEntity` jest lub mogłoby być typem encji. To oznacza, że `TEntity`:
+    * Musi być typem referencyjnym.
+    * Nie może być jawnie skonfigurowany jako prymitywny typ danych (`bool`, `int`, `string` itd.).
+    * Nie może być zmapowany jako prymitywny typ danych przez używany silnik bazodanowy.
+    * Nie może być automatycznie konwertowalny do prymitywnego typu danych  mapowanego przez użyty silnik bazodanowy.
+* Właściwość nie jest statyczna.
+* Właściwość nie jest właściwością indeksatora.
+###### Przykład
+```csharp =
+public class Blog
+{
+    public int Id { get; set; }
+    public List<Tag> Tags { get; set; } = null!;
+}
+
+public class Tag
+{
+    public Guid Id { get; set; }
+    public IEnumerable<Blog> Blogs { get; } = new List<Blog>();
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#collection-navigations_
+
+W powyższym przykładzie zarówno `Blog.Tags`, jak i `Tag.Blogs` są wykryte jako nawigacje po kolekcjach.
+##### Parowanie nawigacji
+Kiedy wykryto już nawigację (np. dla encji `A` do encji `B`), to jest sprawdzane, czy istnieje nawigacja w drugą stronę (dla `B` do `A`). Jeżeli tak, to obie nawigacje są ze sobą parowane, tworząc jedną relację dwukierunkową. Typ relacji zależy, czy nawigacja i odwrotna nawigacja są referencjami, czy kolekcjami. Dokładniej:
+* Jeśli jedna nawigacja jest kolekcją, a druga referencją, to jest to relacja jeden do wielu.
+```csharp =
+public class Blog
+{
+    public int Id { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>(); // nawigacja po kolekcji
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? BlogId { get; set; }
+    public Blog? Blog { get; set; } // nawigacja referencyjna
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#pairing-navigations_
+* Jeśli obie nawigacje są referencyjne, to jest to relacja jeden do jednego.
+```csharp =
+public class Blog
+{
+    public int Id { get; set; }
+    public Author? Author { get; set; } // nawigacja referencyjna
+}
+
+public class Author
+{
+    public int Id { get; set; }
+    public int? BlogId { get; set; }
+    public Blog? Blog { get; set; } // nawigacja referencyjna
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#pairing-navigations_
+* Jeżeli obie nawigacje są kolekcjami, to jest to relacja wiele do wielu.
+```csharp =
+public class Post
+{
+    public int Id { get; set; }
+    public ICollection<Tag> Tags { get; } = new List<Tag>(); // nawigacja po kolekcji
+}
+
+public class Tag
+{
+    public int Id { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>(); // nawigacja po kolekcji
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#pairing-navigations_
+
+| :warning:**UWAGA!** |
+| :---: |
+|Parowanie nawigacji może być niepoprawne, jeżeli dwie nawigacje reprezentują dwie różne jednokierunkowe relacje. W tym wypadku, te dwie relacje muszą być jawnie skonfigurowane w kontekście (o czym w następnej lekcji).|
+|Parowanie relacji działa tylko, gdy jest tylko jedna relacja pomiędzy dwoma typami. Wiele relacji między dwoma typami musi być jawnie skonfigurowanych.|
+|Powyższe przykłady dotyczyły relacji między dwoma różnymi typami. Jednak, jest również możliwe, aby ten sam typ był na obu końcach relacji (jeden element tego typu był w relacji z innym elementem tego typu). Pojedynczy typ może więc mieć dwie nawigacje sparowane ze sobą nawzajem. Nazywamy to _self-referencing relationship_.|
+
+#### Wykrywanie właściwości z kluczami obcymi
+Gdy nawigacje dla relacji zostaną wykryte lub jawnie skonfigurowane, służą one do wykrycia odpowiednich właściwości klucza obcego dla relacji. Właściwość jest wykryta jako klucz obcy gdy:
+* Typ właściwości jest kompatybilny z kluczem głównym lub alternatywnym typu głównej encji.
+    * Typy są kompatybilne, gdy są takie same lub gdy typ klucza obcego jest nullowalną wersją typu klucza głównego lub alternatywnego.
+* Nazwa właściwości pasuje do jednej z konwencji nazewnictwa właściwości klucza obcego. Konwencje nazewnicze to:
+    * `<nazwa właściwości nawigacji><nazwa właściwości klucza głównego>`
+    * `<nazwa właściwości nawigacji><Id\id\ID>`
+    * `<nazwa typu właściwości głównej><nazwa właściwości klucza głównego>`
+    * `<nazwa typu właściwości głównej><Id\id\ID>`
+* Dodatkowo, jeżeli koniec zależny został jawnie skonfigurowany przy użyciu API do budowy modeli i zależny klucz główny jest kompatybilny, wówczas zależny klucz główny zostanie również użyty jako klucz obcy.
+##### Przykłady
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#discovering-foreign-key-properties_
+
+Przykład dla konwencji nazewniczej `<nazwa właściwości nawigacji><nazwa właściwości klucza głównego>`:
+```csharp =
+public class Blog
+{
+    public int Key { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? TheBlogKey { get; set; }
+    public Blog? TheBlog { get; set; }
+}
+```
+Przykład dla konwencji nazewniczej `<nazwa właściwości nawigacji><Id\id\ID>`:
+```csharp =
+public class Blog
+{
+    public int Key { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? TheBlogID { get; set; }
+    public Blog? TheBlog { get; set; }
+}
+```
+Przykład dla konwencji nazewniczej `<nazwa typu właściwości głównej><nazwa właściwości klucza głównego>`:
+```csharp =
+public class Blog
+{
+    public int Key { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? BlogKey { get; set; }
+    public Blog? TheBlog { get; set; }
+}
+```
+Przykład dla konwencji nazewniczej `<nazwa typu właściwości głównej><Id\id\ID>`:
+```csharp =
+public class Blog
+{
+    public int Key { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? Blogid { get; set; }
+    public Blog? TheBlog { get; set; }
+}
+```
+| :warning:**UWAGA!** |
+| :---: |
+|W przypadku nawigacji jeden do wielu, właściwości klucza obcego muszą być w tym samym typie, co nawigacja referencyjna, gdyż to będzie encja zależna.|
+|W przypadku relacji jeden do jednego, wykrycie klucza obcego jest użyte do określenia który typ reprezentuje stronę zależną relacji. Jeśli nie wykryto właściwości klucza obcego, koniec zależny musi zostać skonfigurowany przy użyciu metody `HasForeignKey`.|
