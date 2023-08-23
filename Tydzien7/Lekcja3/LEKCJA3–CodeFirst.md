@@ -11,7 +11,7 @@ Podejście _code first_ pozwala na napisanie przez programistów modeli w naszej
 W katalogu _Model_ projektu _.Domain_ tworzymy klasy z naszymi modelami. Modele będą wyglądać podobnie jak te, które pisaliśmy do tej pory. Będą to po prostu publiczne klasy zawierające publiczne właściwości, na podstawie których zostaną utworzone tabele w bazie danych (jedna klasa = jedna tabela, jedna właściwość klasy = jedna kolumna tabeli).
 ### Mapowanie
 #### Nazwy
-Automatycznie, po mapowaniu, tabele w bazie danych będą miały takie nazwy jak nasze klasy, natomiast kolumny, takie jak nasze metody. Jeżeli jednak z jakiegoś powodu (choć nie jest to zalecane), chcielibyśmy, aby elementy w bazie danych miały inne nazwy niż odpowiadające im elementy w modelach, to z pomocą przychodzą nam odpowiednie atrybuty. Są to odpowiednio `TableAttribute` i `ColumnAttribute`, które przyjmują żądane nazwy, jako argumenty konstruktora. Np.:
+Automatycznie, po mapowaniu, tabele w bazie danych będą miały takie nazwy jak nasze klasy, natomiast kolumny, takie jak nasze właściwości. Jeżeli jednak z jakiegoś powodu (choć nie jest to zalecane), chcielibyśmy, aby elementy w bazie danych miały inne nazwy niż odpowiadające im elementy w modelach, to z pomocą przychodzą nam odpowiednie atrybuty. Są to odpowiednio `TableAttribute` i `ColumnAttribute`, które przyjmują żądane nazwy, jako argumenty konstruktora. Np.:
 ```csharp =
 [Table("Subjects")]
 public class Item
@@ -51,7 +51,7 @@ public class Type
     public string Name { get; set; }
 }
 ```
-Jak widać chcemy, do obiektów `Item` przyporządkowywać jakiś obiekt `Type`. Tak napisalibyśmy je do tej pory. _Entity Framework Core_ wymaga od nas jeszcze stworzenia właściwości na obiekty znajdujące się w relacji. Dzięki temu będziemy mogli np. sprawdzić `Name` obiektu `Type` powiązanego z naszym obiektem `Item` bez tworzenia dodatkowych zapytań. Do klasy `Item` musimy zatem dopisać jeszcze jedną linijkę:
+Jak widać chcemy, do obiektów `Item` przyporządkowywać jakiś obiekt `Type`. Tak napisalibyśmy je do tej pory. _Entity Framework Core_ wymaga od nas jeszcze stworzenia właściwości na obiekty znajdujące się w relacji. Będziemy je nazywać nawigacjami. Dzięki nim będziemy mogli np. sprawdzić `Name` obiektu `Type` powiązanego z naszym obiektem `Item` bez tworzenia dodatkowych zapytań. Do klasy `Item` musimy zatem dopisać jeszcze jedną linijkę:
 ```csharp =
 public class Item
 {

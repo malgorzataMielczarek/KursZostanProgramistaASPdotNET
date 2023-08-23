@@ -8,7 +8,7 @@ Używa się go do tworzenia relacji pomiędzy danymi. Klucz obcy jest to klucz g
 ## Relacje
 Pomiędzy danymi w bazach danych mogą występować trzy rodzaje relacji: jeden do jednego, jeden do wielu i wiele do wielu.
 ### Jeden do jednego
-Relacja mówiąca, że element z jednej tabeli może mieć relację tylko i wyłącznie z jednym elementem z drugiej tabeli. Składa się z tabeli głównej (_principal_, _parent_) i zależnej (_dependent_, _child_). Tabela zależna, jest to tabela posiadająca klucz obcy. Jeżeli dopiero tworzymy bazę danych, to jako tabele zależną powinniśmy wybrać tabele, której istnienie niema logicznego sensu bez tabeli głównej. Jeżeli pomiędzy tabelami występuje naturalna relacja dziecko-rodzic, to "dziecko" powinno być tabelą zależną, a "rodzic" główną.
+Relacja mówiąca, że element z jednej tabeli może mieć relację tylko i wyłącznie z jednym elementem z drugiej tabeli. Składa się z tabeli głównej (_principal_, _parent_) i zależnej (_dependent_, _child_). Tabela zależna, jest to tabela posiadająca klucz obcy. Jeżeli dopiero tworzymy bazę danych, to jako tabelę zależną powinniśmy wybrać tabele, której istnienie niema logicznego sensu bez tabeli głównej. Jeżeli pomiędzy tabelami występuje naturalna relacja dziecko-rodzic, to "dziecko" powinno być tabelą zależną, a "rodzic" główną.
 #### Przykład
 Załóżmy, że klientami naszej aplikacji są firmy. Każda z nich ma wyznaczoną dokładnie jedną osobę do kontaktu. Klienci, będą więc naszym modelem głównym. Istnienie informacji kontaktowych dla nieistniejącego klienta niema bowiem sensu. Tak więc klasa wskazująca osobę do kontaktu będzie zawierać klucz obcy (klucz główny klienta). Np.:
 ```csharp =
@@ -20,7 +20,7 @@ public class Customer
     public string NIP { get; set; }
 
     // Relacja jeden do jednego
-    public CustomerContactInformation CustomerContactInformation { get; set; } // powiązany obiekt
+    public CustomerContactInformation CustomerContactInformation { get; set; } // powiązany obiekt, nawigacja referencyjna
 }
 ```
 ```csharp =
@@ -34,7 +34,7 @@ public class CustomerContactInformation
 
     // Relacja jeden do jednego
     public int CustomerRef { get; set; } // referencja do klienta, klucz obcy
-    public Customer Customer { get; set; } // powiązany obiekt
+    public Customer Customer { get; set; } // powiązany obiekt, nawigacja referencyjna
 }
 ```
 Dodatkowo będziemy musieli stworzyć klasę definiującą na podstawie jakich pól osiągamy relacją. Zajmiemy się tym jednak w kolejnej lekcji, podczas omawiania tworzenia kontekstów.
@@ -50,7 +50,7 @@ public class Item
 
     // Relacja jeden do wielu
     public int TypeId {get; set; } // referencja do powiązanego obiektu, klucz obcy
-    public virtual Type Type { get; set; } // powiązany obiekt
+    public virtual Type Type { get; set; } // powiązany obiekt, nawigacja referencyjna
 }
 ```
 ```csharp =
@@ -60,7 +60,7 @@ public class Type
     public string Name { get; set; }
 
     // Relacja jeden do wielu
-    public virtual ICollection<Item> Items { get; set; } // kolekcja powiązanych obiektów
+    public virtual ICollection<Item> Items { get; set; } // kolekcja powiązanych obiektów, nawigacja po kolekcji
 }
 ```
 ### Wiele do wielu
@@ -190,7 +190,7 @@ Aby _EF Core_ automatycznie wykrywał relacje i dokonywał mapowania, pisany prz
 #### Wykrywanie nawigacji
 Wykrywanie relacji rozpoczyna się wykrywaniem nawigacji pomiędzy typami encji.
 ##### Referencje
-Właściwość typu encji jest wykrywana jako nawigacja referencyjne gdy:
+Właściwość typu encji jest wykrywana jako nawigacja referencyjna gdy:
 * Właściwość jest publiczna (`public`).
 * Właściwość ma getter i setter.
     * Setter nie musi być publiczny, może być prywatny lub mieć inny modyfikator dostępu.
@@ -331,9 +331,9 @@ Gdy nawigacje dla relacji zostaną wykryte lub jawnie skonfigurowane, służą o
 * Nazwa właściwości pasuje do jednej z konwencji nazewnictwa właściwości klucza obcego. Konwencje nazewnicze to:
     * `<nazwa właściwości nawigacji><nazwa właściwości klucza głównego>`
     * `<nazwa właściwości nawigacji><Id\id\ID>`
-    * `<nazwa typu właściwości głównej><nazwa właściwości klucza głównego>`
-    * `<nazwa typu właściwości głównej><Id\id\ID>`
-* Dodatkowo, jeżeli koniec zależny został jawnie skonfigurowany przy użyciu API do budowy modeli i zależny klucz główny jest kompatybilny, wówczas zależny klucz główny zostanie również użyty jako klucz obcy.
+    * `<nazwa typu encji głównej><nazwa właściwości klucza głównego>`
+    * `<nazwa typu encji głównej><Id\id\ID>`
+* Dodatkowo, jeżeli koniec zależny został jawnie skonfigurowany przy użyciu API do budowy modeli i klucz główny encji zależnej jest kompatybilny, wówczas klucz główny końca zależnego zostanie również użyty jako klucz obcy.
 ##### Przykłady
 _Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#discovering-foreign-key-properties_
 
@@ -367,7 +367,7 @@ public class Post
     public Blog? TheBlog { get; set; }
 }
 ```
-Przykład dla konwencji nazewniczej `<nazwa typu właściwości głównej><nazwa właściwości klucza głównego>`:
+Przykład dla konwencji nazewniczej `<nazwa typu encji głównej><nazwa właściwości klucza głównego>`:
 ```csharp =
 public class Blog
 {
@@ -382,7 +382,7 @@ public class Post
     public Blog? TheBlog { get; set; }
 }
 ```
-Przykład dla konwencji nazewniczej `<nazwa typu właściwości głównej><Id\id\ID>`:
+Przykład dla konwencji nazewniczej `<nazwa typu encji głównej><Id\id\ID>`:
 ```csharp =
 public class Blog
 {
@@ -401,3 +401,52 @@ public class Post
 | :---: |
 |W przypadku nawigacji jeden do wielu, właściwości klucza obcego muszą być w tym samym typie, co nawigacja referencyjna, gdyż to będzie encja zależna.|
 |W przypadku relacji jeden do jednego, wykrycie klucza obcego jest użyte do określenia który typ reprezentuje stronę zależną relacji. Jeśli nie wykryto właściwości klucza obcego, koniec zależny musi zostać skonfigurowany przy użyciu metody `HasForeignKey`.|
+#### Wykrywanie liczebności relacji (typu)
+EF używa wykrytych właściwości nawigacji i klucza obcego do ustalenia liczebności relacji, wraz z ich końcami (głównym i zależnym).
+* Jeśli występuje jedna, niesparowana nawigacja referencyjna, wówczas relacja jest konfigurowana jako jednokierunkowa, jeden do wielu, z nawigacją referencyjną na końcu zależnym.
+* Jeśli występuje jedna niesparowana nawigacja po kolekcji, wówczas relacja jest konfigurowana jako jednokierunkowa, jeden do wielu, z nawigacją po kolekcji na końcu głównym.
+* Jeśli występują sparowane nawigacje referencyjna i po kolekcji, wówczas relacja jest konfigurowana jako dwukierunkowa, jeden do wielu, z nawigacją po kolekcji na końcu głównym.
+* Jeśli nawigacja referencyjna jest sparowana z inną nawigacją referencyjną, wówczas:
+    * Jeśli wykryto właściwość klucza obcego tylko po jednej stronie, to relacja jest konfigurowana jako dwukierunkowa, jeden do jednego, z właściwością klucza obcego na końcu zależnym.
+    * Jeśli nie wykryto właściwości klucza obcego, lub wykryto ją na obu końcach, strona zależna nie może zostać określona. EF wyrzuca wówczas wyjątek wskazujący, że koniec zależny musi być jawnie skonfigurowany.
+* Jeśli nawigacja po kolekcji jest sparowana z inną nawigacją po kolekcji wówczas relacja jest konfigurowana jako dwukierunkowa, wiele do wielu.
+#### Właściwości cienia klucza obcego
+Jeśli EF wykrył koniec zależny relacji, ale nie znalazł właściwości klucza obcego, wówczas tworzy tzw. właściwość cienia (ang. _shadow property_), reprezentującą klucz obcy.
+
+**Właściwości cienia** są to właściwości, które nie są zdefiniowane w naszych .NET-owych klasach encji, ale są zdefiniowane dla tych typów encji w modelach EF Core. Wartość i stan tych właściwości są utrzymywane wyłącznie w _Change Tracker_. Są one użyteczne, gdy w bazie danych znajdują się dane, które nie powinny być ujawnione na zmapowanych typach encji.
+
+Właściwość cienia klucza obcego:
+* Ma typ właściwości klucza głównego lub alternatywnego, głównego końca relacji.
+    * Typ jest domyślnie ustawiany jako nullowalny, co sprawia, że relacja jest domyślnie opcjonalna.
+* Jest nazywana używając nazwy nawigacji końca zależnego połączonej z nazwą właściwości klucza obcego lub alternatywnego, pod warunkiem, że na końcu zależnym jest nawigacja.
+* Jeśli na końcu zależnym nie ma nawigacji, wówczas nazwa jest tworzona przez połączenia nazwy typu (klasy) głównej encji i właściwości klucza głównego lub alternatywnego.
+#### Usuwanie kaskadowe
+Zgodnie z konwencją, wymagane relacje (te gdzie typ właściwości klucza obcego nie jest nullowalny) są konfigurowane do usuwania kaskadowego (ang. _cascade delete_). Relacje opcjonalne (te gdzie typ właściwości klucza obcego jest nullowalny) są konfigurowane, aby nie usuwały się kaskadowo.
+
+**Usuwanie kaskadowe** oznacza, że gdy usuniemy główną encję (rodzica), to encja od niego zależna (dziecko) również zostanie usunięta. Jeżeli dziecko, jest encją główną dla innej encji zależnej (i mamy dla nich również skonfigurowane usuwanie kaskadowe), to wówczas ta encja zależna również jest usuwana itd.
+#### Wiele do wielu
+Relacja wiele do wielu nie ma końca głównego i zależnego. Żadna strona nie posiada klucza obcego. Zamiast tego używa typu encji łączenia. Zawiera ona pary kluczy obcych wskazujących na każdy z końców relacji wiele do wielu.
+##### Przykład
+```csharp =
+public class Post
+{
+    public int Id { get; set; }
+    public ICollection<Tag> Tags { get; } = new List<Tag>();
+}
+
+public class Tag
+{
+    public int Id { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#many-to-many_
+
+Do tworzonej encji łączenia zastosowanie mają następujące konwencje:
+* Typ encji łączenia zostanie nazwany zgodnie z konwencją `<nazwa typu lewej encji><nazwa typu prawej encji>`, czyli `PostTag`.
+    * Tabela łączenia, która zostanie utworzona w bazie danych, będzie miała taką samą nazwę jak typ encji łączenia.
+* Typ encji łączenia będzie mieć właściwości klucza obcego dla każdego kierunku relacji. Są one nazwane zgodnie z konwencją `<nazwa nawigacji><nazwa klucza głównego>`, czyli `PostsId` i `TagsId`.
+    * Dla jednokierunkowych relacji wiele do wielu, właściwość klucza obcego bez powiązanej nawigacji jest nazywana zgodnie z konwencją `<nazwa typu głównej encji><nazwa klucza głównego>`.
+* Właściwości kluczy obcych są nienullowalne. Obie relacje encji łączenia są więc wymagane.
+    * Konwencje usuwania kaskadowego oznaczają, że te relacje zostaną skonfigurowane do usuwania kaskadowego.
+* Typ encji łączenia jest skonfigurowany z kluczem głównym złożonym, który składa się z dwóch właściwości kluczy obcych, czyli z `PostsId` i `TagsId`.
