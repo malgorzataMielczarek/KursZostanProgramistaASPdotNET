@@ -185,7 +185,7 @@ namespace TitlesOrganizer.Infrastructure
 ```
 Tradycyjnie nazwa właściwości `DbSet` odpowiada liczbie mnogiej nazwy modelu, którego dotyczy. Wyjątek stanowią modele pomocnicze do tworzenia relacji wiele do wielu, w których używamy liczby pojedynczej, właśnie, aby wyróżnić, że są to tabele z relacjami.
 
-Gdyby wszystkie klasy i relacje były utworzone zgodnie z konwencją, to na tym moglibyśmy zakończyć tworzenie naszej klasy `Context`. Jak już jednak wspominaliśmy konwencja wspiera wyłącznie tworzenie relacji jeden do wielu. W naszym przykładzie występują jednak również relacje jeden do jednego i wiele do wielu. Musimy więc je jeszcze zdefiniować. Posłuży do tego tzw. _fluent API_.
+Gdyby wszystkie klasy i relacje były utworzone zgodnie z konwencją, to na tym moglibyśmy zakończyć tworzenie naszej klasy `Context`. Jak już jednak wspominaliśmy konwencja wspiera wyłącznie tworzenie relacji jeden do wielu (już nie tylko, ale nadal może istnieć konieczność skonfigurowania rzeczy niezgodnych z konwencją lub przez nią nieuwzględnionych, np. jednokierunkowa relacja wiele do wielu). W naszym przykładzie występują jednak również relacje jeden do jednego i wiele do wielu. Musimy więc je jeszcze zdefiniować (nie trzeba już jawnie konfigurować relacji jeden do jednego i wiele do wielu, ale ponieważ tu mamy utworzone modele dla pomocniczych tabeli łączących, więc musimy przynajmniej zdefiniować dla nich klucze złożone). Posłuży do tego tzw. _fluent API_.
 ## _Fluent API_
 Tym mianem określamy metody klasy `ModelBuilder`. Pozwalają one na nadpisanie jakichkolwiek domyślnych konfiguracji mapowania _Entity Framework Core_. Zmiany wykonane przy pomocy _Fluent API_ są nadrzędne względem wszystkich innych konfiguracji. Modyfikacji `ModelBuilder`a dokonujemy przez nadpisanie metody `OnModelCreating(ModelBuilder modelBuilder)` klasy `DbContext`.
 ### `OnModelCreating`
@@ -200,12 +200,22 @@ Zwraca ona obiekt `EntityTypeBuilder<TEntity>`, który może zostać użyty do s
 Metoda klasy `EntityTypeBuilder<TEntity>` pozwalająca na ustawienie właściwości modelu `TEntity`, które będą tworzyć klucz główny. Wywołujemy ją na obiekcie zwróconym przez metodę `Entity<TEntity>`.
 ### `HasOne<TRelatedEntity>`
 Metoda klasy `EntityTypeBuilder<TEntity>` konfigurująca relację, gdzie `TEntity` posiada referencję wskazującą na pojedynczą instancję `TRelatedEntity`. Zwraca obiekt typu `ReferenceNavigationBuilder<TEntity,TRelatedEntity>`.
+### `HasMany<TRelatedEntity>`
+Metoda klasy `EntityTypeBuilder<TEntity>` konfigurująca relację, gdzie `TEntity` posiada kolekcję zawierającą instancje `TRelatedEntity`. Zwraca obiekt typu `CollectionNavigationBuilder<TEntity,TRelatedEntity>`.
 ### `WithOne`
-Metoda klasy `ReferenceNavigationBuilder<TEntity,TRelatedEntity>`. Wskazuje, że ta relacja jest typu jeden do jednego. Zwraca obiekt typu `ReferenceCollectionBuilder<TRelatedEntity,TEntity>`, umożliwiający dalszą konfigurację relacji.
+Metoda klasy `ReferenceNavigationBuilder<TEntity,TRelatedEntity>` lub `CollectionNavigationBuilder<TEntity,TRelatedEntity>`. Konfiguruje ona odpowiednią relację i zwraca obiekt umożliwiający jej dalszą konfigurację.
+Klasa|Relacja|Typ zwracany
+---|---|---
+`ReferenceNavigationBuilder <TEntity,TRelatedEntity>`|jeden do jednego|`ReferenceReferenceBuilder <TEntity,TRelatedEntity>`
+`CollectionNavigationBuilder <TEntity,TRelatedEntity>`|jeden do wielu|`ReferenceCollectionBuilder <TEntity,TRelatedEntity>`
 ### `WithMany`
-Metoda klasy `ReferenceNavigationBuilder<TEntity,TRelatedEntity>`. Wskazuje, że ta relacja jest typu jeden do wielu. Zwraca obiekt typu `ReferenceCollectionBuilder<TRelatedEntity,TEntity>`, umożliwiający dalszą konfigurację relacji.
+Metoda klasy `ReferenceNavigationBuilder<TEntity,TRelatedEntity>` lub `CollectionNavigationBuilder<TEntity,TRelatedEntity>`. Konfiguruje ona odpowiednią relację i zwraca obiekt umożliwiający jej dalszą konfigurację.
+Klasa|Relacja|Typ zwracany
+---|---|---
+`ReferenceNavigationBuilder <TEntity,TRelatedEntity>`|jeden do wielu|`ReferenceCollectionBuilder <TRelatedEntity,TEntity>`
+`CollectionNavigationBuilder <TEntity,TRelatedEntity>`|wiele do wielu|`CollectionCollectionBuilder <TRelatedEntity,TEntity>`
 ### `HasForeignKey`
-Metoda klasy `ReferenceCollectionBuilder<TRelatedEntity,TEntity>`. Konfiguruje właściwość (właściwości), którą (które) należy użyć, jako klucza obcego tej relacji.
+Metoda klas `ReferenceCollectionBuilder<TPrincipalEntity,TDependentEntity>` i `ReferenceReferenceBuilder<TEntity,TRelatedEntity>`. Konfiguruje właściwość (właściwości), którą (które) należy użyć, jako klucza obcego tej relacji.
 ### Przykład
 Skonfigurujmy więc relacje jeden do jednego i wiele do wielu, dla naszych przykładowych modeli. Zauważmy, że relacja wiele do wielu, jest w praktyce relacją jeden do wielu, pomiędzy modelami, a klasą pomocniczą. Czyli np. relacja wiele do wielu pomiędzy `Book` i `Author`, jest tak na prawdę relacją jeden do wielu między `Book` i `BookAuthor` oraz `Author` i `BookAuthor`. Zwróćmy jeszcze uwagę, że dla modeli pomocniczych musimy skonfigurować klucze główne, gdyż będą to tzw. klucze złożone, składające się z dwóch właściwości, będących kluczami obcymi. Nadpiszmy więc metodę `OnModelCreating`:
 ```csharp =
@@ -273,7 +283,7 @@ namespace TitlesOrganizer.Infrastructure
 }
 ```
 ## Konfiguracja UI
-Kiedy tworzyliśmy nasz projekt _.Web_ wybraliśmy opcję autoryzacji użytkowników przy pomocy _Individual Accounts_. Przez to, został więc dla nas automatycznie utworzony podstawowy `IdentityDbContext`. Znajduje się on w katalogu _Data_ projektu _.Web_. Ponieważ aplikacja MVC ma być tylko frontem naszej aplikacji, więc nie chcemy się w niej łączyć z bazą danych. Usuwamy więc cały katalog _Data_. Teraz, musimy jeszcze zaktualizować konfigurację naszej aplikacji. W pliku _Program.cs_ (lub _Startup.cs_, jeśli istnieje) aplikacji webowej podmieniamy usunięty przed chwilą kontekst (`ApplicationDbContext`), na ten przez nas utworzony (`TitlesOrganizer.Infrastructure.Context`).
+Kiedy tworzyliśmy nasz projekt _.Web_ wybraliśmy opcję autoryzacji użytkowników przy pomocy _Individual Accounts_. Przez to, został dla nas automatycznie utworzony podstawowy `IdentityDbContext`. Znajduje się on w katalogu _Data_ projektu _.Web_. Ponieważ aplikacja MVC ma być tylko frontem naszej aplikacji, więc nie chcemy się w niej łączyć z bazą danych. Usuwamy więc cały katalog _Data_. Teraz, musimy jeszcze zaktualizować konfigurację naszej aplikacji. W pliku _Program.cs_ (lub _Startup.cs_, jeśli istnieje) aplikacji webowej podmieniamy usunięty przed chwilą kontekst (`ApplicationDbContext`), na ten przez nas utworzony (`TitlesOrganizer.Infrastructure.Context`).
 
 Więc kod:
 ```csharp =
