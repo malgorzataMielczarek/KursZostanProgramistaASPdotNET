@@ -52,7 +52,7 @@ Podejście _code first_ pozwala na napisanie przez programistów modeli w naszej
 W katalogu _Model_ projektu _.Domain_ tworzymy klasy z naszymi modelami. Modele będą wyglądać podobnie jak te, które pisaliśmy do tej pory. Będą to po prostu publiczne klasy zawierające publiczne właściwości, na podstawie których zostaną utworzone tabele w bazie danych (jedna klasa = jedna tabela, jedna właściwość klasy = jedna kolumna tabeli).
 #### Mapowanie
 ##### Nazwy
-Automatycznie, po mapowaniu, tabele w bazie danych będą miały takie nazwy jak nasze klasy, natomiast kolumny, takie jak nasze metody. Jeżeli jednak z jakiegoś powodu (choć nie jest to zalecane), chcielibyśmy, aby elementy w bazie danych miały inne nazwy niż odpowiadające im elementy w modelach, to z pomocą przychodzą nam odpowiednie atrybuty. Są to odpowiednio `TableAttribute` i `ColumnAttribute`, które przyjmują żądane nazwy, jako argumenty konstruktora. Np.:
+Automatycznie, po mapowaniu, tabele w bazie danych będą miały takie nazwy jak nasze klasy, natomiast kolumny, takie jak nasze właściwości. Jeżeli jednak z jakiegoś powodu (choć nie jest to zalecane), chcielibyśmy, aby elementy w bazie danych miały inne nazwy niż odpowiadające im elementy w modelach, to z pomocą przychodzą nam odpowiednie atrybuty. Są to odpowiednio `TableAttribute` i `ColumnAttribute`, które przyjmują żądane nazwy, jako argumenty konstruktora. Np.:
 ```csharp =
 [Table("Subjects")]
 public class Item
@@ -92,7 +92,7 @@ public class Type
     public string Name { get; set; }
 }
 ```
-Jak widać chcemy, do obiektów `Item` przyporządkowywać jakiś obiekt `Type`. Tak napisalibyśmy je do tej pory. _Entity Framework Core_ wymaga od nas jeszcze stworzenia właściwości na obiekty znajdujące się w relacji. Dzięki temu będziemy mogli np. sprawdzić `Name` obiektu `Type` powiązanego z naszym obiektem `Item` bez tworzenia dodatkowych zapytań. Do klasy `Item` musimy zatem dopisać jeszcze jedną linijkę:
+Jak widać chcemy, do obiektów `Item` przyporządkowywać jakiś obiekt `Type`. Tak napisalibyśmy je do tej pory. _Entity Framework Core_ wymaga od nas jeszcze stworzenia właściwości na obiekty znajdujące się w relacji. Będziemy je nazywać nawigacjami. Dzięki nim będziemy mogli np. sprawdzić `Name` obiektu `Type` powiązanego z naszym obiektem `Item` bez tworzenia dodatkowych zapytań. Do klasy `Item` musimy zatem dopisać jeszcze jedną linijkę:
 ```csharp =
 public class Item
 {
@@ -103,7 +103,7 @@ public class Item
     public virtual Type Type { get; set; }
 }
 ```
-Widzimy tu, że każdy obiekt `Item` jest powiązany z dokładnie jednym obiektem `Type`. Relacja jest jednak dwustronna. Tutaj mamy do czynienia z najbardziej podstawowym typem relacji, czyli tzw. relacja jeden do wielu. Oznacza to, że Jeden obiekt `Type` może być w relacji z wieloma obiektami `Item`. Musimy więc jeszcze zmodyfikować naszą klasę `Type`, aby móc w niej przechowywać powiązaną z danym obiektem `Type` kolekcję obiektów `Item`:
+Widzimy tu, że każdy obiekt `Item` jest powiązany z dokładnie jednym obiektem `Type`. Relacja jest jednak dwustronna. Tutaj mamy do czynienia z najbardziej podstawowym typem relacji, czyli tzw. relacja jeden do wielu. Oznacza to, że jeden obiekt `Type` może być w relacji z wieloma obiektami `Item`. Musimy więc jeszcze zmodyfikować naszą klasę `Type`, aby móc w niej przechowywać powiązaną z danym obiektem `Type` kolekcję obiektów `Item`:
 ```csharp =
 public class Type
 {
@@ -125,7 +125,7 @@ Używa się go do tworzenia relacji pomiędzy danymi. Klucz obcy jest to klucz g
 ### Relacje
 Pomiędzy danymi w bazach danych mogą występować trzy rodzaje relacji: jeden do jednego, jeden do wielu i wiele do wielu.
 #### Jeden do jednego
-Relacja mówiąca, że element z jednej tabeli może mieć relację tylko i wyłącznie z jednym elementem z drugiej tabeli. Składa się z tabeli głównej (_principal_, _parent_) i zależnej (_dependent_, _child_). Tabela zależna, jest to tabela posiadająca klucz obcy. Jeżeli dopiero tworzymy bazę danych, to jako tabele zależną powinniśmy wybrać tabele, której istnienie niema logicznego sensu bez tabeli głównej. Jeżeli pomiędzy tabelami występuje naturalna relacja dziecko-rodzic, to "dziecko" powinno być tabelą zależną, a "rodzic" główną.
+Relacja mówiąca, że element z jednej tabeli może mieć relację tylko i wyłącznie z jednym elementem z drugiej tabeli. Składa się z tabeli głównej (_principal_, _parent_) i zależnej (_dependent_, _child_). Tabela zależna, jest to tabela posiadająca klucz obcy. Jeżeli dopiero tworzymy bazę danych, to jako tabelę zależną powinniśmy wybrać tabele, której istnienie niema logicznego sensu bez tabeli głównej. Jeżeli pomiędzy tabelami występuje naturalna relacja dziecko-rodzic, to "dziecko" powinno być tabelą zależną, a "rodzic" główną.
 ##### Przykład
 Załóżmy, że klientami naszej aplikacji są firmy. Każda z nich ma wyznaczoną dokładnie jedną osobę do kontaktu. Klienci, będą więc naszym modelem głównym. Istnienie informacji kontaktowych dla nieistniejącego klienta niema bowiem sensu. Tak więc klasa wskazująca osobę do kontaktu będzie zawierać klucz obcy (klucz główny klienta). Np.:
 ```csharp =
@@ -137,7 +137,7 @@ public class Customer
     public string NIP { get; set; }
 
     // Relacja jeden do jednego
-    public CustomerContactInformation CustomerContactInformation { get; set; } // powiązany obiekt
+    public CustomerContactInformation CustomerContactInformation { get; set; } // powiązany obiekt, nawigacja referencyjna
 }
 ```
 ```csharp =
@@ -151,7 +151,7 @@ public class CustomerContactInformation
 
     // Relacja jeden do jednego
     public int CustomerRef { get; set; } // referencja do klienta, klucz obcy
-    public Customer Customer { get; set; } // powiązany obiekt
+    public Customer Customer { get; set; } // powiązany obiekt, nawigacja referencyjna
 }
 ```
 Dodatkowo będziemy musieli stworzyć klasę definiującą na podstawie jakich pól osiągamy relacją. Zajmiemy się tym jednak w kolejnej lekcji, podczas omawiania tworzenia kontekstów.
@@ -167,7 +167,7 @@ public class Item
 
     // Relacja jeden do wielu
     public int TypeId {get; set; } // referencja do powiązanego obiektu, klucz obcy
-    public virtual Type Type { get; set; } // powiązany obiekt
+    public virtual Type Type { get; set; } // powiązany obiekt, nawigacja referencyjna
 }
 ```
 ```csharp =
@@ -177,7 +177,7 @@ public class Type
     public string Name { get; set; }
 
     // Relacja jeden do wielu
-    public virtual ICollection<Item> Items { get; set; } // kolekcja powiązanych obiektów
+    public virtual ICollection<Item> Items { get; set; } // kolekcja powiązanych obiektów, nawigacja po kolekcji
 }
 ```
 #### Wiele do wielu
@@ -302,6 +302,271 @@ Id|StreetId|Local|CustomerId
 | :warning:**UWAGA!** |
 | :---: |
 |Do powyższych zasad należy się stosować, gdy ma to sens. Trzecią formę normalną stosuje się przykładowo tylko dla często zmieniających się danych. Np. przeprowadzona w powyższym przykładzie normalizacja do trzeciej postaci normalnej niema sensu. Miałaby ono sens, gdyby nazwy ulic, czy miejscowości często się zmieniały. Wówczas takie poprawki musielibyśmy nanieść tylko w jednym miejscu, zamiast w wielu rekordach. Ponieważ jednak zdarza się to sporadycznie i prawdopodobieństwo konieczności naniesienia takich poprawek jest bliskie zeru, więc lepiej pozostawić naszą tabelę Addresses w drugiej postaci normalnej. Szczególnie, że wiele małych tabel może obniżać wydajność lub przekraczać pojemność otwartych plików i pamięci. Wyodrębnienie nazw miast, kodów pocztowych itd. mogłoby mieć jeszcze sens, gdybyśmy mieli w bazie z góry zdefiniowaną listę miast, kodów itp. Wówczas wprowadzając nowy adres klienta będziemy np. wybierać dane z rozwijanej listy, zamiast wpisywać ręcznie, co zmniejszy ryzyko błędu.|
+#### Konwencje
+Aby _EF Core_ automatycznie wykrywał relacje i dokonywał mapowania, pisany przez nas kod musi przestrzegać ustalonych konwencji.
+##### Wykrywanie nawigacji
+Wykrywanie relacji rozpoczyna się wykrywaniem nawigacji pomiędzy typami encji.
+###### Referencje
+Właściwość typu encji jest wykrywana jako nawigacja referencyjna gdy:
+* Właściwość jest publiczna (`public`).
+* Właściwość ma getter i setter.
+    * Setter nie musi być publiczny, może być prywatny lub mieć inny modyfikator dostępu.
+    * Setter może być `init`.
+* Typ właściwości jest, lub może być, typem encji. Oznacza to, że typ właściwości:
+    * Musi być typem referencyjnym.
+    * Nie może być jawnie skonfigurowany jako prymitywny typ danych (`bool`, `int`, `string` itd.).
+    * Nie może być zmapowany jako prymitywny typ danych przez używany silnik bazodanowy.
+    * Nie może być automatycznie konwertowalny do prymitywnego typu danych  mapowanego przez użyty silnik bazodanowy.
+* Właściwość nie jest statyczna.
+* Właściwość nie jest właściwością indeksatora.
+####### Przykład
+```csharp =
+public class Blog
+{
+    // Not discovered as reference navigations:
+    public int Id { get; set; }
+    public string Title { get; set; } = null!;
+    public Uri? Uri { get; set; }
+    public ConsoleKeyInfo ConsoleKeyInfo { get; set; }
+    public Author DefaultAuthor => new() { Name = $"Author of the blog {Title}" };
+
+    // Discovered as a reference navigation:
+    public Author? Author { get; private set; }
+}
+
+public class Author
+{
+    // Not discovered as reference navigations:
+    public Guid Id { get; set; }
+    public string Name { get; set; } = null!;
+    public int BlogId { get; set; }
+
+    // Discovered as a reference navigation:
+    public Blog Blog { get; init; } = null!;
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#reference-navigations_
+
+W powyższym przykładzie `Blog.Author` i `Author.Blog` są rozpoznane jako nawigacje referencyjne (_reference navigations_). Z drugiej strony, pozostałe właściwości nie zostały rozpoznane jako nawigacje, gdyż:
+* `Blog.Id`, bo `int` jest mapowany jako typ prymitywny
+* `Blog.Title`, bo `string` jest mapowany jako typ prymitywny
+* `Blog.Uri`, bo `Uri` jest automatycznie konwertowany do mapowanego typu prymitywnego
+* `Blog.ConsoleKeyInfo`, bo `ConsoleKeyInfo` jest typem wartościowym C#
+* `Blog.DefaultAuthor`, bo właściwość nie ma settera
+* `Author.Id`, bo `Guid` jest mapowany do typu prymitywnego
+* `Author.Name`, bo `string` jest mapowany do typu prymitywnego
+* `Author.BlogId`, bo `int` jest mapowany do typu prymitywnego
+
+###### Kolekcje
+Właściwość typu encji jest wykrywana jako nawigacja po kolekcji gdy:
+* Właściwość jest publiczna.
+* Właściwość ma getter. Właściwość może mieć również setter, jednak nie jest on wymagany.
+* Typem właściwości jest lub implementuje `IEnumerable<TEntity>`, gdzie `TEntity` jest lub mogłoby być typem encji. To oznacza, że `TEntity`:
+    * Musi być typem referencyjnym.
+    * Nie może być jawnie skonfigurowany jako prymitywny typ danych (`bool`, `int`, `string` itd.).
+    * Nie może być zmapowany jako prymitywny typ danych przez używany silnik bazodanowy.
+    * Nie może być automatycznie konwertowalny do prymitywnego typu danych  mapowanego przez użyty silnik bazodanowy.
+* Właściwość nie jest statyczna.
+* Właściwość nie jest właściwością indeksatora.
+####### Przykład
+```csharp =
+public class Blog
+{
+    public int Id { get; set; }
+    public List<Tag> Tags { get; set; } = null!;
+}
+
+public class Tag
+{
+    public Guid Id { get; set; }
+    public IEnumerable<Blog> Blogs { get; } = new List<Blog>();
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#collection-navigations_
+
+W powyższym przykładzie zarówno `Blog.Tags`, jak i `Tag.Blogs` są wykryte jako nawigacje po kolekcjach.
+###### Parowanie nawigacji
+Kiedy wykryto już nawigację (np. dla encji `A` do encji `B`), to jest sprawdzane, czy istnieje nawigacja w drugą stronę (dla `B` do `A`). Jeżeli tak, to obie nawigacje są ze sobą parowane, tworząc jedną relację dwukierunkową. Typ relacji zależy, czy nawigacja i odwrotna nawigacja są referencjami, czy kolekcjami. Dokładniej:
+* Jeśli jedna nawigacja jest kolekcją, a druga referencją, to jest to relacja jeden do wielu.
+```csharp =
+public class Blog
+{
+    public int Id { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>(); // nawigacja po kolekcji
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? BlogId { get; set; }
+    public Blog? Blog { get; set; } // nawigacja referencyjna
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#pairing-navigations_
+* Jeśli obie nawigacje są referencyjne, to jest to relacja jeden do jednego.
+```csharp =
+public class Blog
+{
+    public int Id { get; set; }
+    public Author? Author { get; set; } // nawigacja referencyjna
+}
+
+public class Author
+{
+    public int Id { get; set; }
+    public int? BlogId { get; set; }
+    public Blog? Blog { get; set; } // nawigacja referencyjna
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#pairing-navigations_
+* Jeżeli obie nawigacje są kolekcjami, to jest to relacja wiele do wielu.
+```csharp =
+public class Post
+{
+    public int Id { get; set; }
+    public ICollection<Tag> Tags { get; } = new List<Tag>(); // nawigacja po kolekcji
+}
+
+public class Tag
+{
+    public int Id { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>(); // nawigacja po kolekcji
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#pairing-navigations_
+
+| :warning:**UWAGA!** |
+| :---: |
+|Parowanie nawigacji może być niepoprawne, jeżeli dwie nawigacje reprezentują dwie różne jednokierunkowe relacje. W tym wypadku, te dwie relacje muszą być jawnie skonfigurowane w kontekście (o czym w następnej lekcji).|
+|Parowanie relacji działa tylko, gdy jest tylko jedna relacja pomiędzy dwoma typami. Wiele relacji między dwoma typami musi być jawnie skonfigurowanych.|
+|Powyższe przykłady dotyczyły relacji między dwoma różnymi typami. Jednak, jest również możliwe, aby ten sam typ był na obu końcach relacji (jeden element tego typu był w relacji z innym elementem tego typu). Pojedynczy typ może więc mieć dwie nawigacje sparowane ze sobą nawzajem. Nazywamy to _self-referencing relationship_.|
+
+##### Wykrywanie właściwości z kluczami obcymi
+Gdy nawigacje dla relacji zostaną wykryte lub jawnie skonfigurowane, służą one do wykrycia odpowiednich właściwości klucza obcego dla relacji. Właściwość jest wykryta jako klucz obcy gdy:
+* Typ właściwości jest kompatybilny z kluczem głównym lub alternatywnym typu głównej encji.
+    * Typy są kompatybilne, gdy są takie same lub gdy typ klucza obcego jest nullowalną wersją typu klucza głównego lub alternatywnego.
+* Nazwa właściwości pasuje do jednej z konwencji nazewnictwa właściwości klucza obcego. Konwencje nazewnicze to:
+    * `<nazwa właściwości nawigacji><nazwa właściwości klucza głównego>`
+    * `<nazwa właściwości nawigacji><Id\id\ID>`
+    * `<nazwa typu encji głównej><nazwa właściwości klucza głównego>`
+    * `<nazwa typu encji głównej><Id\id\ID>`
+* Dodatkowo, jeżeli koniec zależny został jawnie skonfigurowany przy użyciu API do budowy modeli i klucz główny encji zależnej jest kompatybilny, wówczas klucz główny końca zależnego zostanie również użyty jako klucz obcy.
+###### Przykłady
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#discovering-foreign-key-properties_
+
+Przykład dla konwencji nazewniczej `<nazwa właściwości nawigacji><nazwa właściwości klucza głównego>`:
+```csharp =
+public class Blog
+{
+    public int Key { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? TheBlogKey { get; set; }
+    public Blog? TheBlog { get; set; }
+}
+```
+Przykład dla konwencji nazewniczej `<nazwa właściwości nawigacji><Id\id\ID>`:
+```csharp =
+public class Blog
+{
+    public int Key { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? TheBlogID { get; set; }
+    public Blog? TheBlog { get; set; }
+}
+```
+Przykład dla konwencji nazewniczej `<nazwa typu encji głównej><nazwa właściwości klucza głównego>`:
+```csharp =
+public class Blog
+{
+    public int Key { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? BlogKey { get; set; }
+    public Blog? TheBlog { get; set; }
+}
+```
+Przykład dla konwencji nazewniczej `<nazwa typu encji głównej><Id\id\ID>`:
+```csharp =
+public class Blog
+{
+    public int Key { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+
+public class Post
+{
+    public int Id { get; set; }
+    public int? Blogid { get; set; }
+    public Blog? TheBlog { get; set; }
+}
+```
+| :warning:**UWAGA!** |
+| :---: |
+|W przypadku nawigacji jeden do wielu, właściwości klucza obcego muszą być w tym samym typie, co nawigacja referencyjna, gdyż to będzie encja zależna.|
+|W przypadku relacji jeden do jednego, wykrycie klucza obcego jest użyte do określenia który typ reprezentuje stronę zależną relacji. Jeśli nie wykryto właściwości klucza obcego, koniec zależny musi zostać skonfigurowany przy użyciu metody `HasForeignKey`.|
+##### Wykrywanie liczebności relacji (typu)
+EF używa wykrytych właściwości nawigacji i klucza obcego do ustalenia liczebności relacji, wraz z ich końcami (głównym i zależnym).
+* Jeśli występuje jedna, niesparowana nawigacja referencyjna, wówczas relacja jest konfigurowana jako jednokierunkowa, jeden do wielu, z nawigacją referencyjną na końcu zależnym.
+* Jeśli występuje jedna niesparowana nawigacja po kolekcji, wówczas relacja jest konfigurowana jako jednokierunkowa, jeden do wielu, z nawigacją po kolekcji na końcu głównym.
+* Jeśli występują sparowane nawigacje referencyjna i po kolekcji, wówczas relacja jest konfigurowana jako dwukierunkowa, jeden do wielu, z nawigacją po kolekcji na końcu głównym.
+* Jeśli nawigacja referencyjna jest sparowana z inną nawigacją referencyjną, wówczas:
+    * Jeśli wykryto właściwość klucza obcego tylko po jednej stronie, to relacja jest konfigurowana jako dwukierunkowa, jeden do jednego, z właściwością klucza obcego na końcu zależnym.
+    * Jeśli nie wykryto właściwości klucza obcego, lub wykryto ją na obu końcach, strona zależna nie może zostać określona. EF wyrzuca wówczas wyjątek wskazujący, że koniec zależny musi być jawnie skonfigurowany.
+* Jeśli nawigacja po kolekcji jest sparowana z inną nawigacją po kolekcji wówczas relacja jest konfigurowana jako dwukierunkowa, wiele do wielu.
+##### Właściwości cienia klucza obcego
+Jeśli EF wykrył koniec zależny relacji, ale nie znalazł właściwości klucza obcego, wówczas tworzy tzw. właściwość cienia (ang. _shadow property_), reprezentującą klucz obcy.
+
+**Właściwości cienia** są to właściwości, które nie są zdefiniowane w naszych .NET-owych klasach encji, ale są zdefiniowane dla tych typów encji w modelach EF Core. Wartość i stan tych właściwości są utrzymywane wyłącznie w _Change Tracker_. Są one użyteczne, gdy w bazie danych znajdują się dane, które nie powinny być ujawnione na zmapowanych typach encji.
+
+Właściwość cienia klucza obcego:
+* Ma typ właściwości klucza głównego lub alternatywnego, głównego końca relacji.
+    * Typ jest domyślnie ustawiany jako nullowalny, co sprawia, że relacja jest domyślnie opcjonalna.
+* Jest nazywana używając nazwy nawigacji końca zależnego połączonej z nazwą właściwości klucza obcego lub alternatywnego, pod warunkiem, że na końcu zależnym jest nawigacja.
+* Jeśli na końcu zależnym nie ma nawigacji, wówczas nazwa jest tworzona przez połączenia nazwy typu (klasy) głównej encji i właściwości klucza głównego lub alternatywnego.
+##### Usuwanie kaskadowe
+Zgodnie z konwencją, wymagane relacje (te gdzie typ właściwości klucza obcego nie jest nullowalny) są konfigurowane do usuwania kaskadowego (ang. _cascade delete_). Relacje opcjonalne (te gdzie typ właściwości klucza obcego jest nullowalny) są konfigurowane, aby nie usuwały się kaskadowo.
+
+**Usuwanie kaskadowe** oznacza, że gdy usuniemy główną encję (rodzica), to encja od niego zależna (dziecko) również zostanie usunięta. Jeżeli dziecko, jest encją główną dla innej encji zależnej (i mamy dla nich również skonfigurowane usuwanie kaskadowe), to wówczas ta encja zależna również jest usuwana itd.
+##### Wiele do wielu
+Relacja wiele do wielu nie ma końca głównego i zależnego. Żadna strona nie posiada klucza obcego. Zamiast tego używa typu encji łączenia. Zawiera ona pary kluczy obcych wskazujących na każdy z końców relacji wiele do wielu.
+###### Przykład
+```csharp =
+public class Post
+{
+    public int Id { get; set; }
+    public ICollection<Tag> Tags { get; } = new List<Tag>();
+}
+
+public class Tag
+{
+    public int Id { get; set; }
+    public ICollection<Post> Posts { get; } = new List<Post>();
+}
+```
+_Źródło: https://learn.microsoft.com/en-us/ef/core/modeling/relationships/conventions#many-to-many_
+
+Do tworzonej encji łączenia zastosowanie mają następujące konwencje:
+* Typ encji łączenia zostanie nazwany zgodnie z konwencją `<nazwa typu lewej encji><nazwa typu prawej encji>`, czyli `PostTag`.
+    * Tabela łączenia, która zostanie utworzona w bazie danych, będzie miała taką samą nazwę jak typ encji łączenia.
+* Typ encji łączenia będzie mieć właściwości klucza obcego dla każdego kierunku relacji. Są one nazwane zgodnie z konwencją `<nazwa nawigacji><nazwa klucza głównego>`, czyli `PostsId` i `TagsId`.
+    * Dla jednokierunkowych relacji wiele do wielu, właściwość klucza obcego bez powiązanej nawigacji jest nazywana zgodnie z konwencją `<nazwa typu głównej encji><nazwa klucza głównego>`.
+* Właściwości kluczy obcych są nienullowalne. Obie relacje encji łączenia są więc wymagane.
+    * Konwencje usuwania kaskadowego oznaczają, że te relacje zostaną skonfigurowane do usuwania kaskadowego.
+* Typ encji łączenia jest skonfigurowany z kluczem głównym złożonym, który składa się z dwóch właściwości kluczy obcych, czyli z `PostsId` i `TagsId`.
 
 ## [LEKCJA 5 – Context](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-7-bazy-danych/lekcja-5-context/)
 Kontekst jest to specjalna klasa wymagana przez _Entity Framework Core_ definiująca tabele i relacje jakie mają zostać utworzone w bazie danych. Pozwala ona na zmapowanie stworzonych przez nas modeli domenowych na tabele bazodanowe. Tworzy sesję z bazą danych i umożliwia wysyłanie zapytań, pobieranie i modyfikację danych w bazie danych.
@@ -490,7 +755,7 @@ namespace TitlesOrganizer.Infrastructure
 ```
 Tradycyjnie nazwa właściwości `DbSet` odpowiada liczbie mnogiej nazwy modelu, którego dotyczy. Wyjątek stanowią modele pomocnicze do tworzenia relacji wiele do wielu, w których używamy liczby pojedynczej, właśnie, aby wyróżnić, że są to tabele z relacjami.
 
-Gdyby wszystkie klasy i relacje były utworzone zgodnie z konwencją, to na tym moglibyśmy zakończyć tworzenie naszej klasy `Context`. Jak już jednak wspominaliśmy konwencja wspiera wyłącznie tworzenie relacji jeden do wielu. W naszym przykładzie występują jednak również relacje jeden do jednego i wiele do wielu. Musimy więc je jeszcze zdefiniować. Posłuży do tego tzw. _fluent API_.
+Gdyby wszystkie klasy i relacje były utworzone zgodnie z konwencją, to na tym moglibyśmy zakończyć tworzenie naszej klasy `Context`. Jak już jednak wspominaliśmy konwencja wspiera wyłącznie tworzenie relacji jeden do wielu (już nie tylko, ale nadal może istnieć konieczność skonfigurowania rzeczy niezgodnych z konwencją lub przez nią nieuwzględnionych, np. jednokierunkowa relacja wiele do wielu). W naszym przykładzie występują jednak również relacje jeden do jednego i wiele do wielu. Musimy więc je jeszcze zdefiniować (nie trzeba już jawnie konfigurować relacji jeden do jednego i wiele do wielu, ale ponieważ tu mamy utworzone modele dla pomocniczych tabeli łączących, więc musimy przynajmniej zdefiniować dla nich klucze złożone). Posłuży do tego tzw. _fluent API_.
 ### _Fluent API_
 Tym mianem określamy metody klasy `ModelBuilder`. Pozwalają one na nadpisanie jakichkolwiek domyślnych konfiguracji mapowania _Entity Framework Core_. Zmiany wykonane przy pomocy _Fluent API_ są nadrzędne względem wszystkich innych konfiguracji. Modyfikacji `ModelBuilder`a dokonujemy przez nadpisanie metody `OnModelCreating(ModelBuilder modelBuilder)` klasy `DbContext`.
 #### `OnModelCreating`
@@ -505,12 +770,22 @@ Zwraca ona obiekt `EntityTypeBuilder<TEntity>`, który może zostać użyty do s
 Metoda klasy `EntityTypeBuilder<TEntity>` pozwalająca na ustawienie właściwości modelu `TEntity`, które będą tworzyć klucz główny. Wywołujemy ją na obiekcie zwróconym przez metodę `Entity<TEntity>`.
 #### `HasOne<TRelatedEntity>`
 Metoda klasy `EntityTypeBuilder<TEntity>` konfigurująca relację, gdzie `TEntity` posiada referencję wskazującą na pojedynczą instancję `TRelatedEntity`. Zwraca obiekt typu `ReferenceNavigationBuilder<TEntity,TRelatedEntity>`.
+#### `HasMany<TRelatedEntity>`
+Metoda klasy `EntityTypeBuilder<TEntity>` konfigurująca relację, gdzie `TEntity` posiada kolekcję zawierającą instancje `TRelatedEntity`. Zwraca obiekt typu `CollectionNavigationBuilder<TEntity,TRelatedEntity>`.
 #### `WithOne`
-Metoda klasy `ReferenceNavigationBuilder<TEntity,TRelatedEntity>`. Wskazuje, że ta relacja jest typu jeden do jednego. Zwraca obiekt typu `ReferenceCollectionBuilder<TRelatedEntity,TEntity>`, umożliwiający dalszą konfigurację relacji.
+Metoda klasy `ReferenceNavigationBuilder<TEntity,TRelatedEntity>` lub `CollectionNavigationBuilder<TEntity,TRelatedEntity>`. Konfiguruje ona odpowiednią relację i zwraca obiekt umożliwiający jej dalszą konfigurację.
+Klasa|Relacja|Typ zwracany
+---|---|---
+`ReferenceNavigationBuilder <TEntity,TRelatedEntity>`|jeden do jednego|`ReferenceReferenceBuilder <TEntity,TRelatedEntity>`
+`CollectionNavigationBuilder <TEntity,TRelatedEntity>`|jeden do wielu|`ReferenceCollectionBuilder <TEntity,TRelatedEntity>`
 #### `WithMany`
-Metoda klasy `ReferenceNavigationBuilder<TEntity,TRelatedEntity>`. Wskazuje, że ta relacja jest typu jeden do wielu. Zwraca obiekt typu `ReferenceCollectionBuilder<TRelatedEntity,TEntity>`, umożliwiający dalszą konfigurację relacji.
+Metoda klasy `ReferenceNavigationBuilder<TEntity,TRelatedEntity>` lub `CollectionNavigationBuilder<TEntity,TRelatedEntity>`. Konfiguruje ona odpowiednią relację i zwraca obiekt umożliwiający jej dalszą konfigurację.
+Klasa|Relacja|Typ zwracany
+---|---|---
+`ReferenceNavigationBuilder <TEntity,TRelatedEntity>`|jeden do wielu|`ReferenceCollectionBuilder <TRelatedEntity,TEntity>`
+`CollectionNavigationBuilder <TEntity,TRelatedEntity>`|wiele do wielu|`CollectionCollectionBuilder <TRelatedEntity,TEntity>`
 #### `HasForeignKey`
-Metoda klasy `ReferenceCollectionBuilder<TRelatedEntity,TEntity>`. Konfiguruje właściwość (właściwości), którą (które) należy użyć, jako klucza obcego tej relacji.
+Metoda klas `ReferenceCollectionBuilder<TPrincipalEntity,TDependentEntity>` i `ReferenceReferenceBuilder<TEntity,TRelatedEntity>`. Konfiguruje właściwość (właściwości), którą (które) należy użyć, jako klucza obcego tej relacji.
 #### Przykład
 Skonfigurujmy więc relacje jeden do jednego i wiele do wielu, dla naszych przykładowych modeli. Zauważmy, że relacja wiele do wielu, jest w praktyce relacją jeden do wielu, pomiędzy modelami, a klasą pomocniczą. Czyli np. relacja wiele do wielu pomiędzy `Book` i `Author`, jest tak na prawdę relacją jeden do wielu między `Book` i `BookAuthor` oraz `Author` i `BookAuthor`. Zwróćmy jeszcze uwagę, że dla modeli pomocniczych musimy skonfigurować klucze główne, gdyż będą to tzw. klucze złożone, składające się z dwóch właściwości, będących kluczami obcymi. Nadpiszmy więc metodę `OnModelCreating`:
 ```csharp =
@@ -578,7 +853,7 @@ namespace TitlesOrganizer.Infrastructure
 }
 ```
 ### Konfiguracja UI
-Kiedy tworzyliśmy nasz projekt _.Web_ wybraliśmy opcję autoryzacji użytkowników przy pomocy _Individual Accounts_. Przez to, został więc dla nas automatycznie utworzony podstawowy `IdentityDbContext`. Znajduje się on w katalogu _Data_ projektu _.Web_. Ponieważ aplikacja MVC ma być tylko frontem naszej aplikacji, więc nie chcemy się w niej łączyć z bazą danych. Usuwamy więc cały katalog _Data_. Teraz, musimy jeszcze zaktualizować konfigurację naszej aplikacji. W pliku _Program.cs_ (lub _Startup.cs_, jeśli istnieje) aplikacji webowej podmieniamy usunięty przed chwilą kontekst (`ApplicationDbContext`), na ten przez nas utworzony (`TitlesOrganizer.Infrastructure.Context`).
+Kiedy tworzyliśmy nasz projekt _.Web_ wybraliśmy opcję autoryzacji użytkowników przy pomocy _Individual Accounts_. Przez to, został dla nas automatycznie utworzony podstawowy `IdentityDbContext`. Znajduje się on w katalogu _Data_ projektu _.Web_. Ponieważ aplikacja MVC ma być tylko frontem naszej aplikacji, więc nie chcemy się w niej łączyć z bazą danych. Usuwamy więc cały katalog _Data_. Teraz, musimy jeszcze zaktualizować konfigurację naszej aplikacji. W pliku _Program.cs_ (lub _Startup.cs_, jeśli istnieje) aplikacji webowej podmieniamy usunięty przed chwilą kontekst (`ApplicationDbContext`), na ten przez nas utworzony (`TitlesOrganizer.Infrastructure.Context`).
 
 Więc kod:
 ```csharp =
@@ -620,7 +895,7 @@ var app = builder.Build();
 ## [LEKCJA 6 – Repository](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-7-bazy-danych/lekcja-6-repository/)
 Kiedy mamy już utworzony kontekst ze wszystkimi naszymi tabelami bazodanowymi, możemy przejść do implementacji operacji na danych. Poprzednio, w aplikacji konsolowej, używaliśmy w tym celu serwisów. W aplikacji webowej stworzymy do tego celu repozytoria w naszym projekcie _.Infrastructure_.
 ### Czy trzeba tworzyć repozytoria?
-Od kiedy powstał _Entity Framework Core_ takie operacje możemy wykonywać bezpośrednio na utworzonych w kontekście `DbSet`ach. Teoretycznie nie musielibyśmy więc tworzyć repozytoriów. Warto jednak oddzielnie zaimplementować przynajmniej operacje na danych z bazy danych. Pozwala nam to na kontrolę nad tym, jak te operacje są wykonywane, co zmniejsza ryzyko błędu. Poprawia to również podział logiczny aplikacji. Serwisy nie będą wykonywać operacji na bazie danych, a jedynie otrzymywać i przesyłać odpowiednie dane i wywoływać odpowiednie operacje.
+Od kiedy powstał _Entity Framework Core_ takie operacje możemy wykonywać bezpośrednio na utworzonych w kontekście `DbSet`ach. Teoretycznie nie musielibyśmy więc tworzyć repozytoriów. Warto jednak oddzielnie zaimplementować operacje na danych z bazy danych. Pozwala nam to na kontrolę nad tym, jak te operacje są wykonywane, co zmniejsza ryzyko błędu. Poprawia to również podział logiczny aplikacji. Serwisy nie będą wykonywać operacji na bazie danych, a jedynie otrzymywać i przesyłać odpowiednie dane i wywoływać odpowiednie operacje.
 ### Jak tworzyć repozytoria?
 Istnieją dwa podejścia do tworzenia repozytoriów. Po pierwsze możemy tworzyć osobne repozytorium dla każdej tabeli. Często jednak mamy powiązane z sobą tabele, które zawsze będziemy używać razem. Np. w jednej tabeli przechowujemy książki, a w drugiej autorów. Wyświetlając, tworząc lub edytując książki będziemy również podawać autorów. Samych autorów też nie będziemy raczej używać nie w odniesieniu do książek. Tworzenie osobnych repozytoriów dla obu tych tabel może nie mieć więc sensu. Zgodnie z drugim podejściem tworzymy więc repozytoria zgodnie z logiką biznesową. Wówczas w jednym repozytorium możemy wykonywać operacje na kilku `DbSet`ach.
 ### Tworzenie repozytoriów
@@ -777,9 +1052,9 @@ Jeżeli okno _Connect to Server_ nie otworzyło nam się automatycznie po urucho
 Kiedy połączymy się już z naszym serwerem w _Object Explorer_ (F8, jeśli się nie wyświetla) możemy zobaczyć co się na nim znajduje. Nasze bazy danych zostaną umieszczone w folderze _Databases_, kiedy już je utworzymy.
 
 ## [LEKCJA 9 – Migracje](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-7-bazy-danych/lekcja-9-migracje/)
-Migracje, jest to mechanizm pozwalający na automatyczne przeniesienie struktury bazy danych stworzonej w podejściu _code first_ do silnika bazodanowego, do naszej instancji serwera, na faktyczną bazę danych.
+Migracje, jest to mechanizm pozwalający na automatyczne przeniesienie struktury bazy danych, stworzonej w podejściu _code first_, do silnika bazodanowego (naszej instancji serwera), na faktyczną bazę danych.
 
-Moglibyśmy oczywiście ręcznie stworzyć całą naszą bazę danych, przy pomocy silnika bazodanowego i odpowiednich zapytań SQL lub wyklikując odpowiednie opcje np. w Microsoft SQL Server Management Studio. Aby jednak zaoszczędzić programistą czasu i pracy stworzono właśnie migracje.
+Moglibyśmy oczywiście ręcznie stworzyć całą naszą bazę danych, przy pomocy silnika bazodanowego i odpowiednich zapytań SQL lub wyklikując odpowiednie opcje np. w Microsoft SQL Server Management Studio. Aby jednak zaoszczędzić programistom czasu i pracy stworzono właśnie migracje.
 
 Komendy związane z migracjami znajdują się w paczce _Microsoft.EntityFrameworkCore.Tools_, którą zainstalowaliśmy w naszym projekcie na początku tego tygodnia. Będziemy ich używać w konsoli _Package Manager Console_ w Visual Studio. Konsolę otworzymy wybierając z menu _Tools_(Alt+T) -> _NuGet Package Manager_(N) -> _Package Manager Console_(O). W konsoli w _Default project:_ musimy wybrać projekt, który będzie związany z migracjami, a co za tym idzie z bazą danych (projekt, w którym znajduje się kontekst). Będzie to oczywiście nasz projekt _.Infrastructure_. Komendy będziemy wywoływać podając po prostu nazwę i po spacji ewentualne parametry. Jeśli będą to parametry obowiązkowe i pozycyjne, to wystarczy, że podamy wartość, którą chcemy im nadać. W przeciwnym razie najpierw musimy podać nazwę parametru poprzedzoną myślnikiem, a po spacji wartość. W tabeli poniżej podano parametry wspólne dla wszystkich komend EF Core.
 ### Wspólne parametry komend EF Core
@@ -808,7 +1083,7 @@ Parametr|Opis
 `-Output <String>`|Ścieżka tworzonego pliku wykonywalnego.
 `-Force`|Zastąp istniejące pliki.
 `-SelfContained`|Zapakuj również pakiet środowiska uruchomieniowego .NET, żeby nie trzeba go było instalować na maszynie.
-`-TargetRuntime <String>`|Docelowe środowisko uruchomieniowe na które ma byś utworzony plik.
+`-TargetRuntime <String>`|Docelowe środowisko uruchomieniowe na które ma być utworzony plik.
 `-Framework <String>`|Docelowy framework. Domyślnie, pierwszy w projekcie.
 ### `Drop-Database`
 Usuwa bazę danych. Poza wskazanymi wyżej parametrami wspólnymi dla wszystkich komend EF Core, posiada jeszcze jeden, `WhatIf`. Żaden z parametrów nie jest obowiązkowy, ani pozycyjny.
@@ -826,7 +1101,8 @@ Parametr|Opis
 ### `Optimize-DbContext`
 Generuje skompilowaną wersję modelu użytego w `DbContext`. Poza wspólnymi parametrami są jeszcze:
 Parametr|Opis
-`-OutputDir <String>`|Katalog, w którym mają zostać umieszczone pliki. Ścieżki są relatywne do głównego katalogu projektu.
+:--|:--
+`-OutputDir <String>`|Katalog, w którym mają zostać umieszczone pliki. Ścieżki są względne w stosunku do głównego katalogu projektu.
 `-Namespace <String>`|Przestrzeń nazwy, w której mają się znaleźć wygenerowane klasy. Domyślnie nazwa jest generowana przez połączenie nazwy głównej przestrzeni nazw, katalogu określonego przez parametr `OutputDir` i przyrostka `CompiledModels`.
 ### `Remove-Migration`
 Usuwa ostatnią migrację (wycofuje zmiany kodu, które zostały wykonane podczas migracji). Poza wspólnymi parametrami posiada jeszcze parametr `Force`.
@@ -856,10 +1132,10 @@ Generuje skrypt SQL, który zastosowuje wszystkie zmiany z jednej wybranej migra
 Parametr|Opis
 :--|:--
 `-From <String>`|Początkowa migracja. Migracje mogą być identyfikowane według nazwy lub ID. Cyfra 0 to szczególny przypadek, który oznacza przed pierwszą migracją. Domyślnie 0.
-`-To <String>`|Kończąca się migracja. Domyślnie ostatnia migracja.
+`-To <String>`|Końcowa migracja. Domyślnie ostatnia migracja.
 `-Idempotent`|Wygeneruj skrypt, którego można użyć w bazie danych podczas dowolnej migracji.
 `-NoTransactions`|Nie generuj instrukcji transakcji SQL.
-`-Output <String>`|Plik, w którym ma zostać zapisany wynik. JEŚLI ten parametr zostanie pominięty, plik zostanie utworzony z wygenerowaną nazwą w tym samym folderze, w którym tworzone są pliki wykonawcze aplikacji, np.: _/obj/Debug/netcoreapp2.1/ghbkztfz.sql/_.
+`-Output <String>`|Plik, w którym ma zostać zapisany wynik. Jeśli ten parametr zostanie pominięty, plik zostanie utworzony z wygenerowaną nazwą w tym samym folderze, w którym tworzone są pliki wykonawcze aplikacji, np.: _/obj/Debug/netcoreapp2.1/ghbkztfz.sql/_.
 
 Parametry `To`, `From` i `Output` wspierają tzw. _tab-extension_ (rozszerzenie tabulacji), czyli automatyczne wyszukiwanie odpowiedniej wartości parametru przez wciśnięcie klawisza Tab.
 ### `Update-Database`
@@ -871,7 +1147,7 @@ Parametr|Opis
 
 Parametr `Migration` wspieraj tzw. _tab-extension_ (rozszerzenie tabulacji), czyli automatyczne wyszukiwanie odpowiedniej wartości parametru przez wciśnięcie klawisza Tab.
 ### `Script-DbContext`
-Komenda zdefiniowana w paczce _Microsoft.EntityFrameworkCore.Design_, od której zależy paszka _Tools_. Generuje skrypt SQL z DbContext. Pomija wszelkie migracje. Poza parametrami wspólnymi, ma jeszcze parametr `Output`.
+Komenda zdefiniowana w paczce _Microsoft.EntityFrameworkCore.Design_, od której zależy paczka _Tools_. Generuje skrypt SQL z DbContext. Pomija wszelkie migracje. Poza parametrami wspólnymi, ma jeszcze parametr `Output`.
 Parametr|Opis
 :--|:--
 `-Output <String>`|Plik, do którego ma zostać zapisany rezultat.
@@ -885,7 +1161,7 @@ Po zbudowaniu migracji, możemy zaktualizować do niej naszą bazę danych. Zani
     1. Sprawdźmy, czy wskazuje na zainstalowaną przez nas w poprzedniej lekcji instancję serwera.
     2. Sprawdźmy, czy wskazuje na właściwą bazę danych. Jeżeli wkleiliśmy skopiowany z podsumowania instalacji connection string, to musimy zmienić jeszcze nazwę bazy danych. Wewnątrz stringa prawdopodobnie mamy wówczas coś takiego `"Database=master"`, czyli nasz connection string wskazuje na bazę danych o nazwie _master_. Jest to baza wewnętrzna naszej instancji serwera. Jest ona nadrzędna nad wszystkimi innymi bazami danych. Tam znajdują się m.in. nazwy baz danych znajdujących się w tej instancji i niektóre logi. Nie powinniśmy więc do niej niczego dopisywać. Musimy więc zmienić nazwę _master_ na inną, którą chcielibyśmy nadać nowotworzonej przez nas bazie danych. Może to być np. nazwa naszej solucji, np. _TitlesOrganizer_ lub jakaś inna nazwa, wskazująca na to, co znajduje się w tej bazie danych.
 
-Po sprawdzeniu, że wszystko się zgadza, możemy wrócić do konsoli ( _Package Manager Console_) i stworzyć bazę danych. Robimy to przy pomocy komendy `Update-Database`. Spowoduje to ponowne zbudowanie naszego projektu (upewnijmy się, że mamy wybrany projekt _.Infrastructure_), aby sprawdzić, czy nie ma żadnych błędów w migracji. Po czym nastąpi aktualizacja (lub, jak w naszym przypadku, utworzenie) bazy danych. Jeżeli wszystko się uda powinniśmy zobaczyć w konsoli komunikat _Done._ Możemy teraz przejść do Microsoft SQL Server Management Studio i podejrzeć naszą bazę danych. W folderze _Databases_ powinna pojawić się nasza baza danych, ze wszystkimi zdefiniowanymi przez nas tabelami (w folderze _Tables_ naszej bazy danych).
+Po sprawdzeniu, że wszystko się zgadza, możemy wrócić do konsoli ( _Package Manager Console_) i stworzyć bazę danych. Robimy to przy pomocy komendy `Update-Database`. Spowoduje to ponowne zbudowanie naszego projektu (upewnijmy się, że mamy wybrany projekt _.Infrastructure_), aby sprawdzić, czy nie ma żadnych błędów w migracji. Po czym nastąpi aktualizacja (lub, jak w naszym przypadku, utworzenie) bazy danych. Jeżeli wszystko się uda powinniśmy zobaczyć w konsoli komunikat _Done._ Jeżeli otrzymamy błąd `A connection was successfully established with the server, but then an error occurred during the login process.`, to dodajmy do naszego connection string w _appsettings.json_ parametr `TrustServerCertificate=True;` i spróbujmy ponownie. Po udanym utworzeniu bazy danych, możemy przejść do Microsoft SQL Server Management Studio i podejrzeć naszą bazę danych. W folderze _Databases_ powinna pojawić się nasza baza danych, ze wszystkimi zdefiniowanymi przez nas tabelami (w folderze _Tables_ naszej bazy danych).
 
 ## [LEKCJA 10 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-7-bazy-danych/lekcja-10-bledy-poczatkujacych/)
 Podstawowym błędem na tym etapie jest źle zaplanowany schemat bazy danych. Należy na spokojnie zaplanować strukturę bazy danych. Pamiętajmy przy tym o zasadach normalizacji. Dobrze zaplanowana baza danych ułatwi nam dalszą pracę. Błędy popełnione na tym etapie trudno będzie natomiast później naprawić. Będzie to wymagało dużo pracy. Pamiętajmy więc, że gdy np. istnieje jakakolwiek szansa, że będziemy mieć kilka danych tego samego typu, dotyczące jednego rekordu (np. kilka numerów telefonów), to nigdy nie możemy przechowywać takich danych w jednej kolumnie. Wyodrębnijmy osobną tabelę na takie dane. Da nam to większą elastyczność. Dobrze zaplanujmy więc strukturę bazy danych, a dopiero później stwórzmy modele metodą code first.
