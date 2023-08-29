@@ -1,0 +1,2 @@
+# [LEKCJA 1 – Powitanie](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-8-od-widoku-do-modelu/lekcja-1-powitanie/)
+Zaczynamy tydzień 8 - od widoku do modelu. Jest to najważniejszy tydzień tego kursu. Utworzymy w nim naszą aplikację internetową i poznamy cały proces tworzenia nowoczesnych aplikacji webowych w ASP.NET Core MVC za pomocą czystej architektury. W tym tygodniu powstanie większość naszej aplikacji. Napiszemy zarówno cały backend, jak i interfejs użytkownika. Wykorzystamy m.in. bibliotekę Bootstrap do utworzenia nowoczesnej, responsywnej aplikacji.
