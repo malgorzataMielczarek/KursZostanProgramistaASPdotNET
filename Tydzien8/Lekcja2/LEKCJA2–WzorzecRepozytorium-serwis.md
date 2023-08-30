@@ -40,27 +40,10 @@ Czego nie umieszczamy w repozytoriach?
 * Walidacji.
 
 ## Przykładowy schemat
-```mermaid =
-flowchart TD
-w([UI z kontrolerami])
-s1[MovieService]
-s2[WatchService]
-s3[TvSeriesService]
-r1[MovieRepository]
-r2[CountryRepository]
-r3[TvSeriesRepository]
-d[(Baza danych)]
-w --> s1
-w --> s2
-w --> s3
-s1 <--> r1
-s1 <--> r2
-s2 <--> r1
-s2 <--> r2
-s2 <--> r3
-s3 <--> r2
-s3 <--> r3
-d --> r1
-d --> r2
-d --> r3
+```mermaid
+graph TD;
+   w([UI z kontrolerami]) --> s1[MovieService] & s2[WatchService] & s3[TvSeriesService];
+   s2 <--> r1[MovieRepository] & r2[CountryRepository] & r3[TvSeriesRepository] <--> d[(Baza danych)];
+   s1 <--> r1 & r2;
+   s3 <--> r2 & r3;
 ```
