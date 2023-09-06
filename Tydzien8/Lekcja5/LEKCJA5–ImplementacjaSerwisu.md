@@ -26,7 +26,7 @@ public ListCustomerForListVm GetAllCustomersForList()
             Id = customer.Id,
             Name = customer.Name,
             NIP = customer.NIP,
-            CEO = customer.CEOName + " " + customerLastName()
+            CEO = customer.CEOName + " " + customer.CEOLastName()
         };
 
         customVm.MainCountry = customer.Addresses.FirstOrDefault()?.Country ?? string.Empty;
