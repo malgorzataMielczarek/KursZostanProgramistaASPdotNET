@@ -287,7 +287,7 @@ Kiedy tworzyliśmy nasz projekt _.Web_ wybraliśmy opcję autoryzacji użytkowni
 
 Więc kod:
 ```csharp =
-using TitlesOrganizer.Web.Data; // ZMIANIC REFERENCJE
+using TitlesOrganizer.Web.Data; // ZMIENIC REFERENCJE
 
 var builder = WebApplication.CreateBuilder(args);
 
