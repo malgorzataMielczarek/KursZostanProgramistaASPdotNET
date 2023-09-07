@@ -97,9 +97,15 @@ W tym typie serwisu:
     * np. gdy mamy kilka parametrów w kontrolerze zależnych od tego serwisu, wszystkie te obiekty będą zawierać tą samą instancję serwisu na czas trwania żądania
 
 Wybieramy go, gdy chcemy utrzymać stan wewnątrz żądania.
-![Schemat serwisu zakresowego](https://f4n3x6c5.stackpathcdn.com/article/differences-between-scoped-transient-and-singleton-service/Images/scoped_service.PNG)<br />
-_Rysunek 3. Schemat serwisu zakresowego (scoped service)<br/>
-Źródło: https://www.c-sharpcorner.com/article/differences-between-scoped-transient-and-singleton-service/_
+```mermaid
+graph LR;
+R1>Żądanie1]-->N1{{"IMessageWriter writer = new MessageWriter()"}}-->N1S1(["new ErrorsService(writer)"]);
+N1-->N1S2(["new SuccessService(writer)"]);
+R2>Żądanie2]-->N2{{"IMessageWriter writer = new MessageWriter()"}}-->N2S1(["new ErrorsService(writer)"]);
+N2-->N2S2(["new SuccessService(writer)"]);
+R3>Żądanie3]-->N3{{"IMessageWriter writer = new MessageWriter()"}}-->N3S1(["new ErrorsService(writer)"]);
+N3-->N3S2(["new SuccessService(writer)"]);
+```
 ### Transient service
 ```csharp =
 builder.Services.AddTransient<IMessageWriter, MessageWriter>();
@@ -109,9 +115,15 @@ W tym typie serwisu:
 * instancja jest tworzona za każdym razem, co zwiększa użycie pamięci i zasobów. To podejście może więc mieć niekorzystny wpływ na wydajność aplikacji.
 
 Wybieramy go, gdy aplikacja działa wielowątkowo, gdyż dzięki temu obiekty są od siebie niezależne. Możemy go również wykorzystać do lekkich serwisów z niewielkim stanem lub bez stanu.
-![Schemat serwisu przejściowego](https://f4n3x6c5.stackpathcdn.com/article/differences-between-scoped-transient-and-singleton-service/Images/tranient_service.PNG)<br />
-_Rysunek 3. Schemat serwisu przejściowego (transient service)<br/>
-Źródło: https://www.c-sharpcorner.com/article/differences-between-scoped-transient-and-singleton-service/_
+```mermaid
+graph LR;
+R1>Żądanie1]-->R1N1{{"IMessageWriter writer1 = new MessageWriter()"}}-->R1N1S1(["new ErrorsService(writer1)"]);
+R1-->R1N2{{"IMessageWriter writer2 = new MessageWriter()"}}-->R1N2S2(["new SuccessService(writer2)"]);
+R2>Żądanie2]-->R2N1{{"IMessageWriter writer1 = new MessageWriter()"}}-->R2N1S1(["new ErrorsService(writer1)"]);
+R2-->R2N2{{"IMessageWriter writer2 = new MessageWriter()"}}-->R2N2S2(["new SuccessService(writer2)"]);
+R3>Żądanie3]-->R3N1{{"IMessageWriter writer1 = new MessageWriter()"}}-->R3N1S1(["new ErrorsService(writer1)"]);
+R3-->R3N2{{"IMessageWriter writer2 = new MessageWriter()"}}-->R3N2S2(["new SuccessService(writer2)"]);
+```
 ### Singleton service
 ```csharp =
 builder.Services.AddSingleton<IMessageWriter, MessageWriter>();
@@ -121,6 +133,21 @@ W tym typie serwisu:
 * ta sama instancja jest używana za każdym razem, gdy serwis jest potrzebny
 * ewentualne wycieki pamięci będą się z czasem namnażać, ponieważ używamy cały czas tego samego obiektu
 * zapewniona jest największa wydajność, jeśli chodzi o zużycie pamięci, gdyż serwis jest tworzony jednokrotnie i wszędzie jest używany ten sam obiekt
+```mermaid
+graph LR;
+R1>Żądanie1]-->N{{"IMessageWriter writer = new MessageWriter()"}}-->R1S1(["new ErrorsService(writer)"]);
+R1-->R1S1;
+R1-->R1S2(["new SuccessService(writer)"]);
+N-->R1S2;
+R2>Żądanie2]-->R2S1(["new ErrorsService(writer)"]);
+R2~~~N-->R2S1;
+R2-->R2S2(["new SuccessService(writer)"]);
+N-->R2S2;
+R3>Żądanie3]-->R3S1(["new ErrorsService(writer)"]);
+R3~~~N-->R3S1;
+R3-->R3S2(["new SuccessService(writer)"]);
+N-->R3S2;
+```
 ### Kiedy używać którego podejścia
 Typ podejścia|Użycie
 ------------:|:-----
