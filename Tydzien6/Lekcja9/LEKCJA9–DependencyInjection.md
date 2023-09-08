@@ -148,6 +148,9 @@ R3~~~N-->R3S1;
 R3-->R3S2(["new SuccessService(writer)"]);
 N-->R3S2;
 ```
+| :warning:**UWAGA!** |
+| :---: |
+|Mimo, że singleton jest jednym z podstawowych wzorców projektowych opisanych przez tzw. bandę czworga (_The "Gang of Four"_ - GoF) w książce "Design Patterns: Elements of Reusable Object-Oriented Software", jest on często uważany za antywzorzec, gdyż nie spełnia zasad SOLID. Z tego powodu **NIE NALEŻY UŻYWAĆ SERWISÓW SINGLETONOWYCH**. Robimy to tylko w naprawdę uzasadnionych przypadkach. Jednym z nielicznych odstępstw, w którym używa się serwisów singletonowych są loggery, które mają zbierać logi z całego cyklu życia aplikacji.|
 ### Kiedy używać którego podejścia
 Typ podejścia|Użycie
 ------------:|:-----
