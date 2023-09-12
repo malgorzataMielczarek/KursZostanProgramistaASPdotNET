@@ -1,0 +1,4 @@
+# [LEKCJA 9 – Filtrowanie, wyszukiwanie, paginacja](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-8-od-widoku-do-modelu/lekcja-9-filtrowanie-wyszukiwanie-paginacja/)
+**Paginacja** - inaczej stronicowanie, a po ang. _paging_. Jest to często stosowany mechanizm dzielący duże (długie) tabele na strony. Dzięki temu na stronę musimy na raz przesłać mniejszą ilość danych. Użytkownik natomiast, żeby zobaczyć kolejne dane, zamiast używać scrolla, zmienia "stronę tabeli".
+
+Jeżeli mamy do wyświetlenia dużą ilość danych (np. lista wszystkich klientów, produktów, książek, filmów itp.), warto, jeśli jest to możliwe, użyć mechanizmów filtrowania, paginacji i wyszukiwania. Zarówno zmniejszy to ilość danych którą musi przesłać do klienta nasz serwer, jak i korzystnie wpłynie na przejrzystość aplikacji.
