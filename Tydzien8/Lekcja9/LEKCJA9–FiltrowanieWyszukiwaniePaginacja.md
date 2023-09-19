@@ -151,7 +151,7 @@ public class ListBookForListVM
 ```
 ### 4. View
 Załóżmy, że mieliśmy taki widok:
-```csharp
+```cshtml
 @model TitlesOrganizer.Application.ViewModels.BookVMs.ListBookForListVM
 
 @{
@@ -194,7 +194,7 @@ Wszystkie kontrolki zawierające dane, które chcemy przesłać do kontrolera mu
 Na samym dole dokumentu dodamy jeszcze sekcję `Scripts`, w której umieścimy skrypt z naszą funkcją w JavaScript.
 
 Zobaczmy jak mogą wyglądać wszystkie te elementy na naszym przykładzie:
-```csharp
+```cshtml
 @model TitlesOrganizer.Application.ViewModels.BookVMs.ListBookForListVM
 
 @{
@@ -204,8 +204,11 @@ Zobaczmy jak mogą wyglądać wszystkie te elementy na naszym przykładzie:
 <h1>Books</h1>
 
 <p class="row"><a asp-action="Create" class="col">Create New</a></p>
+
+@*Wszystkie kontrolki z danymi do przeslania do kontrolera umieszczamy w formularzu*@
 <form asp-action="Index" asp-controller="Books" method="post">
     <div class="row">
+    @*Dropdown lista do wyboru liczby ksiazek do wyswietlenia na stronie*@
         <select asp-for="PageSize">
             <option value="5">5 books</option>
             <option value="10">10 books</option>
@@ -214,7 +217,9 @@ Zobaczmy jak mogą wyglądać wszystkie te elementy na naszym przykładzie:
             <option value="50">50 books</option>
             <option value="100">100 books</option>
         </select>
+    @*Kontrolka do wpisania przez uzytkownika wyszukiwanej w tytule frazy*@
         <input type="text" asp-for="SearchString" name="searchString" id="searchString" />
+    @*Przycisk do przeslania danych do kontrolera*@
         <input type="submit" value="Show" />
     </div>
     <div class="row">
@@ -243,28 +248,85 @@ Zobaczmy jak mogą wyglądać wszystkie te elementy na naszym przykładzie:
         </table>
     </div>
     <div class="row">
+    @*Tworzymy linki do zmiany strony tabeli*@
         @for (int i = 1; i <= Math.Ceiling(Model.Count / (double)Model.PageSize); i++)
         {
             <div class="col">
             @if (i == Model.PageNo)
             {
-                <span>@i</span>
+                <span>@i</span> @*numer biezacej strony nie jest linkiem*@
             }
             else
             {
+                @*Numery wczesniejszych/pozniejszych stron sa linkami wywolujacymi metode JavaScript PagerClick i przesylajacymi do niej, po kliknieciu, numer wybranej strony*@
                 <a href="javascript:PagerClick(@i)">@i</a>
             }
             </div>
         }
+    @*Ukryta (nie widoczna dla uzytkownika) kontrolka do umieszczenia wybranego numeru strony*@
         <input type="hidden" name="pageNo" id="pageNo"/>
     </div>
+@*Koniec formularza*@
 </form>
+
+@*Sekcja ze skryptami*@
 @section Scripts {
+    @*Skrypt JavaScript z funkcja PagerClick*@
     <script type="text/javascript">
         function PagerClick(index){
+            @*Wartosc przeslana jako parametr funkcji wstawiamy do ukrytej kontrolki*@
             document.getElementById("pageNo").value = index;
+            @*Przesylamy formularz do akcji kontrolera*@
             document.forms[0].submit();
         }
     </script>
 }
 ```
+1. Tag formularza (`<form></form>`)<br />
+W tagu formularza użyliśmy dwóch tzw. pomocników tagów formularzy: `asp-action` i `asp-controller`. W pierwszym wskazujemy akcję, do której ma zostać przesłany formularz, a w drugim kontroler, do którego ta akcja należy. Zamias nich można również użyć atrybutu html `action` podając w nim ścieżkę URL do akcji (`action="/Books/Index"`). Używamy również atrybutu `method`, wskazującego jaką metodą chcemy przesyłać formularz (`method="post"`). Na ogół będzie to metoda POST, tak jak w naszym przykładzie.
+2. Pomocnik tagów wejściowych `asp-for`<br />
+W kontrolkach związanych z danymi, które chcemy przesyłać w formularzu będziemy używać pomocnika `asp-for`. Powiąże on element wejściowy html (input, select itd.) z wyrażeniem viewmodelu w widoku Razor (czyli np. z konkretną właściwością viewmodelu). Pomocnik `asp-for` m.in.:
+    - generuje atrybuty html `id` i `name` dla nazwy wyrażenia podanej w atrybucie `asp-for`. `asp-for="Property1.Property2"` jest równoważne `m => m.Property1.Property2`.
+    - dla kontrolki `<input></input>` ustawia atrybut html `type` na podstawie viewmodelu i jego atrybutów, chyba, że został on podany.
+
+    Typ .NET|`<input type=`
+    --:|:--
+    `Bool`|`type="checkbox"`
+    `String`|`type="text"`
+    `DateTime`|`type="datetime-local"`
+    `Byte`|`type="number"`
+    `Int`|`type="number"`
+    `Single, Double`|`type="number"`
+
+    Atrybut viewmodelu|`<input type=`
+    --:|:--
+    `[EmailAddress]`|`type="email"`
+    `[Url]`|`type="url"`
+    `[HiddenInput]`|`type="hidden"`
+    `[Phone]`|`type="tel"`
+    `[DataType(DataType.Password)]`|`type="password"`
+    `[DataType(DataType.Date)]`|`type="date"`
+    `[DataType(DataType.Time)]`|`type="time"`
+3. Tag `<option></option>`<br />
+Wewnątrz tagu `<select></select>` tworzącego kontrolkę listy rozwijanej, umieszczamy elementy `<option></option>`. Każdy taki element definiuje jedną pozycję na liście. Tekst umieszczony między tagiem otwierającym (`<option>`), a zamykającym (`</option>`) zostanie wyświetlony użytkownikowi w liście rozwijanej. Dodatkowo można zdefiniować jeszcze atrybut `value`. Podana w nim wartość zostanie przesłana przez formularz, jeżeli użytkownik wybierze daną opcję. Jeśli nie zdefiniujemy atrybutu `value`, to jego wartość będzie taka sama jak wyświetlanego tekstu (umieszczonego między otwierającym a zamykającym tagiem).
+4. Atrybuty `id`<br />
+`id` jest atrybutem globalnym, co oznacza, że jest dostępny dla wszystkich elementów html. Określa on unikatowy identyfikator danego elementu. Na jednej stronie html nie mogą na raz występować dwa elementy o takim samym `id`. Służy do odwołania się do jednego konkretnego elementu np. w skryptach JS, czy przy definiowaniu stylów w CSS.
+5. Atrybut `name`<br />
+Określa nazwę danego elementu html. W odróżnieniu od `id` nie jest to atrybut globalny. Można go zdefiniować dla następujących elementów: `<button>`, `<fieldset>`, `<form>`, `<iframe>`, `<input>`, `<map>`, `<meta>`, `<object>`, `<output>`, `<param>`, `<select>`, `<textarea>`. Podobnie jak `id`, `name` służy do odwoływania się do danego obiektu. W odróżnieni od `id`, `name` nie musi być unikatowe. Może więc występować kilka elementów o takiej samej nazwie. Oznacza to, że gdy będziemy odwoływać się do elementów po samej nazwie, to może być tak, że będziemy odwoływać się do kilku elementów, a nie jednego. W skryptach JS może to np. oznaczać, że otrzymamy nie jeden element, a array. Dla poszczególnych typów elementów atrybut `name` może mieć jeszcze dodatkowe zastosowania:
+    - w `<form>` jest używany jako odniesienie podczas przesyłania danych.
+    - w `<iframe>` może zostać użyty do kierowania przesyłania formularza.
+    - w `<map>` jest powiązany z atrybutem `usemap` elementu `<img>` i tworzy relację pomiędzy obrazem a mapą.
+    - w `<meta>` określa nazwę dla informacji/wartości atrybutu `content`, np. `<meta name="description" content="Free Web tutorials">`, `<meta name="keywords" content="HTML,CSS,XML,JavaScript">`. Może przyjmować wartości: `"application-name"`, `"author"`, `"description"`, `"generator"`, `"keywords"`, `"viewport"`
+    - w `<param>` jest używany w połączeniu z atrybutem `value`, aby sprecyzować parametry dla pluginów nadrzędnego elementu `<object>`, np. `<object data="horse.wav"><param name="autoplay" value="true"></object>`
+6. Atrybut `class`<br />
+Podobnie jak `id` jest to atrybut globalny. Określa on nazwy klas CSS do których należy dany element. Jeden element może nie należeć do żadnej klasy albo należeć do jednej lub kilku klas. Jeżeli chcemy aby element należał do kilku klas, to wypisujemy je wszystkie jako wartość atrybutu, oddzielając je od siebie spacjami. W powyższym przykładzie używaliśmy klas zdefiniowanych w zestawie narzędzi Bootstrap.
+7. Atrybut `type`<br />
+Atrybut elementów `<a>`, `<button>`, `<embed>`, `<input>`, `<link>`, `<menu>`, `<object>`, `<script>`, `<source>`, `<style>` określający typ danego elementu. Dla elementów `<input>` atrybut `type` może przyjmować następujące wartości:
+    - `"button"` - definiuje możliwy do kliknięcia przycisk,
+    - `"checkbox"` - definiuje checkbox,
+    - `"color"` - definiuje kontrolkę do wyboru kolorów,
+    - `"date"` - definiuje kontrolkę do wyboru daty (rok, miesiąc, dzień (bez czasu)),
+    - `"datetime-local"` - definiuje kontrolkę do wyboru daty i czasu (rok, miesiąc, dzień, czas (bez strefy czasowej)),
+    - `"email"` - definiuje pole na adres e-mailowy,
+    - `"file"` - definiuje pole wyboru pliku w formie przycisku wywołującego okno wyboru,
+    - `"hidden"` - 
