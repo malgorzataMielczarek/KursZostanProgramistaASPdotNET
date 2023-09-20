@@ -210,6 +210,7 @@ Zobaczmy jak mogą wyglądać wszystkie te elementy na naszym przykładzie:
     <div class="row">
     @*Dropdown lista do wyboru liczby ksiazek do wyswietlenia na stronie*@
         <select asp-for="PageSize">
+            <option value="1">1 books</option> @* dodane na potrzeby prezentacji *@
             <option value="5">5 books</option>
             <option value="10">10 books</option>
             <option value="20">20 books</option>
@@ -282,6 +283,10 @@ Zobaczmy jak mogą wyglądać wszystkie te elementy na naszym przykładzie:
     </script>
 }
 ```
+Co w przeglądarce będzie wyglądać następująco:
+
+![Widok z filtrowaniem i paginacją](Ilustracje/WidokZFiltrowaniemIPaginacja.png)
+
 1. Tag formularza (`<form></form>`)<br />
 W tagu formularza użyliśmy dwóch tzw. pomocników tagów formularzy: `asp-action` i `asp-controller`. W pierwszym wskazujemy akcję, do której ma zostać przesłany formularz, a w drugim kontroler, do którego ta akcja należy. Zamias nich można również użyć atrybutu html `action` podając w nim ścieżkę URL do akcji (`action="/Books/Index"`). Używamy również atrybutu `method`, wskazującego jaką metodą chcemy przesyłać formularz (`method="post"`). Na ogół będzie to metoda POST, tak jak w naszym przykładzie.
 2. Pomocnik tagów wejściowych `asp-for`<br />
@@ -321,7 +326,8 @@ Określa nazwę danego elementu html. W odróżnieniu od `id` nie jest to atrybu
 6. Atrybut `class`<br />
 Podobnie jak `id` jest to atrybut globalny. Określa on nazwy klas CSS do których należy dany element. Jeden element może nie należeć do żadnej klasy albo należeć do jednej lub kilku klas. Jeżeli chcemy aby element należał do kilku klas, to wypisujemy je wszystkie jako wartość atrybutu, oddzielając je od siebie spacjami. W powyższym przykładzie używaliśmy klas zdefiniowanych w zestawie narzędzi Bootstrap.
 7. Atrybut `type`<br />
-Atrybut elementów `<a>`, `<button>`, `<embed>`, `<input>`, `<link>`, `<menu>`, `<object>`, `<script>`, `<source>`, `<style>` określający typ danego elementu. Dla elementów `<input>` atrybut `type` może przyjmować następujące wartości:
+Atrybut elementów `<a>`, `<button>`, `<embed>`, `<input>`, `<link>`, `<menu>`, `<object>`, `<script>`, `<source>`, `<style>` określający typ danego elementu.<br />
+Dla elementów `<input>` atrybut `type` może przyjmować następujące wartości:
     - `"button"` - definiuje możliwy do kliknięcia przycisk,
     - `"checkbox"` - definiuje checkbox,
     - `"color"` - definiuje kontrolkę do wyboru kolorów,
@@ -329,4 +335,245 @@ Atrybut elementów `<a>`, `<button>`, `<embed>`, `<input>`, `<link>`, `<menu>`, 
     - `"datetime-local"` - definiuje kontrolkę do wyboru daty i czasu (rok, miesiąc, dzień, czas (bez strefy czasowej)),
     - `"email"` - definiuje pole na adres e-mailowy,
     - `"file"` - definiuje pole wyboru pliku w formie przycisku wywołującego okno wyboru,
-    - `"hidden"` - 
+    - `"hidden"` - definiuje ukryte (niewidoczne dla użytkownika) pole,
+    - `"image"` - definiuje obrazek jako przycisk przesyłania danych,
+    - `"month"` - definiuje kontrolkę do wyboru miesiąca i roku (bez stref czasowych),
+    - `"number"` - definiuje pole do wpisania numeru (ze strzałkami w górę/w dół do inkrementacji/dekrementacji, z możliwością zdefiniowania wartości minimalnej, maksymalnej i kroku),
+    - `"password"` - definiuje pole na hasło,
+    - `"radio"` - definiuje przycisk wyboru opcji (radio button, wszystkie przyciski należące do jednej grupy, wybór jednej opcji z kilku, muszą mieć taką samą nazwę `name`),
+    - `"range"` - definiuje kontrolkę zakresową (np. slider - suwak),
+    - `"reset"` - definiuje przycisk resetu,
+    - `"search"` - definiuje pole do wpisywania wyszukiwanego tekstu,
+    - `"submit"` - definiuje przycisk do przesłania na serwer wprowadzonych danych,
+    - `"tel"` - definiuje pole do wprowadzania numeru telefonu,
+    - `"text"` - definiuje jednoliniowe pole tekstowe. Jest to typ domyślny,
+    - `"time"` - definiuje kontrolkę do wprowadzenia czasu (bez strefy czasowej),
+    - `"url"` - definiuje pole na URL,
+    - `"week"` - definiuje kontrolkę na tydzień i rok (bez strefy czasowej).
+8. Tag wejściowy `<input />`<br />
+Elementy input służą do wprowadzania danych przez użytkownika i przesyłania ich na serwer. W poprzednich punktach omówiliśmy atrybuty `id`, `name`, `type` i `asp-for`, które możemy m.in. używać dla elementów input. Używamy jeszcze atrybutu `value`. W przypadku inputów, definiuje ona tekst, który zostanie wyświetlony w kontrolce, np. napis na przycisku, domyślnie wpisany tekst, czy wybraną datę. Oczywiście istnieją również inne atrybuty, także specyficzne dla konkretnego typu. Do zdefiniowania pola do wpisywania wyszukiwanej frazy użyliśmy domyślnego typu `"text"`, ale moglibyśmy zamiast niego użyć typu `"search"`.
+9. Tag `<span></span>`<br />
+Jest to kontener inline, używany do wydzielenia części tekstu lub dokumentu. Można go łatwo wystylizować w CSS lub manipulować nim w JS przy użyciu jego atrybutu `class` lub `id`. Jest to tylko kontener, spełnia więc podobną funkcję jak `<div>`, jednak w odróżnieniu od niego, jest elementem typu inline, a nie block. W naszym przykładzie użyliśmy go do umieszczenia w nim numeru aktualnie wyświetlanej strony. Nie chcemy, aby był to element interaktywny. Moglibyśmy więc wypisać numer bezpośrednio na stronie, bez użycia dodatkowego kontenera. Użycie elementu `<span>` pozwoli nam jednak później dopasować wygląd numeru strony do naszych preferencji oraz umieścić element w odpowiednim miejscu strony.
+10. Tag `<a></a>`<br />
+Definiuje hiperlinki. Jest używany do przekierowywania z jednej strony na drugą. Najważniejszym atrybutem elementu jest `href`, definiujący miejsce docelowe łącza. W naszym przykładzie, zamiast przekierowywać użytkownika na inną stronę, użyjemy hiperłącza do wywołania funkcji JavaScript. Do atrybutu `href`, zamiast adresu URL, przypiszemy więc wywołanie naszej funkcji poprzedzone znacznikiem "javascript:". Pomiędzy tagiem otwierającym (`<a>`), a zamykającym (`</a>`) kotwicy (ang. _anchor_) umieszczamy tekst, który zostanie wyświetlony jako nasze hiperłącze. W naszym przypadku będzie to po prostu numer strony.
+11. Obliczanie numerów stron<br />
+Numer aktualnie wyświetlanej strony mamy zapisany w modelu jako `@Model.PageNo`. Nie wiemy natomiast ile stron powinna mieć nasza tabela. Musimy to więc obliczyć. Ponieważ znamy łączną liczbę elementów na liście (`@Model.Count`) i liczbę elementów wyświetlanych na jednej stronie (`@Model.PageSize`), dzieląc jedno przez drugie możemy obliczyć liczbę stron. Liczba stron musi być przy tym liczbą całkowitą z zaokrągleniem w górę (uwzględniamy ewentualną ostatnią niepełną stronę). Do zaokrąglania w górę możemy użyć funkcji `Ceiling` statycznej klasy `System.Math`. Pamiętajmy jednak, że zarówno `Count` jak i `PageSize` są typu `int`. Oznacza to, że podzielenie jednej wartości przez drugą da nam wynik typu `int`, powstały przez odcięcie części dziesiętnej (zaokrąglenie w dół). Aby móc zaokrąglić nasze dzielenie w górę, musimy więc najpierw dokonać rzutowania przynajmniej jednej z wartości na typ zmiennoprzecinkowy, tak aby wynik dzielenia również był liczbą zmiennoprzecinkową (np. `double`). Dopiero po otrzymaniu wyniku w postaci liczby zmiennoprzecinkowej, możemy go sensownie zaokrąglić w górę. Całe działanie może więc wyglądać następująco `Math.Ceiling(Model.Count / (double)Model.PageSize)`. Kiedy wiemy już ile stron ma nasza tabela (znamy numer ostatniej strony), możemy przeiterować po wszystkich numerach stron (od 1 do obliczony numer) i wyświetlić ja na stronie odpowiednio jako zwykły napis (obecna strona) lub hiperlink (wszystkie inne strony), np. przy pomocy pętli `for`.
+12. Funkcja JavaScript do zmiany numeru wyświetlanej strony<br />
+Na końcu widoku tworzymy sekcję `Scripts` oczekiwaną przez główny layout naszej strony.<br />
+Pod koniec pliku *_Layout.cshtml*, definiującego ogólny schemat wyglądu każdej naszej strony html (wstawiane są do niego nasze widoki), znajduje się kod `@await RenderSectionAsync("Scripts", required: false)`. Oznacza on właśnie, że layout oczekuje na sekcję `Scripts`. Kod umieszczony wewnątrz tej sekcji zostanie umieszczony na wygenerowanej stronie html w miejscu gdzie umieszczony został kod `@await...`. Sekcja ta jest przeznaczona do umieszczania w niej skryptów JavaScript.<br />
+Tworzymy więc w sekcji skrypt przy pomocy znaczników `<script type="text/javascript"></script>`, pomiędzy którymi umieszczamy treść naszego skryptu, pisaną już w języku JavaScript. W tym wypadku będzie to funkcję `PagerClick`, którą wywoływały nasze hiperłącza.<br />
+Do funkcji przekazujemy jeden parametr, wybrany numer strony. Otrzymaną wartość chcemy przypisać do ukrytego pola `pageNo`, tak, aby móc ją przesłać w formularzu do akcji kontrolera.
+    1. Wyszukanie odpowiedniego elementu html<br />
+    Element wyszukamy po `id`, przy pomocy przeznaczonej do tego funkcji `getElementById` wywoływanej na obiekcie `document`, czyli cały aktualnie wyświetlany dokument (strona) html. Funkcja przyjmuje jako parametr `id` szukanego elementu i zwraca znaleziony element o podanym `id`. Aby znaleźć nasze ukryte pole piszemy więc `document.getElementById("pageNo")`.
+    2. Odwołanie się do atrybutu<br />
+    Kiedy mamy już odpowiedni element, możemy m.in. odwoływać się do jego atrybutów. W tym wypadku interesuje nas atrybut `value`, czyli wartość, jaka jest zapisana w naszym polu. Odwołać możemy się do niego pisząc po prostu `[element].value`.
+    3. Przypisanie wartości do atrybutu<br />
+    Do otrzymanego atrybutu możemy przypisać teraz nową wartość przy pomocy operatora przypisania (`=`). Łączne zapisanie tych kroków da nam polecenie `document.getElementById("pageNo").value = index;`, gdzie `index` to nazwa parametru funkcji, czyli wybrany numer strony.
+    4. Przesłanie formularza<br />
+    Kiedy przypiszemy już odpowiedni numer strony do ukrytego pola formularza, cały formularz możemy wysłać do akcji kontrolera. Podobnie jak poprzednio musimy najpierw znaleźć odpowiedni element `<form>`. Tym razem użyjemy jednak atrybutu `forms` naszego obiektu `document`. Atrybut ten zwraca wszystkie formularze znajdujące się na stronie, a więc obiekt array. Na jednej stronie mogłoby się bowiem znaleźć wiele formularzy. U nas znajduje się jednak tylko jeden, wiemy więc, że pierwszy element otrzymanej tabeli będzie naszym formularzem. Piszemy więc `document.forms[0]`. Do przesłania formularza służy jego funkcja `submit`. Cała instrukcja będzie więc wyglądać następująco `document.forms[0].submit();`.
+
+Jak być może zauważyliśmy w powyższym kodzie formularz może być przesłany na dwa sposoby:
+1. przy pomocy przycisku `<input type="submit" value="Show" />`,
+2. przy pomocy funkcji JavaScript `PagerClick` wywoływanej przez tagi `<a></a>` z numerami stron.
+
+W obu przypadkach w formularzu zostaną wysłane wszystkie znajdujące się w nim w danym momencie dane (dane z inputów, selectów itd.). Jeżeli prześlemy formularz przy pomocy przycisku submit (pierwszy sposób), oznacza to, że nie umieściliśmy żadnej wartości w naszym ukrytym polu `pageNo`. Stąd też parametr `pageNo` akcji naszego kontrolera może nie mieć wartości (a właściwie mieć przypisaną wartość domyślną, która dla typu `int?` wynosi `null`). Dzięki temu wiemy, kiedy użytkownik chce tylko przejść na następną stronę, a kiedy zmienił kryteria wyszukiwania albo wielkość strony. Ponieważ w tym drugim przypadku (zmiana kryteriów wyszukiwania lub wielkości strony) chcemy zawsze przenosić użytkownika na pierwszą stronę, więc takie rozróżnienie jest nam na rękę, a odpowiedni mechanizm musieliśmy uwzględnić w akcji kontrolera. To samo moglibyśmy osiągnąć przypisując "na sztywno" wartość `1` do naszego ukrytego pola. W tym wypadku moglibyśmy rzeczywiście tak zrobić bo mechanizm przenoszenia na pierwszą stronę jest dość oczywisty i bardzo wątpliwe aby ulegał zmianie, jest to jednak w pewnym sensie niepotrzebne przenoszenie logiki na widok, czego powinniśmy unikać.
+
+Przedstawione modyfikacje widoku uwzględniają mechanizmy filtrowania i paginacji w dość podstawowej formie. Możemy się nimi dalej bawić np. dodając wybór mechanizmu sortowania listy książek, definiując możliwe do wyboru wielkości stron w osobnej klasie, czy ulepszając paginację chociażby przy pomocy Bootstrapa.
+
+Np. widok:
+```cshtml
+@model TitlesOrganizer.Application.ViewModels.BookVMs.ListBookForListVM
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h1>Books</h1>
+
+<p class="row"><a asp-action="Create" class="col">Create New</a></p>
+<form asp-action="Index" asp-controller="Books" method="post">
+    <div class="row">
+        <select asp-for="SortBy" asp-items="Html.GetEnumSelectList<TitlesOrganizer.Application.ViewModels.Common.SortByEnum>()" onchange="javascript:Submit();"></select>
+        <select asp-for="PageSize" asp-items="new SelectList(TitlesOrganizer.Application.ViewModels.Common.PageSize.List, TitlesOrganizer.Application.ViewModels.Common.PageSize.DataValueField, TitlesOrganizer.Application.ViewModels.Common.PageSize.DataTextField)" onchange="javascript:Submit();" action="/Books/Index"></select>
+        <input type="search" asp-for="SearchString" name="searchString" id="searchString" placeholder="Search..." onchange="javascript:Submit();" />
+        <input type="submit" value="Search" />
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Title</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var (book, index) in Model.List.Select((value, index) => (value, index + 1))) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => index)</td>
+                    <td>@Html.DisplayFor(modelItem => book.Title)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = book.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = book.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = book.Id })
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="row justify-content-center">
+        @{
+            var pages = Math.Ceiling(Model.Count / (double)Model.PageSize);
+            int numbersNextTo = 2;
+        }
+        <nav aria-label="...">
+            <ul class="pagination">
+                @if (Model.PageNo > numbersNextTo + 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:PagerClick(@(Model.PageNo - numbersNextTo - 1))" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                }
+                @for (int i = numbersNextTo; i >= 1; i--)
+                {
+                    if (i < Model.PageNo)
+                    {
+                        <li class="page-item"><a class="page-link" href="javascript:PagerClick(@(Model.PageNo - i))">@(Model.PageNo - i)</a></li>
+                    }
+                }
+                @if (pages > 1)
+                {
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">@Model.PageNo</span>
+                    </li>
+                }
+                @for (int i = 1; i <= numbersNextTo && Model.PageNo + i <= pages; i++)
+                {
+                    <li class="page-item"><a class="page-link" href="javascript:PagerClick(@(Model.PageNo + i))">@(Model.PageNo + i)</a></li>
+                }
+                @if (Model.PageNo + numbersNextTo + 1 <= pages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:PagerClick(@(Model.PageNo + numbersNextTo + 1))" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+        <input type="hidden" name="pageNo" id="pageNo"/>
+    </div>
+</form>
+@section Scripts {
+    <script type="text/javascript">
+        function PagerClick(index){
+            document.getElementById("pageNo").value = index;
+            Submit();
+        }
+        function Submit(){
+            document.forms[0].submit();
+        }
+    </script>
+}
+```
+z pomocniczymi klasami i enumem we viewmodelach:
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
+
+namespace TitlesOrganizer.Application.ViewModels.Common
+{
+    public enum SortByEnum
+    {
+        [Display(Name = "[A-Z]")]
+        Ascending = 0,
+
+        [Display(Name = "[Z-A]")]
+        Descending = 1
+    }
+
+    public static class SortByExtensions
+    {
+        public static IOrderedQueryable<T> Sort<T, TKey>(this IQueryable<T> listToSort, SortByEnum sortBy, Expression<Func<T, TKey>> selector)
+        {
+            return sortBy switch
+            {
+                SortByEnum.Descending => listToSort.OrderByDescending(selector),
+                _ => listToSort.OrderBy(selector)
+            };
+        }
+
+        public static IOrderedQueryable<T> Sort<T, TKey, TThenKey>(this IQueryable<T> listToSort, SortByEnum sortBy, Expression<Func<T, TKey>> selector, params Expression<Func<T, TThenKey>>[] thenSelectors)
+        {
+            var result = sortBy switch
+            {
+                SortByEnum.Descending => listToSort.OrderByDescending(selector),
+                _ => listToSort.OrderBy(selector)
+            };
+
+            foreach (var thenSelector in thenSelectors)
+            {
+                result = sortBy switch
+                {
+                    SortByEnum.Descending => result.ThenByDescending(thenSelector),
+                    _ => result.ThenBy(thenSelector)
+                };
+            }
+
+            return result;
+        }
+
+        public static IOrderedQueryable<T> Sort<T, TKey, TThenKey>(this IQueryable<T> listToSort, SortByEnum sortBy, Expression<Func<T, TKey>> selector, params (SortByEnum SortBy, Expression<Func<T, TThenKey>> Selector)[] thenSort)
+        {
+            var result = sortBy switch
+            {
+                SortByEnum.Descending => listToSort.OrderByDescending(selector),
+                _ => listToSort.OrderBy(selector)
+            };
+
+            foreach (var then in thenSort)
+            {
+                result = then.SortBy switch
+                {
+                    SortByEnum.Descending => result.ThenByDescending(then.Selector),
+                    _ => result.ThenBy(then.Selector)
+                };
+            }
+
+            return result;
+        }
+    }
+}
+```
+```csharp
+namespace TitlesOrganizer.Application.ViewModels.Common
+{
+    public static class PageSize
+    {
+        public static string DataTextField = "Value";
+        public static string DataValueField = "Key";
+
+        public static Dictionary<int, string> List = new Dictionary<int, string>()
+        {
+            {1, "1 books on page" }, // dodane na potrzeby prezentacji
+            {5, "5 books on page" },
+            {10, "10 books on page" },
+            {20, "20 books on page" },
+            {50, "50 books on page" },
+            {100, "100 books on page" },
+            {150, "150 books on page" },
+            {200, "200 books on page" },
+            {250, "250 books on page" },
+            {500, "500 books on page" }
+        };
+    }
+}
+```
+Co w przeglądarce wygląda następująco:
+
+![Podrasowany widok](Ilustracje/UlepszonyWidokZSortowaniemFiltrowaniemIPaginacja.png)
+
+Dodano jeszcze mechanizm sortowania tytułów alfabetycznie rosnąco lub malejąco, co wymagało oczywiście dodania sortowania w serwisie przy pomocy metod rozszerzających klasy `SortByExtensions` oraz dodania odpowiedniego parametru do akcji kontrolera i metody serwisu (i jego interfejsu), a także dodania właściwości w viewmodelu. Dodatkowo formularz zostaje również automatycznie przesłany przy zmianie sposobu sortowania lub liczby wyświetlanych na stronie książek. Zmienił się również wygląd paginacji. Wyświetlane są maksymalnie numery dwóch wcześniejszych i dwóch kolejnych stron (jeśli takowe istnieją) oraz na końcach podwójne "strzałki" w odpowiednią stronę jeśli istnieją jakieś wcześniejsze/późniejsze strony. Do wystylizowania kontrolek stronicowania wykorzystano [mechanizmy paginacji Bootstrapa](https://getbootstrap.com/docs/4.6/components/pagination/).
