@@ -253,7 +253,7 @@ Zobaczmy jak mogą wyglądać wszystkie te elementy na naszym przykładzie:
         @for (int i = 1; i <= Math.Ceiling(Model.Count / (double)Model.PageSize); i++)
         {
             <div class="col">
-            @if (i == Model.PageNo)
+            @if (i == Model.CurrentPage)
             {
                 <span>@i</span> @*numer biezacej strony nie jest linkiem*@
             }
@@ -358,7 +358,7 @@ Jest to kontener inline, używany do wydzielenia części tekstu lub dokumentu. 
 10. Tag `<a></a>`<br />
 Definiuje hiperlinki. Jest używany do przekierowywania z jednej strony na drugą. Najważniejszym atrybutem elementu jest `href`, definiujący miejsce docelowe łącza. W naszym przykładzie, zamiast przekierowywać użytkownika na inną stronę, użyjemy hiperłącza do wywołania funkcji JavaScript. Do atrybutu `href`, zamiast adresu URL, przypiszemy więc wywołanie naszej funkcji poprzedzone znacznikiem "javascript:". Pomiędzy tagiem otwierającym (`<a>`), a zamykającym (`</a>`) kotwicy (ang. _anchor_) umieszczamy tekst, który zostanie wyświetlony jako nasze hiperłącze. W naszym przypadku będzie to po prostu numer strony.
 11. Obliczanie numerów stron<br />
-Numer aktualnie wyświetlanej strony mamy zapisany w modelu jako `@Model.PageNo`. Nie wiemy natomiast ile stron powinna mieć nasza tabela. Musimy to więc obliczyć. Ponieważ znamy łączną liczbę elementów na liście (`@Model.Count`) i liczbę elementów wyświetlanych na jednej stronie (`@Model.PageSize`), dzieląc jedno przez drugie możemy obliczyć liczbę stron. Liczba stron musi być przy tym liczbą całkowitą z zaokrągleniem w górę (uwzględniamy ewentualną ostatnią niepełną stronę). Do zaokrąglania w górę możemy użyć funkcji `Ceiling` statycznej klasy `System.Math`. Pamiętajmy jednak, że zarówno `Count` jak i `PageSize` są typu `int`. Oznacza to, że podzielenie jednej wartości przez drugą da nam wynik typu `int`, powstały przez odcięcie części dziesiętnej (zaokrąglenie w dół). Aby móc zaokrąglić nasze dzielenie w górę, musimy więc najpierw dokonać rzutowania przynajmniej jednej z wartości na typ zmiennoprzecinkowy, tak aby wynik dzielenia również był liczbą zmiennoprzecinkową (np. `double`). Dopiero po otrzymaniu wyniku w postaci liczby zmiennoprzecinkowej, możemy go sensownie zaokrąglić w górę. Całe działanie może więc wyglądać następująco `Math.Ceiling(Model.Count / (double)Model.PageSize)`. Kiedy wiemy już ile stron ma nasza tabela (znamy numer ostatniej strony), możemy przeiterować po wszystkich numerach stron (od 1 do obliczony numer) i wyświetlić ja na stronie odpowiednio jako zwykły napis (obecna strona) lub hiperlink (wszystkie inne strony), np. przy pomocy pętli `for`.
+Numer aktualnie wyświetlanej strony mamy zapisany w modelu jako `@Model.CurrentPage`. Nie wiemy natomiast ile stron powinna mieć nasza tabela. Musimy to więc obliczyć. Ponieważ znamy łączną liczbę elementów na liście (`@Model.Count`) i liczbę elementów wyświetlanych na jednej stronie (`@Model.PageSize`), dzieląc jedno przez drugie możemy obliczyć liczbę stron. Liczba stron musi być przy tym liczbą całkowitą z zaokrągleniem w górę (uwzględniamy ewentualną ostatnią niepełną stronę). Do zaokrąglania w górę możemy użyć funkcji `Ceiling` statycznej klasy `System.Math`. Pamiętajmy jednak, że zarówno `Count` jak i `PageSize` są typu `int`. Oznacza to, że podzielenie jednej wartości przez drugą da nam wynik typu `int`, powstały przez odcięcie części dziesiętnej (zaokrąglenie w dół). Aby móc zaokrąglić nasze dzielenie w górę, musimy więc najpierw dokonać rzutowania przynajmniej jednej z wartości na typ zmiennoprzecinkowy, tak aby wynik dzielenia również był liczbą zmiennoprzecinkową (np. `double`). Dopiero po otrzymaniu wyniku w postaci liczby zmiennoprzecinkowej, możemy go sensownie zaokrąglić w górę. Całe działanie może więc wyglądać następująco `Math.Ceiling(Model.Count / (double)Model.PageSize)`. Kiedy wiemy już ile stron ma nasza tabela (znamy numer ostatniej strony), możemy przeiterować po wszystkich numerach stron (od 1 do obliczony numer) i wyświetlić ja na stronie odpowiednio jako zwykły napis (obecna strona) lub hiperlink (wszystkie inne strony), np. przy pomocy pętli `for`.
 12. Funkcja JavaScript do zmiany numeru wyświetlanej strony<br />
 Na końcu widoku tworzymy sekcję `Scripts` oczekiwaną przez główny layout naszej strony.<br />
 Pod koniec pliku *_Layout.cshtml*, definiującego ogólny schemat wyglądu każdej naszej strony html (wstawiane są do niego nasze widoki), znajduje się kod `@await RenderSectionAsync("Scripts", required: false)`. Oznacza on właśnie, że layout oczekuje na sekcję `Scripts`. Kod umieszczony wewnątrz tej sekcji zostanie umieszczony na wygenerowanej stronie html w miejscu gdzie umieszczony został kod `@await...`. Sekcja ta jest przeznaczona do umieszczania w niej skryptów JavaScript. Miejsce umieszczenia skryptów w pliku html ma duże znaczenie. Jeżeli bowiem będziemy używać dodatkowych bibliotek (np. jquery, czy bootstrap), to korzystające z nich skrypty muszą znajdować się w dokumencie poniżej linków do bibliotek. Dlatego też na końcu (tuż przed tagiem zamykającym body - `</body>`) schematu strony definiowanego przez plik *_Layout.cshtml* umieszczona zostaje sekcja ze skryptami.<br />
@@ -430,35 +430,35 @@ Np. widok:
         }
         <nav aria-label="...">
             <ul class="pagination">
-                @if (Model.PageNo > numbersNextTo + 1)
+                @if (Model.CurrentPage > numbersNextTo + 1)
                 {
                     <li class="page-item">
-                        <a class="page-link" href="javascript:PagerClick(@(Model.PageNo - numbersNextTo - 1))" aria-label="Previous">
+                        <a class="page-link" href="javascript:PagerClick(@(Model.CurrentPage - numbersNextTo - 1))" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
                 }
                 @for (int i = numbersNextTo; i >= 1; i--)
                 {
-                    if (i < Model.PageNo)
+                    if (i < Model.CurrentPage)
                     {
-                        <li class="page-item"><a class="page-link" href="javascript:PagerClick(@(Model.PageNo - i))">@(Model.PageNo - i)</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:PagerClick(@(Model.CurrentPage - i))">@(Model.CurrentPage - i)</a></li>
                     }
                 }
                 @if (pages > 1)
                 {
                     <li class="page-item active" aria-current="page">
-                        <span class="page-link">@Model.PageNo</span>
+                        <span class="page-link">@Model.CurrentPage</span>
                     </li>
                 }
-                @for (int i = 1; i <= numbersNextTo && Model.PageNo + i <= pages; i++)
+                @for (int i = 1; i <= numbersNextTo && Model.CurrentPage + i <= pages; i++)
                 {
-                    <li class="page-item"><a class="page-link" href="javascript:PagerClick(@(Model.PageNo + i))">@(Model.PageNo + i)</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:PagerClick(@(Model.CurrentPage + i))">@(Model.CurrentPage + i)</a></li>
                 }
-                @if (Model.PageNo + numbersNextTo + 1 <= pages)
+                @if (Model.CurrentPage + numbersNextTo + 1 <= pages)
                 {
                     <li class="page-item">
-                        <a class="page-link" href="javascript:PagerClick(@(Model.PageNo + numbersNextTo + 1))" aria-label="Next">
+                        <a class="page-link" href="javascript:PagerClick(@(Model.CurrentPage + numbersNextTo + 1))" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
