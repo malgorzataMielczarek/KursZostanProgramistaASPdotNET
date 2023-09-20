@@ -70,7 +70,7 @@ public ActionResult Index()
 ```
 jeżeli w danym kontrolerze będziemy wyświetlać kilka różnych takich list, np. książki, autorów, gatunki itp., ale nie chcemy mieć wspólnej wartości dla wszystkich kontrolerów. Gdybyśmy chcieli mieć stałą domyślną wielkość strony dla wszystkich kontrolerów, wówczas musielibyśmy taką zmienną wyrzucić poza klasę kontrolera, np. do osobnej klasy/struktury pomocniczej lub utworzyć nadrzędny kontroler bazowy, jeśli nasze kontrolery będą mieć więcej punktów wspólnych.
 ### 2. Serwis
-Do metody `GetAllBooksForList` serwisu i jego interfejsu dopiszmy odpowiednie parametry (`int pageSize, int pageNo, string searchString`). Moglibyśmy teraz przesłać te dane do repozytorium i bezpośrednio tam wyszukać i pobrać odpowiednie elementy. Chcemy jednak dostać całą listę, aby wiedzieć ile jest na niej elementów (do parametru `Count` viewmodelu i określenia liczby stron tabeli). Tak na prawdę to moglibyśmy zrobić wyszukiwanie po stronie repozytorium, ale zostawmy już wszystko w serwisie. Załóżmy, że nasza metoda wyglądała wcześniej tak:
+Do metody `GetAllBooksForList` serwisu i jego interfejsu dopiszmy odpowiednie parametry (`int pageSize, int pageNo, string searchString`). Moglibyśmy teraz przesłać te dane do repozytorium i bezpośrednio tam wyszukać i pobrać odpowiednie elementy. Chcemy jednak dostać całą listę, aby wiedzieć ile jest na niej elementów (do parametru `Count` viewmodelu i określenia liczby stron tabeli). Tak na prawdę to moglibyśmy zrobić wyszukiwanie po stronie repozytorium, ale ponieważ jest to część logiki biznesowej aplikacji, więc zostawmy to w serwisie. Załóżmy, że nasza metoda wyglądała wcześniej tak:
 ```csharp =
 public ListBookForListVM GetAllBooksForList()
 {
@@ -116,7 +116,7 @@ public ListBookForListVM GetAllBooksForList(int pageSize, int pageNo, string sea
         List = limitedList, // lista ksiazek do wyswietlenia na tej stronie
         Count = books.Count, // liczba wszystkich ksiazek spelniajacych podane kryterium wyszukiwania, na wszystkich stronach
         PageSize = pageSize, // wielkosc strony, liczba elementow (ksiazek) wyswietlanych na stronie
-        PageNo = pageNo, // numer aktualnie wyswietlanej strony
+        CurrentPage = pageNo, // numer aktualnie wyswietlanej strony
         SearchString = searchString // parametr filtrowania, string wyszukiwany w tytulach ksiazek
     };
 }
@@ -144,7 +144,7 @@ public class ListBookForListVM
 {
     public int Count { get; set; }
     public List<BookForListVM> List { get; set; }
-    public int PageNo { get; set; }
+    public int CurrentPage { get; set; }
     public int PageSize { get; set; }
     public string SearchString { get; set; }
 }
@@ -271,7 +271,8 @@ Zobaczmy jak mogą wyglądać wszystkie te elementy na naszym przykładzie:
 </form>
 
 @*Sekcja ze skryptami*@
-@section Scripts {
+@section Scripts
+{
     @*Skrypt JavaScript z funkcja PagerClick*@
     <script type="text/javascript">
         function PagerClick(index){
@@ -290,7 +291,7 @@ Co w przeglądarce będzie wyglądać następująco:
 1. Tag formularza (`<form></form>`)<br />
 W tagu formularza użyliśmy dwóch tzw. pomocników tagów formularzy: `asp-action` i `asp-controller`. W pierwszym wskazujemy akcję, do której ma zostać przesłany formularz, a w drugim kontroler, do którego ta akcja należy. Zamias nich można również użyć atrybutu html `action` podając w nim ścieżkę URL do akcji (`action="/Books/Index"`). Używamy również atrybutu `method`, wskazującego jaką metodą chcemy przesyłać formularz (`method="post"`). Na ogół będzie to metoda POST, tak jak w naszym przykładzie.
 2. Pomocnik tagów wejściowych `asp-for`<br />
-W kontrolkach związanych z danymi, które chcemy przesyłać w formularzu będziemy używać pomocnika `asp-for`. Powiąże on element wejściowy html (input, select itd.) z wyrażeniem viewmodelu w widoku Razor (czyli np. z konkretną właściwością viewmodelu). Pomocnik `asp-for` m.in.:
+W kontrolkach związanych z danymi, które chcemy pobierać z przesłanego viewmodelu będziemy używać pomocnika `asp-for`. Powiąże on element wejściowy html (input, select itd.) z wyrażeniem viewmodelu w widoku Razor (czyli np. z konkretną właściwością viewmodelu). Pomocnik `asp-for` m.in.:
     - generuje atrybuty html `id` i `name` dla nazwy wyrażenia podanej w atrybucie `asp-for`. `asp-for="Property1.Property2"` jest równoważne `m => m.Property1.Property2`.
     - dla kontrolki `<input></input>` ustawia atrybut html `type` na podstawie viewmodelu i jego atrybutów, chyba, że został on podany.
 
@@ -360,7 +361,7 @@ Definiuje hiperlinki. Jest używany do przekierowywania z jednej strony na drug�
 Numer aktualnie wyświetlanej strony mamy zapisany w modelu jako `@Model.PageNo`. Nie wiemy natomiast ile stron powinna mieć nasza tabela. Musimy to więc obliczyć. Ponieważ znamy łączną liczbę elementów na liście (`@Model.Count`) i liczbę elementów wyświetlanych na jednej stronie (`@Model.PageSize`), dzieląc jedno przez drugie możemy obliczyć liczbę stron. Liczba stron musi być przy tym liczbą całkowitą z zaokrągleniem w górę (uwzględniamy ewentualną ostatnią niepełną stronę). Do zaokrąglania w górę możemy użyć funkcji `Ceiling` statycznej klasy `System.Math`. Pamiętajmy jednak, że zarówno `Count` jak i `PageSize` są typu `int`. Oznacza to, że podzielenie jednej wartości przez drugą da nam wynik typu `int`, powstały przez odcięcie części dziesiętnej (zaokrąglenie w dół). Aby móc zaokrąglić nasze dzielenie w górę, musimy więc najpierw dokonać rzutowania przynajmniej jednej z wartości na typ zmiennoprzecinkowy, tak aby wynik dzielenia również był liczbą zmiennoprzecinkową (np. `double`). Dopiero po otrzymaniu wyniku w postaci liczby zmiennoprzecinkowej, możemy go sensownie zaokrąglić w górę. Całe działanie może więc wyglądać następująco `Math.Ceiling(Model.Count / (double)Model.PageSize)`. Kiedy wiemy już ile stron ma nasza tabela (znamy numer ostatniej strony), możemy przeiterować po wszystkich numerach stron (od 1 do obliczony numer) i wyświetlić ja na stronie odpowiednio jako zwykły napis (obecna strona) lub hiperlink (wszystkie inne strony), np. przy pomocy pętli `for`.
 12. Funkcja JavaScript do zmiany numeru wyświetlanej strony<br />
 Na końcu widoku tworzymy sekcję `Scripts` oczekiwaną przez główny layout naszej strony.<br />
-Pod koniec pliku *_Layout.cshtml*, definiującego ogólny schemat wyglądu każdej naszej strony html (wstawiane są do niego nasze widoki), znajduje się kod `@await RenderSectionAsync("Scripts", required: false)`. Oznacza on właśnie, że layout oczekuje na sekcję `Scripts`. Kod umieszczony wewnątrz tej sekcji zostanie umieszczony na wygenerowanej stronie html w miejscu gdzie umieszczony został kod `@await...`. Sekcja ta jest przeznaczona do umieszczania w niej skryptów JavaScript.<br />
+Pod koniec pliku *_Layout.cshtml*, definiującego ogólny schemat wyglądu każdej naszej strony html (wstawiane są do niego nasze widoki), znajduje się kod `@await RenderSectionAsync("Scripts", required: false)`. Oznacza on właśnie, że layout oczekuje na sekcję `Scripts`. Kod umieszczony wewnątrz tej sekcji zostanie umieszczony na wygenerowanej stronie html w miejscu gdzie umieszczony został kod `@await...`. Sekcja ta jest przeznaczona do umieszczania w niej skryptów JavaScript. Miejsce umieszczenia skryptów w pliku html ma duże znaczenie. Jeżeli bowiem będziemy używać dodatkowych bibliotek (np. jquery, czy bootstrap), to korzystające z nich skrypty muszą znajdować się w dokumencie poniżej linków do bibliotek. Dlatego też na końcu (tuż przed tagiem zamykającym body - `</body>`) schematu strony definiowanego przez plik *_Layout.cshtml* umieszczona zostaje sekcja ze skryptami.<br />
 Tworzymy więc w sekcji skrypt przy pomocy znaczników `<script type="text/javascript"></script>`, pomiędzy którymi umieszczamy treść naszego skryptu, pisaną już w języku JavaScript. W tym wypadku będzie to funkcję `PagerClick`, którą wywoływały nasze hiperłącza.<br />
 Do funkcji przekazujemy jeden parametr, wybrany numer strony. Otrzymaną wartość chcemy przypisać do ukrytego pola `pageNo`, tak, aby móc ją przesłać w formularzu do akcji kontrolera.
     1. Wyszukanie odpowiedniego elementu html<br />
@@ -467,7 +468,8 @@ Np. widok:
         <input type="hidden" name="pageNo" id="pageNo"/>
     </div>
 </form>
-@section Scripts {
+@section Scripts
+{
     <script type="text/javascript">
         function PagerClick(index){
             document.getElementById("pageNo").value = index;
