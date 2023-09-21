@@ -339,7 +339,7 @@ Dla elementów `<input>` atrybut `type` może przyjmować następujące wartośc
     - `"hidden"` - definiuje ukryte (niewidoczne dla użytkownika) pole,
     - `"image"` - definiuje obrazek jako przycisk przesyłania danych,
     - `"month"` - definiuje kontrolkę do wyboru miesiąca i roku (bez stref czasowych),
-    - `"number"` - definiuje pole do wpisania numeru (ze strzałkami w górę/w dół do inkrementacji/dekrementacji, z możliwością zdefiniowania wartości minimalnej, maksymalnej i kroku),
+    - `"number"` - definiuje pole do wpisania numeru (ze strzałkami w górę/w dół do inkrementacji/dekrementacji, z możliwością zdefiniowania wartości minimalnej, maksymalnej i kroku). Html umożliwia wpisanie w takie pole wyłącznie znaków związanych z liczbami, czyli cyfr, przecinków, małej literki e (związanej z notacją wykładniczą) itd. Wpisanie znaków nie związanych z jakimkolwiek zapisem liczbowym nie powiedzie się,
     - `"password"` - definiuje pole na hasło,
     - `"radio"` - definiuje przycisk wyboru opcji (radio button, wszystkie przyciski należące do jednej grupy, wybór jednej opcji z kilku, muszą mieć taką samą nazwę `name`),
     - `"range"` - definiuje kontrolkę zakresową (np. slider - suwak),
