@@ -213,9 +213,9 @@ To na ten moment wszystkie zmiany jakie wprowadzimy. Po modyfikacjach nasz kod m
 
 @section Scripts {
     <script type="text/javascript">
-    *@ Wyszukanie inputa Year po id *@
+    @* Wyszukanie inputa Year po id *@
         var year = document.getElementById("Year");
-    *@ Dodanie nasłuchiwania na wypadek klikniecia lub uzyskania focusa (np. przy przechodzeniu miedzy inputami z uzyciem Tab) na inpucie Year i wywolanie zdefiniowanej nizej funkcji w przypadku wystapienia ktoregos z tych eventow. *@
+    @* Dodanie nasłuchiwania na wypadek klikniecia lub uzyskania focusa (np. przy przechodzeniu miedzy inputami z uzyciem Tab) na inpucie Year i wywolanie zdefiniowanej nizej funkcji w przypadku wystapienia ktoregos z tych eventow. *@
         year.addEventListener("click", (event) => YearFirstClicked());
         year.addEventListener("focus", (event) => YearFirstClicked());
 
