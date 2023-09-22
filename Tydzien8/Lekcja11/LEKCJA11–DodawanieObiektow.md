@@ -1,0 +1,17 @@
+# [LEKCJA 11 – Dodawanie obiektów](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-8-od-widoku-do-modelu/lekcja-11-dodawanie-obiektow/)
+W poprzedniej lekcji stworzyliśmy formularz do dodawania nowego obiektu i przesłaliśmy go do odpowiedniej akcji kontrolera. Aby dodać nowy obiekt do bazy danych pozostało nam więc jeszcze zaimplementowanie metod serwisu, repozytorium i ich interfejsów.
+## Serwis
+1. Do serwisu przesyłamy wypełniony pobranymi od użytkownika danymi viewmodel.
+2. W metodzie serwisu musimy zmapować otrzymany obiekt na odpowiedni model domenowy. Możemy użyć do tego AutoMappera, jakiejś innej biblioteki lub zrobić to samodzielnie.
+3. Otrzymany w wyniku mapowania obiekt modelu domenowego możemy w razie potrzeby uzupełnić jakimiś domyślnymi wartościami, np. jeśli posiada on flagę `IsActive` (którą zmieniamy na `false` w momencie usuwania obiektu przez użytkownika, zamiast faktycznie kasować obiekt z bazy danych), to ustawiamy ją na `true`. Dodajemy dowolną potrzebną nam logikę. Jeśli istnieje taka potrzeba możemy również dodać obróbkę danych przed mapowaniem.
+4. Kiedy naszykujemy już odpowiednio obiekt, który chcemy dodać do bazy danych, przesyłamy go do repozytorium, poprzez właściwą metodę.
+5. Po otrzymaniu odpowiedzi od metody repozytorium zwracamy (z metody serwisu) otrzymany (z wywołanej metody repozytorium) numer identyfikacyjny nowo dodanego obiektu do wywołującego ją (metodę serwisu) kontrolera.
+## Repozytorium
+1. Metoda repozytorium otrzymuje przesłany z serwisu, gotowy do zapisania, obiekt modelu domenowego.
+2. Metoda wywołuje odpowiedni DbSet kontekstu i, używając metody `Add`, dodaje otrzymany obiekt do bazy danych.
+3. Po pomyślnym dodaniu obiektu pobierane jest nadane obiektowi przez silnik bazodanowy nowe, unikalne `Id`.
+4. Metoda repozytorium zwraca (do wywołującej ją metody serwisu) otrzymane `Id`.
+## Kontroler
+1. Akcja kontrolera otrzymuje od użytkownika dane przesłane przy pomocy formularza przez data content żądania POST.
+2. Otrzymane dane przesyła do serwisu i otrzymuje w odpowiedzi `Id` nowo dodanego obiektu.
+3. Jeżeli teraz wywołalibyśmy metodę `View()`, to wywołany zostałby widok, z którego otrzymaliśmy dane (tworzony w poprzedniej lekcji widok z formularzem do dodawania nowych obiektów). Oczywiście gdy już dodaliśmy nowy obiekt to raczej nie chcemy już wracać do tego widoku. Zamiast tego zastosujemy mechanizm przekierowania do innej akcji kontrolera. Może to być np. akcja `Index` wyświetlająca listę obiektów (zawierającą nasz nowo dodany obiekt) lub np. `Details`, wyświetlająca szczegóły obiektu który właśnie dodaliśmy. Może to być dowolna wybrana przez nas akcja, do której przeniesienie będzie miało w naszym przypadku sens. Tak czy inaczej użyjemy do tego metody kontrolera (`ControllerBase`) `RedirectToAction`. Powoduje ona przekierowanie do wskazanej akcji przy pomocy statusu 302 Found. W wywołaniu podajemy nazwę akcji, do której chcemy dokonać przekierowania, a jeżeli jest to akcja innego kontrolera, to również nazwę kontrolera. W razie potrzeby można nią również przesłać parametry ścieżki i fragment, który chcemy dodać do URL. Podsumowując, na końcu akcji kontrolera, zamiast pisać `return View();`, jak to zwykle robiliśmy do tej pory, piszemy np. `return RedirectToAction("Index");`.
