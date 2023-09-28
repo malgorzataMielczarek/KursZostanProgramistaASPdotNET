@@ -48,7 +48,7 @@ namespace TitlesOrganizer.Application.ViewModels.BookVMs
             // OriginalLanguageCode jest trzyliterowym kodem jezyku, nie musi zostac podany, ale gdy juz jest, to musi skladac sie dokladnie z trzech liter
             RuleFor(x => x.OriginalLanguageCode).Length(3).Must(lang => lang.ToLower().All(c => c >= 'a' && c <= 'z')).Unless(x => string.IsNullOrEmpty(x.OriginalLanguageCode));
             // Year jest rokiem wydania ksiazki, nie musi byc podany, ale gdy jest, musi byc dodatni i nie wiekszy niz biezacy rok
-            RuleFor(x => x.Year).GreaterThan(0).LessThanOrEqualTo(DateTime.Now.Year).When(x => x.Year.HasValue);
+            RuleFor(x => x.Year).GreaterThan(0).LessThanOrEqualTo(DateTime.Now.Year);
             // Edition nie musi byc podana, a jej maksymalna dlugosc w naszej bazie danych jest ustawiona na 50 znakow
             RuleFor(x => x.Edition).MaximumLength(50);
             // Description nie musi byc podany, a jego maksymalna dlugosc w bazie danych jest ustawiona na 4000 znakow
@@ -75,3 +75,74 @@ Przy czym wszystkie reguły zdefiniowane z użyciem warunków (`When`, `Unless`)
 Aby utworzony przez nas walidator zadziałał musimy jeszcze zdefiniować dla niego serwis do dependency injection. Dla przykładu z poprzedniego punktu musimy dodać do konfiguracji następującą instrukcję `services.AddTransient<IValidator<BookVM>, BookValidator>();`, gdzie `services` to obiekt `IServiceCollection` aplikacji webowej. Możemy dodać tą instrukcję do pliku _Program.cs_ (lub _Startup.cs_). Wówczas `services` zastąpimy najpewniej kodem `builder.Services`, a samą instrukcję wstawimy przed zbudowaniem aplikacji (`builder.Build()`). Jeżeli w projekcie _.Application_ tworzyliśmy osobną klasę `DependencyInjection` z metodą rozszerzającą dodającą do kolekcji wszystkie serwisy do wstrzykiwania zależności związane z tym projektem, to możemy tam dodać tą instrukcję. Będziemy musieli utworzyć analogiczny serwis dla każdego zdefiniowanego przez nas walidatora.
 
 Teraz już wszystko powinno działać.
+
+### Manualna walidacja FluentValidation
+Manualna, czyli nie automatyczna, nie wykonywana przez potok walidacyjny ASP.NET tylko wywoływana bezpośrednio przez nas. Należy pamiętać, że jest to walidacja tylko po stronie serwera.
+#### 1. Konfiguracja
+Jeśli nie chcemy używać synchronicznego potoku walidacyjnego ASP.NET i nie wspieranej dłużej biblioteki _FluentValidation.AspNetCore_, to pomijamy związaną z tym konfigurację (`builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();`).
+### 2. Reguły walidacji
+Reguły walidacji nie będą się oczywiści niczym różnić, od tych które już stworzyliśmy.
+### 3. Dependency injection
+Nadal musimy jedynie skonfigurować serwer do dependency injection dokładnie w ten sam sposób co w przypadku walidacji automatycznej (`builder.Services.AddTransient<IValidator<BookVM>, BookValidator>();`). Tym razem jednak będziemy wstrzykiwać zależność przez konstruktor. Walidatora będziemy używać w kontrolerze, gdyż do warstwy aplikacji chcemy przesłać wyłącznie prawidłowe dane. Jeżeli walidacja wykaże błędy chcemy natomiast zwrócić informację o błędach użytkownikowi, tak, aby mógł je poprawić. Będziemy więc jeszcze musieli zmodyfikować kontroler.
+### 4. Walidacja w kontrolerze
+1. Wstrzyknięcie walidatora<br />
+Zanim będziemy mogli użyć walidatora, to musimy umieścić go w klasie kontrolera. Tworzymy więc, jak zwykle przy wstrzykiwaniu zależności, prywatne pole tylko do odczytu, w którym zostanie umieszczony obiekt walidatora (`private readonly IValidator<BookVM> _bookValidator;`). Modyfikujemy również konstruktor klasy, aby przypisać wartość temu polu. Np. (komentarzami oznaczono dodane elementy związane z walidatorem):
+```csharp
+private readonly ILogger<BooksController> _logger;
+private readonly IBookService _bookService;
+private readonly ILanguageService _languageService;
+private readonly IValidator<BookVM> _bookValidator; // <= nasz walidator
+
+public BooksController(ILogger<BooksController> logger, IBookService bookService, ILanguageService languageService, IValidator<BookVM> bookValidator /* przekazanie obiektu walidatora */)
+{
+    _logger = logger;
+    _bookService = bookService;
+    _languageService = languageService;
+    _bookValidator = bookValidator; // <= przypisanie wartosci do walidatora
+}
+```
+2. Walidacja danych<br />
+Walidację przeprowadza się przy pomocy metody `Validate` lub `ValidateAsync` walidatora, przekazując jako parametr model z danymi. Jeżeli używamy wersji async, to akcja musi być `async` i zwracać typ `Task<IActionResult>`. Wówczas przed wywołaniem funkcji `ValidateAsync` musimy jeszcze użyć słowa kluczowego `await`. Metoda zwraca obiekt `ValidationResult`. Zawiera on m.in. informację, czy dane są prawidłowe (`IsValid`) oraz informacje dotyczące wykrytych błędów (`Errors`). Po przeprowadzaniu walidacji, jeżeli okaże się, że w przekazanych danych są błędy to przekazujemy komunikaty o tych błędach do obiektu `ModelState` kontrolera i ponownie zwracamy widok, z którego przyszły dane. Jeżeli natomiast dane są prawidłowe, to robimy to, po co pobieraliśmy dane (zapewne przesyłamy dane do serwisu). Kiedy już wykona się odpowiednia logika to prawdopodobnie będziemy chcieli wyświetlić jakiś inny widok, więc dokonamy przekierowania do innej akcji, tego lub innego, kontrolera.
+#### Przykład
+Pokażmy jak wywołuje się walidację na przykładzie. Załóżmy, że dane wysyłamy do akcji `AddBook`, którą używaliśmy w przykładzie dwie lekcje temu:
+```csharp
+[HttpPost]
+public ActionResult AddBook(BookVM book)
+{
+    int id = _bookService.AddBook(book);
+
+    return View();
+}
+```
+Zmodyfikujmy akcję, uwzględniając walidację.
+```csharp
+[HttpPost]
+public ActionResult AddBook(BookVM book)
+{
+    ValidationResult result _bookValidator.Validate(book);
+    if (result.IsValid)
+    {
+        int id = _bookService.AddBook(book);
+        if (id > 0)
+        {
+            return RedirectToAction("Details", new { id = id });
+        }
+    }
+    else
+    {
+        result.AddToModelState(this.ModelState);
+    }
+
+    return View(book);
+}
+```
+Metoda rozszerzająca `AddToModelState` jest zdefiniowana w bibliotece _FluentValidation.AspNetCore_. Jeżeli nie chcemy z niej korzystać, to musimy ją jeszcze zaimplementować. Dopisujemy wówczas jeszcze implementację:
+```csharp
+public static void AddToModelState(this ValidationResult result, ModelStateDictionary modelState) 
+{
+    foreach (var error in result.Errors) 
+    {
+        modelState.AddModelError(error.PropertyName, error.ErrorMessage);
+    }
+}
+```
