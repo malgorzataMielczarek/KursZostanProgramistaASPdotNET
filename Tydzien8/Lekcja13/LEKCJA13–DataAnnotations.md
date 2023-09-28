@@ -1,0 +1,2 @@
+# [LEKCJA 13 – Data Annotations](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-8-od-widoku-do-modelu/lekcja-13-data-annotations/)
+Zamiast walidacji przy pomocy biblioteki FluentValidation możemy użyć wbudowanego mechanizmu ASP.NET korzystającego z adnotacji (`System.ComponentModel.DataAnnotations`). Będziemy to robić podobnie jak w przypadku wszystkich używanych dotychczas adnotacji (np. `[DisplayName("Nazwa")]`).
