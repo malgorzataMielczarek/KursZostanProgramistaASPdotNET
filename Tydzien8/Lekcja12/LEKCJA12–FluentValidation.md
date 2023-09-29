@@ -41,18 +41,18 @@ namespace TitlesOrganizer.Application.ViewModels.BookVMs
         {
             // Id nie może być nullem
             RuleFor(x => x.Id).NotNull();
-            // Title powinien zawsze byc podany (nie null i nie pusty string), a jego maksymalna dlugosc jest w bazie danych ustawiona na 450 znakow
-            RuleFor(x => x.Title).NotNull().NotEmpty().MaximumLength(450);
-            // OriginalTitle nie musi byc podany, a jego maksymalna dlugosc jest w bazie danych rowniez ustawiona na 450 znakow
-            RuleFor(x => x.OriginalTitle).MaximumLength(450);
+            // Title powinien zawsze byc podany (nie null i nie pusty string), a jego maksymalna dlugosc jest w bazie danych ustawiona na 450 bajtow i typ nvarchar, czyli jeden znak to 2 bajty
+            RuleFor(x => x.Title).NotNull().NotEmpty().MaximumLength(225);
+            // OriginalTitle nie musi byc podany, a jego maksymalna dlugosc jest w bazie danych rowniez ustawiona na 450 bajtow i typ nvarchar
+            RuleFor(x => x.OriginalTitle).MaximumLength(225);
             // OriginalLanguageCode jest trzyliterowym kodem jezyku, nie musi zostac podany, ale gdy juz jest, to musi skladac sie dokladnie z trzech liter
-            RuleFor(x => x.OriginalLanguageCode).Length(3).Must(lang => lang.ToLower().All(c => c >= 'a' && c <= 'z')).Unless(x => string.IsNullOrEmpty(x.OriginalLanguageCode));
+            RuleFor(x => x.OriginalLanguageCode).Length(3).Must(lang => lang.ToLower().All(c => c >= 'a' && c <= 'z')).Unless(x => x.OriginalLanguageCode is null);
             // Year jest rokiem wydania ksiazki, nie musi byc podany, ale gdy jest, musi byc dodatni i nie wiekszy niz biezacy rok
             RuleFor(x => x.Year).GreaterThan(0).LessThanOrEqualTo(DateTime.Now.Year);
-            // Edition nie musi byc podana, a jej maksymalna dlugosc w naszej bazie danych jest ustawiona na 50 znakow
-            RuleFor(x => x.Edition).MaximumLength(50);
-            // Description nie musi byc podany, a jego maksymalna dlugosc w bazie danych jest ustawiona na 4000 znakow
-            RuleFor(x => x.Description).MaximumLength(4000);
+            // Edition nie musi byc podana, a jej maksymalna dlugosc w naszej bazie danych jest ustawiona na 50 bajtow i typ nvarchar (25 znakow)
+            RuleFor(x => x.Edition).MaximumLength(25);
+            // Description nie musi byc podany, a jego maksymalna dlugosc w bazie danych jest ustawiona na 4000 bajtow i typ nvarchar (2000 znakow)
+            RuleFor(x => x.Description).MaximumLength(2000);
         }
     }
 }
