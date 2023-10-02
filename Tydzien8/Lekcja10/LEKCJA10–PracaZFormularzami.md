@@ -28,7 +28,7 @@ W naszym kontrolerze ponownie będziemy potrzebować dwóch akcji.
 
 Podobnie jak to miało miejsce w przypadku akcji `Index` z poprzedniej lekcji obie akcje będą miały taką samą nazwę, a różnić się będą argumentami (pierwsza będzie bezargumentowa, druga będzie przyjmować viewmodel `BookVM`) i atrybutami określającymi typ żądania http na jakie odpowiada (pierwsza GET, druga POST). Nazwijmy te metody `AddBook`. Będziemy więc mieli coś takiego:
 ```csharp
- [HttpGet]
+[HttpGet]
 public ActionResult AddBook()
 {
     return View(new BookVM() { Title = string.Empty });
