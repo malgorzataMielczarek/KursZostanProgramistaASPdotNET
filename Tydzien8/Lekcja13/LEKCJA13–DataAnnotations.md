@@ -53,7 +53,7 @@ namespace TitlesOrganizer.Application.ViewModels.BookVMs
 
         [Required]
         [StringLength(225, MinimumLength = 1)]
-        public required string Title { get; set; }
+        public string Title { get; set; }
 
         [StringLength(225)]
         public string? OriginalTitle { get; set; }
