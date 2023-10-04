@@ -1,0 +1,5 @@
+# [LEKCJA 17 – Błędy początkujących](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-8-od-widoku-do-modelu/lekcja-17-bledy-poczatkujacych/)
+Na początku podział programu na kontrolery serwisy i repozytoria może być nieco przytłaczający i mało intuicyjny. Nie bójmy się jednak popełniać błędu. W końcu zawsze możemy nasz kod zrefaktoryzować. Pamiętajmy jednak o trzech rzeczach:
+1. Akcje kontrolerów powinny zawierać jak naj mniej kodu. Właściwie znajduje się tu tylko logika związana z wyświetleniem odpowiedniego widoku i wywołanie odpowiedniej metody serwisu.
+2. W serwisach umieszczamy główną logikę naszej aplikacji. Nie robimy tu jednak za dużo rzeczy związanych bezpośrednio z bazą danych i operacjami na niej.
+3. W repozytorium tworzymy metody związane z operacjami na bazie danych. Nie powinna się tu znaleźć żadna logika, a jedynie jak najprostsze metody do komunikacji z bazą danych. Tu chcemy właściwie tylko pobrać określone dane z bazy danych, zapisać otrzymane dane (dodać lub zmodyfikować) lub usunąć z bazy określone rekordy.

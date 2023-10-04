@@ -1,0 +1,2 @@
+# [LEKCJA 18 – Praca domowa](https://kurs.szkoladotneta.pl/zostan-programista-asp-net/tydzien-8-od-widoku-do-modelu/lekcja-18-praca-domowa/)
+Pracą domową na ten tydzień (a właściwie więcej niż tydzień) jest właściwie stworzenie całej aplikacji. Spokojnie implementujemy wszystkie zaplanowane funkcjonalności, a w razie jakichkolwiek wątpliwości prosimy o pomoc na grupie. Na razie pomijamy jedynie zarządzanie użytkownikami, gdyż tym zajmiemy się w lekcjach kolejnego tygodnia.
