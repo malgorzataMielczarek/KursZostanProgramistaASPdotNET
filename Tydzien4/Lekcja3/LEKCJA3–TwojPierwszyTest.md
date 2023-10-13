@@ -76,3 +76,5 @@ Służy do sprawdzenia, czy jakiś `string` (lub kolekcja) zawiera jakiś elemen
 Służy do sprawdzenia, czy jakiś `string` (lub kolekcja) nie zawiera jakiegoś elementu.
 ## Pisanie testów
 Pisząc testy chcemy sprawdzić nie tylko nasz idealny wariant, który z założenia powinien być poprawnie wykonany. Powinniśmy sprawdzić wszystkie możliwości dotyczące naszego kodu. Im więcej wariantów sprawdzimy, im więcej testów napiszemy, tym mniej będziemy później musieli debugować nasz kod. Kiedy większość sytuacji zostanie przewidziana i sprawdzona w testach, to zamiast debugować kod, będziemy mogli uruchomić testy. Jeżeli któryś z nich wypadnie negatywnie, to będziemy wiedzieć w której części kodu znajduje się błąd. Nie będziemy więc musieli przechodzić debugerem krok po kroku przez cały kod, a jedynie najwyżej przez fragment w którym testy wykazały błąd.
+
+Jeżeli w jednej metodzie testowej chcemy sprawdzić wiele możliwości danych warto użyć testów sparametryzowanych. Więcej na ten temat można znaleźć np. na stronie https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/.
